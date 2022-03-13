@@ -51,7 +51,13 @@ class UnivariateGaussian:
         Sets `self.mu_`, `self.var_` attributes according to calculated estimation (where
         estimator is either biased or unbiased). Then sets `self.fitted_` attribute to `True`
         """
-        raise NotImplementedError()
+        # update the expectation (mu) to be the sample mean estimator:
+        self.mu_ = X.mean()
+
+        # update the variance (var) to be the sample variance estimator (biased/unbiased):
+        m = X.size
+        var_factor = (1 / m) if self.biased_ else (1 / (m - 1))
+        self.var_ = var_factor * ((X - self.mu_) ** 2).sum()
 
         self.fitted_ = True
         return self
@@ -76,7 +82,10 @@ class UnivariateGaussian:
         """
         if not self.fitted_:
             raise ValueError("Estimator must first be fitted before calling `pdf` function")
-        raise NotImplementedError()
+
+        constant = 1 / np.sqrt(2 * np.pi * self.var_)
+        normalized_samples = ((X - self.mu_) ** 2) / (-2 * self.var_)
+        return constant * np.exp(normalized_samples)
 
     @staticmethod
     def log_likelihood(mu: float, sigma: float, X: np.ndarray) -> float:
@@ -97,7 +106,11 @@ class UnivariateGaussian:
         log_likelihood: float
             log-likelihood calculated
         """
-        raise NotImplementedError()
+        # Calculate the log_likelihood according to the formula we've learned:
+        m = X.size
+        first_factor = - 1 / (2 * sigma)
+        second_factor = (m / 2) * np.log(2 * np.pi * sigma)
+        return first_factor * ((X - mu) ** 2).sum() - second_factor
 
 
 class MultivariateGaussian:
@@ -143,12 +156,18 @@ class MultivariateGaussian:
         Sets `self.mu_`, `self.cov_` attributes according to calculated estimation.
         Then sets `self.fitted_` attribute to `True`
         """
-        raise NotImplementedError()
+        # update the expectation (mu) to be the sample mean estimator:
+        self.mu_ = X.mean(axis=0)
+
+        # update the covariance (cov) to be the sample variance estimator:
+        m = X.shape[0]  # the number of samples (i.e. random vectors) in X
+        centered_x = X - self.mu_
+        self.cov_ = (1 / (m - 1)) * np.dot(centered_x.transpose(), centered_x)
 
         self.fitted_ = True
         return self
 
-    def pdf(self, X: np.ndarray):
+    def pdf(self, X: np.ndarray) -> np.ndarray:
         """
         Calculate PDF of observations under Gaussian model with fitted estimators
 
@@ -168,7 +187,14 @@ class MultivariateGaussian:
         """
         if not self.fitted_:
             raise ValueError("Estimator must first be fitted before calling `pdf` function")
-        raise NotImplementedError()
+        m, d = X.shape  # d is the dimension of each sample and m is the number of samples
+        constant = 1 / np.sqrt(np.power(2 * np.pi, d) * det(self.cov_))
+        centered_x = X - self.mu_
+        pdf = np.zeros(m)
+        for i in range(m):
+            row_mult = multi_dot((centered_x[i].T, inv(self.cov_), centered_x[i]))
+            pdf[i] = constant * np.exp(-0.5 * row_mult)
+        return pdf
 
     @staticmethod
     def log_likelihood(mu: np.ndarray, cov: np.ndarray, X: np.ndarray) -> float:
@@ -189,4 +215,16 @@ class MultivariateGaussian:
         log_likelihood: float
             log-likelihood calculated over all input data and under given parameters of Gaussian
         """
-        raise NotImplementedError()
+        m, d = X.shape  # d is the dimension of each sample and m is the number of samples
+        centered_x = X - mu
+        # calculating the "complicated" part of the formula which is:
+        # sum((Xi-mu).T * inv(cov) * (Xi-mu))
+        # as: trace((X-mu).T * inv(cov) * (X-mu)) which can be computed faster.
+        row_prod_sum = (np.dot(centered_x, inv(cov)) * centered_x).sum()
+        return (-0.5) * (row_prod_sum + m * np.log(np.power((2 * np.pi), d) * det(cov)))
+
+        # m, d = X.shape  # d is the dimension of each sample and m is the number of samples
+        # centered_x = X - mu
+        # row_prod_sum = np.apply_along_axis(lambda x: multi_dot((x.T, inv(cov), x)), 1,
+        #                                    centered_x).sum() * (-0.5)
+        # return row_prod_sum - (m / 2) * np.log(np.power((2 * np.pi), d) * det(cov))
