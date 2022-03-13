@@ -1,6 +1,6 @@
 from __future__ import annotations
 import numpy as np
-from numpy.linalg import inv, det, slogdet
+from numpy.linalg import inv, det, slogdet, multi_dot
 
 
 class UnivariateGaussian:
