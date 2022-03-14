@@ -226,3 +226,14 @@ class MultivariateGaussian:
         det_sign, log_det = slogdet(cov)
         const = m * ((d * np.log(2 * np.pi)) + (det_sign * log_det))
         return (-0.5) * (row_prod_sum + const)
+
+        # first version:
+        # m, d = X.shape  # d is the dimension of each sample and m is the number of samples
+        # centered_x = X - mu
+        # row_prod_sum = np.apply_along_axis(lambda x: multi_dot((x.T, inv(cov), x)), 1,
+        #                                    centered_x).sum() * (-0.5)
+        # return row_prod_sum - (m / 2) * np.log(np.power((2 * np.pi), d) * det(cov))
+
+        # second version:
+        # row_prod_sum = (np.dot(centered_x, inv(cov)) * centered_x).sum()
+        # return (-0.5) * (row_prod_sum + m * np.log(np.power((2 * np.pi), d) * det(cov))) * 7
