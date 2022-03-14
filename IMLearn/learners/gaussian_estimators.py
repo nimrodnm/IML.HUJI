@@ -7,6 +7,7 @@ class UnivariateGaussian:
     """
     Class for univariate Gaussian Distribution Estimator
     """
+
     def __init__(self, biased_var: bool = False) -> UnivariateGaussian:
         """
         Estimator for univariate Gaussian mean and variance parameters
@@ -117,6 +118,7 @@ class MultivariateGaussian:
     """
     Class for multivariate Gaussian Distribution Estimator
     """
+
     def __init__(self):
         """
         Initialize an instance of multivariate Gaussian estimator
@@ -220,11 +222,18 @@ class MultivariateGaussian:
         # calculating the "complicated" part of the formula which is:
         # sum((Xi-mu).T * inv(cov) * (Xi-mu))
         # as: trace((X-mu).T * inv(cov) * (X-mu)) which can be computed faster.
-        row_prod_sum = (np.dot(centered_x, inv(cov)) * centered_x).sum()
-        return (-0.5) * (row_prod_sum + m * np.log(np.power((2 * np.pi), d) * det(cov)))
+        row_prod_sum = (np.dot(centered_x, inv(cov)) * centered_x).sum()  # calculation of the trace
+        det_sign, log_det = slogdet(cov)
+        const = m * ((d * np.log(2 * np.pi)) + (det_sign * log_det))
+        return (-0.5) * (row_prod_sum + const)
 
+        # first version:
         # m, d = X.shape  # d is the dimension of each sample and m is the number of samples
         # centered_x = X - mu
         # row_prod_sum = np.apply_along_axis(lambda x: multi_dot((x.T, inv(cov), x)), 1,
         #                                    centered_x).sum() * (-0.5)
         # return row_prod_sum - (m / 2) * np.log(np.power((2 * np.pi), d) * det(cov))
+
+        # second version:
+        # row_prod_sum = (np.dot(centered_x, inv(cov)) * centered_x).sum()
+        # return (-0.5) * (row_prod_sum + m * np.log(np.power((2 * np.pi), d) * det(cov))) * 7
