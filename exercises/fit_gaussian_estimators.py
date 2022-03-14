@@ -52,7 +52,9 @@ def test_multivariate_gaussian():
     multivariate = MultivariateGaussian()
     multivariate.fit(samples)
     print("Q4) Estimated expectation and covariance of multivariate gaussian:")
+    print("Expectation Vector:")
     print(multivariate.mu_)
+    print("Covariance Matrix:")
     print(multivariate.cov_)
     print("\n")
 
@@ -76,7 +78,7 @@ def test_multivariate_gaussian():
     max_indices_zipped = list(zip(max_indices[0], max_indices[1]))
     f1 = round(feature[max_indices_zipped[0][0]], 3)
     f3 = round(feature[max_indices_zipped[0][1]], 3)
-    print(f"Q5) The maximum log-likelihood value is: {max_value}\n"
+    print(f"Q5) The maximum log-likelihood value is: {round(max_value, 3)}\n"
           f"and the model that achieved it is:\n"
           f"[f1, 0, f3, 0] = [{f1}, 0, {f3}, 0]")
 
