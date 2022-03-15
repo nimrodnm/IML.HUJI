@@ -15,7 +15,7 @@ def test_univariate_gaussian():
     univariate_1 = UnivariateGaussian()
     univariate_1.fit(samples)
     print("Q1) Estimated expectation and variance of univariate gaussian:")
-    print(univariate_1.mu_, univariate_1.var_)
+    print(f"(expectation, variance) = ({univariate_1.mu_}, {univariate_1.var_})")
     print("\n")
 
     # Question 2 - Empirically showing sample mean is consistent
