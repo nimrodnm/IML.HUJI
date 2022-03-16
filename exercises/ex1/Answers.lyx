@@ -1620,8 +1620,21 @@ status open
 \end_layout
 
 \begin_layout Standard
+כתבו בפורום שיש טעות בשאלה והפונקציה היא 
+\begin_inset Formula $S:\kaliReal^{d}\rightarrow\left[0,1\right]^{d}$
+\end_inset
+
+.
+ כלומר 
+\begin_inset Formula $k=d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 כמו בתרגול, נגדיר לכל 
-\begin_inset Formula $i\in\left[k\right]$
+\begin_inset Formula $i\in\left[d\right]$
 \end_inset
 
  את הפונקציה 
@@ -1657,7 +1670,7 @@ status open
 \end_inset
 
 נקבל שלכל 
-\begin_inset Formula $i\in\left[k\right]$
+\begin_inset Formula $i\in\left[d\right]$
 \end_inset
 
  מתקיים ש- 
@@ -1669,11 +1682,7 @@ status open
 
 \begin_layout Standard
 לכן לכל 
-\begin_inset Formula $i\in\left[k\right]$
-\end_inset
-
- ולכל 
-\begin_inset Formula $j\in\left[n\right]$
+\begin_inset Formula $i,j\in\left[d\right]$
 \end_inset
 
  מתקיים ש-
@@ -1684,11 +1693,7 @@ status open
 
 \end_inset
 
-נניח תחילה ש-
-\begin_inset Formula $k\leqslant d$
-\end_inset
 
-.
 \end_layout
 
 \begin_layout Standard
@@ -1707,10 +1712,7 @@ status open
  היא: 
 \begin_inset Formula 
 \[
-\frac{\partial}{\partial x_{j}}h\left(x\right)=\begin{cases}
-e^{x_{j}} & j\leqslant k\\
-0 & j>k
-\end{cases}
+\frac{\partial}{\partial x_{j}}h\left(x\right)=\frac{\partial}{\partial x_{j}}\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}=\stackrel[\ell=1]{k}{\sum}\frac{\partial}{\partial x_{j}}e^{x_{\ell}}=e^{x_{j}}
 \]
 
 \end_inset
@@ -1735,15 +1737,7 @@ e^{x_{j}} & j\leqslant k\\
 \begin_inset Formula $i\neq j$
 \end_inset
 
-, עם 
-\begin_inset Formula $j\in\left[d\right]$
-\end_inset
-
- ו- 
-\begin_inset Formula $i\in\left[k\right]$
-\end_inset
-
-, נקבל שהנגזרת החלקית של 
+ נקבל שהנגזרת החלקית של 
 \begin_inset Formula $g_{i}\left(x\right)$
 \end_inset
 
@@ -1759,26 +1753,10 @@ e^{x_{j}} & j\leqslant k\\
 
 \end_inset
 
-ולכן אם 
-\begin_inset Formula $j\leqslant k$
-\end_inset
-
- אז:
+ולכן:
 \begin_inset Formula 
 \[
 \frac{\partial}{\partial x_{j}}S_{i}\left(x\right)\overset{{\color{green}\bigstar}}{=}\frac{\frac{\partial g_{i}\left(x\right)}{\partial x_{j}}h\left(x\right)-\frac{\partial h\left(x\right)}{\partial x_{j}}g_{i}\left(x\right)}{h^{2}\left(x\right)}=\frac{0-e^{x_{j}}\cdot e^{x_{i}}}{\left(\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}\right)^{2}}=-\frac{e^{x_{j}}}{\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}}\cdot\frac{e^{x_{i}}}{\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}}=-S_{j}\left(x\right)S_{i}\left(x\right)
-\]
-
-\end_inset
-
-ואם 
-\begin_inset Formula $j>k$
-\end_inset
-
- אז:
-\begin_inset Formula 
-\[
-\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)=\frac{0-0}{\left(\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}\right)^{2}}=0
 \]
 
 \end_inset
@@ -1790,57 +1768,10 @@ e^{x_{j}} & j\leqslant k\\
  היא:
 \begin_inset Formula 
 \[
-\kaliReal^{k\times d}\ni J_{x}\left(S\right)=\begin{bmatrix}S_{1}\left(1-S_{1}\right) & -S_{2}S_{1} & \ldots & -S_{k}S_{1} & 0 & \ldots & 0\\
--S_{1}S_{2} & S_{2}\left(1-S_{2}\right) & \ldots & -S_{k}S_{2} & 0 & \ldots & 0\\
-\vdots & \vdots & \ddots & \vdots & \vdots & \ddots & \vdots\\
--S_{1}S_{k} & -S_{2}S_{k} & \ldots & S_{k}\left(1-S_{k}\right) & 0 & \ldots & 0
-\end{bmatrix}
-\]
-
-\end_inset
-
-במקרה שבו 
-\begin_inset Formula $d\leqslant k$
-\end_inset
-
-, לכל 
-\begin_inset Formula $j\in\left[d\right]$
-\end_inset
-
- נקבל ש- 
-\begin_inset Formula $j\in\left[k\right]$
-\end_inset
-
- ולכן 
-\begin_inset Formula $\frac{\partial}{\partial x_{j}}h\left(x\right)=e^{x_{j}}$
-\end_inset
-
-, ולכן לכל 
-\begin_inset Formula $i\in\left[k\right]$
-\end_inset
-
-, 
-\begin_inset Formula $j\in\left[d\right]$
-\end_inset
-
- שונים:
-\begin_inset Formula 
-\[
-\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)=-S_{j}\left(x\right)S_{i}\left(x\right)
-\]
-
-\end_inset
-
-ונקבל שמטריצת היעקוביאן היא:
-\begin_inset Formula 
-\[
-J_{x}\left(S\right)=\begin{bmatrix}S_{1}\left(1-S_{1}\right) & -S_{2}S_{1} & \ldots & -S_{d}S_{1}\\
+\kaliReal^{d\times d}\ni J_{x}\left(S\right)=\begin{bmatrix}S_{1}\left(1-S_{1}\right) & -S_{2}S_{1} & \ldots & -S_{d}S_{1}\\
 -S_{1}S_{2} & S_{2}\left(1-S_{2}\right) & \ldots & -S_{d}S_{2}\\
 \vdots & \vdots & \ddots & \vdots\\
--S_{1}S_{d} & -S_{2}S_{d} & \ldots & S_{d}\left(1-S_{d}\right)\\
--S_{1}S_{d+1} & -S_{2}S_{d+1} & \ldots & -S_{d}S_{d+1}\\
-\vdots & \vdots & \ddots & \vdots\\
--S_{1}S_{k} & -S_{2}S_{k} & \ldots & -S_{d}S_{k}
+-S_{1}S_{d} & -S_{2}S_{d} & \ldots & S_{d}\left(1-S_{d}\right)
 \end{bmatrix}
 \]
 
