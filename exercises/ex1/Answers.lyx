@@ -1,0 +1,2650 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\begin_preamble
+\usepackage{culmus}
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Fix numbering in hebrew article:
+\renewcommand{\thetheorem}{\beginL \thesection.\arabic{theorem}}
+
+% Create symbol for DotCup (forn union):
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\usepackage{mathtools}
+\usepackage{dsfont}
+\end_preamble
+\use_default_options true
+\begin_modules
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/nimro/AppData/Roaming/LyX2.3/MacrosHeb.lyx"
+
+\end_inset
+
+
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Title
+)
+\numeric on
+67577
+\numeric off
+( מבוא למערכות לומדות | תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+חלק תאורטי
+\end_layout
+
+\begin_layout Author
+שם: נמרוד בר גיורא | ת"ז:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+207090622
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+חלק תאורטי
+\end_layout
+
+\begin_layout Subsection*
+אלגברה ליניארית
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+תהי 
+\begin_inset Formula $A$
+\end_inset
+
+ מטריצה אורתוגונלית המייצגת העתקה 
+\begin_inset Formula $T:V\rightarrow W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula $\dim\left(V\right)=n$
+\end_inset
+
+ ו- 
+\begin_inset Formula $\dim\left(W\right)=m$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $A\in M_{m\times n}\left(\kaliReal\right)$
+\end_inset
+
+.
+ מתקיים לכל 
+\begin_inset Formula $x\in V$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+\left\Vert Ax\right\Vert =\sqrt{\left\langle Ax\mid Ax\right\rangle }\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{הגדרת הצמוד}}}}}{\downarrow}}}{=}\sqrt{\left\langle x\mid A^{\ast}Ax\right\rangle }\overset{{\color{gray}\overset{\mathclap{A\in M_{m\times n}\left(\boldsymbol{\kaliReal}\right)}}{\downarrow}}}{=}\sqrt{\left\langle x\mid A^{\top}Ax\right\rangle }\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{\ensuremath{A} אורתוגונלית}}}}}{\overset{}{\downarrow}}}}{=}\sqrt{\left\langle x\mid I_{n}x\right\rangle }=\sqrt{\left\langle x\mid x\right\rangle }=\left\Vert x\right\Vert 
+\]
+
+\end_inset
+
+כנדרש.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נתונה המטריצה 
+\begin_inset Formula $A=\begin{bmatrix}1 & 1 & 0\\
+1 & -1 & 2
+\end{bmatrix}$
+\end_inset
+
+.
+ נמצא מטריצות 
+\begin_inset Formula $U,\Sigma,V$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $U,V$
+\end_inset
+
+ אורתוגונליות מסדר 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ ו- 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ בהתאמה ו- 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ אלכסונית מסדר 
+\begin_inset Formula $2\times3$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $A=U\Sigma V^{\top}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נחשב את 
+\begin_inset Formula $A^{\top}A$
+\end_inset
+
+ ונלכסן אותה אורתוגונלית:
+\begin_inset Formula 
+\[
+A^{\top}A=\begin{bmatrix}1 & 1\\
+1 & -1\\
+0 & 2
+\end{bmatrix}\begin{bmatrix}1 & 1 & 0\\
+1 & -1 & 2
+\end{bmatrix}=\begin{bmatrix}2 & 0 & 2\\
+0 & 2 & -2\\
+2 & -2 & 4
+\end{bmatrix}
+\]
+
+\end_inset
+
+נחשב את הפולינום האופייני:
+\begin_inset Formula 
+\begin{align*}
+\chi_{A^{\top}A}\left(\lambda\right) & =\det\begin{bmatrix}\lambda-2 & 0 & -2\\
+0 & \lambda-2 & 2\\
+-2 & 2 & \lambda-4
+\end{bmatrix}=\left(\lambda-2\right)\det\begin{bmatrix}\lambda-2 & 2\\
+2 & \lambda-4
+\end{bmatrix}-2\det\begin{bmatrix}0 & \lambda-2\\
+-2 & 2
+\end{bmatrix}=\\
+ & =\left(\lambda-2\right)\left(\left(\lambda-2\right)\left(\lambda-4\right)-4\right)-4\left(\lambda-2\right)=\left(\lambda-2\right)\left(\left(\lambda-2\right)\left(\lambda-4\right)-8\right)=\\
+ & =\left(\lambda-2\right)\left(\lambda^{2}-6\lambda+8-8\right)=\left(\lambda-2\right)\left(\lambda-6\right)\lambda
+\end{align*}
+
+\end_inset
+
+לכן הערכים העצמיים הם 
+\begin_inset Formula $\left\{ 0,2,6\right\} $
+\end_inset
+
+.
+ נמצא להם וקטורים עצמיים.
+ עבור הע
+\begin_inset Quotes erd
+\end_inset
+
+ע 
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+A^{\top}A-0I=\begin{bmatrix}2 & 0 & 2\\
+0 & 2 & -2\\
+2 & -2 & 4
+\end{bmatrix}\stackrel{\text{\R{\text{דירוג}}}}{\Longrightarrow}\begin{bmatrix}1 & 0 & 1\\
+0 & 1 & -1\\
+0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+לכן הוקטור 
+\begin_inset Formula $\begin{bmatrix}-1\\
+1\\
+1
+\end{bmatrix}\in\kaliReal^{3}$
+\end_inset
+
+ הוא ו
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $A^{\top}A$
+\end_inset
+
+ עם ע
+\begin_inset Quotes erd
+\end_inset
+
+ע
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+.
+ ננרמל אותו ונקבל את הוקטור 
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{3}}\begin{bmatrix}-1\\
+1\\
+1
+\end{bmatrix}
+\]
+
+\end_inset
+
+עבור הע
+\begin_inset Quotes erd
+\end_inset
+
+ע 
+\begin_inset Formula $2$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+A^{\top}A-2I=\begin{bmatrix}0 & 0 & 2\\
+0 & 0 & -2\\
+2 & -2 & 2
+\end{bmatrix}\stackrel{\text{\R{\text{דירוג}}}}{\Longrightarrow}\begin{bmatrix}1 & -1 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+לכן הוקטור 
+\begin_inset Formula $\begin{bmatrix}1\\
+1\\
+0
+\end{bmatrix}$
+\end_inset
+
+ הוא ו
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $A^{\top}A$
+\end_inset
+
+ עם ע
+\begin_inset Quotes erd
+\end_inset
+
+ע 
+\begin_inset Formula $2$
+\end_inset
+
+.
+ ננרמל אותו ונקבל את הוקטור:
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{2}}\begin{bmatrix}1\\
+1\\
+0
+\end{bmatrix}
+\]
+
+\end_inset
+
+עבור הע
+\begin_inset Quotes erd
+\end_inset
+
+ע 
+\begin_inset Formula $6$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+A^{\top}A-6I=\begin{bmatrix}-4 & 0 & 2\\
+0 & -4 & -2\\
+2 & -2 & -2
+\end{bmatrix}\stackrel{\text{\R{\text{דירוג}}}}{\Longrightarrow}\begin{bmatrix}1 & 0 & -1/2\\
+0 & 1 & 1/2\\
+0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+לכן הוקטור 
+\begin_inset Formula $\begin{bmatrix}1\\
+-1\\
+2
+\end{bmatrix}$
+\end_inset
+
+ הוא ו
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $A^{\top}A$
+\end_inset
+
+ עם ע
+\begin_inset Quotes erd
+\end_inset
+
+ע 
+\begin_inset Formula $6$
+\end_inset
+
+.
+ ננרמל ונקבל את הוקטור:
+\begin_inset Formula 
+\[
+\frac{1}{\sqrt{6}}\begin{bmatrix}1\\
+-1\\
+2
+\end{bmatrix}
+\]
+
+\end_inset
+
+ולכן בסיס אורתונורמלי של 
+\begin_inset Formula $\kaliReal^{3}$
+\end_inset
+
+ שמלכסן את 
+\begin_inset Formula $A^{\top}A$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+\left(\frac{1}{\sqrt{6}}\begin{bmatrix}1\\
+-1\\
+2
+\end{bmatrix},\frac{1}{\sqrt{2}}\begin{bmatrix}1\\
+1\\
+0
+\end{bmatrix},\frac{1}{\sqrt{3}}\begin{bmatrix}-1\\
+1\\
+1
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+נסמן 
+\begin_inset Formula 
+\[
+V=\begin{bmatrix}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{3}}\\
+\frac{-1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}}\\
+\frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{3}}
+\end{bmatrix}
+\]
+
+\end_inset
+
+אז 
+\begin_inset Formula $V$
+\end_inset
+
+ מטריצה אורתוגונלית כי עמודותיה הן בסיס א
+\begin_inset Quotes erd
+\end_inset
+
+נ של 
+\begin_inset Formula $\kaliReal^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+את המטריצה 
+\begin_inset Formula $\Sigma\in M_{2\times3}\left(\kaliReal\right)$
+\end_inset
+
+ נגדיר להיות:
+\begin_inset Formula 
+\[
+\Sigma=\begin{bmatrix}\sqrt{6} & 0 & 0\\
+0 & \sqrt{2} & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+כי היא מקיימת ש- 
+\begin_inset Formula $\Sigma^{\top}\Sigma=\left[\begin{smallmatrix}6\\
+ & 2\\
+ &  & 0
+\end{smallmatrix}\right]$
+\end_inset
+
+.
+ עכשיו כפי שראינו בתרגול מתקיים ש-
+\begin_inset Formula 
+\[
+U\Sigma=AV=\begin{bmatrix}0 & \sqrt{2} & 0\\
+\sqrt{6} & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula 
+\[
+U=\begin{bmatrix}0 & 1\\
+1 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+היא אורתוגונלית למשל כי עמודותיה הן הבסיס הסטנדרטי של 
+\begin_inset Formula $\kaliReal^{2}$
+\end_inset
+
+, והוא בסיס א
+\begin_inset Quotes erd
+\end_inset
+
+נ.
+\end_layout
+
+\begin_layout Standard
+עם המטריצות שמצאנו מתקיים ש- 
+\begin_inset Formula $A=U\Sigma V^{\top}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q3.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נתונה מטריצה 
+\begin_inset Formula $A\in M_{m\times n}\left(\kaliReal\right)$
+\end_inset
+
+.
+ נסמן 
+\begin_inset Formula $C_{0}=A^{\top}A$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{1}\geqslant\ldots\geqslant\lambda_{n}$
+\end_inset
+
+ הע
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $C_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{1},\ldots,v_{n}\in\kaliReal^{n}$
+\end_inset
+
+ הו
+\begin_inset Quotes erd
+\end_inset
+
+ע המתאימים מנורמלים.
+ נניח ש- 
+\begin_inset Formula $\lambda_{1}>\lambda_{2}$
+\end_inset
+
+ ונגדיר:
+\begin_inset Formula 
+\[
+b_{0}=\stackrel[i=1]{n}{\sum}a_{i}v_{i}\quad,\quad b_{k+1}=\frac{C_{0}b_{k}}{\left\Vert C_{0}b_{k}\right\Vert }
+\]
+
+\end_inset
+
+עם 
+\begin_inset Formula $a_{1}\neq0$
+\end_inset
+
+.
+ נשים לב שלפי הגדרת 
+\begin_inset Formula $b_{0}$
+\end_inset
+
+ ומכך ש- 
+\begin_inset Formula $v_{1},\ldots,v_{n}$
+\end_inset
+
+ ו
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $C_{0}$
+\end_inset
+
+ נובע ש-
+\begin_inset Formula 
+\[
+C_{0}b_{0}=C_{0}\stackrel[i=1]{n}{\sum}a_{i}v_{i}=\stackrel[i=1]{n}{\sum}a_{i}C_{0}v_{i}=\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}v_{i}
+\]
+
+\end_inset
+
+נוכיח באינדוקציה שלכל 
+\begin_inset Formula $k\in\kaliNatural$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+b_{k}=\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\right\Vert }
+\]
+
+\end_inset
+
+בסיס: לפי ההגדרה ולפי החישוב לעיל:
+\begin_inset Formula 
+\[
+b_{1}=\frac{C_{0}b_{0}}{\left\Vert C_{0}b_{0}\right\Vert }=\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}v_{i}\right\Vert }
+\]
+
+\end_inset
+
+כנדרש.
+\end_layout
+
+\begin_layout Proof
+צעד: נניח נכונות עבור 
+\begin_inset Formula $k-1$
+\end_inset
+
+ ונוכיח עבור 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+b_{k} & \overset{{\color{gray}\overset{\text{\R{\text{לפי ההגדרה}}}}{\downarrow}}}{=}\frac{C_{0}b_{k-1}}{\left\Vert C_{0}b_{k-1}\right\Vert }\overset{{\color{gray}\overset{\text{\R{\text{מהנחת האינדוקציה}}}}{\downarrow}}}{=}\frac{C_{0}\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }}{\left\Vert C_{0}\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }\right\Vert }=\frac{\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}C_{0}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }}{\left\Vert \frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}C_{0}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }\right\Vert }=\frac{\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}\lambda_{i}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }}{\left\Vert \frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}\lambda_{i}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }\right\Vert }=\\
+ & =\frac{\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }}{\frac{1}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k-1}v_{i}\right\Vert }\cdot\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\right\Vert }=\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\right\Vert }
+\end{align*}
+
+\end_inset
+
+וזה מוכיח את צעד האינדוקציה.
+\end_layout
+
+\begin_layout Proof
+נחשב את הנורמה 
+\begin_inset Formula $\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\right\Vert $
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\kaliNatural$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\right\Vert =\sqrt{\left\langle \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\mid\,\stackrel[j=1]{n}{\sum}a_{j}\lambda_{j}^{k}v_{j}\right\rangle }=\sqrt{\stackrel[i=1]{n}{\sum}\stackrel[j=1]{n}{\sum}a_{i}a_{j}\lambda_{i}^{k}\lambda_{j}^{k}\left\langle v_{i}\mid v_{j}\right\rangle }\overset{{\color{gray}\overset{\text{\R{\text{כי זו סדרת וקטורים א"נ}}}}{\downarrow}}}{=}\sqrt{\stackrel[i=1]{n}{\sum}\left(a_{i}\lambda_{i}^{k}\right)^{2}}
+\]
+
+\end_inset
+
+ועכשיו בעזרת הזהות שהוכחנו באינדוקציה וע
+\begin_inset Quotes erd
+\end_inset
+
+י חילוק המונה והמכנה ב-
+\begin_inset Formula $\lambda_{1}^{k}$
+\end_inset
+
+ נקבל ש-:
+\begin_inset Formula 
+\[
+b_{k}=\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}}{\left\Vert \stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}\right\Vert }=\frac{\stackrel[i=1]{n}{\sum}a_{i}\lambda_{i}^{k}v_{i}}{\sqrt{\stackrel[i=1]{n}{\sum}\left(a_{i}\lambda_{i}^{k}\right)^{2}}}\overset{{\color{gray}\overset{\mathclap{\cdot\frac{\lambda_{1}^{k}}{\lambda_{1}^{k}}}}{\downarrow}}}{=}\frac{\stackrel[i=1]{n}{\sum}a_{i}\left(\frac{\lambda_{i}}{\lambda_{1}}\right)^{k}v_{i}}{\sqrt{\stackrel[i=1]{n}{\sum}\left(a_{i}\left(\frac{\lambda_{i}}{\lambda_{1}}\right)^{k}\right)^{2}}}
+\]
+
+\end_inset
+
+מכיוון ש-
+\begin_inset Formula $\lambda_{1}>\lambda_{2}\geqslant\lambda_{3}\geqslant\ldots\geqslant\lambda_{n}$
+\end_inset
+
+ אז לכל 
+\begin_inset Formula $2\leqslant i\leqslant n$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula $\frac{\lambda_{i}}{\lambda_{1}}<1$
+\end_inset
+
+ ולכן: 
+\begin_inset Formula 
+\[
+\left(\frac{\lambda_{i}}{\lambda_{1}}\right)^{k}\xrightarrow[k\rightarrow\infty]{}0
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+b_{k}=\frac{\stackrel[i=1]{n}{\sum}a_{i}\left(\frac{\lambda_{i}}{\lambda_{1}}\right)^{k}v_{i}}{\sqrt{\stackrel[i=1]{n}{\sum}\left(a_{i}\left(\frac{\lambda_{i}}{\lambda_{1}}\right)^{k}\right)^{2}}}\xrightarrow[k\rightarrow\infty]{}\frac{a_{1}v_{1}}{\sqrt{a_{1}^{2}}}=\frac{a_{1}}{\left|a_{1}\right|}v_{1}=\pm v_{1}
+\]
+
+\end_inset
+
+כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+אינפי רב-מימדי
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q4.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נסמן לכל 
+\begin_inset Formula $1\leqslant i,j\leqslant n$
+\end_inset
+
+ את הכניסה ה-
+\begin_inset Formula $i,j$
+\end_inset
+
+ של 
+\begin_inset Formula $U$
+\end_inset
+
+ ב- 
+\begin_inset Formula $u_{j}^{i}\in\kaliReal$
+\end_inset
+
+ )כאשר 
+\begin_inset Formula $i$
+\end_inset
+
+ מסמן את אינדקס השורה ו-
+\begin_inset Formula $j$
+\end_inset
+
+ את אינדקס העמודה(, ולכל 
+\begin_inset Formula $1\leqslant i\leqslant n$
+\end_inset
+
+ נסמן את העמודה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של 
+\begin_inset Formula $U$
+\end_inset
+
+ ב- 
+\begin_inset Formula $u_{i}\in\kaliReal^{n}$
+\end_inset
+
+.
+ נשים לב שלכל 
+\begin_inset Formula $\sigma\in\kaliReal^{n}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\begin{align*}
+f\left(\sigma\right) & =U\text{diag}\left(\sigma\right)U^{\top}x=\begin{bmatrix}| &  & |\\
+u_{1} & \ldots & u_{n}\\
+| &  & |
+\end{bmatrix}\begin{bmatrix}\sigma_{1}\\
+ & \ddots\\
+ &  & \sigma_{n}
+\end{bmatrix}\begin{bmatrix}- & u_{1}^{\top} & -\\
+ & \vdots\\
+- & u_{1}^{\top} & -
+\end{bmatrix}x=\begin{bmatrix}| &  & |\\
+\sigma_{1}u_{1} & \ldots & \sigma_{n}u_{n}\\
+| &  & |
+\end{bmatrix}\begin{bmatrix}u_{1}^{\top}x\\
+\vdots\\
+u_{n}^{\top}x
+\end{bmatrix}=\\
+ & =u_{1}^{\top}x\sigma_{1}u_{1}+\ldots+u_{n}^{\top}x\sigma_{n}u_{n}=\sigma_{1}u_{1}^{\top}xu_{1}+\ldots+\sigma_{n}u_{n}^{\top}xu_{n}=\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}\in\kaliReal^{n}
+\end{align*}
+
+\end_inset
+
+נשים לב שלכל 
+\begin_inset Formula $1\leqslant i\leqslant n$
+\end_inset
+
+, הכניסה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של הוקטור שקיבלנו היא סכום הכניסות ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של הוקטורים שהוא הסכום שלהם, כלומר:
+\begin_inset Formula 
+\[
+\left[\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}\right]_{i}=\stackrel[\ell=1]{n}{\sum}\left[\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}\right]_{i}=\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}^{i}
+\]
+
+\end_inset
+
+ונשים לב שבנוסחא הזו 
+\begin_inset Formula $u_{\ell}^{\top}xu_{\ell}^{i}\in\kaliReal$
+\end_inset
+
+ )הוא סקלר(.
+ לכן נוכל להגדיר לכל 
+\begin_inset Formula $1\leqslant i\leqslant n$
+\end_inset
+
+ 
+\begin_inset Formula $f_{i}:\kaliReal^{n}\rightarrow\kaliReal$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\kaliForall\sigma\in\kaliReal^{n}:\quad f_{i}\left(\sigma\right)=\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}^{i}
+\]
+
+\end_inset
+
+ונקבל ש-
+\begin_inset Formula 
+\[
+f\left(\sigma\right)=\begin{bmatrix}f_{1}\left(\sigma\right)\\
+\vdots\\
+f_{n}\left(\sigma\right)
+\end{bmatrix}=\begin{bmatrix}\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}^{1}\\
+\vdots\\
+\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}^{n}
+\end{bmatrix}
+\]
+
+\end_inset
+
+עכשיו לכל 
+\begin_inset Formula $1\leqslant i,j\leqslant n$
+\end_inset
+
+ נקבל ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}f_{i}\left(\sigma\right)=\frac{\partial}{\partial x_{j}}\stackrel[\ell=1]{n}{\sum}\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}^{i}=\stackrel[\ell=1]{n}{\sum}\frac{\partial}{\partial x_{j}}\left(\sigma_{\ell}u_{\ell}^{\top}xu_{\ell}^{i}\right)=\frac{\partial}{\partial x_{j}}\left(\sigma_{j}u_{j}^{\top}xu_{j}^{i}\right)=u_{j}^{\top}xu_{j}^{i}=\left\langle u_{j}\mid x\right\rangle u_{j}^{i}
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\begin{align*}
+J_{\sigma}\left(f\right) & =\begin{bmatrix}\left\langle u_{1}\mid x\right\rangle u_{1}^{1} & \ldots & \left\langle u_{n}\mid x\right\rangle u_{n}^{1}\\
+\vdots & \ddots & \vdots\\
+\left\langle u_{1}\mid x\right\rangle u_{1}^{n} & \ldots & \left\langle u_{n}\mid x\right\rangle u_{n}^{n}
+\end{bmatrix}=\begin{bmatrix}| &  & |\\
+\left\langle u_{1}\mid x\right\rangle u_{1} & \ldots & \left\langle u_{n}\mid x\right\rangle u_{n}\\
+| &  & |
+\end{bmatrix}=\begin{bmatrix}| &  & |\\
+u_{1} & \ldots & u_{n}\\
+| &  & |
+\end{bmatrix}\begin{bmatrix}\left\langle u_{1}\mid x\right\rangle \\
+ & \ddots\\
+ &  & \left\langle u_{n}\mid x\right\rangle 
+\end{bmatrix}=\\
+ & =U\cdot\text{diag}\Big(\begin{bmatrix}\left\langle u_{1}\mid x\right\rangle \\
+\vdots\\
+\left\langle u_{1}\mid x\right\rangle 
+\end{bmatrix}\Big)=U\cdot\text{diag}\left(\left[x\right]_{\kaliBBasis_{U}}\right)
+\end{align*}
+
+\end_inset
+
+כאשר השיוויון האחרון נובע מכך ש-
+\begin_inset Formula $U$
+\end_inset
+
+ אורתוגונלית, ולכן עמודותיה הן בסיס אורתונורמלי 
+\begin_inset Formula $\kaliBBasis_{U}=\left(u_{1},\ldots,u_{n}\right)$
+\end_inset
+
+ של 
+\begin_inset Formula $\kaliReal^{n}$
+\end_inset
+
+, ולומדים בליניארית ש-
+\begin_inset Formula $\left[\begin{smallmatrix}\left\langle u_{1}\mid x\right\rangle \\
+\vdots\\
+\left\langle u_{1}\mid x\right\rangle 
+\end{smallmatrix}\right]$
+\end_inset
+
+ הוא בדיוק עמודת הקוארדינטות של 
+\begin_inset Formula $x$
+\end_inset
+
+ ביחס לבסיס האורתונורמלי הזה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q5.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula $g:\kaliReal^{n}\rightarrow\kaliReal$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\kaliForall\sigma\in\kaliReal^{n}:\quad g\left(\sigma\right)=\frac{1}{2}\left\Vert \sigma-y\right\Vert ^{2}
+\]
+
+\end_inset
+
+ונקבל ש- 
+\begin_inset Formula $h\left(\sigma\right)=\frac{1}{2}\left\Vert f\left(\sigma\right)-y\right\Vert ^{2}=g\left(f\left(\sigma\right)\right)=\left(g\circ f\right)\left(\sigma\right)$
+\end_inset
+
+.
+ לפי כלל השרשרת מתקיים ש-
+\begin_inset Formula 
+\[
+J_{\sigma}\left(h\right)=J_{f\left(\sigma\right)}\left(g\right)\cdot J_{\sigma}\left(f\right)
+\]
+
+\end_inset
+
+בשאלה הקודמת ראינו ש- 
+\begin_inset Formula $J_{\sigma}\left(f\right)=U\cdot\text{diag}\left(\left[x\right]_{\kaliBBasis_{U}}\right)$
+\end_inset
+
+, כאשר 
+\begin_inset Formula $x\in\kaliReal^{n}$
+\end_inset
+
+ ו-
+\begin_inset Formula $U\in\kaliReal^{n\times n}$
+\end_inset
+
+ אורתוגונלית, ו-
+\begin_inset Formula $\kaliBBasis_{U}$
+\end_inset
+
+ בסיס א
+\begin_inset Quotes erd
+\end_inset
+
+נ של 
+\begin_inset Formula $\kaliReal^{n}$
+\end_inset
+
+ המורכב מעמודותיה של 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נחשב את 
+\begin_inset Formula $J_{\sigma}\left(g\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+לכל 
+\begin_inset Formula $1\leqslant i\leqslant n$
+\end_inset
+
+ הנגזרת של 
+\begin_inset Formula $g\left(\sigma\right)$
+\end_inset
+
+ לפי 
+\begin_inset Formula $\sigma_{i}$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\sigma_{i}}g\left(\sigma\right) & =\frac{\partial}{\partial\sigma_{i}}\left(\frac{1}{2}\left\Vert \sigma-y\right\Vert ^{2}\right)=\frac{\partial}{\partial\sigma_{i}}\left(\frac{1}{2}\stackrel[\ell=1]{n}{\sum}\left(\sigma_{\ell}-y_{\ell}\right)^{2}\right)=\frac{\partial}{\partial\sigma_{i}}\left(\frac{1}{2}\stackrel[\ell=1]{n}{\sum}\left(\sigma_{\ell}^{2}-2\sigma_{\ell}y_{\ell}+y_{\ell}^{2}\right)\right)=\\
+ & =\frac{1}{2}\stackrel[\ell=1]{n}{\sum}\frac{\partial}{\partial\sigma_{i}}\left(\sigma_{\ell}^{2}-2\sigma_{\ell}y_{\ell}+y_{\ell}^{2}\right)=\frac{1}{2}\left(2\sigma_{i}-2y_{i}\right)=\sigma_{i}-y_{i}
+\end{align*}
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+\nabla g\left(\sigma\right)=\left[\begin{smallmatrix}\sigma_{1}-y_{1}\\
+\vdots\\
+\sigma_{n}-y_{n}
+\end{smallmatrix}\right]=\sigma-y
+\]
+
+\end_inset
+
+ולכן כפי שראינו - 
+\begin_inset Formula $J_{\sigma}\left(g\right)=\left(\nabla g\left(\sigma\right)\right)^{\top}=\left(\sigma-y\right)^{\top}$
+\end_inset
+
+.
+ נציב בכלל השרשרת ונקבל ש-
+\begin_inset Formula 
+\[
+J_{\sigma}\left(h\right)=\left(f\left(\sigma\right)-y\right)^{\top}U\text{diag}\left(\left[x\right]_{\kaliBBasis_{U}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q6.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כמו בתרגול, נגדיר לכל 
+\begin_inset Formula $i\in\left[k\right]$
+\end_inset
+
+ את הפונקציה 
+\begin_inset Formula $g_{i}:\kaliReal^{d}\rightarrow\kaliReal$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י: 
+\begin_inset Formula 
+\[
+\kaliForall x\in\kaliReal^{d}:\quad g_{i}\left(x\right)=e^{x_{i}}
+\]
+
+\end_inset
+
+ואת הפונקציה 
+\begin_inset Formula $h:\kaliReal^{d}\rightarrow\kaliReal$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\kaliForall x\in\kaliReal^{d}:\quad h\left(x\right)=\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}
+\]
+
+\end_inset
+
+נקבל שלכל 
+\begin_inset Formula $i\in\left[k\right]$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $S_{i}\left(x\right)=\frac{g_{i}\left(x\right)}{h\left(x\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכן לכל 
+\begin_inset Formula $i\in\left[k\right]$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $j\in\left[n\right]$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)=\frac{\partial}{\partial x_{j}}\frac{e^{x_{i}}}{\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}}=\frac{\partial}{\partial x_{j}}\frac{g_{i}\left(x\right)}{h\left(x\right)}=\frac{\frac{\partial g_{i}\left(x\right)}{\partial x_{j}}h\left(x\right)-\frac{\partial h\left(x\right)}{\partial x_{j}}g_{i}\left(x\right)}{h^{2}\left(x\right)}\quad{\color{green}\bigstar}
+\]
+
+\end_inset
+
+נניח תחילה ש-
+\begin_inset Formula $k\leqslant d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נשים לב שלכל 
+\begin_inset Formula $j\in\left[d\right]$
+\end_inset
+
+ הנגזרת החלקית של 
+\begin_inset Formula $h\left(x\right)$
+\end_inset
+
+ ביחס ל-
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ היא: 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}h\left(x\right)=\begin{cases}
+e^{x_{j}} & j\leqslant k\\
+0 & j>k
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בתרגול ראינו שעבור 
+\begin_inset Formula $i=j$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)=S_{i}\left(x\right)\left(1-S_{j}\left(x\right)\right)
+\]
+
+\end_inset
+
+במקרה שבו 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, עם 
+\begin_inset Formula $j\in\left[d\right]$
+\end_inset
+
+ ו- 
+\begin_inset Formula $i\in\left[k\right]$
+\end_inset
+
+, נקבל שהנגזרת החלקית של 
+\begin_inset Formula $g_{i}\left(x\right)$
+\end_inset
+
+ ביחס ל-
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}g_{i}\left(x\right)=\frac{\partial}{\partial x_{j}}e^{x_{i}}=0
+\]
+
+\end_inset
+
+ולכן אם 
+\begin_inset Formula $j\leqslant k$
+\end_inset
+
+ אז:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)\overset{{\color{green}\bigstar}}{=}\frac{\frac{\partial g_{i}\left(x\right)}{\partial x_{j}}h\left(x\right)-\frac{\partial h\left(x\right)}{\partial x_{j}}g_{i}\left(x\right)}{h^{2}\left(x\right)}=\frac{0-e^{x_{j}}\cdot e^{x_{i}}}{\left(\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}\right)^{2}}=-\frac{e^{x_{j}}}{\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}}\cdot\frac{e^{x_{i}}}{\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}}=-S_{j}\left(x\right)S_{i}\left(x\right)
+\]
+
+\end_inset
+
+ואם 
+\begin_inset Formula $j>k$
+\end_inset
+
+ אז:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)=\frac{0-0}{\left(\stackrel[\ell=1]{k}{\sum}e^{x_{\ell}}\right)^{2}}=0
+\]
+
+\end_inset
+
+ולכן מטריצת היעקוביאן של 
+\begin_inset Formula $S$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\[
+\kaliReal^{k\times d}\ni J_{x}\left(S\right)=\begin{bmatrix}S_{1}\left(1-S_{1}\right) & -S_{2}S_{1} & \ldots & -S_{k}S_{1} & 0 & \ldots & 0\\
+-S_{1}S_{2} & S_{2}\left(1-S_{2}\right) & \ldots & -S_{k}S_{2} & 0 & \ldots & 0\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \ddots & \vdots\\
+-S_{1}S_{k} & -S_{2}S_{k} & \ldots & S_{k}\left(1-S_{k}\right) & 0 & \ldots & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+במקרה שבו 
+\begin_inset Formula $d\leqslant k$
+\end_inset
+
+, לכל 
+\begin_inset Formula $j\in\left[d\right]$
+\end_inset
+
+ נקבל ש- 
+\begin_inset Formula $j\in\left[k\right]$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $\frac{\partial}{\partial x_{j}}h\left(x\right)=e^{x_{j}}$
+\end_inset
+
+, ולכן לכל 
+\begin_inset Formula $i\in\left[k\right]$
+\end_inset
+
+, 
+\begin_inset Formula $j\in\left[d\right]$
+\end_inset
+
+ שונים:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial x_{j}}S_{i}\left(x\right)=-S_{j}\left(x\right)S_{i}\left(x\right)
+\]
+
+\end_inset
+
+ונקבל שמטריצת היעקוביאן היא:
+\begin_inset Formula 
+\[
+J_{x}\left(S\right)=\begin{bmatrix}S_{1}\left(1-S_{1}\right) & -S_{2}S_{1} & \ldots & -S_{d}S_{1}\\
+-S_{1}S_{2} & S_{2}\left(1-S_{2}\right) & \ldots & -S_{d}S_{2}\\
+\vdots & \vdots & \ddots & \vdots\\
+-S_{1}S_{d} & -S_{2}S_{d} & \ldots & S_{d}\left(1-S_{d}\right)\\
+-S_{1}S_{d+1} & -S_{2}S_{d+1} & \ldots & -S_{d}S_{d+1}\\
+\vdots & \vdots & \ddots & \vdots\\
+-S_{1}S_{k} & -S_{2}S_{k} & \ldots & -S_{d}S_{k}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q7.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נתחיל בחישוב הנגזרות החלקיות של 
+\begin_inset Formula $f$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial x}f\left(x,y\right) & =\frac{\partial}{\partial x}\left(x^{3}-5xy-y^{5}\right)=3x^{2}-5y\\
+\frac{\partial}{\partial y}f\left(x,y\right) & =\frac{\partial}{\partial y}\left(x^{3}-5xy-y^{5}\right)=-5x-5y^{4}
+\end{align*}
+
+\end_inset
+
+ונמשיך עם הנגזרות השניות החלקיות:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial^{2}}{\partial^{2}x}f\left(x,y\right) & =\frac{\partial}{\partial x}\left(3x^{2}-5y\right)=6x\\
+\frac{\partial^{2}}{\partial x\partial y}f\left(x,y\right) & =\frac{\partial}{\partial y}\left(3x^{2}-5y\right)=-5\\
+\frac{\partial^{2}}{\partial^{2}y}f\left(x,y\right) & =\frac{\partial}{\partial y}\left(-5x-5y^{4}\right)=-20y^{3}\\
+\frac{\partial^{2}}{\partial y\partial x}f\left(x,y\right) & =\frac{\partial}{\partial x}\left(-5x-5y^{4}\right)=-5
+\end{align*}
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+H\left(f\right)=\begin{bmatrix}\frac{\partial^{2}f}{\partial^{2}x} & \frac{\partial^{2}f}{\partial x\partial y}\\
+\frac{\partial^{2}f}{\partial y\partial x} & \frac{\partial^{2}f}{\partial^{2}y}
+\end{bmatrix}=\begin{bmatrix}6x & -5\\
+-5 & -20y^{3}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+תאוריית אומדן
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q8.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נסמן ב-
+\begin_inset Formula $\mu$
+\end_inset
+
+ את התוחלת של 
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+ וב-
+\begin_inset Formula $\gamma$
+\end_inset
+
+ את השונות שלה.
+\end_layout
+
+\begin_layout Proof
+לפי ההגדרה, האומד 
+\begin_inset Formula $\hat{\mu}_{n}$
+\end_inset
+
+ מנסה לאמוד את התוחלת של 
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+ - 
+\begin_inset Formula $\mu$
+\end_inset
+
+, ולכן הוא קונסיסטנטי אם ורק אם לכל 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\underset{n\shortrightarrow\infty}{\lim}\kaliProbability\left(\left|\mu_{n}-\mu\right|\geqslant\varepsilon\right)=0
+\]
+
+\end_inset
+
+נחשב לכל 
+\begin_inset Formula $n\in\kaliNatural$
+\end_inset
+
+ את התוחלת של 
+\begin_inset Formula $\hat{\mu}_{n}$
+\end_inset
+
+ )הוא הרי מ
+\begin_inset Quotes erd
+\end_inset
+
+מ(:
+\begin_inset Formula 
+\[
+\kaliExpectedValue\left(\hat{\mu}_{n}\right)=\kaliExpectedValue\left(\frac{1}{n}\stackrel[i=1]{n}{\sum}x_{i}\right)\overset{{\color{gray}\overset{\text{\R{\text{ליניאריות התוחלת}}}}{\downarrow}}}{=}\frac{1}{n}\stackrel[i=1]{n}{\sum}\kaliExpectedValue\left(x_{i}\right)\overset{{\color{gray}\overset{\mathclap{x_{i}\sim\overset{\text{iid}}{\sim}P}}{\downarrow}}}{=}\frac{1}{n}\stackrel[i=1]{n}{\sum}\mu=\frac{1}{n}\cdot n\cdot\mu=\mu
+\]
+
+\end_inset
+
+מכיוון ש- 
+\begin_inset Formula $x_{i}\overset{\text{iid}}{\sim}\mathcal{P}$
+\end_inset
+
+ אז בפרט הם ב
+\begin_inset Quotes erd
+\end_inset
+
+ת ולכן נוכל לחשב גם את השונות של 
+\begin_inset Formula $\hat{\mu}_{n}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $n\in\kaliNatural$
+\end_inset
+
+ בקלות:
+\begin_inset Formula 
+\[
+\text{Var}\left(\hat{\mu}_{n}\right)=\text{Var}\left(\frac{1}{n}\stackrel[i=1]{n}{\sum}x_{i}\right)=\frac{1}{n^{2}}\stackrel[i=1]{n}{\sum}\text{Var}\left(x_{i}\right)=\frac{1}{n^{2}}\cdot n\cdot\gamma=\frac{\gamma}{n}
+\]
+
+\end_inset
+
+יהי 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+.
+ לפי אי-שיוויון צ'בישב:
+\begin_inset Formula 
+\[
+\kaliProbability\left(\left|\hat{\mu}_{n}-\mu\right|\geqslant\varepsilon\right)\leqslant\frac{\text{Var}\left(\hat{\mu}_{n}\right)}{\varepsilon^{2}}=\frac{\frac{\gamma}{n}}{\varepsilon^{2}}=\frac{\gamma}{n\varepsilon^{2}}\xrightarrow[n\rightarrow\infty]{}0
+\]
+
+\end_inset
+
+ומכיוון שהסתברות היא אי-שלילית לפי הגדרתה אז נובע מסנדוויץ' ש-
+\begin_inset Formula 
+\[
+\underset{n\shortrightarrow\infty}{\lim}\kaliProbability\left(\left|\mu_{n}-\mu\right|\geqslant\varepsilon\right)=0
+\]
+
+\end_inset
+
+וזה נכון לכל 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $\hat{\mu}_{n}$
+\end_inset
+
+ קונסיסטנטי כנדרש.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q9.PNG
+	lyxscale 85
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ראינו בכיתה שפונקציית הצפיפות של מ
+\begin_inset Quotes erd
+\end_inset
+
+מ 
+\begin_inset Formula $X$
+\end_inset
+
+ המתפלג 
+\begin_inset Formula $\mathcal{N}\left(\mu,\Sigma\right)$
+\end_inset
+
+ עם 
+\begin_inset Formula $\mu\in\kaliReal^{d}$
+\end_inset
+
+ ו- 
+\begin_inset Formula $\Sigma\in M_{d\times d}\left(\kaliReal\right)$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\[
+\kaliForall x\in\kaliReal^{d}:\quad f_{X}\left(x\right)=\frac{1}{\sqrt{\left(2\pi\right)^{d}\left|\Sigma\right|}}\exp\left(-\frac{1}{2}\left(x-\mu\right)^{\top}\Sigma^{-1}\left(x-\mu\right)\right)
+\]
+
+\end_inset
+
+בנוסף ראינו שעבור מ
+\begin_inset Quotes erd
+\end_inset
+
+מ 
+\begin_inset Formula $X\sim\mathcal{P}\left(\theta\right)$
+\end_inset
+
+ עם פונקציית צפיפות 
+\begin_inset Formula $f$
+\end_inset
+
+, פונקציית ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ שלו היא:
+\begin_inset Formula 
+\[
+\mathcal{L}\left(\theta\mid x\right)=f_{\theta}\left(x\right)
+\]
+
+\end_inset
+
+ופונקציית ה-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+ היא 
+\begin_inset Formula $\log\left(f_{\theta}\left(x\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ולכן עבור התצפיות 
+\begin_inset Formula $x_{1},\ldots,x_{m}\overset{\text{iid}}{\sim}\mathcal{N}\left(\mu,\Sigma\right)$
+\end_inset
+
+ הנתונות מתקיים לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+\mathcal{L}\left(\theta\mid x_{i}\right)=f_{\theta}\left(x_{i}\right)=\frac{1}{\sqrt{\left(2\pi\right)^{d}\left|\Sigma\right|}}\exp\left(-\frac{1}{2}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)\right)
+\]
+
+\end_inset
+
+מכיוון שהם בלתי תלויים ובעלי התפלגות זהה:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\theta\mid x_{1},\ldots,x_{m}\right) & =f_{\theta}\left(x_{1},\ldots,x_{m}\right)=\stackrel[i=1]{m}{\prod}f_{\theta}\left(x_{i}\right)=\stackrel[i=1]{m}{\prod}\left(\frac{1}{\sqrt{\left(2\pi\right)^{d}\left|\Sigma\right|}}\exp\left(-\frac{1}{2}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)\right)\right)=\\
+ & =\frac{1}{\left(\left(2\pi\right)^{d}\left|\Sigma\right|\right)^{\frac{m}{2}}}\stackrel[i=1]{m}{\prod}\exp\left(-\frac{1}{2}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)\right)=\\
+ & =\frac{1}{\left(\left(2\pi\right)^{d}\left|\Sigma\right|\right)^{\frac{m}{2}}}\exp\left(-\frac{1}{2}\stackrel[i=1]{m}{\sum}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)\right)
+\end{align*}
+
+\end_inset
+
+ולכן פונקציית ה-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+ של 
+\begin_inset Formula $\mathcal{N}\left(\mu,\Sigma\right)$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\begin{align*}
+\log & \left(\frac{1}{\left(\left(2\pi\right)^{d}\left|\Sigma\right|\right)^{\frac{m}{2}}}\exp\left(-\frac{1}{2}\stackrel[i=1]{m}{\sum}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)\right)\right)=\\
+= & \log\left(\frac{1}{\left(\left(2\pi\right)^{d}\left|\Sigma\right|\right)^{\frac{m}{2}}}\right)+\log\left(\exp\left(-\frac{1}{2}\stackrel[i=1]{m}{\sum}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)\right)\right)=\\
+= & -\frac{m}{2}\log\left(\left(2\pi\right)^{d}\left|\Sigma\right|\right)-\frac{1}{2}\stackrel[i=1]{m}{\sum}\left(x_{i}-\mu\right)^{\top}\Sigma^{-1}\left(x_{i}-\mu\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+חלק מעשי
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+הערכים של התוחלת ושל השונות שחושבו מודפסים בקוד כפי שכתוב בהוראות.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+גרף המציג את גודל השגיאה באומדן התוחלת ביחס למספר הדגימות:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/plot1.PNG
+	lyxscale 90
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+גרף המציג את פונקציית הצפיפות שחושבה ע
+\begin_inset Quotes erd
+\end_inset
+
+י המודל:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/plot2.PNG
+	lyxscale 88
+	scale 88
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+הערכים של וקטור התוחלת ושל מטריצת השונות המשותפת שחושבו מודפסים בקוד כפי
+ שכתוב בהוראות.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+גרף )
+\lang english
+HeatMap
+\lang hebrew
+( המציג את ערך פונקציית ה-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/plot3.PNG
+	lyxscale 87
+	scale 87
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+מתוך כל הערכים שחושבו בשאלה הקודמת, המודל שהשיג ערך מקסימלי עבור פונקציית
+ ה-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+\mu=\begin{bmatrix}f_{1} & 0 & f_{3} & 0\end{bmatrix}=\begin{bmatrix}-0.050 & 0 & 3.970 & 0\end{bmatrix}
+\]
+
+\end_inset
+
+והערך המקסימלי שהתקבל הוא 
+\begin_inset Formula $-5806.003$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
