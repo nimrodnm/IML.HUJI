@@ -736,10 +736,10 @@ A^{\top}A-6I=\begin{bmatrix}-4 & 0 & 2\\
 נסמן 
 \begin_inset Formula 
 \[
-V=\begin{bmatrix}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{3}}\\
+\boxed{V=\begin{bmatrix}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{3}}\\
 \frac{-1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}}\\
 \frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{3}}
-\end{bmatrix}
+\end{bmatrix}}
 \]
 
 \end_inset
@@ -767,9 +767,9 @@ V=\begin{bmatrix}\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{3}}\\
  נגדיר להיות:
 \begin_inset Formula 
 \[
-\Sigma=\begin{bmatrix}\sqrt{6} & 0 & 0\\
+\boxed{\Sigma=\begin{bmatrix}\sqrt{6} & 0 & 0\\
 0 & \sqrt{2} & 0
-\end{bmatrix}
+\end{bmatrix}}
 \]
 
 \end_inset
@@ -795,9 +795,9 @@ U\Sigma=AV=\begin{bmatrix}0 & \sqrt{2} & 0\\
 ולכן 
 \begin_inset Formula 
 \[
-U=\begin{bmatrix}0 & 1\\
+\boxed{U=\begin{bmatrix}0 & 1\\
 1 & 0
-\end{bmatrix}
+\end{bmatrix}}
 \]
 
 \end_inset
@@ -1537,6 +1537,18 @@ J_{\sigma}\left(h\right)=\left(f\left(\sigma\right)-y\right)^{\top}U\text{diag}\
 
 \end_inset
 
+לכן הגרדיינט של 
+\begin_inset Formula $h\left(\sigma\right)$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+\nabla h\left(\sigma\right)=\left(J_{\sigma}\left(h\right)\right)^{\top}=\left(\left(f\left(\sigma\right)-y\right)^{\top}U\text{diag}\left(\left[x\right]_{\kaliBBasis_{U}}\right)\right)^{\top }=\text{diag}\left(\left[x\right]_{\kaliBBasis_{U}}\right)U^{\top}\left(f\left(\sigma\right)-y\right)
+\]
+
+\end_inset
+
 
 \end_layout
 
@@ -2034,7 +2046,7 @@ status open
 מ(:
 \begin_inset Formula 
 \[
-\kaliExpectedValue\left(\hat{\mu}_{n}\right)=\kaliExpectedValue\left(\frac{1}{n}\stackrel[i=1]{n}{\sum}x_{i}\right)\overset{{\color{gray}\overset{\text{\R{\text{ליניאריות התוחלת}}}}{\downarrow}}}{=}\frac{1}{n}\stackrel[i=1]{n}{\sum}\kaliExpectedValue\left(x_{i}\right)\overset{{\color{gray}\overset{\mathclap{x_{i}\sim\overset{\text{iid}}{\sim}P}}{\downarrow}}}{=}\frac{1}{n}\stackrel[i=1]{n}{\sum}\mu=\frac{1}{n}\cdot n\cdot\mu=\mu
+\kaliExpectedValue\left(\hat{\mu}_{n}\right)=\kaliExpectedValue\left(\frac{1}{n}\stackrel[i=1]{n}{\sum}x_{i}\right)\overset{{\color{gray}\overset{\text{\R{\text{ליניאריות התוחלת}}}}{\downarrow}}}{=}\frac{1}{n}\stackrel[i=1]{n}{\sum}\kaliExpectedValue\left(x_{i}\right)\overset{{\color{gray}\overset{\mathclap{x_{i}\overset{\text{iid}}{\sim}P}}{\downarrow}}}{=}\frac{1}{n}\stackrel[i=1]{n}{\sum}\mu=\frac{1}{n}\cdot n\cdot\mu=\mu
 \]
 
 \end_inset
