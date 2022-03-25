@@ -1,0 +1,2314 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\begin_preamble
+\usepackage{culmus}
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Fix numbering in hebrew article:
+\renewcommand{\thetheorem}{\beginL \thesection.\arabic{theorem}}
+
+% Create symbol for DotCup (forn union):
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\usepackage{mathtools}
+\usepackage{dsfont}
+\end_preamble
+\use_default_options true
+\begin_modules
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/nimro/AppData/Roaming/LyX2.3/MacrosHeb.lyx"
+
+\end_inset
+
+
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Title
+)
+\numeric on
+67577
+\numeric off
+( מבוא למערכות לומדות | תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Author
+שם: נמרוד בר גיורא | ת"ז:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+207090622
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק תאורטי
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Theoretical_Part.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+פתרונות למשוואות הנורמליות
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_1_1.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נראה שיש הכלה דו-כיוונית בין הקבוצות וזה יוכיח את השיוויון:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\supseteq\right)$
+\end_inset
+
+ יהי 
+\begin_inset Formula $v\in\ker\left(X^{\top}X\right)$
+\end_inset
+
+.
+ אזי- 
+\begin_inset Formula $X^{\top}Xv=0$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+0=v^{\top}\cdot0=v^{\top}\left(X^{\top}Xv\right)=\left(v^{\top}X^{\top}\right)Xv=\left(Xv\right)^{\top}\left(Xv\right)=\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{זו הנורמה האוקלידית}}}}}{\downarrow}}}{\left\Vert Xv\right\Vert ^{2}}
+\]
+
+\end_inset
+
+מכיוון שהנורמה היא חיובית בהחלט אז 
+\begin_inset Formula $Xv=0$
+\end_inset
+
+ בהכרח, כלומר - 
+\begin_inset Formula $v\in\ker\left(X\right)$
+\end_inset
+
+, ובאופן כללי קיבלנו ש- 
+\begin_inset Formula $\ker\left(X\right)\supseteq\ker\left(X^{\top}X\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\subseteq\right)$
+\end_inset
+
+ יהי 
+\begin_inset Formula $v\in\ker\left(X\right)$
+\end_inset
+
+.
+ אזי- 
+\begin_inset Formula $Xv=0$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+X^{\top}Xv=X^{\top}\cdot0=0
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $v\in\ker\left(X^{\top}X\right)$
+\end_inset
+
+, ובאופן כללי - 
+\begin_inset Formula $\ker\left(X\right)\subseteq\ker\left(X^{\top}X\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_1_2.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נוכיח קודם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+טענות עזר:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+למה
+\family roman
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+\bar default
+:
+\series default
+ לכל תמ
+\begin_inset Quotes erd
+\end_inset
+
+ו 
+\begin_inset Formula $V\subseteq\kaliReal^{n}$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\left(V^{\perp}\right)^{\perp}=V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הוכחה
+\bar default
+: יהי 
+\begin_inset Formula $v\in V$
+\end_inset
+
+, אז לכל 
+\begin_inset Formula $v^{\perp}\in V^{\perp}$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\left\langle v\mid v^{\perp}\right\rangle =0$
+\end_inset
+
+, ולכן לפי הגדרת המרחב הניצב- 
+\begin_inset Formula $v\in\left(V^{\perp}\right)^{\perp}$
+\end_inset
+
+.
+ כלומר - 
+\begin_inset Formula $V\subseteq\left(V^{\perp}\right)^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בקורס ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מוכיחים שמרחב והמרחב הניצב לו הם סכום ישר של המרחב כולו.
+ כלומר מתקיים ש-
+\begin_inset Formula 
+\[
+\kaliReal^{n}=V\oplus V^{\perp}
+\]
+
+\end_inset
+
+ומצד שני מתקיים גם ש-
+\begin_inset Formula 
+\[
+\kaliReal^{n}=V^{\perp}\oplus\left(V^{\perp}\right)^{\perp}
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+\dim V+\dim V^{\perp}=\dim V^{\perp}+\dim\left(V^{\perp}\right)^{\perp}\quad\Longrightarrow\quad\dim V=\dim\left(V^{\perp}\right)^{\perp}
+\]
+
+\end_inset
+
+כעת יחד עם ההכלה שהראינו מתקיים ש- 
+\begin_inset Formula $V=\left(V^{\perp}\right)^{\perp}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+למה
+\family roman
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\shape default
+\size default
+\emph default
+\numeric on
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+\bar default
+:
+\series default
+ אם 
+\begin_inset Formula $U,V\subseteq\kaliReal^{n}$
+\end_inset
+
+ תמ
+\begin_inset Quotes erd
+\end_inset
+
+וים כך ש- 
+\begin_inset Formula $U^{\perp}\subseteq V$
+\end_inset
+
+, אז 
+\begin_inset Formula $V^{\perp}\subseteq U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הוכחה
+\bar default
+: יהי 
+\begin_inset Formula $v^{\perp}\in V^{\perp}$
+\end_inset
+
+.
+ אז לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\left\langle v^{\perp}\mid v\right\rangle =0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+בפרט, מכיוון ש- 
+\begin_inset Formula $U^{\perp}\subseteq V$
+\end_inset
+
+, אז לכל 
+\begin_inset Formula $u^{\perp}\in U^{\perp}$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\left\langle v^{\perp}\mid u^{\perp}\right\rangle =0$
+\end_inset
+
+, ולכן 
+\begin_inset Formula 
+\[
+v^{\perp}\in\left(U^{\perp}\right)^{\perp}\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{לפי למה 1}}}}}{\downarrow}}}{=}U
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר מתקיים ש- 
+\begin_inset Formula $V^{\perp}\subseteq U$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+עכשיו נוכיח את הטענה הנדרשת:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נוכיח הכלה דו-כיוונית:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\subseteq\right)$
+\end_inset
+
+ יהי 
+\begin_inset Formula $v\in\text{Im}\left(A^{\top}\right)$
+\end_inset
+
+.
+ אז קיים 
+\begin_inset Formula $w\in\kaliReal^{n}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $A^{\top}w=v$
+\end_inset
+
+.
+ נשים לב שלכל 
+\begin_inset Formula $u\in\ker\left(A\right)$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+\left\langle v\mid u\right\rangle =v^{\top}u=\left(A^{\top}w\right)^{\top}u=w^{\top}Au=w^{\top}\cdot0=0
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $v\in\left(\ker\left(A\right)\right)^{\perp}$
+\end_inset
+
+.
+ כלומר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ - 
+\begin_inset Formula $\text{Im}\left(A^{\top}\right)\subseteq\left(\ker\left(A\right)\right)^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\supseteq\right)$
+\end_inset
+
+ יהי 
+\begin_inset Formula $v\in\left(\text{Im}\left(A^{\top}\right)\right)^{\perp}$
+\end_inset
+
+.
+ מכיוון שלכל 
+\begin_inset Formula $w\in\kaliReal^{n}$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $A^{\top}w\in\text{Im}\left(A^{\top}\right)$
+\end_inset
+
+ אז לכל 
+\begin_inset Formula $w\in\kaliReal^{n}$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula 
+\[
+0=\left\langle v\mid A^{\top}w\right\rangle =v^{\top}A^{\top}w=\left(Av\right)^{\top}w
+\]
+
+\end_inset
+
+בפרט, זה נכון עבור 
+\begin_inset Formula $w=Av$
+\end_inset
+
+, כלומר-
+\begin_inset Formula 
+\[
+0=\left(Av\right)^{\top}\left(Av\right)=\left\Vert Av\right\Vert ^{2}
+\]
+
+\end_inset
+
+ולכן מחיוביות בהחלט של הנורמה האוקלידית נובע ש- 
+\begin_inset Formula $Av=0$
+\end_inset
+
+, ולכן 
+\begin_inset Formula $v\in\ker\left(A\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+כלומר הראינו ש- 
+\begin_inset Formula $\ker\left(A\right)\supseteq\left(\text{Im}\left(A^{\top}\right)\right)^{\perp}$
+\end_inset
+
+ ולכן לפי למה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- 
+\begin_inset Formula $\text{Im}\left(A^{\top}\right)\supseteq\left(\ker\left(A\right)\right)^{\perp}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+בסך הכל משתי ההכלות נובע ש- 
+\begin_inset Formula $\text{Im}\left(A^{\top}\right)=\left(\ker\left(A\right)\right)^{\perp}$
+\end_inset
+
+, כנדרש.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_1_3.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\Leftarrow\right)$
+\end_inset
+
+ נניח ש- 
+\begin_inset Formula $y\perp\ker\left(X^{\top}\right)$
+\end_inset
+
+.
+ כלומר - 
+\begin_inset Formula $y\in\left(\ker\left(X^{\top}\right)\right)^{\perp}$
+\end_inset
+
+.
+ לפי ההוכחה בשאלה הקודמת:
+\begin_inset Formula 
+\[
+\left(\ker\left(X^{\top}\right)\right)^{\perp}=\text{Im}\left(\left(X^{\top}\right)^{\top}\right)=\text{Im}\left(X\right)
+\]
+
+\end_inset
+
+כלומר - 
+\begin_inset Formula $y\in\text{Im}\left(X\right)$
+\end_inset
+
+, ולכן 
+\series bold
+קיים
+\series default
+ למערכת המשוואות 
+\begin_inset Formula $Xw=y$
+\end_inset
+
+ פתרון.
+ נסמן אותו ב-
+\begin_inset Formula $p$
+\end_inset
+
+, כלומר - 
+\begin_inset Formula $Xp=y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מכיוון ש-
+\begin_inset Formula $X$
+\end_inset
+
+ לא הפיכה, אז למערכת המשוואות ההומוגנית 
+\begin_inset Formula $Xw=0$
+\end_inset
+
+ קיימים 
+\begin_inset Formula $\infty$
+\end_inset
+
+ פתרונות.
+\end_layout
+
+\begin_layout Proof
+נשים לב שלכל פתרון 
+\begin_inset Formula $v$
+\end_inset
+
+ כזה, המקיים ש- 
+\begin_inset Formula $Xv=0$
+\end_inset
+
+, מתקיים ש-
+\begin_inset Formula 
+\[
+X\left(p+v\right)=Xp+Xv=Xp+0=Xp=y
+\]
+
+\end_inset
+
+כלומר ניתן ליצור 
+\begin_inset Formula $\infty$
+\end_inset
+
+ פתרונות למערכת 
+\begin_inset Formula $Xw=y$
+\end_inset
+
+ בעזרת הפתרון 
+\begin_inset Formula $p$
+\end_inset
+
+ ואינסוף הפתרונות של המערכת ההומוגנית 
+\begin_inset Formula $Xw=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\Rightarrow\right)$
+\end_inset
+
+ נניח שלמערכת המשוואת 
+\begin_inset Formula $Xw=y$
+\end_inset
+
+ קיימים 
+\begin_inset Formula $\infty$
+\end_inset
+
+ פתרונות.
+ נובע מכך ש- 
+\begin_inset Formula $y\in\text{Im}\left(X\right)$
+\end_inset
+
+, ולכן לפי ההוכחה בשאלה הקודמת:
+\begin_inset Formula 
+\[
+y\in\left(\ker\left(X^{\top}\right)\right)^{\perp}
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $y\perp\ker\left(X^{\top}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_1_4.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נשים לב ש- 
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ היא מטריצה ריבועית )מסדר 
+\begin_inset Formula $d\times d$
+\end_inset
+
+(, ולכן אם היא 
+\series bold
+הפיכה
+\series default
+ אז לכל 
+\begin_inset Formula $b\in\kaliReal^{d}$
+\end_inset
+
+ קיים פתרון 
+\series bold
+יחיד
+\series default
+ למערכת 
+\begin_inset Formula $X^{\top}Xw=b$
+\end_inset
+
+.
+ בפרט, עבור 
+\begin_inset Formula $b=X^{\top}y$
+\end_inset
+
+ קיים פתרון יחיד, ואפשר לקבל אותו ע
+\begin_inset Quotes erd
+\end_inset
+
+י כפל במטריצה ההפוכה:
+\begin_inset Formula 
+\[
+\left[X^{\top}X\right]^{-1}\cdot X^{\top}Xw=\left[X^{\top}X\right]^{-1}X^{\top}y\quad\Longrightarrow\quad w=\left[X^{\top}X\right]^{-1}X^{\top}y
+\]
+
+\end_inset
+
+אם 
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ לא הפיכה אז לפי ההוכחה בשאלה הקודמת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ - קיימים 
+\begin_inset Formula $\infty$
+\end_inset
+
+ פתרונות למערכת 
+\begin_inset Formula $X^{\top}Xw=X^{\top}y$
+\end_inset
+
+ אם ורק אם מתקיים ש- 
+\begin_inset Formula 
+\[
+X^{\top}y\perp\ker\left(X^{\top}X\right)
+\]
+
+\end_inset
+
+אבל לפי ההוכחה בשאלה 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- 
+\begin_inset Formula $\ker\left(X^{\top}X\right)=\ker\left(X\right)$
+\end_inset
+
+, ומתקיים לכל 
+\begin_inset Formula $v\in\ker\left(X\right)$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+\left\langle X^{\top}y\mid v\right\rangle =\left(X^{\top}y\right)^{\top}v=y^{\top}Xv\overset{{\color{gray}\overset{\mathclap{v\in\ker\left(X\right)}}{\downarrow}}}{=}y^{\top}\cdot0=0
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $X^{\top}y\perp\ker\left(X\right)$
+\end_inset
+
+ ולכן 
+\begin_inset Formula $X^{\top}y\perp\ker\left(X^{\top}X\right)$
+\end_inset
+
+, ולכן אם 
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ לא הפיכה אז קיימים 
+\begin_inset Formula $\infty$
+\end_inset
+
+ פתרונות למערכת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+מטריצות הטלה
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_2_5.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Formula $\text{(a)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+נשים לב שמתכונות של פעולת השחלוף )שמוכיחים בקורס אלגברה ליניארית( נובע ש-
+\begin_inset Formula 
+\[
+P^{\top}=\left(\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}\right)^{\top}=\stackrel[i=1]{k}{\sum}\left(v_{i}v_{i}^{\top}\right)^{\top}=\stackrel[i=1]{k}{\sum}\left(v_{i}^{\top}\right)^{\top}v_{i}^{\top}=\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}=P
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $P$
+\end_inset
+
+ מטריצה סימטרית.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{(b)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+כפי שמוכיחים בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- ניתן להשלים את הבסיס האורתונורמלי הנתון לבסיס של 
+\begin_inset Formula $\kaliReal^{d}$
+\end_inset
+
+, ואז ע
+\begin_inset Quotes erd
+\end_inset
+
+י הליך גרם-שמידט לקבל בסיס 
+\begin_inset Formula $\left(u_{1},\ldots,u_{k},u_{k+1},\ldots,u_{d}\right)$
+\end_inset
+
+ 
+\series bold
+אורתונורמלי
+\series default
+ של 
+\begin_inset Formula $\kaliReal^{d}$
+\end_inset
+
+, כך שנשמרת התכונה ש- 
+\begin_inset Formula $V=\kaliSpan\left(u_{1},\ldots,u_{k}\right)$
+\end_inset
+
+, ומתקיים ש-
+\begin_inset Formula 
+\[
+\kaliReal^{d}=\kaliSpan\left(u_{1},\ldots,u_{k}\right)\oplus\kaliSpan\left(u_{k+1},\ldots,u_{d}\right)=V\oplus V^{\perp}
+\]
+
+\end_inset
+
+יהי 
+\begin_inset Formula $0\neq v\in\kaliReal^{d}$
+\end_inset
+
+.
+ אם 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ אז קיימים 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{k}\in\kaliReal$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $v=\stackrel[j=1]{k}{\sum}\alpha_{j}v_{j}$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+Pv=\left(\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}\right)\cdot\stackrel[j=1]{k}{\sum}\alpha_{j}v_{j}=\stackrel[i=1]{k}{\sum}\big(v_{i}v_{i}^{\top}\stackrel[j=1]{k}{\sum}\alpha_{j}v_{j}\big)=\stackrel[i=1]{k}{\sum}\stackrel[j=1]{k}{\sum}\alpha_{j}v_{i}v_{i}^{\top}v_{j}=\stackrel[i=1]{k}{\sum}\stackrel[j=1]{k}{\sum}\alpha_{j}v_{i}\left\langle v_{i}\mid v_{j}\right\rangle \overset{{\color{green}\sun}}{=}\stackrel[i=1]{k}{\sum}\alpha_{i}v_{i}=v=1\cdot v
+\]
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: כי 
+\begin_inset Formula $\left(v_{1},\ldots,v_{k}\right)$
+\end_inset
+
+ בסיס א
+\begin_inset Quotes erd
+\end_inset
+
+נ ולכן לכל 
+\begin_inset Formula $1\leqslant i,j\leqslant k$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\left\langle v_{i}\mid v_{j}\right\rangle =\begin{cases}
+0 & i\neq j\\
+1 & i=j
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכן 
+\begin_inset Formula $1$
+\end_inset
+
+ הוא ע
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $P$
+\end_inset
+
+, וכל 
+\begin_inset Formula $0\neq v\in V$
+\end_inset
+
+ הוא וקטור עצמי שמתאים לע
+\begin_inset Quotes erd
+\end_inset
+
+ע הזה, בפרט - 
+\begin_inset Formula $v_{1},\ldots,v_{k}$
+\end_inset
+
+ הם וקטורים עצמיים שמתאימים לו.
+\end_layout
+
+\begin_layout Proof
+אם 
+\begin_inset Formula $v\in V^{\perp}$
+\end_inset
+
+ אז 
+\begin_inset Formula $\left\langle v_{i}\mid v\right\rangle =0$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[k\right]$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+Pv=\left(\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}\right)\cdot v=\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}v=\stackrel[i=1]{k}{\sum}v_{i}\left\langle v_{i}\mid v\right\rangle =\stackrel[i=1]{k}{\sum}v_{i}\cdot0=0=0\cdot v
+\]
+
+\end_inset
+
+לכן 
+\begin_inset Formula $0$
+\end_inset
+
+ הוא ע
+\begin_inset Quotes erd
+\end_inset
+
+ע של 
+\begin_inset Formula $P$
+\end_inset
+
+, וכל 
+\begin_inset Formula $0\neq v\in V^{\perp}$
+\end_inset
+
+ הוא וקטור עצמי שמתאים לע
+\begin_inset Quotes erd
+\end_inset
+
+ע הזה.
+\end_layout
+
+\begin_layout Proof
+נשים לב שאלו הערכים העצמיים היחידים כי אם 
+\begin_inset Formula $v=u+w$
+\end_inset
+
+ עם 
+\begin_inset Formula $0\neq u\in V$
+\end_inset
+
+ ו- 
+\begin_inset Formula $0\neq w\in V^{\perp}$
+\end_inset
+
+ אז לפי מה שהראינו:
+\begin_inset Formula 
+\[
+Pv=P\left(u+w\right)=Pu+Pw=u+0=u
+\]
+
+\end_inset
+
+ולא קיים 
+\begin_inset Formula $\lambda\in\kaliReal$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $Pv=u=\lambda v$
+\end_inset
+
+, כי אז נקבל ש- 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ בסתירה לכך ש-
+\begin_inset Formula $w\neq0$
+\end_inset
+
+.
+ כלומר 
+\begin_inset Formula $v$
+\end_inset
+
+ אינו וקטור עצמי במקרה הזה.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{(c)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+הראיתי את זה בסעיף הקודם.
+ נשים את זה כאן שוב למקרה ש..:
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $v\in V$
+\end_inset
+
+.
+ אז קיימים 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{k}\in\kaliReal$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $v=\stackrel[j=1]{k}{\sum}\alpha_{j}v_{j}$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+Pv=\left(\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}\right)\cdot\stackrel[j=1]{k}{\sum}\alpha_{j}v_{j}=\stackrel[i=1]{k}{\sum}\big(v_{i}v_{i}^{\top}\stackrel[j=1]{k}{\sum}\alpha_{j}v_{j}\big)=\stackrel[i=1]{k}{\sum}\stackrel[j=1]{k}{\sum}\alpha_{j}v_{i}v_{i}^{\top}v_{j}=\stackrel[i=1]{k}{\sum}\stackrel[j=1]{k}{\sum}\alpha_{j}v_{i}\left\langle v_{i}\mid v_{j}\right\rangle \overset{{\color{green}\sun}}{=}\stackrel[i=1]{k}{\sum}\alpha_{i}v_{i}=v
+\]
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: כי 
+\begin_inset Formula $\left(v_{1},\ldots,v_{k}\right)$
+\end_inset
+
+ בסיס א
+\begin_inset Quotes erd
+\end_inset
+
+נ ולכן לכל 
+\begin_inset Formula $1\leqslant i,j\leqslant k$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\left\langle v_{i}\mid v_{j}\right\rangle =\begin{cases}
+0 & i\neq j\\
+1 & i=j
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{(d)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+לכל 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+P^{2}v & =P\cdot Pv=P\cdot\stackrel[j=1]{k}{\sum}v_{j}v_{j}^{\top}v=\left(\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}\right)\cdot\stackrel[j=1]{k}{\sum}v_{j}v_{j}^{\top}v=\stackrel[i=1]{k}{\sum}\big(v_{i}v_{i}^{\top}\stackrel[j=1]{k}{\sum}v_{j}v_{j}^{\top}v\big)=\\
+ & =\stackrel[i=1]{k}{\sum}\stackrel[j=1]{k}{\sum}v_{i}v_{i}^{\top}v_{j}v_{j}^{\top}v=\stackrel[i=1]{k}{\sum}\stackrel[j=1]{k}{\sum}v_{i}\left\langle v_{i}\mid v_{j}\right\rangle v_{j}^{\top}v\underset{{\color{gray}\underset{\mathclap{\text{\R{\text{כי הבסיס א"נ}}}}}{\uparrow}}}{=}\quad\,\stackrel[i=1]{k}{\sum}v_{i}v_{i}^{\top}v=Pv
+\end{align*}
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $P^{2}=P$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{(e)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+לפי הסעיף הקודם 
+\begin_inset Formula $P^{2}=P$
+\end_inset
+
+ ולכן: 
+\begin_inset Formula 
+\[
+\left(I-P\right)P=P-P^{2}=P-P=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection*
+ריבועים פחותים
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_3_6.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נוכיח קודם טענת עזר:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+למה
+\bar default
+:
+\series default
+ אם 
+\begin_inset Formula $O\in\kaliReal^{d\times r}$
+\end_inset
+
+ מטריצה אורתוגונלית ו- 
+\begin_inset Formula $A\in\kaliReal^{r\times r}$
+\end_inset
+
+ מטריצה הפיכה אז:
+\begin_inset Formula 
+\[
+\left[OAO^{\top}\right]^{-1}=OA^{-1}O^{\top}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הוכחה
+\bar default
+: מכך ש-
+\begin_inset Formula $O$
+\end_inset
+
+ אורתוגונלית נובע ש- 
+\begin_inset Formula $O\cdot O^{\top}=I$
+\end_inset
+
+ ולכן: 
+\begin_inset Formula 
+\[
+\left(OA^{-1}O^{\top}\right)\left(OAO^{\top}\right)=OA^{-1}O^{\top}OAO^{\top}=OA^{-1}AO^{\top}=OO^{\top}=I
+\]
+
+\end_inset
+
+מכיוון ש- 
+\begin_inset Formula $OAO^{\top}$
+\end_inset
+
+ היא מטריצה ריבועית )מסדר 
+\begin_inset Formula $d\times d$
+\end_inset
+
+( אז השיוויון הזה מספיק כדי להסיק ש- 
+\begin_inset Formula $OA^{-1}O^{\top}=\left[OAO^{\top}\right]^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+עכשיו נוכיח את הטענה הנדרשת:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+פירוק ה-
+\begin_inset Formula $\text{SVD}$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+X=U\Sigma V^{\top}=\overset{m\times m}{\overbrace{\left[\begin{smallmatrix}| &  & |\\
+u_{1} & \ldots & u_{m}\\
+| &  & |
+\end{smallmatrix}\right]}}\overset{m\times d}{\overbrace{\left[\begin{smallmatrix}\sigma_{1}\\
+ & \ddots\\
+ &  & \sigma_{d}
+\end{smallmatrix}\right]}}\overset{d\times d}{\overbrace{\left[\begin{smallmatrix}- & v_{1}^{\top} & -\\
+ & \vdots\\
+- & v_{d}^{\top} & -
+\end{smallmatrix}\right]}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+וראינו בתרגול
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שניתן להפוך את הפירוק הזה לפירוק 
+\begin_inset Formula $\text{compact SVD}$
+\end_inset
+
+ באופן הבא:
+\end_layout
+
+\begin_layout Proof
+נסמן ב
+\begin_inset Formula $r\leqslant d$
+\end_inset
+
+ את מספר הערכים הסינגולרים השונים מ-
+\begin_inset Formula $0$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+, ונסמן ב- 
+\begin_inset Formula $\tilde{\Sigma}\in\kaliReal^{r\times r}$
+\end_inset
+
+ את המטריצה האלכסונית שעל האלכסון שלה מופיעים 
+\begin_inset Formula $r$
+\end_inset
+
+ הערכים הסינגולרים הללו.
+ נסמן ב- 
+\begin_inset Formula $\tilde{U}\in\kaliReal^{m\times r}$
+\end_inset
+
+ את המטריצה המורכבת מ-
+\begin_inset Formula $r$
+\end_inset
+
+ העמודות הראשונות של 
+\begin_inset Formula $U$
+\end_inset
+
+, וב- 
+\begin_inset Formula $\tilde{V}\in\kaliReal^{d\times r}$
+\end_inset
+
+ את המטריצה המורכבת מ-
+\begin_inset Formula $r$
+\end_inset
+
+ העמודות הראשונות של 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ נקבל ש-
+\begin_inset Formula 
+\begin{align*}
+X & =U\Sigma V^{\top}=\left[\begin{smallmatrix}| &  & | & | &  & |\\
+u_{1} & \ldots & u_{r} & u_{r+1} & \ldots & u_{m}\\
+| &  & | & | &  & |
+\end{smallmatrix}\right]\left[\begin{smallmatrix}\sigma_{1} &  &  & 0\\
+ & \ddots &  & \vdots\\
+ &  & \sigma_{r} & 0\\
+0 & \ldots & 0 & 0
+\end{smallmatrix}\right]\left[\begin{smallmatrix}- & v_{1}^{\top} & -\\
+ & \vdots\\
+- & v_{r}^{\top} & -\\
+- & v_{r+1}^{\top} & -\\
+ & \vdots\\
+- & v_{d}^{\top} & -
+\end{smallmatrix}\right]=\left[\begin{smallmatrix}| &  & |\\
+u_{1} & \ldots & u_{r}\\
+| &  & |
+\end{smallmatrix}\right]\left[\begin{smallmatrix}\sigma_{1}\\
+ & \ddots\\
+ &  & \sigma_{r}
+\end{smallmatrix}\right]\left[\begin{smallmatrix}- & v_{1}^{\top} & -\\
+ & \vdots\\
+- & v_{r}^{\top} & -
+\end{smallmatrix}\right]=\tilde{U}\tilde{\Sigma}\tilde{V}^{\top}
+\end{align*}
+
+\end_inset
+
+הפתרון הכללי למשוואות הנורמליות שראינו בתרגול הוא 
+\begin_inset Formula $\hat{w}=X^{\dagger}y$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $X^{\dagger}=V\Sigma^{\dagger}U^{\top}$
+\end_inset
+
+, ו- 
+\begin_inset Formula $\Sigma^{\dagger}\in\kaliReal^{d\times m}$
+\end_inset
+
+ אלכסונית המוגדרת ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\kaliForall i\in\left[d\right]:\quad\Sigma^{\dagger}_{i,i}=\begin{cases}
+1/\sigma_{i} & \sigma_{i}\neq0\\
+0 & \sigma_{i}=
+\end{cases}
+\]
+
+\end_inset
+
+נשים לב שניתן לכתוב את 
+\begin_inset Formula $X^{\dagger}$
+\end_inset
+
+ באופן דומה ל-
+\begin_inset Formula $\text{compact SVD}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+X^{\dagger} & =V\Sigma^{\dagger}U^{\top}=\left[\begin{smallmatrix}| &  & | & | &  & |\\
+v_{1} & \ldots & v_{r} & v_{r+1} & \ldots & v_{m}\\
+| &  & | & | &  & |
+\end{smallmatrix}\right]\left[\begin{smallmatrix}\frac{1}{\sigma_{1}} &  &  & 0\\
+ & \ddots &  & \vdots\\
+ &  & \frac{1}{\sigma_{r}} & 0\\
+0 & \ldots & 0 & 0
+\end{smallmatrix}\right]\left[\begin{smallmatrix}- & u_{1}^{\top} & -\\
+ & \vdots\\
+- & u_{r}^{\top} & -\\
+- & u_{r+1}^{\top} & -\\
+ & \vdots\\
+- & u_{d}^{\top} & -
+\end{smallmatrix}\right]=\left[\begin{smallmatrix}| &  & |\\
+v_{1} & \ldots & v_{r}\\
+| &  & |
+\end{smallmatrix}\right]\left[\begin{smallmatrix}\frac{1}{\sigma_{1}}\\
+ & \ddots\\
+ &  & \frac{1}{\sigma_{r}}
+\end{smallmatrix}\right]\left[\begin{smallmatrix}- & u_{1}^{\top} & -\\
+ & \vdots\\
+- & u_{r}^{\top} & -
+\end{smallmatrix}\right]=\tilde{V}\tilde{\Sigma}^{-1}\tilde{U}^{\top}
+\end{align*}
+
+\end_inset
+
+עכשיו, מכך ש-
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ הפיכה נובע כפי שראינו בכיתה שפתרון של המשוואות הנורמליות הוא 
+\begin_inset Formula $\overline{w}=\left[X^{\top}X\right]^{-1}X^{\top}y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נראה ש- 
+\begin_inset Formula $\hat{w}=\overline{w}$
+\end_inset
+
+.
+ נציב את ה-
+\begin_inset Formula $\text{compact SVD}$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+ בנוסחא של 
+\begin_inset Formula $\overline{w}$
+\end_inset
+
+ ונקבל:
+\begin_inset Formula 
+\begin{align*}
+\overline{w}=\left[X^{\top}X\right]^{-1}X^{\top}y & =\left[\left(\tilde{U}\tilde{\Sigma}\tilde{V}^{\top}\right)^{\top}\tilde{U}\tilde{\Sigma}\tilde{V}^{\top}\right]^{-1}\left(\tilde{U}\tilde{\Sigma}\tilde{V}^{\top}\right)^{\top}y=\left[\tilde{V}\tilde{\Sigma}^{\top}\tilde{U}^{\top}\tilde{U}\tilde{\Sigma}\tilde{V}^{\top}\right]^{-1}\tilde{V}\tilde{\Sigma}^{\top}\tilde{U}^{\top}y=\\
+{\color{gray}\begin{array}{c}
+\text{\R{\text{\ensuremath{\tilde{U}} אורתוגונלית}}}\\
+\text{\R{\text{\ensuremath{\tilde{\Sigma}} אלכסונית ריבועית}}}
+\end{array}\rightarrow} & =\left[\tilde{V}\tilde{\Sigma}^{2}\tilde{V}^{\top}\right]^{-1}\tilde{V}\tilde{\Sigma}\tilde{U}^{\top}y=\\
+{\color{gray}\text{\R{\text{לפי הלמה כי \ensuremath{\tilde{V}} אורתוגונלית}}}\rightarrow} & =\tilde{V}\left[\tilde{\Sigma}^{2}\right]^{-1}\tilde{V}^{\top}\tilde{V}\tilde{\Sigma}\tilde{U}^{\top}y=\\
+{\color{gray}\text{\R{\text{\ensuremath{\tilde{V}} אורתוגונלית}}}\rightarrow} & =\tilde{V}\left[\tilde{\Sigma}^{2}\right]^{-1}\tilde{\Sigma}\tilde{U}^{\top}y={\color{blue}\bigstar}
+\end{align*}
+
+\end_inset
+
+נשים לב ש-
+\begin_inset Formula 
+\[
+\left[\tilde{\Sigma}^{2}\right]^{-1}\tilde{\Sigma}=\left[\begin{smallmatrix}\sigma_{1}^{2}\\
+ & \ddots\\
+ &  & \sigma_{r}^{2}
+\end{smallmatrix}\right]^{-1}\left[\begin{smallmatrix}\sigma_{1}\\
+ & \ddots\\
+ &  & \sigma_{r}
+\end{smallmatrix}\right]=\left[\begin{smallmatrix}\frac{1}{\sigma_{1}^{2}}\\
+ & \ddots\\
+ &  & \frac{1}{\sigma_{r}^{2}}
+\end{smallmatrix}\right]\left[\begin{smallmatrix}\sigma_{1}\\
+ & \ddots\\
+ &  & \sigma_{r}
+\end{smallmatrix}\right]=\left[\begin{smallmatrix}\frac{1}{\sigma_{1}}\\
+ & \ddots\\
+ &  & \frac{1}{\sigma_{r}}
+\end{smallmatrix}\right]=\tilde{\Sigma}^{-1}
+\]
+
+\end_inset
+
+ולכן קיבלנו ש-
+\begin_inset Formula 
+\[
+{\color{blue}\bigstar}=\tilde{V}\tilde{\Sigma}^{-1}\tilde{U}^{\top}y=X^{\dagger}y=\hat{w}
+\]
+
+\end_inset
+
+כנדרש.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_3_7.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+\text{\R{\text{הפיכה}}}\;X^{\top}X\quad & \iff\quad\ker\left(X^{\top}X\right)=\left\{ 0\right\} \quad\overset{\mathclap{\text{\R{\text{לפי שאלה 1}}}}}{\iff}\quad\ker\left(X\right)=\left\{ 0\right\} \quad\iff\quad\dim\ker\left(X\right)=0\quad\iff\\
+ & \underset{\mathclap{\text{\R{\text{משפט המימדים}}}}}{\iff}\quad\dim\kaliSpan\left\{ x_{1},\ldots,x_{m}\right\} =\kaliRank\left(X\right)=\dim\kaliReal^{d}\quad\underset{\mathclap{\kaliSpan\left\{ x_{1},\ldots,x_{m}\right\} \subseteq\kaliReal^{d}}}{\iff}\quad\kaliSpan\left\{ x_{1},\ldots,x_{m}\right\} =\kaliReal^{d}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_3_8.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+...
+\end_layout
+
+\end_body
+\end_document
