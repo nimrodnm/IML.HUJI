@@ -7,6 +7,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 import plotly.io as pio
+
 pio.templates.default = "simple_white"
 
 
@@ -23,7 +24,46 @@ def load_data(filename: str):
     Design matrix and response vector (prices) - either as a single
     DataFrame or a Tuple[DataFrame, Series]
     """
-    raise NotImplementedError()
+    df = pd.read_csv(filename)
+
+    # remove duplicates:
+    df.drop_duplicates(inplace=True)
+
+    # remove rows with invalid values:
+    to_remove = pd.concat([df.loc[(df.bedrooms <= 0) & (df.bathrooms <= 0)],
+                           df.loc[(df.sqft_living <= 0) | (df.sqft_lot <= 0) | (df.sqft_above <= 0)
+                                  | (df.sqft_basement < 0) | (df.sqft_living15 < 0)
+                                  | (df.sqft_lot15 < 0) | (df.price < 0)
+                                  | (df.price.isnull())]]).drop_duplicates()
+    for row_idx in to_remove.index:
+        df.drop(row_idx, axis=0, inplace=True)
+
+    # parse the date column:
+    df['date'] = pd.to_datetime(df.date, errors='coerce')
+
+    # delete samples with no date:
+    for row_idx in df.loc[df.date.isnull()].index:
+        df.drop(row_idx, axis=0, inplace=True)
+
+    # replace date column with year month and day columns:
+    df['sale_year'] = df.date.dt.year
+    df['sale_month'] = df.date.dt.month
+    df['sale_day'] = df.date.dt.weekday
+
+    # remove redundant columns:
+    df.drop(columns=['id', 'date', 'zipcode'], inplace=True)
+
+    # create column for age:= sale_year - max(yr_built, yr_renovated):
+    df['age'] = df.sale_year - np.maximum(df.yr_built, df.yr_renovated)
+    # TODO: there are 18 rows with negative age - need to deal with that?
+
+    # Create columns with ratio between avg square-fit of nearby houses to square-fit of each house:
+    # (no division by zero because I removed rows with sqft_living==0 or sqft_lot==0)
+    df['sqft_living_ratio'] = df.sqft_living15 / df.sqft_living
+    df['sqft_lot_ratio'] = df.sqft_lot15 / df.sqft_lot
+
+    response = df.pop('price')
+    return (df, response)
 
 
 def feature_evaluation(X: pd.DataFrame, y: pd.Series, output_path: str = ".") -> NoReturn:
@@ -43,19 +83,39 @@ def feature_evaluation(X: pd.DataFrame, y: pd.Series, output_path: str = ".") ->
     output_path: str (default ".")
         Path to folder in which plots are saved
     """
-    raise NotImplementedError()
+    y_values = np.array(y)
+
+    for col_name, col in X.iteritems():
+        values = np.array(col)
+        correlation = pearson_correlation(values, y_values)
+        print(correlation)
+        px.scatter(x=values, y=y_values, trendline="ols",
+                   title=f"Pearson Correlation of {col_name} and price = {correlation}",
+                   labels=dict(x=col_name, y="price")).write_image(f"{output_path}/{col_name}.png")
+
+
+def pearson_correlation(x: np.ndarray, y: np.ndarray) -> float:
+    """
+    Calculate the pearson correlation of the 2 given sample vectors
+    """
+    x_centered = x - x.mean()
+    y_centered = y - y.mean()
+    x_centered_norm = np.linalg.norm(x_centered)
+    y_centered_norm = np.linalg.norm(y_centered)
+    return np.inner(x_centered, y_centered) / (x_centered_norm * y_centered_norm)
 
 
 if __name__ == '__main__':
     np.random.seed(0)
     # Question 1 - Load and preprocessing of housing prices dataset
-    raise NotImplementedError()
+    df, response = load_data("../datasets/house_prices.csv")
 
     # Question 2 - Feature evaluation with respect to response
-    raise NotImplementedError()
+    plots_path = "G:/My Drive/Semester_4/IML/IML.HUJI/exercises/ex2/plots"
+    feature_evaluation(df, response, plots_path)
 
     # Question 3 - Split samples into training- and testing sets.
-    raise NotImplementedError()
+    # raise NotImplementedError()
 
     # Question 4 - Fit model over increasing percentages of the overall training data
     # For every percentage p in 10%, 11%, ..., 100%, repeat the following 10 times:
@@ -64,4 +124,4 @@ if __name__ == '__main__':
     #   3) Test fitted model over test set
     #   4) Store average and variance of loss over test set
     # Then plot average loss as function of training size with error ribbon of size (mean-2*std, mean+2*std)
-    raise NotImplementedError()
+    # raise NotImplementedError()
