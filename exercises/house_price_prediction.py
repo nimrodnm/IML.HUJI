@@ -51,7 +51,7 @@ def load_data(filename: str):
     df['sale_day'] = df.date.dt.weekday
 
     # remove redundant columns:
-    df.drop(columns=['id', 'date', 'zipcode'], inplace=True)
+    df.drop(columns=['id', 'date', 'lat', 'long'], inplace=True)
 
     # create column for age:= sale_year - max(yr_built, yr_renovated):
     df['age'] = df.sale_year - np.maximum(df.yr_built, df.yr_renovated)
@@ -61,6 +61,9 @@ def load_data(filename: str):
     # (no division by zero because I removed rows with sqft_living==0 or sqft_lot==0)
     df['sqft_living_ratio'] = df.sqft_living15 / df.sqft_living
     df['sqft_lot_ratio'] = df.sqft_lot15 / df.sqft_lot
+
+    # do one-hot encoding for the zipcode feature:
+    df = pd.get_dummies(df, columns=['zipcode'])
 
     response = df.pop('price')
     return (df, response)
@@ -89,7 +92,7 @@ def feature_evaluation(X: pd.DataFrame, y: pd.Series, output_path: str = ".") ->
         values = np.array(col)
         correlation = pearson_correlation(values, y_values)
         print(correlation)
-        px.scatter(x=values, y=y_values, trendline="ols",
+        px.scatter(x=values, y=y_values, trendline="ols", trendline_color_override='skyblue',
                    title=f"Pearson Correlation of {col_name} and price = {correlation}",
                    labels=dict(x=col_name, y="price")).write_image(f"{output_path}/{col_name}.png")
 
@@ -111,11 +114,11 @@ if __name__ == '__main__':
     df, response = load_data("../datasets/house_prices.csv")
 
     # Question 2 - Feature evaluation with respect to response
-    plots_path = "G:/My Drive/Semester_4/IML/IML.HUJI/exercises/ex2/plots"
-    feature_evaluation(df, response, plots_path)
+    # plots_path = "G:/My Drive/Semester_4/IML/IML.HUJI/exercises/ex2/plots"
+    # feature_evaluation(df, response, plots_path)
 
     # Question 3 - Split samples into training- and testing sets.
-    # raise NotImplementedError()
+    train_data, train_responses, test_data, test_responses = split_train_test(df, response, 0.75)
 
     # Question 4 - Fit model over increasing percentages of the overall training data
     # For every percentage p in 10%, 11%, ..., 100%, repeat the following 10 times:
@@ -124,4 +127,20 @@ if __name__ == '__main__':
     #   3) Test fitted model over test set
     #   4) Store average and variance of loss over test set
     # Then plot average loss as function of training size with error ribbon of size (mean-2*std, mean+2*std)
-    # raise NotImplementedError()
+
+    linear_model = LinearRegression()
+    percentages = np.arange(10, 101)
+    loss_means, loss_vars = [], []
+    for percentage in percentages:
+        losses = []
+
+        for i in range(10):
+            train_sample = train_data.sample(frac=(percentage / 100), random_state=i)
+            response_sample = train_responses.sample(frac=(percentage / 100), random_state=i)
+            linear_model.fit(np.array(train_sample), np.array(response_sample))
+            losses.append(linear_model.loss(np.array(test_data), np.array(test_responses)))
+
+        loss_means.append(np.array(losses).mean())
+        loss_vars.append(np.array(losses).var())
+
+    # TODO: create the plot :(
