@@ -2085,7 +2085,7 @@ u_{1} & \ldots & u_{r}\\
 י:
 \begin_inset Formula 
 \[
-\kaliForall i\in\left[d\right]:\quad\Sigma^{\dagger}_{i,i}=\begin{cases}
+\kaliForall i\in\left[d\right]:\quad\Sigma_{i,i}^{\dagger}=\begin{cases}
 1/\sigma_{i} & \sigma_{i}\neq0\\
 0 & \sigma_{i}=
 \end{cases}
@@ -2308,6 +2308,232 @@ v_{1} & \ldots & v_{r}\\
 
 \begin_layout Proof
 ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק מעשי
+\end_layout
+
+\begin_layout Subsection*
+רגרסיה ליניארית
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Itemize
+איזה פיצ'רים שמרתי ואיזה לא?
+\end_layout
+
+\begin_layout Itemize
+איזה פיצ'רים מורכבים מערכים קטגוריים ואיך התמודדתי איתם?
+\end_layout
+
+\begin_layout Itemize
+איזה פיצ'רים נוספים הוספתי ומה היה ההיגיון מאחורי זה?
+\end_layout
+
+\begin_layout Itemize
+איך התמודדתי עם ערכים חסרים או לא הגיוניים?
+\end_layout
+
+\begin_layout Itemize
+לפרט על כל דבר נוסף שעשיתי לדאטא
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+לבחור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פיצ'רים - אחד שנראה מועיל למודל ואחד שלא.
+ להוסיף גרפים שלהם ולהסביר למה הסקתי ככה.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+בקוד.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
