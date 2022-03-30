@@ -35,15 +35,13 @@ def load_data(filename: str):
                                   | (df.sqft_basement < 0) | (df.sqft_living15 < 0)
                                   | (df.sqft_lot15 < 0) | (df.price < 0)
                                   | (df.price.isnull())]]).drop_duplicates()
-    for row_idx in to_remove.index:
-        df.drop(row_idx, axis=0, inplace=True)
+    df.drop(to_remove.index, inplace=True)
 
     # parse the date column:
     df['date'] = pd.to_datetime(df.date, errors='coerce')
 
     # delete samples with no date:
-    for row_idx in df.loc[df.date.isnull()].index:
-        df.drop(row_idx, axis=0, inplace=True)
+    df.drop(df.loc[df.date.isnull()].index, inplace=True)
 
     # replace date column with year month and day columns:
     df['sale_year'] = df.date.dt.year
@@ -130,17 +128,32 @@ if __name__ == '__main__':
 
     linear_model = LinearRegression()
     percentages = np.arange(10, 101)
-    loss_means, loss_vars = [], []
+    loss_means, loss_stds = [], []
     for percentage in percentages:
         losses = []
 
         for i in range(10):
+            print("\n%=", percentage / 100, "i=", i)
             train_sample = train_data.sample(frac=(percentage / 100), random_state=i)
             response_sample = train_responses.sample(frac=(percentage / 100), random_state=i)
             linear_model.fit(np.array(train_sample), np.array(response_sample))
             losses.append(linear_model.loss(np.array(test_data), np.array(test_responses)))
+            print("loss=", losses[i])
 
         loss_means.append(np.array(losses).mean())
-        loss_vars.append(np.array(losses).var())
+        loss_stds.append(np.array(losses).std())
 
-    # TODO: create the plot :(
+    loss_means_np = np.array(loss_means)
+    loss_stds_np = np.array(loss_stds)
+    fig = go.Figure(data=[go.Scatter(x=percentages, y=loss_means_np, mode="markers+lines",
+                                     marker=dict(color="blue", opacity=0.7)),
+                          go.Scatter(x=percentages, y=(loss_means_np - (2 * loss_stds_np)),
+                                     fill=None, mode="lines", line=dict(color="lightgrey"),
+                                     showlegend=False),
+                          go.Scatter(x=percentages, y=(loss_means_np + (2 * loss_stds_np)),
+                                     fill="tonexty", mode="lines", line=dict(color="lightgrey"),
+                                     showlegend=False)],
+                    layout=dict(title="Title",
+                                xaxis_title="Percentages",
+                                yaxis_title="Average Loss"))
+    fig.show()
