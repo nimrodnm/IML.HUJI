@@ -87,24 +87,3 @@ class PolynomialFitting(BaseEstimator):
             Vandermonde matrix of given samples up to degree k
         """
         return np.vander(X, N=(self._deg + 1), increasing=True)
-
-
-if __name__ == '__main__':
-    response = lambda x: x ** 4 - 2 * x ** 3 - .5 * x ** 2 + 1
-    # Take only even indices:
-    x = np.linspace(-1.2, 2, 40)[0::2]
-    y_ = response(x)
-    from sklearn.preprocessing import PolynomialFeatures
-    import sklearn.linear_model as lm
-    from sklearn.pipeline import make_pipeline
-
-    m, k, X = 5, 4, x.reshape(-1, 1)
-    pol = PolynomialFitting(k)
-
-    sklearn_pred = make_pipeline(PolynomialFeatures(k),
-                                 lm.LinearRegression(fit_intercept=False)).fit(X, y_).predict(X)
-    pol.fit(x, y_)
-    my_pred = pol.predict(x)
-    print(sklearn_pred)
-    print("\n")
-    print(my_pred)

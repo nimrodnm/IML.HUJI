@@ -74,9 +74,3 @@ def cross_entropy(y_true: np.ndarray, y_pred: np.ndarray) -> float:
     Cross entropy of given predictions
     """
     raise NotImplementedError()
-
-
-if __name__ == '__main__':
-    true = np.array([1, 1, 2, 2, 4])
-    pred = np.array([0.6, 1.29, 1.99, 2.69, 3.4])
-    print(mean_square_error(true, pred))

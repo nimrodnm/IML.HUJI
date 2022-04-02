@@ -45,20 +45,20 @@ if __name__ == '__main__':
     # Question 2 - Exploring data for specific country
     il_df = df.loc[df.Country.astype(str) == "Israel"].reset_index(drop=True)
     il_df.Year = il_df.Year.astype(str)
-    # px.scatter(il_df, x='DayOfYear', y='Temp', color='Year',
-    #            title="Temperature in TLV as a function of DayOfYear").show()
-    # px.bar(il_df.groupby('Month').agg({'Temp': 'std'}).reset_index().
-    #        rename(columns={'Temp': 'Temp_std'}),
-    #        x='Month', y='Temp_std',
-    #        title="Standard Deviation of Daily Temperatures Per Month").show()
+    px.scatter(il_df, x='DayOfYear', y='Temp', color='Year',
+               title="Temperature in TLV as a function of DayOfYear").show()
+    px.bar(il_df.groupby('Month').agg({'Temp': 'std'}).reset_index().
+           rename(columns={'Temp': 'Temp_std'}),
+           x='Month', y='Temp_std',
+           title="Standard Deviation of Daily Temperatures Per Month").show()
 
     # Question 3 - Exploring differences between countries
     countries_df = df.groupby(['Country', 'Month']).agg({'Temp': ['mean', 'std']}).reset_index()
     countries_df.columns = countries_df.columns.droplevel(0)
     countries_df.columns = ['Country', 'Month', 'Temp_mean', 'Temp_std']
-    # px.line(countries_df, x='Month', y='Temp_mean', color='Country', error_y='Temp_std',
-    #         title="Average Temperature in 4 Countries Per Month, Including Standard Deviation").\
-    #     update_xaxes(tick0=1, dtick=1).show()
+    px.line(countries_df, x='Month', y='Temp_mean', color='Country', error_y='Temp_std',
+            title="Average Temperature in 4 Countries Per Month, Including Standard Deviation").\
+        update_xaxes(tick0=1, dtick=1).show()
 
     # Question 4 - Fitting model for different values of `k`
     train_x, train_y, test_x, test_y = split_train_test(il_df['DayOfYear'], il_df['Temp'])

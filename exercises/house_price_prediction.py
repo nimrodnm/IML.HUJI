@@ -108,8 +108,8 @@ if __name__ == '__main__':
     df, response = load_data("../datasets/house_prices.csv")
 
     # Question 2 - Feature evaluation with respect to response
-    # plots_path = "G:/My Drive/Semester_4/IML/IML.HUJI/exercises/ex2/plots"
-    # feature_evaluation(df, response, plots_path)
+    plots_path = "G:/My Drive/Semester_4/IML/IML.HUJI/exercises/ex2/plots"
+    feature_evaluation(df, response, plots_path)
 
     # Question 3 - Split samples into training- and testing sets.
     train_data, train_responses, test_data, test_responses = split_train_test(df, response, 0.75)
