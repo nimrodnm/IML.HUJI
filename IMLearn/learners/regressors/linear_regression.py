@@ -50,8 +50,6 @@ class LinearRegression(BaseEstimator):
         -----
         Fits model with or without an intercept depending on value of `self.include_intercept_`
         """
-        # TODO: should I validate input?
-
         # If an intercept is needed - add a column of ones to the design matrix:
         if self.include_intercept_:
             X = np.c_[np.ones(X.shape[0]), X]
@@ -73,7 +71,6 @@ class LinearRegression(BaseEstimator):
         responses : ndarray of shape (n_samples, )
             Predicted responses of given samples
         """
-        # TODO: code duplication - fix
         # If an intercept is needed - add a column of ones to the design matrix:
         if self.include_intercept_:
             X = np.c_[np.ones(X.shape[0]), X]

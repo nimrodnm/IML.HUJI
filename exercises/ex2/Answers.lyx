@@ -2358,22 +2358,302 @@ v_{1} & \ldots & v_{r}\\
 
 \begin_layout Itemize
 איזה פיצ'רים שמרתי ואיזה לא?
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+תשובה
+\bar default
+: מחקתי את הפיצ'רים 
+\begin_inset Formula $\text{id,date,lat,long}$
+\end_inset
+
+ )אחרי שעשיתי שימוש בנתונים שיש בעמודת 
+\begin_inset Formula $\text{date}$
+\end_inset
+
+(, שמרתי את שאר הפיצ'רים.
 \end_layout
 
 \begin_layout Itemize
 איזה פיצ'רים מורכבים מערכים קטגוריים ואיך התמודדתי איתם?
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+תשובה
+\bar default
+: הפיצ'ר היחיד שהתייחסתי אליו כבעל ערכים קטגוריים הוא ה-
+\begin_inset Formula $\text{zipcode}$
+\end_inset
+
+.
+ השתמשתי בשיטת 
+\begin_inset Formula $\text{one-hot encoding}$
+\end_inset
+
+ כדי להפוך אותו לערך של 
+\begin_inset Formula $0$
+\end_inset
+
+ או 
+\begin_inset Formula $1$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
 איזה פיצ'רים נוספים הוספתי ומה היה ההיגיון מאחורי זה?
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+תשובה
+\bar default
+: הוספתי את הפיצ'רים הבאים:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\text{age}$
+\end_inset
+
+: הוספתי לכל רשומה בדאטא ערך שמציין את ה
+\begin_inset Quotes erd
+\end_inset
+
+גיל
+\begin_inset Quotes erd
+\end_inset
+
+ של הבית, ומוגדר ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\text{sale\_year }-\max\left(\text{yr\_built },\text{yr\_renovated}\right)
+\]
+
+\end_inset
+
+עשיתי זאת כי לדעתי זו דרך טובה לתת ערך מספרי )עם יחס סדר( לתאריכים שיש לכל
+ רשומה בדאטא - פחות ברור מה הקשר בין בית שנמכר ב
+\begin_inset Formula $2018$
+\end_inset
+
+ ובית שנמכר ב
+\begin_inset Formula $2015$
+\end_inset
+
+ מאשר הקשר בין בית שנמכר 
+\begin_inset Formula $20$
+\end_inset
+
+ שנים לאחר ששופץ לאחרונה ובין בית שנמכר 
+\begin_inset Formula $2$
+\end_inset
+
+ שנים לאחר ששופץ לאחרונה.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{sqft\_living\_ratio}$
+\end_inset
+
+: פיצ'ר שמודד את הגודל היחסי של הבית ביחס לגודל הממוצע של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+15
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הבתים הקרובים אליו ביותר.
+ מוגדר ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\frac{\text{sqft\_living15}}{\text{sqft\_living}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{sqft\_lot\_ratio}$
+\end_inset
+
+: פיצר שמודד את הגודל היחסי של הנכס ביחס לגודל הממוצע של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+15
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הנכסים הקרובים ביותר.
+ מוגדר ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\frac{\text{sqft\_lot15}}{\text{sqft\_lot}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 איך התמודדתי עם ערכים חסרים או לא הגיוניים?
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+תשובה
+\bar default
+: מכיוון שלא היו הרבה ערכים חסרים או לא הגיוניים - מחקתי את כל הרשומות )השורות(
+ שבהן היו ערכים כאלו.
+ בסך הכל לא מחקתי יותר מ
+\numeric on
+20
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ רשומות.
 \end_layout
 
 \begin_layout Itemize
-לפרט על כל דבר נוסף שעשיתי לדאטא
+לפרט על כל דבר נוסף שעשיתי לדאטא:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2408,62 +2688,60 @@ v_{1} & \ldots & v_{r}\\
 \end_layout
 
 \begin_layout Standard
-לבחור
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-פיצ'רים - אחד שנראה מועיל למודל ואחד שלא.
- להוסיף גרפים שלהם ולהסביר למה הסקתי ככה.
+ערך שנראה שמועיל למודל הוא ערך ה-
+\begin_inset Formula $\text{grade}$
+\end_inset
+
+.
+ הנה גרף שמציג אותו ביחס למחיר של כל בית בדאטא, ואת הקורלציה ביניהם:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename plots/grade.png
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ערך שנראה שפחות מועיל למודל הוא 
+\begin_inset Formula $\text{sqft\_lot}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename plots/sqft_lot.png
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הסיבה שהסקתי שהראשון מועיל והשני פחות מועיל היא שהקורלציה בין ה-
+\begin_inset Formula $\text{grade}$
+\end_inset
+
+ למחיר של הבית גבוהה בהרבה מהקורלציה בין ה-
+\begin_inset Formula $\text{sqft\_lot}$
+\end_inset
+
+ למחיר )שקרובה מאוד ל-
+\begin_inset Formula $0$
+\end_inset
+
+(.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2533,7 +2811,599 @@ v_{1} & \ldots & v_{r}\\
 \end_layout
 
 \begin_layout Standard
-ד'
+הגרף הנדרש:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q4_result.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+הסבר
+\bar default
+: 
+\begin_inset Formula ${\color{red}TODO}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Polynomial Fitting}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+בקוד.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Itemize
+גרף שמציג את הטמפרטורה בישראל )בפועל בתל-אביב( בפונקציה של היום בשנה:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename PolyFitting_Q2_ScatterPlot.PNG
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+לדעתי פולינום מדרגה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ או 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יספיק כדי להתאים לנתונים האלו.
+\end_layout
+
+\begin_layout Itemize
+גרף שמציג את סטיית התקן של הטמפרטוריות היומיות בכל חודש:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename PolyFitting_Q2_BarPlot.PNG
+	lyxscale 71
+	scale 71
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+ע
+\begin_inset Quotes erd
+\end_inset
+
+פ הגרף הזה אני מצפה שמודל פולינומיאלי יהיה מדויק יותר בחודשים 
+\begin_inset Formula $6,7,8,9$
+\end_inset
+
+ שבהם סטיית התקן של הטמפרטורות נמוכה יותר.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+גרף המציג את הטמפרטורה הממוצעת בכל חודש בישראל, ירדן, דרום אמריקה והולנד,
+ כולל סטיית התקן:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename PolyFitting_Q3_LinePlot.PNG
+	lyxscale 71
+	scale 71
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+רואים בגרף לעיל שתבנית הטמפרטורה לפי חודשים של ישראל וירדן דיי דומה, והערכים
+ דיי קרובים.
+\end_layout
+
+\begin_layout Standard
+תבנית הטמפרטורה של הולנד גם דומה לזו של ישראל אבל הערכים נמצאים בטווח שונה
+ )נמוכים יותר(.
+\end_layout
+
+\begin_layout Standard
+לכן אני חושב שמודל שלמד את הדאטא של ישראל בלבד יעבוד הכי טוב )באופן יחסי(
+ על הדאטא של 
+\series bold
+ירדן
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+גרף המציג את הטעות )
+\lang english
+MSE
+\lang hebrew
+( של המודל עבור כל ערך של 
+\begin_inset Formula $k$
+\end_inset
+
+ בין 
+\begin_inset Formula $1$
+\end_inset
+
+ ל-
+\begin_inset Formula $10$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename PolyFitting_Q4_BarPlot.PNG
+	lyxscale 72
+	scale 72
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לפי התוצאות האלו רואים שהערך של 
+\begin_inset Formula $k$
+\end_inset
+
+ עבורו המודל התאים ביותר לדאטא הוא 
+\begin_inset Formula $5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+התוצאות שהתקבלו עבור 
+\begin_inset Formula $k=4$
+\end_inset
+
+ ו- 
+\begin_inset Formula $k=3$
+\end_inset
+
+ דומות מאוד, ולכן יתכן שעדיף לבחור באחד מהערכים הללו עבור 
+\begin_inset Formula $k$
+\end_inset
+
+ כי זה יתן לנו מודל פשוט יותר.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+גרף המציג את השגיאה )
+\lang english
+MSE
+\lang hebrew
+( של מודל שלמד על הדאטא של ישראל בלבד, עם 
+\begin_inset Formula $k=5$
+\end_inset
+
+, על דאטא של כל אחת מ-
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+המדינות שבדאטא-סט כולו:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename PolyFitting_Q5.PNG
+	lyxscale 72
+	scale 72
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כצפוי, השגיאה הקטנה ביותר היא על הדאטא של ישראל, כי עליו המודל התאמן.
+\end_layout
+
+\begin_layout Standard
+כמו שצפיתי בתשובה לשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- השגיאה שהתקבלה עבור הדאטא של ירדן היא הנמוכה מבין
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+המדינות הנוספות.
 \end_layout
 
 \end_body

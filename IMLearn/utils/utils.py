@@ -1,8 +1,8 @@
 from typing import Tuple
 import numpy as np
 import pandas as pd
+import random
 
-# TODO: is this good?
 SEED = 7
 
 
@@ -36,12 +36,11 @@ def split_train_test(X: pd.DataFrame, y: pd.Series, train_proportion: float = .7
         Responses of test samples
 
     """
-    # TODO: does it make sense that that train_proportion default value is 0.25?
-    #       maybe it should represent the test_proportion?
-    train_X = X.sample(frac=train_proportion, random_state=SEED)
-    train_y = y.sample(frac=train_proportion, random_state=SEED)
-    test_X = X.drop(train_X.index).sample(frac=1, random_state=SEED)
-    test_y = y.drop(train_y.index).sample(frac=1, random_state=SEED)
+    rand_seed = random.randint(1, 10)
+    train_X = X.sample(frac=train_proportion, random_state=rand_seed)
+    train_y = y.sample(frac=train_proportion, random_state=rand_seed)
+    test_X = X.drop(train_X.index).sample(frac=1, random_state=rand_seed)
+    test_y = y.drop(train_y.index).sample(frac=1, random_state=rand_seed)
     return train_X, train_y, test_X, test_y
 
 

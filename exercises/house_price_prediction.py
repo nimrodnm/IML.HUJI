@@ -24,10 +24,7 @@ def load_data(filename: str):
     Design matrix and response vector (prices) - either as a single
     DataFrame or a Tuple[DataFrame, Series]
     """
-    df = pd.read_csv(filename)
-
-    # remove duplicates:
-    df.drop_duplicates(inplace=True)
+    df = pd.read_csv(filename).drop_duplicates()
 
     # remove rows with invalid values:
     to_remove = pd.concat([df.loc[(df.bedrooms <= 0) & (df.bathrooms <= 0)],
@@ -53,7 +50,6 @@ def load_data(filename: str):
 
     # create column for age:= sale_year - max(yr_built, yr_renovated):
     df['age'] = df.sale_year - np.maximum(df.yr_built, df.yr_renovated)
-    # TODO: there are 18 rows with negative age - need to deal with that?
 
     # Create columns with ratio between avg square-fit of nearby houses to square-fit of each house:
     # (no division by zero because I removed rows with sqft_living==0 or sqft_lot==0)
@@ -64,7 +60,7 @@ def load_data(filename: str):
     df = pd.get_dummies(df, columns=['zipcode'])
 
     response = df.pop('price')
-    return (df, response)
+    return df, response
 
 
 def feature_evaluation(X: pd.DataFrame, y: pd.Series, output_path: str = ".") -> NoReturn:
@@ -124,8 +120,6 @@ if __name__ == '__main__':
     #   2) Fit linear model (including intercept) over sampled set
     #   3) Test fitted model over test set
     #   4) Store average and variance of loss over test set
-    # Then plot average loss as function of training size with error ribbon of size (mean-2*std, mean+2*std)
-
     linear_model = LinearRegression()
     percentages = np.arange(10, 101)
     loss_means, loss_stds = [], []
@@ -133,27 +127,28 @@ if __name__ == '__main__':
         losses = []
 
         for i in range(10):
-            print("\n%=", percentage / 100, "i=", i)
+            print("\n%=", percentage, "i=", i)
             train_sample = train_data.sample(frac=(percentage / 100), random_state=i)
             response_sample = train_responses.sample(frac=(percentage / 100), random_state=i)
             linear_model.fit(np.array(train_sample), np.array(response_sample))
             losses.append(linear_model.loss(np.array(test_data), np.array(test_responses)))
-            print("loss=", losses[i])
 
         loss_means.append(np.array(losses).mean())
         loss_stds.append(np.array(losses).std())
 
-    loss_means_np = np.array(loss_means)
-    loss_stds_np = np.array(loss_stds)
-    fig = go.Figure(data=[go.Scatter(x=percentages, y=loss_means_np, mode="markers+lines",
-                                     marker=dict(color="blue", opacity=0.7)),
-                          go.Scatter(x=percentages, y=(loss_means_np - (2 * loss_stds_np)),
+    # Then plot average loss as function of training size with error ribbon of size (mean-2*std, mean+2*std)
+    loss_means = np.array(loss_means)
+    loss_stds = np.array(loss_stds)
+    fig = go.Figure(data=[go.Scatter(x=percentages, y=loss_means, mode="markers+lines",
+                                     marker=dict(color="blue", opacity=0.7),
+                                     name="MSE values"),
+                          go.Scatter(x=percentages, y=(loss_means - (2 * loss_stds)),
                                      fill=None, mode="lines", line=dict(color="lightgrey"),
                                      showlegend=False),
-                          go.Scatter(x=percentages, y=(loss_means_np + (2 * loss_stds_np)),
+                          go.Scatter(x=percentages, y=(loss_means + (2 * loss_stds)),
                                      fill="tonexty", mode="lines", line=dict(color="lightgrey"),
                                      showlegend=False)],
-                    layout=dict(title="Title",
+                    layout=dict(title="Average Loss of House Price Prediction",
                                 xaxis_title="Percentages",
                                 yaxis_title="Average Loss"))
     fig.show()
