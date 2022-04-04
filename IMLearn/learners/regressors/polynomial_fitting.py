@@ -35,7 +35,6 @@ class PolynomialFitting(BaseEstimator):
         y : ndarray of shape (n_samples, )
             Responses of input data to fit to
         """
-        # TODO: should accept X with shape=(n,1) or shape=(n,) ? For now accepting the 2'nd option
         self._regressor.fit(self.__transform(X), y)
 
     def _predict(self, X: np.ndarray) -> np.ndarray:

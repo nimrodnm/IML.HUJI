@@ -55,7 +55,7 @@ class LinearRegression(BaseEstimator):
             X = np.c_[np.ones(X.shape[0]), X]
 
         # define the coefficients vector as the moore-penrose-inverse of X multiplied with y:
-        self.coefs_ = np.linalg.pinv(X) @ y
+        self.coefs_ = pinv(X) @ y
 
     def _predict(self, X: np.ndarray) -> np.ndarray:
         """

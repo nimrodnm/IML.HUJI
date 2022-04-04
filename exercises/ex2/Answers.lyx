@@ -2642,11 +2642,56 @@ v_{1} & \ldots & v_{r}\\
 \end_layout
 
 \begin_layout Itemize
-לפרט על כל דבר נוסף שעשיתי לדאטא:
+דברים נוספים שעשיתי:
 \begin_inset Newline newline
 \end_inset
 
-
+בנוסף, מחקתי דגימות עם מחירי בתים גבוהים במיוחד )מעל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\numeric off
+מיליון(, כי ראיתי שבאופן יחסי אלו מקרי קצה והם מנפחים מאוד את ערך ה-
+\lang english
+MSE
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ כפי שראינו בתרגול.
 \end_layout
 
 \begin_layout Standard
@@ -2817,9 +2862,9 @@ v_{1} & \ldots & v_{r}\\
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename Q4_result.PNG
-	lyxscale 80
-	scale 80
+	filename Q4_result_after_removing_outliers.PNG
+	lyxscale 77
+	scale 77
 
 \end_inset
 
@@ -2831,15 +2876,258 @@ v_{1} & \ldots & v_{r}\\
 \bar under
 הסבר
 \bar default
-: 
-\begin_inset Formula ${\color{red}TODO}$
-\end_inset
-
-
+:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ $
+ככל שאחוז הדגימות מתוך סט האימון 
+\series bold
+גדול יותר
+\series default
+, ערך ה-
+\lang english
+Loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של המודל 
+\series bold
+קטן
+\series default
+ )כאשר הוא מחושב כממוצע של האומדן עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+דגימות אקראיות מסט ה-
+\lang english
+test
+\lang hebrew
+(, וה-
+\lang english
+Confidence interval
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הולך ו
+\begin_inset Quotes erd
+\end_inset
+
+מתהדק
+\begin_inset Quotes erd
+\end_inset
+
+ - כלומר השונות של האומדן הולכת 
+\series bold
+וקטנה
+\series default
+ ככל שהמודל מתאמן על אחוז 
+\series bold
+גדול
+\series default
+ יותר מתוך סט האימון.
+ הירידה הזו בשגיאה מעידה על כך שהאומד שלנו משתפר ככל שמספר הדגימות שהוא
+ מתאמן עליהן עולה, והוא הולך ונעשה פחות מוטה )
+\lang english
+biased
+\lang hebrew
+( ועם שונות נמוכה יותר )
+\lang english
+variance
+\lang hebrew
+(.
+\end_layout
+
+\begin_layout Standard
+הערה נוספת שראוי להוסיף על ערך ה-
+\lang english
+confidence interval
+\lang hebrew
+, כלומר על השונות היא שכשמתקרבים ל-
+\numeric on
+100%
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתוך סט האימון ומריצים את המודל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פעמים, ההבדל בתוצאות נהיה קטן מאוד כי החפיפה בין השורות שנבחרות בכל הרצה
+ הולכת וגדלה.
+ זה יכול להסביר גם את הירידה בשונות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -3042,7 +3330,7 @@ v_{1} & \ldots & v_{r}\\
 \end_inset
 
 פ הגרף הזה אני מצפה שמודל פולינומיאלי יהיה מדויק יותר בחודשים 
-\begin_inset Formula $6,7,8,9$
+\begin_inset Formula $7,8$
 \end_inset
 
  שבהם סטיית התקן של הטמפרטורות נמוכה יותר.
@@ -3102,13 +3390,8 @@ v_{1} & \ldots & v_{r}\\
 \end_layout
 
 \begin_layout Standard
-תבנית הטמפרטורה של הולנד גם דומה לזו של ישראל אבל הערכים נמצאים בטווח שונה
- )נמוכים יותר(.
-\end_layout
-
-\begin_layout Standard
-לכן אני חושב שמודל שלמד את הדאטא של ישראל בלבד יעבוד הכי טוב )באופן יחסי(
- על הדאטא של 
+אני חושב שמודל שלמד את הדאטא של ישראל בלבד יעבוד הכי טוב )באופן יחסי( על
+ הדאטא של 
 \series bold
 ירדן
 \series default

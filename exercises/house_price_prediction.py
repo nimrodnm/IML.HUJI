@@ -30,7 +30,7 @@ def load_data(filename: str):
     to_remove = pd.concat([df.loc[(df.bedrooms <= 0) & (df.bathrooms <= 0)],
                            df.loc[(df.sqft_living <= 0) | (df.sqft_lot <= 0) | (df.sqft_above <= 0)
                                   | (df.sqft_basement < 0) | (df.sqft_living15 < 0)
-                                  | (df.sqft_lot15 < 0) | (df.price < 0)
+                                  | (df.sqft_lot15 < 0) | (df.price < 0) | (df.price > 5_000_000)
                                   | (df.price.isnull())]]).drop_duplicates()
     df.drop(to_remove.index, inplace=True)
 
@@ -85,7 +85,6 @@ def feature_evaluation(X: pd.DataFrame, y: pd.Series, output_path: str = ".") ->
     for col_name, col in X.iteritems():
         values = np.array(col)
         correlation = pearson_correlation(values, y_values)
-        print(correlation)
         px.scatter(x=values, y=y_values, trendline="ols", trendline_color_override='skyblue',
                    title=f"Pearson Correlation of {col_name} and price = {correlation}",
                    labels=dict(x=col_name, y="price")).write_image(f"{output_path}/{col_name}.png")
@@ -127,7 +126,6 @@ if __name__ == '__main__':
         losses = []
 
         for i in range(10):
-            print("\n%=", percentage, "i=", i)
             train_sample = train_data.sample(frac=(percentage / 100), random_state=i)
             response_sample = train_responses.sample(frac=(percentage / 100), random_state=i)
             linear_model.fit(np.array(train_sample), np.array(response_sample))
