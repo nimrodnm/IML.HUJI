@@ -2307,7 +2307,520 @@ v_{1} & \ldots & v_{r}\\
 \end_layout
 
 \begin_layout Proof
-...
+יהי 
+\begin_inset Formula $X=U\Sigma V^{\top}$
+\end_inset
+
+ פירוק ה-
+\begin_inset Formula $\text{SVD}$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ נסמן ב-
+\begin_inset Formula $r$
+\end_inset
+
+ את מספר הערכים הסינגולרים השונים מ-
+\begin_inset Formula $0$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+ ונסמן:
+\begin_inset Formula 
+\[
+U=\begin{bmatrix}U_{1} & U_{2}\end{bmatrix}\quad,\quad V=\begin{bmatrix}V_{1} & V_{2}\end{bmatrix}\quad,\quad\Sigma=\begin{bmatrix}\tilde{\Sigma} & 0\\
+0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $U_{1},V_{1}$
+\end_inset
+
+ הן 
+\begin_inset Formula $r$
+\end_inset
+
+ העמודות הראשונות של 
+\begin_inset Formula $U,V$
+\end_inset
+
+ בהתאמה.
+ אז כפי שראינו בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)ובתרגול( - 
+\begin_inset Formula 
+\[
+X=U_{1}\tilde{\Sigma}V_{2}^{\top}
+\]
+
+\end_inset
+
+הוא פירוק ה-
+\begin_inset Formula $\text{compact SVD}$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+, כאשר המימדים הם 
+\begin_inset Formula $U_{1}\in\kaliReal^{m\times r}\,,\,\tilde{\Sigma}\in\kaliReal^{r\times r}\,,\,V_{1}^{\top}\in\kaliReal^{r\times d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+רוצים להראות ש- 
+\begin_inset Formula $\hat{w}=X^{\dagger}y$
+\end_inset
+
+ הוא פתרון של 
+\begin_inset Formula $X^{\top}Xw=X^{\top}y$
+\end_inset
+
+ עם 
+\bar under
+נורמה מינימלית
+\bar default
+.
+\end_layout
+
+\begin_layout Proof
+לכל פתרון 
+\begin_inset Formula $w\in\kaliReal^{d}$
+\end_inset
+
+ נסמן 
+\begin_inset Formula $b=V^{\top}w$
+\end_inset
+
+, וגם 
+\begin_inset Formula $b_{1}=V_{1}^{\top}w$
+\end_inset
+
+, 
+\begin_inset Formula $b_{2}=V_{2}^{\top}w$
+\end_inset
+
+.
+ אז מתקיים ש-
+\begin_inset Formula 
+\[
+b=V^{\top}w=\begin{bmatrix}V_{1}^{\top}\\
+V_{2}^{\top}
+\end{bmatrix}w=\begin{bmatrix}V_{1}^{\top}w\\
+V_{2}^{\top}w
+\end{bmatrix}=\begin{bmatrix}b_{1}\\
+b_{1}
+\end{bmatrix}
+\]
+
+\end_inset
+
+ניזכר שפתרון של המשוואות הנורמליות הוא 
+\begin_inset Formula $\underset{w\in\kaliReal^{n}}{\text{argmin}}\left\Vert Xw-y\right\Vert ^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+ניזכר גם שמכך ש-
+\begin_inset Formula $U$
+\end_inset
+
+ ו-
+\begin_inset Formula $V$
+\end_inset
+
+ אורתוגונליות נובע שהן משמרות נורמה.
+ לכן 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+ הוא עם נורמה מינימלית 
+\bar under
+אם ורק אם
+\bar default
+ 
+\begin_inset Formula $\hat{b}=V^{\top}\hat{w}$
+\end_inset
+
+ הוא עם נורמה מינימלית.
+\end_layout
+
+\begin_layout Proof
+בנוסף, ניעזר באורתוגנליות של 
+\begin_inset Formula $U$
+\end_inset
+
+ כדי לקבל לכל פתרון 
+\begin_inset Formula $w$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\begin{align*}
+\left\Vert Xw-y\right\Vert ^{2} & =\left\Vert U\Sigma V^{\top}w-y\right\Vert ^{2}=\left\Vert U\left(\Sigma b-U^{\top}y\right)\right\Vert ^{2}\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{\ensuremath{U} אורת'}}}}}{\downarrow}}}{=}\left\Vert \Sigma b-U^{\top}y\right\Vert ^{2}=\\
+ & =\left\Vert \begin{bmatrix}\tilde{\Sigma} & 0\\
+0 & 0
+\end{bmatrix}\begin{bmatrix}b_{1}\\
+b_{2}
+\end{bmatrix}-\begin{bmatrix}U_{1}^{\top}y\\
+U_{2}^{\top}y
+\end{bmatrix}\right\Vert ^{2}=\left\Vert \begin{bmatrix}\tilde{\Sigma}b_{1}\\
+0
+\end{bmatrix}-\begin{bmatrix}U_{1}^{\top}y\\
+U_{2}^{\top}y
+\end{bmatrix}\right\Vert ^{2}=\left\Vert \begin{bmatrix}\tilde{\Sigma}b_{1}-U_{1}^{\top}y\\
+-U_{2}^{\top}y
+\end{bmatrix}\right\Vert ^{2}\overset{{\color{green}\sun}}{=}\\
+ & \overset{{\color{green}\sun}}{=}\left\Vert \tilde{\Sigma}b_{1}-U_{1}^{\top}y\right\Vert ^{2}+\left\Vert U_{2}^{\top}y\right\Vert ^{2}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: כי הנורמה בריבוע זה פשוט סכום הריבועים של הקואורדינטות של הוקטור 
+\begin_inset Formula $\left[\begin{smallmatrix}\tilde{\Sigma}b_{1}-U_{1}^{\top}y\\
+-U_{2}^{\top}y
+\end{smallmatrix}\right]$
+\end_inset
+
+, ואפשר לחלק את הסכום אז לשני סכומים שנותנים את הנורמות של הוקטורים 
+\begin_inset Formula $\tilde{\Sigma}b_{1}-U_{1}^{\top}y$
+\end_inset
+
+ ו- 
+\begin_inset Formula $-U_{2}^{\top}y$
+\end_inset
+
+ בנפרד.
+\end_layout
+
+\begin_layout Proof
+מכיוון ש- 
+\begin_inset Formula $\left\Vert U_{2}^{\top}y\right\Vert ^{2}$
+\end_inset
+
+ קבוע אי-שלילי, אז 
+\begin_inset Formula $\overline{w}\in\kaliReal^{d}$
+\end_inset
+
+ מקיים ש- 
+\begin_inset Formula $\overline{w}=\underset{w\in\kaliReal^{n}}{\text{argmin}}\left\Vert Xw-y\right\Vert ^{2}$
+\end_inset
+
+ 
+\bar under
+אם ורק אם
+\bar default
+ 
+\begin_inset Formula $\overline{b_{1}}=V_{1}^{\top}\overline{w}$
+\end_inset
+
+ מקיים ש-
+\begin_inset Formula 
+\[
+\overline{b_{1}}=\underset{b_{1}\in\kaliReal^{n}}{\text{argmin}}\left\Vert \tilde{\Sigma}b_{1}-U_{1}^{\top}y\right\Vert ^{2}
+\]
+
+\end_inset
+
+כלומר אם ורק אם 
+\begin_inset Formula $\overline{b_{1}}$
+\end_inset
+
+ הוא פתרון של המשוואות הנורמליות הבאות:
+\begin_inset Formula 
+\begin{align*}
+\tilde{\Sigma}^{\top}\tilde{\Sigma}\overline{b_{1}} & =\tilde{\Sigma}^{\top}U_{1}^{\top}y\\
+{\color{gray}\text{\R{\text{כי \ensuremath{\tilde{\Sigma}} אלכסונית}}}} & \Updownarrow\\
+\tilde{\Sigma}^{2}\overline{b_{1}} & =\tilde{\Sigma}U_{1}^{\top}y\\
+{\color{gray}\text{\R{\text{כפל ב-\ensuremath{\left[\tilde{\Sigma}^{2}\right]^{-1}}}}}} & \Updownarrow\\
+V_{1}^{\top}\overline{w}=\overline{b_{1}} & =\tilde{\Sigma}^{-1}U_{1}^{\top}y
+\end{align*}
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\overline{w}\in\kaliReal^{d}$
+\end_inset
+
+ הוא פתרון של המשוואות הנורמליות 
+\begin_inset Formula $X^{\top}Xw=X^{\top}y$
+\end_inset
+
+ אם ורק אם הוא מקיים ש- 
+\begin_inset Formula $\overline{b_{1}}=V_{1}^{\top}\overline{w}=\tilde{\Sigma}^{-1}U_{1}^{\top}y$
+\end_inset
+
+, וזה בכלל לא תלוי ברכיב השני - 
+\begin_inset Formula $\overline{b_{2}}=V_{2}^{\top}\overline{w}$
+\end_inset
+
+!
+\end_layout
+
+\begin_layout Proof
+ניזכר עכשיו שפתרון 
+\begin_inset Formula $\overline{w}$
+\end_inset
+
+ הוא 
+\series bold
+עם נורמה מינימלית
+\series default
+ אם ורק אם 
+\begin_inset Formula $V^{\top}\overline{w}$
+\end_inset
+
+ הוא עם נורמה מינימלית, ולכן 
+\begin_inset Formula $\overline{w}$
+\end_inset
+
+ מקיים בהכרח ש- 
+\begin_inset Formula $V_{2}^{\top}\overline{w}=0$
+\end_inset
+
+, כי אחרת אם 
+\begin_inset Formula $V_{2}^{\top}\overline{w}\neq0$
+\end_inset
+
+ נוכל פשוט לקחת את הוקטור 
+\begin_inset Formula $\left[\begin{smallmatrix}V_{1}^{\top}\overline{w}\\
+0
+\end{smallmatrix}\right]$
+\end_inset
+
+ ולקבל לפי מה שראינו לעיל שהוא עדיין פתרון והוא גם מקיים-
+\begin_inset Formula 
+\[
+\left\Vert \begin{bmatrix}V_{1}^{\top}\overline{w}\\
+0
+\end{bmatrix}\right\Vert <\left\Vert \begin{bmatrix}V_{1}^{\top}\overline{w}\\
+V_{2}^{\top}\overline{w}
+\end{bmatrix}\right\Vert 
+\]
+
+\end_inset
+
+לסיום נראה שהפתרון 
+\begin_inset Formula $\hat{w}=X^{\dagger}y$
+\end_inset
+
+ מקיים בדיוק את התכונה הזו:
+\end_layout
+
+\begin_layout Proof
+לצורך כך נשתמש בצורת ה-
+\begin_inset Formula $\text{compact SVD}$
+\end_inset
+
+ של 
+\begin_inset Formula $X^{\dagger}$
+\end_inset
+
+ שהראיתי בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)שם סימנתי 
+\begin_inset Formula $V_{1}=\tilde{V}$
+\end_inset
+
+, 
+\begin_inset Formula $U_{1}=\tilde{U}$
+\end_inset
+
+(.
+ נקבל ש-
+\begin_inset Formula 
+\begin{align*}
+V_{1}^{\top}\hat{w} & =V_{1}^{\top}X^{\dagger}y=V_{1}^{\top}V_{1}\tilde{\Sigma}^{-1}U_{1}^{\top}y\overset{{\color{green}\left(1\right)}}{=}\tilde{\Sigma}^{-1}U_{1}^{\top}y\\
+V_{2}^{\top}\hat{w} & =V_{2}^{\top}X^{\dagger}y=V_{2}^{\top}V_{1}\tilde{\Sigma}^{-1}U_{1}^{\top}y\overset{{\color{green}\left(2\right)}}{=}0\cdot\tilde{\Sigma}^{-1}U_{1}^{\top}y=0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\left(1\right),\left(2\right)}$
+\end_inset
+
+: שני השיוויונות נובעים מכך ש-
+\begin_inset Formula $V$
+\end_inset
+
+ אורתוגונלית - כי זה אומר שעמודותיה הן בסיס אורתונורמלי של 
+\begin_inset Formula $\kaliReal^{d}$
+\end_inset
+
+.
+ לכן במכפלה 
+\begin_inset Formula $V_{1}^{\top}V_{1}$
+\end_inset
+
+ נקבל בדיוק את 
+\begin_inset Formula $I_{r}$
+\end_inset
+
+, ובמכפלה 
+\begin_inset Formula $V_{2}^{\top}V_{1}$
+\end_inset
+
+ נקבל רק מכפלות מהצורה 
+\begin_inset Formula $v_{i}^{\top}v_{j}$
+\end_inset
+
+, עם 
+\begin_inset Formula $i\in\left[r\right]$
+\end_inset
+
+ ו- 
+\begin_inset Formula $j\in\left[d\right]\backslash\left[r\right]$
+\end_inset
+
+, השוות ל-
+\begin_inset Formula $0$
+\end_inset
+
+ מהאורתונורמליות )כש-
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ היא העמודה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של 
+\begin_inset Formula $V$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Proof
+לכן 
+\begin_inset Formula $\hat{w}$
+\end_inset
+
+ הוא הפתרון עם הנורמה המינימלית למשוואות הנורמליות, כנדרש.
 \end_layout
 
 \begin_layout Standard
@@ -2675,7 +3188,7 @@ v_{1} & \ldots & v_{r}\\
 \color inherit
 5
 \numeric off
-מיליון(, כי ראיתי שבאופן יחסי אלו מקרי קצה והם מנפחים מאוד את ערך ה-
+ מיליון(, כי ראיתי שבאופן יחסי אלו מקרי קצה והם מנפחים מאוד את ערך ה-
 \lang english
 MSE
 \family roman
@@ -3168,41 +3681,6 @@ confidence interval
 \uwave default
 \noun default
 \color inherit
-1
-\end_layout
-
-\begin_layout Standard
-בקוד.
-\end_layout
-
-\begin_layout Subsubsection*
-שאלה
-\family roman
-\series bold
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
 2
 \end_layout
 
@@ -3214,8 +3692,8 @@ confidence interval
 \align center
 \begin_inset Graphics
 	filename PolyFitting_Q2_ScatterPlot.PNG
-	lyxscale 70
-	scale 70
+	lyxscale 65
+	scale 65
 
 \end_inset
 
@@ -3316,8 +3794,8 @@ confidence interval
 \align center
 \begin_inset Graphics
 	filename PolyFitting_Q2_BarPlot.PNG
-	lyxscale 71
-	scale 71
+	lyxscale 60
+	scale 60
 
 \end_inset
 
@@ -3376,8 +3854,8 @@ confidence interval
 \align center
 \begin_inset Graphics
 	filename PolyFitting_Q3_LinePlot.PNG
-	lyxscale 71
-	scale 71
+	lyxscale 65
+	scale 65
 
 \end_inset
 
@@ -3453,8 +3931,8 @@ MSE
 \align center
 \begin_inset Graphics
 	filename PolyFitting_Q4_BarPlot.PNG
-	lyxscale 72
-	scale 72
+	lyxscale 65
+	scale 65
 
 \end_inset
 
