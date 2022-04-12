@@ -1,0 +1,754 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\begin_preamble
+\usepackage{culmus}
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Fix numbering in hebrew article:
+\renewcommand{\thetheorem}{\beginL \thesection.\arabic{theorem}}
+
+% Create symbol for DotCup (forn union):
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\usepackage{mathtools}
+\usepackage{dsfont}
+\end_preamble
+\use_default_options true
+\begin_modules
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/nimro/AppData/Roaming/LyX2.3/MacrosHeb.lyx"
+
+\end_inset
+
+
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Title
+)
+\numeric on
+67577
+\numeric off
+( מבוא למערכות לומדות | תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Author
+שם: נמרוד בר גיורא | ת"ז:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+207090622
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק תאורטי
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Hard and Soft SVM}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Cpatures/Q1.JPG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נשים לב ש-
+\lang english
+hyperplane
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- 
+\begin_inset Formula $\left(w^{\ast},b^{\ast}\right)$
+\end_inset
+
+, עם 
+\begin_inset Formula $\left[\begin{smallmatrix}w_{1}^{\ast}\\
+\vdots\\
+w_{d}^{\ast}
+\end{smallmatrix}\right]=w^{\ast}\in\kaliReal^{d}$
+\end_inset
+
+ ו- 
+\begin_inset Formula $b^{\ast}\in\kaliReal$
+\end_inset
+
+ הוא פתרון אופטימלי של הבעיה:
+\begin_inset Formula 
+\[
+\underset{\left(w,b\right)}{\text{argmin}}\left\Vert w\right\Vert ^{2}\quad\text{s.t}\quad\kaliForall i\in\left[m\right]:\,y_{i}\left(\left\langle w\mid x_{i}\right\rangle +b\right)\geqslant1
+\]
+
+\end_inset
+
+
+\bar under
+אם ורק אם
+\bar default
+ הוא פתרון אופטימלי של הבעיה:
+\begin_inset Formula 
+\[
+\underset{\left(w,b\right)}{\text{argmin}}\left\Vert \left[\begin{smallmatrix}w_{1}\\
+\vdots\\
+w_{d}\\
+b
+\end{smallmatrix}\right]\right\Vert ^{2}\quad\text{s.t}\quad\kaliForall i\in\left[m\right]:\,y_{i}\Big<\left[\begin{smallmatrix}w_{1}\\
+\vdots\\
+w_{d}\\
+b
+\end{smallmatrix}\right]\mid x_{i}\Big>\geqslant1
+\]
+
+\end_inset
+
+כאשר מוסיפים למטריצה 
+\begin_inset Formula $X$
+\end_inset
+
+ עמודת 
+\begin_inset Formula $1$
+\end_inset
+
+-דים.
+ כלומר 
+\begin_inset Formula $\left[x_{i}\right]_{d+1}=1$
+\end_inset
+
+ )זו הכניסה ה-
+\begin_inset Formula $d+1$
+\end_inset
+
+ של השורה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+( לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+הסיבה לכך היא שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+y_{i}\left(\left\langle w^{\ast}\mid x_{i}\right\rangle +b\right)\geqslant1\; & \iff\;y_{i}\left(\stackrel[j=1]{d}{\sum}w_{j}^{\ast}\left[x_{i}\right]_{j}+b\right)\geqslant1\;\iff\;y_{i}\left(\stackrel[j=1]{d}{\sum}w_{j}^{\ast}\left[x_{i}\right]_{j}+b\left[x_{i}\right]_{d+1}\right)\geqslant1\;\iff\;y_{i}\Big<\left[\begin{smallmatrix}w_{1}\\
+\vdots\\
+w_{d}\\
+b
+\end{smallmatrix}\right]\mid x_{i}\Big>\geqslant1
+\end{align*}
+
+\end_inset
+
+ובנוסף לכל 
+\begin_inset Formula $w\in\kaliReal^{d}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\left\Vert w^{\ast}\right\Vert ^{2}\leqslant\left\Vert w\right\Vert ^{2}\;\iff\;\stackrel[i=1]{d}{\sum}\left(w_{i}^{\ast}\right)^{2}\leqslant\stackrel[i=1]{d}{\sum}\left(w_{i}\right)^{2}\;\iff\;\stackrel[i=1]{d}{\sum}\left(w_{i}^{\ast}\right)^{2}+b^{2}\leqslant\stackrel[i=1]{d}{\sum}\left(w_{i}\right)^{2}+b^{2}\;\iff\;\left\Vert \left[\begin{smallmatrix}w_{1}^{\ast}\\
+\vdots\\
+w_{d}^{\ast}\\
+b
+\end{smallmatrix}\right]\right\Vert ^{2}\leqslant\left\Vert \left[\begin{smallmatrix}w_{1}\\
+\vdots\\
+w_{d}\\
+b
+\end{smallmatrix}\right]\right\Vert ^{2}
+\]
+
+\end_inset
+
+ולכן אם נוסיף עמודת 
+\begin_inset Formula $1$
+\end_inset
+
+-דים כנ
+\begin_inset Quotes erd
+\end_inset
+
+ל ל-
+\begin_inset Formula $X$
+\end_inset
+
+, נוכל פשוט לעבוד עם הבעיה:
+\begin_inset Formula 
+\[
+\underset{w\in\kaliReal^{d+1}}{\text{argmin}}\left\Vert w\right\Vert ^{2}\quad\text{s.t}\quad\kaliForall i\in\left[m\right]:\,y_{i}\left\langle w\mid x_{i}\right\rangle \geqslant1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נגדיר 
+\begin_inset Formula $Q=2I_{d+1}$
+\end_inset
+
+, 
+\begin_inset Formula $\text{\textbf{a}}=0_{\kaliReal^{d+1}}$
+\end_inset
+
+ ו- 
+\begin_inset Formula 
+\begin{align*}
+\kaliReal^{m}\ni\text{\textbf{d}} & =\begin{bmatrix}-1\\
+\vdots\\
+-1
+\end{bmatrix}\qquad,\qquad\kaliReal^{m\times\left(d+1\right)}\ni A=-1\cdot\begin{bmatrix}\boldsymbol{-} & y_{1}x_{1}^{\top} & \boldsymbol{-}\\
+ & \vdots\\
+\boldsymbol{-} & y_{m}x_{m}^{\top} & \boldsymbol{-}
+\end{bmatrix}
+\end{align*}
+
+\end_inset
+
+ונקבל ש-
+\begin_inset Formula $w^{\ast}\in\kaliReal^{d+1}$
+\end_inset
+
+ הוא פתרון של הבעיה הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל 
+\bar under
+אם ורק אם
+\bar default
+ לכל 
+\begin_inset Formula $w\in\kaliReal^{d+1}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+\left\Vert w^{\ast}\right\Vert ^{2}\leqslant\left\Vert w\right\Vert ^{2}\; & \iff\;w^{\ast\top}w^{\ast}\leqslant w^{\top}w\;\iff\;w^{\ast\top}I_{d}w^{\ast}\leqslant w^{\top}I_{d}w\;\iff\\
+ & \iff\;\frac{1}{2}w^{\ast\top}Qw^{\ast}+\overset{=0}{\overbrace{\boldsymbol{\text{a}}w^{\ast}}}\leqslant\frac{1}{2}w^{\top}Qw+\overset{=0}{\overbrace{\boldsymbol{\text{a}}w}}\;\iff\;w^{\ast}=\underset{w\in\kaliReal^{d+1}}{\text{argmin}}\left(\frac{1}{2}w^{\top}Qw+\text{\textbf{a}}^{\top}w\right)
+\end{align*}
+
+\end_inset
+
+ובנוסף:
+\begin_inset Formula 
+\begin{align*}
+\kaliForall i\in\left[m\right]:\,y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \geqslant1\; & \iff\;\kaliForall i\in\left[m\right]:\,-y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \leqslant-1\;\iff\\
+ & \iff\;\kaliForall i\in\left[m\right]:\,-y_{i}x_{i}^{\top}w^{\ast}\leqslant-1\;\iff Aw^{\ast}\leqslant\text{\textbf{d}}
+\end{align*}
+
+\end_inset
+
+כלומר 
+\bar under
+אם ורק אם
+\bar default
+ הוא פתרון אופטימלי של הבעיה:
+\begin_inset Formula 
+\[
+\underset{w\in\kaliReal^{d+1}}{\text{argmin}}\left(\frac{1}{2}w^{\top}Qw+\text{\textbf{a}}^{\top}w\right)\quad\text{s.t.}\quad Aw\leqslant\text{\textbf{d}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Cpatures/Q2.JPG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $w^{\ast}\in\kaliReal^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ \xi_{i}^{\ast}\right\} _{i=1}^{m}\subseteq\kaliReal$
+\end_inset
+
+ - פתרון אופטימלי לבעיה 
+\begin_inset Formula $\left(3\right)$
+\end_inset
+
+.
+ כלומר לכל 
+\begin_inset Formula $w\in\kaliReal^{d}$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $\left\{ \xi_{i}\right\} _{i=1}^{m}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\frac{\lambda}{2}\left\Vert w^{\ast}\right\Vert ^{2}+\frac{1}{m}\stackrel[i=1]{m}{\sum}\xi_{i}^{\ast}\leqslant\frac{\lambda}{2}\left\Vert w\right\Vert ^{2}+\frac{1}{m}\stackrel[i=1]{m}{\sum}\xi_{i}
+\]
+
+\end_inset
+
+נשים לב שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula 
+\[
+\xi_{i}^{\ast}=\ell^{\text{hinge}}\left(y_{i}\left\langle w\mid x_{i}\right\rangle \right)=\text{max}\left\{ 0,1-y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \right\} =\begin{cases}
+0 & 1<y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \\
+1-y_{i}\left\langle w\mid x_{i}\right\rangle  & 1\geqslant y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle 
+\end{cases}
+\]
+
+\end_inset
+
+כי אם נניח בשלילה שקיים 
+\begin_inset Formula $j$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $\xi_{j}^{\ast}\neq\ell^{\text{hinge}}\left(y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle \right)$
+\end_inset
+
+ אז:
+\end_layout
+
+\begin_layout Proof
+- אם 
+\begin_inset Formula $1<y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle $
+\end_inset
+
+ אז 
+\begin_inset Formula $\ell^{\text{hinge}}\left(y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle \right)=0$
+\end_inset
+
+, ולכן מכך ש- 
+\begin_inset Formula $\xi_{j}^{\ast}\geqslant0$
+\end_inset
+
+ נובע ש- 
+\begin_inset Formula $\ell^{\text{hinge}}\left(y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle \right)<\xi_{j}^{\ast}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+- אם 
+\begin_inset Formula $1\geqslant y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle $
+\end_inset
+
+ אז 
+\begin_inset Formula $\ell^{\text{hinge}}\left(y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle \right)=1-y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle $
+\end_inset
+
+ ולכן מכך ש- 
+\begin_inset Formula $1-\xi_{j}^{\ast}\leqslant y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle $
+\end_inset
+
+ נובע ש- 
+\begin_inset Formula 
+\[
+1-y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle =\ell^{\text{hinge}}\left(y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle \right)<\xi_{j}^{\ast}
+\]
+
+\end_inset
+
+ובכל מקרה נקבל שהפתרון 
+\begin_inset Formula $w^{\ast},\left\{ \xi_{i}^{\prime}\right\} _{i=1}^{m}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\xi_{i}^{\prime}=\xi_{i}^{\ast}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ ו- 
+\begin_inset Formula $\xi_{j}^{\prime}=\ell^{\text{hinge}}\left(y_{j}\left\langle w^{\ast}\mid x_{j}\right\rangle \right)$
+\end_inset
+
+ 
+\series bold
+קטן
+\series default
+ יותר מהפתרון האופטימלי, וזו סתירה.
+\end_layout
+
+\begin_layout Proof
+לכן 
+\begin_inset Formula $w^{\ast}$
+\end_inset
+
+ הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל הוא פתרון אופטימלי לבעיה 
+\begin_inset Formula $\left(4\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+בכיוון השני, אם 
+\begin_inset Formula $w^{\ast}$
+\end_inset
+
+ הוא פתרון אופטימלי ל-
+\begin_inset Formula $\left(4\right)$
+\end_inset
+
+ אז לכל 
+\begin_inset Formula $w\in\kaliReal^{d}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\frac{\lambda}{2}\left\Vert w^{\ast}\right\Vert ^{2}+\frac{1}{m}\stackrel[i=1]{n}{\sum}\ell^{\text{hinge}}\left(y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \right)\leqslant\frac{\lambda}{2}\left\Vert w\right\Vert ^{2}+\frac{1}{m}\stackrel[i=1]{n}{\sum}\ell^{\text{hinge}}\left(y_{i}\left\langle w\mid x_{i}\right\rangle \right)
+\]
+
+\end_inset
+
+נסמן 
+\begin_inset Formula $\xi_{i}^{\ast}=\ell^{\text{hinge}}\left(y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \right)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ ונקבל שהאילוצים של בעיה 
+\begin_inset Formula $\left(3\right)$
+\end_inset
+
+ מתקיימים, ובנוסף לכי שהראינו לעיל לכל 
+\begin_inset Formula $\left\{ \xi_{i}\right\} _{i=1}^{m}\subseteq\kaliReal$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula 
+\[
+\kaliForall i\in\left[m\right]:\quad\xi_{i}^{\ast}=\ell^{\text{hinge}}\left(y_{i}\left\langle w^{\ast}\mid x_{i}\right\rangle \right)\leqslant\xi_{i}\quad\Longrightarrow\quad\frac{1}{m}\stackrel[i=1]{m}{\sum}\xi_{i}^{\ast}\leqslant\frac{1}{m}\stackrel[i=1]{m}{\sum}\xi_{i}
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $w^{\ast},\left\{ \xi_{i}^{\ast}\right\} _{i=1}^{m}$
+\end_inset
+
+ הוא פתרון אופטימלי לבעיה 
+\begin_inset Formula $\left(3\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Naive Bayes Classifiers}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

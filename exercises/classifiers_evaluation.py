@@ -1,5 +1,6 @@
 from IMLearn.learners.classifiers import Perceptron, LDA, GaussianNaiveBayes
 from typing import Tuple
+from typing import NoReturn
 from utils import *
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -36,16 +37,25 @@ def run_perceptron():
     Create a line plot that shows the perceptron algorithm's training loss values (y-axis)
     as a function of the training iterations (x-axis).
     """
-    for n, f in [("Linearly Separable", "linearly_separable.npy"), ("Linearly Inseparable", "linearly_inseparable.npy")]:
+    for n, f in [("Linearly Separable", "linearly_separable.npy"),
+                 ("Linearly Inseparable", "linearly_inseparable.npy")]:
         # Load dataset
-        raise NotImplementedError()
+        X, y = load_dataset(f"../datasets/{f}")
 
         # Fit Perceptron and record loss in each fit iteration
         losses = []
-        raise NotImplementedError()
+
+        def loss_callback(model: Perceptron, x_i: np.ndarray, y_i: int) -> NoReturn:
+            losses.append(model.loss(X, y))
+
+        Perceptron(callback=loss_callback).fit(X, y)
 
         # Plot figure of loss as function of fitting iteration
-        raise NotImplementedError()
+        go.Figure(
+            data=go.Scatter(x=np.arange(1, len(losses) + 1), y=losses, mode="markers + lines"),
+            layout=dict(title=f"Loss as a Function of Fitting Iteration - The {n} Case",
+                        xaxis_title=r"$\text{Iteration}$",
+                        yaxis=dict(title=r"$\text{Loss}$", range=[0, max(losses) + 0.1]))).show()
 
 
 def get_ellipse(mu: np.ndarray, cov: np.ndarray):
@@ -65,7 +75,8 @@ def get_ellipse(mu: np.ndarray, cov: np.ndarray):
         scatter: A plotly trace object of the ellipse
     """
     l1, l2 = tuple(np.linalg.eigvalsh(cov)[::-1])
-    theta = atan2(l1 - cov[0, 0], cov[0, 1]) if cov[0, 1] != 0 else (np.pi / 2 if cov[0, 0] < cov[1, 1] else 0)
+    theta = atan2(l1 - cov[0, 0], cov[0, 1]) if cov[0, 1] != 0 else (
+        np.pi / 2 if cov[0, 0] < cov[1, 1] else 0)
     t = np.linspace(0, 2 * pi, 100)
     xs = (l1 * np.cos(theta) * np.cos(t)) - (l2 * np.sin(theta) * np.sin(t))
     ys = (l1 * np.sin(theta) * np.cos(t)) + (l2 * np.cos(theta) * np.sin(t))
