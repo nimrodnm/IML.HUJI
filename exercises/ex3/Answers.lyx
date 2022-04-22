@@ -750,5 +750,605 @@ b
 
 \end_layout
 
+\begin_layout Subsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Cpatures/Q3.JPG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{a}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ כאשר הדגימות בעלות פיצ'ר בודד )חד-מימדיות( ההנחות של המודל 
+\begin_inset Formula $\text{Naive Bayes Classifier}$
+\end_inset
+
+ הן שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+y_{i} & \sim\text{Mult}\left(\boldsymbol{\pi}\right)\\
+x_{i}\mid y_{i} & \sim\mathcal{N}\left(\mu_{y_{i}},\sigma_{y_{i}}^{2}\right)
+\end{align*}
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $\boldsymbol{\pi}\in\left[0,1\right]^{K}$
+\end_inset
+
+ ומתקיים 
+\begin_inset Formula $\stackrel[j=1]{K}{\sum}\boldsymbol{\pi}_{j}=1$
+\end_inset
+
+, ובנוסף - 
+\begin_inset Formula $\sigma_{k}^{2},\mu_{k}\in\kaliReal$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\left[K\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+לכן כדי לאמן את המודל צריך לחשב אומד של 
+\begin_inset Formula $\left\{ \boldsymbol{\pi}_{k}\right\} _{k\in\left[K\right]}$
+\end_inset
+
+ - ההסתברויות של המחלקות, אומד של 
+\begin_inset Formula $\left\{ \mu_{k}\right\} _{k\in\left[K\right]}$
+\end_inset
+
+ - התוחלות של המחלקות, ואומד של 
+\begin_inset Formula $\left\{ \sigma_{k}^{2}\right\} _{k\in\left[k\right]}$
+\end_inset
+
+ - השונויות של המחלקות.
+ נחשב את ערך ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ בהינתן הדגימות:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right) & =f_{X,Y\mid\Theta}\left(\left\{ \left(x_{i},y_{i}\right)\right\} _{i=1}^{m}\right)=\stackrel[i=1]{m}{\prod}f_{X,Y\mid\Theta}\left(x_{i},y_{i}\right)=\\
+ & =\stackrel[i=1]{m}{\prod}f_{X\mid Y=y_{i}}\left(x_{i}\right)\cdot f_{Y\mid\Theta}\left(y_{i}\right)=\stackrel[i=1]{m}{\prod}\mathcal{N}\left(x_{i}\mid\mu_{y_{i}},\sigma_{y_{i}}^{2}\right)\cdot\text{Mult}\left(y_{i}\mid\boldsymbol{\pi}\right)=\\
+ & =\stackrel[i=1]{m}{\prod}\frac{1}{\sqrt{2\pi\sigma_{y_{i}}^{2}}}\cdot\exp\left(-\frac{\left(x_{i}-\mu_{y_{i}}\right)^{2}}{2\sigma_{y_{i}}^{2}}\right)\cdot\boldsymbol{\pi}_{y_{i}}
+\end{align*}
+
+\end_inset
+
+כדי למצוא 
+\begin_inset Formula $\text{argmax}$
+\end_inset
+
+ ל-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ נוכל להשתמש ב-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right) & =\ln\left(\stackrel[i=1]{m}{\prod}\frac{1}{\sqrt{2\pi\sigma_{y_{i}}^{2}}}\cdot\exp\left(-\frac{\left(x_{i}-\mu_{y_{i}}\right)^{2}}{2\sigma_{y_{i}}^{2}}\right)\cdot\boldsymbol{\pi}_{y_{i}}\right)=\\
+ & =\stackrel[i=1]{m}{\sum}\ln\left(\frac{1}{\sqrt{2\pi\sigma_{y_{i}}^{2}}}\cdot\exp\left(-\frac{\left(x_{i}-\mu_{y_{i}}\right)^{2}}{2\sigma_{y_{i}}^{2}}\right)\cdot\boldsymbol{\pi}_{y_{i}}\right)=\\
+ & =\stackrel[i=1]{m}{\sum}\Big[\ln\left(\left(2\pi\sigma_{y_{i}}^{2}\right)^{-\frac{1}{2}}\right)-\frac{\left(x_{i}-\mu_{y_{i}}\right)^{2}}{2\sigma_{y_{i}}^{2}}+\ln(\boldsymbol{\pi}_{y_{i}})\Big]=\\
+ & =\stackrel[i=1]{m}{\sum}\Big[\ln(\boldsymbol{\pi}_{y_{i}})-\frac{1}{2}\ln\left(2\pi\right)-\frac{1}{2}\ln\left(\sigma_{y_{i}}^{2}\right)-\frac{\left(x_{i}-\mu_{y_{i}}\right)^{2}}{2\sigma_{y_{i}}^{2}}\Big]=\\
+ & =\stackrel[i=1]{m}{\sum}\Big[\ln(\boldsymbol{\pi}_{y_{i}})-\frac{1}{2}\ln\left(\sigma_{y_{i}}^{2}\right)-\frac{\left(x_{i}-\mu_{y_{i}}\right)^{2}}{2\sigma_{y_{i}}^{2}}\Big]-\frac{m}{2}\ln\left(2\pi\right)=\\
+ & =\underset{\mathclap{k\in\left[K\right]}}{\sum}\Big[n_{k}\cdot\ln(\boldsymbol{\pi}_{k})-\frac{n_{k}}{2}\ln\left(\sigma_{k}^{2}\right)-\underset{\mathclap{i:\,y_{i}=k}}{\sum}\frac{\left(x_{i}-\mu_{k}\right)^{2}}{2\sigma_{k}^{2}}\Big]-\frac{m}{2}\ln\left(2\pi\right)
+\end{align*}
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $n_{k}=\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\left[K\right]$
+\end_inset
+
+.
+ כדי למצוא את ה-
+\begin_inset Formula $\text{argmax}$
+\end_inset
+
+ נגזור ביחס לפרמטרים השונים - 
+\begin_inset Formula $\boldsymbol{\pi}_{k},\mu_{k},\sigma_{k}^{2}$
+\end_inset
+
+ - ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+כדי לגזור ביחס ל-
+\begin_inset Formula $\boldsymbol{\pi}_{k}$
+\end_inset
+
+ נשתמש בשיטת כופלי לגרנז' - מכיוון שיש לנו את האילוץ 
+\begin_inset Formula $\underset{k\in\left[K\right]}{\sum}\boldsymbol{\pi}_{k}-1=0\iff\underset{k\in\left[K\right]}{\sum}\boldsymbol{\pi}_{k}=1$
+\end_inset
+
+ נגדיר:
+\begin_inset Formula 
+\[
+g\left(\boldsymbol{\pi}\right)=\underset{k\in\left[K\right]}{\sum}\boldsymbol{\pi}_{k}-1
+\]
+
+\end_inset
+
+ונגזור את - 
+\begin_inset Formula $\mathcal{L}=\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)-\lambda g\left(\boldsymbol{\pi}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ הוא משתנה חדש:
+\begin_inset Formula 
+\[
+\frac{\partial\mathcal{L}}{\partial\boldsymbol{\pi}_{k}}=\frac{\partial}{\partial\boldsymbol{\pi}_{k}}\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)-\lambda\frac{\partial}{\partial\boldsymbol{\pi}_{k}}g\left(\boldsymbol{\pi}\right)=\frac{n_{k}}{\boldsymbol{\pi}_{k}}-\lambda
+\]
+
+\end_inset
+
+נשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ונקבל ש-
+\begin_inset Formula 
+\[
+\frac{n_{k}}{\boldsymbol{\pi}_{k}}-\lambda=0\quad\iff\quad\boldsymbol{\pi}_{k}=\frac{n_{k}}{\lambda}
+\]
+
+\end_inset
+
+וכדי למצוא את 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ נציב באילוץ את הערך של 
+\begin_inset Formula $\boldsymbol{\pi}_{k}$
+\end_inset
+
+ שמצאנו:
+\begin_inset Formula 
+\[
+1=\underset{k\in\left[K\right]}{\sum}\boldsymbol{\pi}_{k}=\underset{k\in\left[K\right]}{\sum}\frac{n_{k}}{\lambda}\quad\iff\quad\lambda=m
+\]
+
+\end_inset
+
+לכן אומד להסתברויות של המחלקות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\boldsymbol{\pi}}_{k}^{\text{MLE}}=\frac{n_{k}}{m}}
+\]
+
+\end_inset
+
+נגזור ביחס ל-
+\begin_inset Formula $\mu_{k}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\mu_{k}}\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right) & =\frac{\partial}{\partial\mu_{k}}\Big(-\underset{\mathclap{i:\,y_{i}=k}}{\sum}\frac{\left(x_{i}-\mu_{k}\right)^{2}}{2\sigma_{k}^{2}}\Big)=-\underset{\mathclap{i:\,y_{i}=k}}{\sum}\frac{\partial}{\partial\mu_{k}}\Big(\frac{\left(x_{i}-\mu_{k}\right)^{2}}{2\sigma_{k}^{2}}\Big)=\underset{\mathclap{i:\,y_{i}=k}}{\sum}\frac{x_{i}-\mu_{k}}{\sigma_{k}^{2}}
+\end{align*}
+
+\end_inset
+
+ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\underset{\mathclap{i:\,y_{i}=k}}{\sum}\frac{x_{i}-\mu_{k}}{\sigma_{k}^{2}}=0\quad\iff\quad\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left(x_{i}-\mu_{k}\right)=0\quad\iff\quad n_{k}\mu_{k}=\underset{\mathclap{i:\,y_{i}=k}}{\sum}x_{i}\quad\iff\quad\mu_{k}=\frac{1}{n_{k}}\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}x_{i}
+\]
+
+\end_inset
+
+לכן אומד לתוחלות של המחלקות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\mu}_{k}^{\text{MLE}}=\frac{1}{n_{k}}\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}x_{i}}
+\]
+
+\end_inset
+
+נגזור ביחס ל-
+\begin_inset Formula $\sigma_{k}^{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\sigma_{k}^{2}}\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right) & =\frac{\partial}{\partial\sigma_{k}^{2}}\left(-\frac{n_{k}}{2}\ln\left(\sigma_{k}^{2}\right)\right)-\underset{\mathclap{i:\,y_{i}=k}}{\sum}\;\frac{\partial}{\partial\sigma_{k}^{2}}\Big(\frac{\left(x-\mu_{k}\right)^{2}}{2\sigma_{k}^{2}}\Big)=\\
+ & =-\frac{n_{k}}{2\sigma_{k}^{2}}+\,\underset{\mathclap{i:\,y_{i}=k}}{\sum}\,\frac{\left(x-\mu_{k}\right)^{2}}{2\left(\sigma_{k}^{2}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+-\frac{n_{k}}{2\sigma_{k}^{2}}+\underset{\mathclap{i:\,y_{i}=k}}{\sum}\frac{\left(x-\mu_{k}\right)^{2}}{2\left(\sigma_{k}^{2}\right)^{2}}=0\quad & \iff\quad\frac{\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left(x-\mu_{k}\right)^{2}-\sigma_{k}^{2}n_{k}}{2\left(\sigma_{k}^{2}\right)^{2}}=0\quad\iff\\
+ & \iff\quad\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left(x-\mu_{k}\right)^{2}-\sigma_{k}^{2}n_{k}=0\quad\,\iff\\
+ & \iff\quad\sigma_{k}^{2}=\frac{1}{n_{k}}\,\;\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left(x-\mu_{k}\right)^{2}
+\end{align*}
+
+\end_inset
+
+לכן אומד לשונויות של המחלקות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\sigma^{2}}_{k}^{\text{MLE}}=\frac{1}{n_{k}}\,\;\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left(x-\hat{\mu}_{k}^{\text{MLE}}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{b}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ כאשר הדגימות הן בעלות 
+\begin_inset Formula $d$
+\end_inset
+
+ פיצ'רים ההנחות של המודל 
+\begin_inset Formula $\text{Naive Bayes Classifier}$
+\end_inset
+
+ הן שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+y_{i} & \sim\text{Mult}\left(\boldsymbol{\pi}\right)\\
+\left[\text{\textbf{x}}_{i}\right]_{j}\mid y_{i} & \overset{\text{ind}}{\sim}\mathcal{N}\left(\mu_{y_{i},j},\sigma_{y_{i},j}^{2}\right)
+\end{align*}
+
+\end_inset
+
+כלומר הלייבל ה-
+\begin_inset Formula $i$
+\end_inset
+
+ מתפלג מולטינומי עם 
+\begin_inset Formula $\boldsymbol{\pi}\in\left[0,1\right]^{K}$
+\end_inset
+
+, 
+\begin_inset Formula $\underset{k\in\left[K\right]}{\sum}\boldsymbol{\pi}_{k}=1$
+\end_inset
+
+, והפיצ'ר ה-
+\begin_inset Formula $j$
+\end_inset
+
+ של כל דגימה 
+\begin_inset Formula $\text{\textbf{x}}_{i}\in\kaliReal^{d}$
+\end_inset
+
+ בהינתן 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ מתפלג נורמלי עם תוחלת 
+\begin_inset Formula $\mu_{y_{i},j}\in\kaliReal$
+\end_inset
+
+ ועם שונות 
+\begin_inset Formula $\sigma_{y_{i},j}^{2}\in\kaliReal$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+לכן כדי לאמן את המודל צריך למצוא אומד ל-
+\begin_inset Formula $\left\{ \boldsymbol{\pi}_{k}\right\} _{k\in\left[K\right]}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ \mu_{k,j}\right\} _{k\in\left[K\right]}^{j\in\left[d\right]}$
+\end_inset
+
+, 
+\begin_inset Formula $\{\sigma_{k,j}^{2}\}_{k\in\left[K\right]}^{j\in\left[d\right]}$
+\end_inset
+
+.
+ פונקציית ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right) & =f_{X,Y\mid\Theta}\left(\left\{ \left(\text{\textbf{x}}_{i},y_{i}\right)\right\} _{i=1}^{m}\right)=\stackrel[i=1]{m}{\prod}f_{X,Y\mid\Theta}\left(\text{\textbf{x}}_{i},y_{i}\right)=\\
+ & =\stackrel[i=1]{m}{\prod}f_{X\mid Y=y_{i}}\left(\text{\textbf{x}}_{i}\right)\cdot f_{Y|\Theta}\left(y_{i}\right)=\stackrel[i=1]{m}{\prod}f_{X_{1}\mid Y=y_{i},\ldots,X_{d}\mid Y=y_{i}}\left(\left[\text{\textbf{x}}_{i}\right]_{1},\ldots,\left[\text{\textbf{x}}_{i}\right]_{d}\right)\cdot f_{Y|\Theta}\left(y_{i}\right)=\\
+ & \overset{{\color{green}\sun}}{=}\stackrel[i=1]{m}{\prod}\Big[f_{Y|\Theta}\left(y_{i}\right)\cdot\stackrel[j=1]{d}{\prod}f_{X_{j}\mid Y=y_{i}}\left(\left[\text{\textbf{x}}_{i}\right]_{j}\right)\Big]=\\
+ & =\stackrel[i=1]{m}{\prod}\Big[\text{Mult}\left(y_{i}\mid\boldsymbol{\pi}\right)\cdot\stackrel[j=1]{d}{\prod}\mathcal{N}\left(\left[\text{\textbf{x}}_{i}\right]_{j}\mid\mu_{y_{i},j},\sigma_{y_{i},j}^{2}\right)\Big]=\\
+ & =\stackrel[i=1]{m}{\prod}\Big[\boldsymbol{\pi}_{y_{i}}\cdot\stackrel[j=1]{d}{\prod}\frac{1}{\sqrt{2\pi\sigma_{y_{i},j}^{2}}}\exp\left(-\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{y_{i},j}\right)^{2}}{2\sigma_{y_{i},j}^{2}}\right)\Big]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: לפי ההנחה של המודל ש-
+\begin_inset Formula $\left[\text{\textbf{x}}_{i}\right]_{j}\mid y_{i}\overset{\text{ind}}{\sim}\mathcal{N}\left(\mu_{y_{i},j},\sigma_{y_{i},j}^{2}\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+כדי למצוא 
+\begin_inset Formula $\text{argmax}$
+\end_inset
+
+ ל-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ נשתמש ב-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right) & =\ln\left(\stackrel[i=1]{m}{\prod}\Big[\boldsymbol{\pi}_{y_{i}}\cdot\stackrel[j=1]{d}{\prod}\frac{1}{\sqrt{2\pi\sigma_{y_{i},j}^{2}}}\exp\left(-\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{y_{i},j}\right)^{2}}{2\sigma_{y_{i},j}^{2}}\right)\Big]\right)=\\
+ & =\stackrel[i=1]{m}{\sum}\ln\left(\boldsymbol{\pi}_{y_{i}}\cdot\stackrel[j=1]{d}{\prod}\frac{1}{\sqrt{2\pi\sigma_{y_{i},j}^{2}}}\exp\left(-\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{y_{i},j}\right)^{2}}{2\sigma_{y_{i},j}^{2}}\right)\right)=\\
+ & =\stackrel[i=1]{m}{\sum}\Bigg[\ln(\boldsymbol{\pi}_{y_{i}})-\stackrel[j=1]{d}{\sum}\Big[\frac{1}{2}\ln\left(2\pi\right)+\frac{1}{2}\ln\left(\sigma_{y_{i},j}^{2}\right)+\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{y_{i},j}\right)^{2}}{2\sigma_{y_{i},j}^{2}}\Big]\Bigg]=\\
+ & =\stackrel[i=1]{m}{\sum}\Big[\ln(\boldsymbol{\pi}_{y_{i}})-\frac{1}{2}\stackrel[j=1]{d}{\sum}\ln\left(\sigma_{y_{i},j}^{2}\right)-\stackrel[j=1]{d}{\sum}\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{y_{i},j}\right)^{2}}{2\sigma_{y_{i},j}^{2}}\Big]-\frac{m\cdot d}{2}\ln\left(2\pi\right)=\\
+ & =\underset{\mathclap{k\in\left[K\right]}}{\sum}\Big[n_{k}\ln(\boldsymbol{\pi}_{k})-\frac{n_{k}}{2}\stackrel[j=1]{d}{\sum}\ln\left(\sigma_{k,j}^{2}\right)-\stackrel[i:\,y_{i}=k]{}{\sum}\stackrel[j=1]{d}{\sum}\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\sigma_{k,j}^{2}}\Big]-\frac{m\cdot d}{2}\ln\left(2\pi\right)
+\end{align*}
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $n_{k}=\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\left[K\right]$
+\end_inset
+
+.
+ כדי למצוא את ה-
+\begin_inset Formula $\text{argmax}$
+\end_inset
+
+ נגזור ביחס לפרמטרים - 
+\begin_inset Formula $\boldsymbol{\pi}_{k},\mu_{k,j},\sigma_{k,j}^{2}$
+\end_inset
+
+ - ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+כדי לגזור ביחס ל-
+\begin_inset Formula $\boldsymbol{\pi}_{k}$
+\end_inset
+
+ נשתמש בכופלי לגרנז'.
+ נגדיר -
+\begin_inset Formula 
+\[
+g\left(\boldsymbol{\pi}\right)=\underset{\mathclap{k\in\left[K\right]}}{\sum}\boldsymbol{\pi}_{k}-1
+\]
+
+\end_inset
+
+ונגזור את 
+\begin_inset Formula $\mathcal{L}=\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right)-\lambda g\left(\boldsymbol{\pi}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ הוא משתנה חדש:
+\begin_inset Formula 
+\[
+\frac{\partial\mathcal{L}}{\partial\boldsymbol{\pi}_{k}}=\frac{\partial}{\partial\boldsymbol{\pi}_{k}}\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right)-\frac{\partial}{\partial\boldsymbol{\pi}_{k}}\lambda g\left(\boldsymbol{\pi}\right)=\qquad\frac{n_{k}}{\boldsymbol{\pi}_{k}}-\lambda
+\]
+
+\end_inset
+
+נשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ונקבל ש- 
+\begin_inset Formula $\boldsymbol{\pi}_{k}=\frac{n_{k}}{\lambda}$
+\end_inset
+
+, וע
+\begin_inset Quotes erd
+\end_inset
+
+י הצבה של הערך הזה באילוץ נקבל ש- 
+\begin_inset Formula $1=\underset{\mathclap{k\in\left[K\right]}}{\sum}\frac{n_{k}}{\lambda}\;\iff\;\lambda=m$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+לכן אומד להסתברויות של המחלקות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\boldsymbol{\pi}}_{k}^{\text{MLE}}=\frac{n_{k}}{m}}
+\]
+
+\end_inset
+
+נגזור את 
+\begin_inset Formula $\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right)$
+\end_inset
+
+ ביחס ל-
+\begin_inset Formula $\mu_{k,j}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\mu_{k.j}}\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right) & =\frac{\partial}{\partial\mu_{k,j}}\Big(-\stackrel[i:\,y_{i}=k]{}{\sum}\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\sigma_{k,j}^{2}}\Big)=\\
+ & =-\stackrel[i:\,y_{i}=k]{}{\sum}\frac{\partial}{\partial\mu_{k,j}}\Big(\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\sigma_{k,j}^{2}}\Big)=\stackrel[i:\,y_{i}=k]{}{\sum}\frac{\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}}{\sigma_{k,j}^{2}}
+\end{align*}
+
+\end_inset
+
+ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\stackrel[i:\,y_{i}=k]{}{\sum}\frac{\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}}{\sigma_{k,j}^{2}}=0\quad\iff\quad\stackrel[i:\,y_{i}=k]{}{\sum}\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)=0\quad\iff\quad\mu_{k,j}=\frac{1}{n_{k}}\stackrel[i:\,y_{i}=k]{}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}
+\]
+
+\end_inset
+
+לכן אומד לתוחלות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]\,,\,j\in\left[d\right]:\quad\boxed{\hat{\mu}_{k,j}^{\text{MLE}}=\frac{1}{n_{k}}\stackrel[i:\,y_{i}=k]{}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}}
+\]
+
+\end_inset
+
+נגזור ביחס ל-
+\begin_inset Formula $\sigma_{k,j}^{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\sigma_{k,j}^{2}}\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right) & =\frac{\partial}{\partial\sigma_{k,j}^{2}}\left(-\frac{n_{k}}{2}\stackrel[j=1]{d}{\sum}\ln\left(\sigma_{k,j}^{2}\right)-\stackrel[i:\,y_{i}=k]{}{\sum}\stackrel[j=1]{d}{\sum}\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\sigma_{k,j}^{2}}\right)=\\
+ & =-\frac{n_{k}}{2}\cdot\frac{\partial}{\partial\sigma_{k,j}^{2}}\ln\left(\sigma_{k,j}^{2}\right)-\stackrel[i:\,y_{i}=k]{}{\sum}\frac{\partial}{\partial\sigma_{k,j}^{2}}\Big(\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\sigma_{k,j}^{2}}\Big)=\\
+ & =-\frac{n_{k}}{2\sigma_{k,j}^{2}}+\stackrel[i:\,y_{i}=k]{}{\sum}\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\left(\sigma_{k,j}^{2}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+ונשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+-\frac{n_{k}}{2\sigma_{k,j}^{2}}+\stackrel[\mathclap{i:\,y_{i}=k}]{}{\sum}\frac{\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}}{2\left(\sigma_{k,j}^{2}\right)^{2}}=0\quad & \iff\quad\frac{\stackrel[\mathclap{i:\,y_{i}=k}]{}{\sum}\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}-\sigma_{k,j}^{2}n_{k}}{2\left(\sigma_{k,j}^{2}\right)^{2}}=0\quad\iff\\
+ & \iff\quad\sigma_{k,j}^{2}=\frac{1}{n_{k}}\,\;\stackrel[\mathclap{i:\,y_{i}=k}]{}{\sum}\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\mu_{k,j}\right)^{2}
+\end{align*}
+
+\end_inset
+
+לכן אומד לשונויות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]\,,\,j\in\left[d\right]:\quad\boxed{\hat{\sigma^{2}}_{k,j}^{\text{MLE}}=\frac{1}{n_{k}}\,\;\stackrel[\mathclap{i:\,y_{i}=k}]{}{\sum}\left(\left[\text{\textbf{x}}_{i}\right]_{j}-\hat{\mu}_{k,j}^{\text{MLE}}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

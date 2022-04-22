@@ -1,5 +1,6 @@
 from typing import NoReturn
 from IMLearn.base import BaseEstimator
+from IMLearn.metrics import misclassification_error
 import numpy as np
 from numpy.linalg import det, inv
 
@@ -49,24 +50,24 @@ class LDA(BaseEstimator):
         """
         m, d = X.shape  # m is the number of samples, d is the number of features
 
-        # Get the classes and the amount of y values for each class:
+        # Get the classes and the amount of samples from each class:
         self.classes_, counts = np.unique(y, return_counts=True)
 
         # Calculate class probabilities:
+        # self.pi_ = {self.classes_[i]: (counts[i] / m) for i in range(self.classes_.size)}
         self.pi_ = np.array([counts[i] / m for i in range(self.classes_.size)])
 
-        # Calculate expectation estimator for every class:
-        mus = dict()
-        for clas in self.classes_:
-            # estimator is the mean of the rows of X such that the y entry is from the class 'clas'
-            mus[clas] = X[y == clas, :].mean(axis=0)  # TODO: validate
-        self.mu_ = np.array(list(mus.values()))
+        # Calculate expectation estimation for every class:
+        # self.mu_ = {clas: X[y == clas, :].mean(axis=0) for clas in self.classes_}
+        self.mu_ = np.empty((self.classes_.size, d))
+        for i in range(self.classes_.size):
+            self.mu_[i, :] = X[y == self.classes_[i], :].mean(axis=0)
 
-        # Calculate covariance matrix estimator:
+        # Calculate covariance matrix estimation:
         self.cov_ = np.zeros((d, d))
-        for i in range(m):
-            centered_row = X[i, :] - mus[y[i]]
-            self.cov_ += np.outer(centered_row, centered_row)
+        for i in range(self.classes_.size):
+            centered = X[y == self.classes_[i], :] - self.mu_[i]
+            self.cov_ += centered.T @ centered
         self.cov_ /= m - self.classes_.size
         self._cov_inv = inv(self.cov_)
 
@@ -102,33 +103,20 @@ class LDA(BaseEstimator):
         -------
         The prediction for the given sample.
         """
-        # TODO: important!:
-        #       Im assuming here that the values in self.classes_ and in self.mu_ share indices -
-        #       meaning that the mu in self.mu_[i] is the correct mu for the class in
-        #       self.classes_[i].
-        #       It depends on the implementation of _fit (mainly depends on python dict to keep the
-        #       order of the items).
-        #       It might be better to hold a dict attribute of the class that will map each class
-        #       value (aka 'k') in self.classes_ to its corresponding mu (aka 'mu_k') in self.mu_.
-        #       This is also true regarding self.pi_ (the class probabilities).
-        max_k = (self.__a(0).T @ x) + self.__b(0)
-        argmax = self.classes_[0]
-        for i in range(1, self.classes_.size):
-            cur_k = (self.__a(i).T @ x) + self.__b(i)
-            if cur_k > max_k:
-                max_k = cur_k
-                argmax = self.classes_[i]
-        return argmax
+        results = np.array([(self.__a(i).T @ x) + self.__b(i) for i in range(self.classes_.size)])
+        return self.classes_[np.argmax(results)]
 
     def __a(self, i: int) -> np.ndarray:
         """
-        TODO: add doc
+        Parameters:
+            i : index of class of self.classes_
         """
         return self._cov_inv @ self.mu_[i]
 
     def __b(self, i: int) -> np.ndarray:
         """
-        TODO: add doc
+        Parameters:
+            i : index of class of self.classes_
         """
         return np.log(self.pi_[i]) - 0.5 * np.inner(self._cov_inv.T @ self.mu_[i], self.mu_[i])
 
@@ -150,7 +138,16 @@ class LDA(BaseEstimator):
         if not self.fitted_:
             raise ValueError("Estimator must first be fitted before calling `likelihood` function")
 
-        raise NotImplementedError()
+        m, d = X.shape  # m is the number of samples, d is the number of features
+        const = np.sqrt(((2 * np.pi) ** d) * det(self.cov_))
+
+        likelihoods = np.empty((m, self.classes_.size))
+        for i in range(self.classes_.size):
+            centered = X - self.mu_[i]
+            mahalanobis = np.einsum("bi,ij,bj->b", centered, self._cov_inv, centered)
+            likelihoods[:, i] = self.pi_[i] * np.exp(-0.5 * mahalanobis) / const
+
+        return likelihoods
 
     def _loss(self, X: np.ndarray, y: np.ndarray) -> float:
         """
@@ -169,13 +166,16 @@ class LDA(BaseEstimator):
         loss : float
             Performance under missclassification loss function
         """
-        from ...metrics import misclassification_error
-        raise NotImplementedError()
+        return misclassification_error(y, self._predict(X))
 
 
 if __name__ == '__main__':
-    X = np.array([[1, 3], [2, 5], [4, 4]])
-    y = np.array([1, 0, 1])
+    data = np.load("G:/My Drive/Semester_4/IML/IML.HUJI/datasets/gaussian1.npy")
+    X = data[:, :2]
+    y = data[:, 2]
     lda = LDA()
     lda.fit(X, y)
+    # print(lda.cov_)
+    # print(lda.mu_)
     print(lda.predict(X))
+    # print(lda.likelihood(X))
