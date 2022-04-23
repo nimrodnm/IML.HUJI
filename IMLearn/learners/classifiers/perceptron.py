@@ -122,7 +122,6 @@ class Perceptron(BaseEstimator):
                 self.callback_(self, X[i, :], y[i])
                 return False
 
-        self.callback_(self, X[-1, :], y[-1])
         return True
 
     def _predict(self, X: np.ndarray) -> np.ndarray:

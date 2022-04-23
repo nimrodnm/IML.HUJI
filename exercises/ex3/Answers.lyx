@@ -807,7 +807,7 @@ status open
 \end_inset
 
  כאשר הדגימות בעלות פיצ'ר בודד )חד-מימדיות( ההנחות של המודל 
-\begin_inset Formula $\text{Naive Bayes Classifier}$
+\begin_inset Formula $\text{Gaussian Naive Bayes}$
 \end_inset
 
  הן שלכל 
@@ -1350,6 +1350,426 @@ g\left(\boldsymbol{\pi}\right)=\underset{\mathclap{k\in\left[K\right]}}{\sum}\bo
 
 \end_layout
 
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Cpatures/Q4.JPG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{a}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ כאשר הדגימות הן בעלות פיצ'ר בודד ההנחות של המודל 
+\begin_inset Formula $\text{Poisson Naive Bayes}$
+\end_inset
+
+ הן שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+y_{i} & \sim\text{Mult}\left(\boldsymbol{\pi}\right)\\
+x_{i}\mid y_{i} & \overset{\text{ind}}{\sim}\text{Poi}(\lambda_{y_{i}})
+\end{align*}
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $\boldsymbol{\pi}\in\left[0,1\right]^{K}$
+\end_inset
+
+, 
+\begin_inset Formula $\underset{k\in\left[K\right]}{\sum}\boldsymbol{\pi}_{k}=1$
+\end_inset
+
+.
+ כדי לאמן את המודל צריך לחשב אומד של 
+\begin_inset Formula $\left\{ \boldsymbol{\pi}_{k}\right\} _{k\in\left[K\right]}$
+\end_inset
+
+ ושל 
+\begin_inset Formula $\left\{ \lambda_{k}\right\} _{k\in\left[K\right]}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נתחיל בחישוב פונקציית ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right) & =p_{X,Y\mid\Theta}\left(\left\{ \left(x_{i},y_{i}\right)\right\} _{i=1}^{m}\right)=\stackrel[i=1]{m}{\prod}p_{X,Y\mid\Theta}\left(x_{i},y_{i}\right)=\stackrel[i=1]{m}{\prod}p_{X\mid Y=y_{i}}\left(x_{i}\right)\cdot f_{Y\mid\Theta}\left(y_{i}\right)=\\
+ & =\stackrel[i=1]{m}{\prod}\text{Poi}\left(x_{i}\mid\lambda_{y_{i}}\right)\cdot\text{Mult}\left(y_{i}\mid\boldsymbol{\pi}\right)=\stackrel[i=1]{m}{\prod}\frac{e^{-\lambda_{y_{i}}}\cdot(\lambda_{y_{i}})^{x_{i}}}{x_{i}!}\cdot\boldsymbol{\pi}_{y_{i}}
+\end{align*}
+
+\end_inset
+
+כדי למקסם את ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ אפשר למקסם את ה-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right) & =\ln\left(\stackrel[i=1]{m}{\prod}\frac{e^{-\lambda_{y_{i}}}\cdot(\lambda_{y_{i}})^{x_{i}}}{x_{i}!}\cdot\boldsymbol{\pi}_{y_{i}}\right)=\stackrel[i=1]{m}{\sum}\Big[\ln\left(\frac{e^{-\lambda_{y_{i}}}\cdot(\lambda_{y_{i}})^{x_{i}}}{x_{i}!}\right)+\ln(\boldsymbol{\pi}_{y_{i}})\Big]=\\
+ & =\stackrel[i=1]{m}{\sum}\Big[\ln\left(e^{-\lambda_{y_{i}}}\right)+\ln\left((\lambda_{y_{i}})^{x_{i}}\right)-\ln\left(x_{i}!\right)+\ln(\boldsymbol{\pi}_{y_{i}})\Big]=\\
+ & =\stackrel[i=1]{m}{\sum}\Big[-\lambda_{y_{i}}+x_{i}\cdot\ln(\lambda_{y_{i}})-\ln\left(x_{i}!\right)+\ln\left(\boldsymbol{\pi}_{y_{i}}\right)\Big]=\\
+ & =\underset{\mathclap{k\in\left[K\right]}}{\sum}\Big[-n_{k}\lambda_{k}+\ln(\lambda_{k})\cdot\underset{\mathclap{i:\,y_{i}=k}}{\sum}x_{i}-\underset{\mathclap{i:\,y_{i}=k}}{\sum}\ln\left(x_{i}!\right)+n_{k}\ln(\boldsymbol{\pi}_{k})\Big]
+\end{align*}
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $n_{k}=\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\left[K\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נגזור ביחס לפרמטר 
+\begin_inset Formula $\boldsymbol{\pi}_{k}$
+\end_inset
+
+ בעזרת כופלי לגרנז.
+ נגדיר 
+\begin_inset Formula $g\left(\boldsymbol{\pi}\right)=\underset{\mathclap{k\in\left[K\right]}}{\sum}\boldsymbol{\pi}_{k}-1$
+\end_inset
+
+ ונגזור את 
+\begin_inset Formula $\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)-\gamma g\left(\boldsymbol{\pi}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ הוא משתנה חדש:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\boldsymbol{\pi}_{k}}\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)-\gamma\frac{\partial}{\partial\boldsymbol{\pi}_{k}}g\left(\boldsymbol{\pi}\right)=\frac{n_{k}}{\boldsymbol{\pi}_{k}}-\gamma
+\]
+
+\end_inset
+
+נשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ונקבל ש- 
+\begin_inset Formula $\boldsymbol{\pi}_{k}=\frac{n_{k}}{\gamma}$
+\end_inset
+
+, וע
+\begin_inset Quotes erd
+\end_inset
+
+י הצבה של הערך הזה באילוץ נקבל ש- 
+\begin_inset Formula $\gamma=\underset{\mathclap{k\in\left[K\right]}}{\sum}n_{k}=m$
+\end_inset
+
+.
+ לכן אומד להסתברויות של המחלקות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\boldsymbol{\pi}}_{k}^{\text{MLE}}=\frac{n_{k}}{m}}
+\]
+
+\end_inset
+
+נגזור את 
+\begin_inset Formula $\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)$
+\end_inset
+
+ ביחס ל-
+\begin_inset Formula $\lambda_{k}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\lambda_{k}}\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)=-n_{k}+\frac{1}{\lambda_{k}}\cdot\underset{\mathclap{i:\,y_{i}=k}}{\sum}x_{i}-0+0
+\]
+
+\end_inset
+
+נשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ונקבל:
+\begin_inset Formula 
+\[
+-n_{k}+\frac{1}{\lambda_{k}}\cdot\underset{\mathclap{i:\,y_{i}=k}}{\sum}x_{i}=0\quad\iff\quad\lambda_{k}=\frac{1}{n_{k}}\,\;\underset{\mathclap{i:\,y_{i}=k}}{\sum}x_{i}=\frac{1}{n_{k}}\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}\cdot x_{i}
+\]
+
+\end_inset
+
+לכן אומד מתאים לפרמטרים של ההתפלגות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\lambda}_{k}^{\text{MLE}}=\frac{1}{n_{k}}\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}\cdot x_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{b}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ כאשר הדגימות 
+\begin_inset Formula $\left\{ \left(\text{\textbf{x}}_{i},y_{i}\right)\right\} _{i=1}^{m}$
+\end_inset
+
+ הן בעלות 
+\begin_inset Formula $d$
+\end_inset
+
+ פיצ'רים ההנחות של המודל 
+\begin_inset Formula $\text{Poisson Naive Bayes}$
+\end_inset
+
+ הן שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+y_{i} & \sim\text{Mult}\left(\boldsymbol{\pi}\right)\\
+\left[\text{\textbf{x}}_{i}\right]_{j}\mid y_{i} & \overset{\text{ind}}{\sim}\text{Poi}(\lambda_{y_{i},j})
+\end{align*}
+
+\end_inset
+
+כדי לאמן את המודל צריך לחשב אומדים להסתברויות של המחלקות 
+\begin_inset Formula $\left\{ \boldsymbol{\pi}_{k}\right\} _{k\in\left[K\right]}$
+\end_inset
+
+ ולפרמטרים של ההתפלגות פואסון 
+\begin_inset Formula $\left\{ \lambda_{k,j}\right\} _{k\in\left[K\right]}^{j\in\left[d\right]}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נחשב את פונקציית ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{L}\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right) & =p_{X,Y\mid\Theta}\left(\left\{ \left(\text{\textbf{x}}_{i},y_{i}\right)\right\} _{i=1}^{m}\right)=\stackrel[i=1]{m}{\prod}p_{X,Y\mid\Theta}\left(\text{\textbf{x}}_{i},y_{i}\right)=\stackrel[i=1]{m}{\prod}p_{X\mid Y=y_{i}}\left(\text{\textbf{x}}_{i}\right)\cdot p_{Y\mid\Theta}\left(y_{i}\right)=\\
+ & =\stackrel[i=1]{m}{\prod}p_{X_{1}\mid Y=y_{i},\ldots,X_{d}\mid Y=y_{i}}\left(\left[\text{\textbf{x}}_{i}\right]_{1},\ldots,\left[\text{\textbf{x}}_{i}\right]_{d}\right)\cdot p_{Y\mid\Theta}\left(y_{i}\right)\overset{{\color{green}\sun}}{=}\stackrel[i=1]{m}{\prod}\Big[p_{Y\mid\Theta}\left(y_{i}\right)\cdot\stackrel[j=1]{d}{\prod}p_{X_{j}\mid Y=y_{i}}\left(\left[\text{\textbf{x}}_{i}\right]_{j}\right)\Big]\\
+ & =\stackrel[i=1]{m}{\prod}\Big[\text{Mult}\left(y_{i}\mid\boldsymbol{\pi}\right)\cdot\stackrel[j=1]{d}{\prod}\text{Pois}\left(\left[\text{\textbf{x}}_{i}\right]_{j}\mid\lambda_{y_{i},j}\right)\Big]=\stackrel[i=1]{m}{\prod}\Big[\boldsymbol{\pi}_{y_{i}}\cdot\stackrel[j=1]{d}{\prod}\frac{e^{-\lambda_{y_{i},j}}\cdot(\lambda_{y_{i},j})^{\left[\text{\textbf{x}}_{i}\right]_{j}}}{\left[\text{\textbf{x}}_{i}\right]_{j}!}\Big]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: לפי ההנחה של המודל שהפיצ'רים בלתי תלויים.
+\begin_inset Newline newline
+\end_inset
+
+כדי למקסם את ה-
+\begin_inset Formula $\text{likelihood}$
+\end_inset
+
+ אפשר למקסם את ה-
+\begin_inset Formula $\text{log-likelihood}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right) & =\ln\left(\stackrel[i=1]{m}{\prod}\Big[\boldsymbol{\pi}_{y_{i}}\cdot\stackrel[j=1]{d}{\prod}\frac{e^{-\lambda_{y_{i},j}}\cdot(\lambda_{y_{i},j})^{\left[\text{\textbf{x}}_{i}\right]_{j}}}{\left[\text{\textbf{x}}_{i}\right]_{j}!}\Big]\right)=\stackrel[i=1]{m}{\sum}\ln\left(\boldsymbol{\pi}_{y_{i}}\cdot\stackrel[j=1]{d}{\prod}\frac{e^{-\lambda_{y_{i},j}}\cdot(\lambda_{y_{i},j})^{\left[\text{\textbf{x}}_{i}\right]_{j}}}{\left[\text{\textbf{x}}_{i}\right]_{j}!}\right)=\\
+ & =\stackrel[i=1]{m}{\sum}\bigg[\ln(\boldsymbol{\pi}_{y_{i}})+\ln\left(\stackrel[j=1]{d}{\prod}\frac{e^{-\lambda_{y_{i},j}}\cdot(\lambda_{y_{i},j})^{\left[\text{\textbf{x}}_{i}\right]_{j}}}{\left[\text{\textbf{x}}_{i}\right]_{j}!}\right)\bigg]=\\
+ & =\stackrel[i=1]{m}{\sum}\bigg[\ln(\boldsymbol{\pi}_{y_{i}})+\stackrel[j=1]{d}{\sum}\Big[-\lambda_{y_{i},j}+\left[\text{\textbf{x}}_{i}\right]_{j}\cdot\ln(\lambda_{y_{i},j})-\ln(\left[\text{\textbf{x}}_{i}\right]_{j})\Big]\bigg]=\\
+ & =\stackrel[i=1]{m}{\sum}\bigg[\ln(\boldsymbol{\pi}_{y_{i}})-\stackrel[j=1]{d}{\sum}\lambda_{y_{i},j}+\stackrel[j=1]{d}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}\cdot\ln(\lambda_{y_{i},j})-\stackrel[j=1]{d}{\sum}\ln(\left[\text{\textbf{x}}_{i}\right]_{j})\bigg]=\\
+ & =\underset{\mathclap{k\in\left[K\right]}}{\sum}\bigg[n_{k}\ln(\boldsymbol{\pi}_{k})-n_{k}\stackrel[j=1]{d}{\sum}\lambda_{k,j}+\stackrel[j=1]{d}{\sum}\Big[\ln(\lambda_{k,j})\cdot\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}\Big]-\underset{i:\,y_{i}=k}{\sum}\stackrel[j=1]{d}{\sum}\ln(\left[\text{\textbf{x}}_{i}\right]_{j})\bigg]
+\end{align*}
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $n_{k}=\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $k\in\left[K\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נגזור ביחס לפרמטר 
+\begin_inset Formula $\boldsymbol{\pi}_{k}$
+\end_inset
+
+ בעזרת כופלי לגרנז.
+ נגדיר 
+\begin_inset Formula $g\left(\boldsymbol{\pi}\right)=\underset{\mathclap{k\in\left[K\right]}}{\sum}\boldsymbol{\pi}_{k}-1$
+\end_inset
+
+ ונגזור את 
+\begin_inset Formula $\ell\left(\Theta\mid\text{\textbf{x}},\text{\textbf{y}}\right)-\gamma g\left(\boldsymbol{\pi}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ הוא משתנה חדש:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\boldsymbol{\pi}_{k}}\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right)-\gamma\frac{\partial}{\partial\boldsymbol{\pi}_{k}}g\left(\boldsymbol{\pi}\right)=\frac{n_{k}}{\boldsymbol{\pi}_{k}}-\gamma
+\]
+
+\end_inset
+
+נשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ונקבל ש- 
+\begin_inset Formula $\boldsymbol{\pi}_{k}=\frac{n_{k}}{\gamma}$
+\end_inset
+
+, וע
+\begin_inset Quotes erd
+\end_inset
+
+י הצבה של הערך הזה באילוץ נקבל ש- 
+\begin_inset Formula $\gamma=\underset{\mathclap{k\in\left[K\right]}}{\sum}n_{k}=m$
+\end_inset
+
+.
+ לכן אומד להסתברויות של המחלקות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]:\quad\boxed{\hat{\boldsymbol{\pi}}_{k}^{\text{MLE}}=\frac{n_{k}}{m}}
+\]
+
+\end_inset
+
+נגזור את 
+\begin_inset Formula $\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right)$
+\end_inset
+
+ ביחס ל-
+\begin_inset Formula $\lambda_{k,j}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\lambda_{k,j}}\ell\left(\Theta\mid\text{\textbf{X}},\text{\textbf{y}}\right)=0-n_{k}+\frac{1}{\lambda_{k,j}}\cdot\,\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}-0
+\]
+
+\end_inset
+
+נשווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ונקבל:
+\begin_inset Formula 
+\[
+-n_{k}+\frac{1}{\lambda_{k,j}}\cdot\,\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}=0\;\iff\;-n_{k}\lambda_{k,j}+\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}=0\;\iff\;\lambda_{k,j}=\frac{1}{n_{k}}\cdot\,\underset{\mathclap{i:\,y_{i}=k}}{\sum}\left[\text{\textbf{x}}_{i}\right]_{j}=\frac{1}{n_{k}}\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}\cdot\left[\text{\textbf{x}}_{i}\right]_{j}
+\]
+
+\end_inset
+
+לכן אומד מתאים לפרמטרים של ההתפלגות הוא:
+\begin_inset Formula 
+\[
+\kaliForall k\in\left[K\right]\,,\,j\in\left[d\right]:\quad\boxed{\hat{\lambda}_{k,j}^{\text{MLE}}=\frac{1}{n_{k}}\stackrel[i=1]{m}{\sum}\mathds{1}_{\left[y_{i}=k\right]}\cdot\left[\text{\textbf{x}}_{i}\right]_{j}}
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
@@ -1456,8 +1876,8 @@ status open
 \align right
 \begin_inset Graphics
 	filename Perceptron_Q1_plot.PNG
-	lyxscale 75
-	scale 75
+	lyxscale 73
+	scale 73
 
 \end_inset
 
@@ -1700,6 +2120,98 @@ y_{i}\cdot\left\langle w\mid x_{i}\right\rangle >0
 \end_inset
 
 .
+ כלומר - הפיצ'רים בדאטא הם בלתי תלויים, ו
+\numeric on
+3-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+המחלקות נדגמו עם התפלגות נורמלית סביב
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הנקודות )שמסומנות ב-
+\begin_inset Formula $\times$
+\end_inset
+
+( שניתן לראות בגרף.
+\end_layout
+
+\begin_layout Standard
+להס
 \end_layout
 
 \begin_layout Standard
@@ -1766,11 +2278,117 @@ y_{i}\cdot\left\langle w\mid x_{i}\right\rangle >0
 \end_inset
 
 .
- לכן אפשר להסיק שההתפלגות שממנה נדגם הדאטא דומה יותר להתפלגות ש-
+ 
+\end_layout
+
+\begin_layout Standard
+באמת ניתן לראות שבדאטא הזה דווקא 
+\series bold
+יש
+\series default
+ תלות בין הפיצ'רים.
+ דרך אחת לראות זאת היא ע
+\begin_inset Quotes erd
+\end_inset
+
+י האליפסות שבגרפים המציגות את מטריצת השונות המשותפת של הפיצ'רים - ה-
 \begin_inset Formula $\text{LDA}$
 \end_inset
 
- מניח.
+ לא מניח אי-תלות בין הפיצ'רים והוא באמת בונה מודל שבו השונות המשותפת שלהם
+ שונה מ-
+\begin_inset Formula $0$
+\end_inset
+
+.
+ לעומת זאת ההנחה של ה-
+\begin_inset Formula $\text{GNB}$
+\end_inset
+
+ שהשונות המשותפת היא 
+\begin_inset Formula $0$
+\end_inset
+
+ גורמת לכך שהוא חוזה את הפיזור של הנקודות באופן פחות מדוייק.
+\end_layout
+
+\begin_layout Standard
+בנוסף ניתן לראות גם שכאשר הערך בציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ גדל - כלומר הערך של הפיצ'ר הראשון גדל - גם הערך בציר ה-
+\begin_inset Formula $y$
+\end_inset
+
+ גדל - כלומר הערך של הפיצ'ר השני גדל.
+\end_layout
+
+\begin_layout Standard
+מעבר לכך מכיוון שה-
+\begin_inset Formula $\text{LDA}$
+\end_inset
+
+ זיהה ברמת דיוק גבוהה את הנקודות ניתן להסיק שההתפלגות שממנה נדגם הדאטא היא
+ מהתפלגות נורמלית עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מוקדים שקרובים לנקודות )שמסומנות ב-
+\begin_inset Formula $\times$
+\end_inset
+
+( שניתן לראות בגרף.
 \end_layout
 
 \end_body
