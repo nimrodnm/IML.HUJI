@@ -58,7 +58,7 @@ class GaussianNaiveBayes(BaseEstimator):
         self.vars_ = np.empty((self.classes_.size, d))
         for i in range(self.classes_.size):
             centered = X[y == self.classes_[i], :] - self.mu_[i]
-            self.vars_[i, :] = (1 / counts[i]) * (centered ** 2).sum(axis=0)
+            self.vars_[i, :] = (1 / (counts[i] - 1)) * (centered ** 2).sum(axis=0)
 
     def _predict(self, X: np.ndarray) -> np.ndarray:
         """
@@ -100,8 +100,8 @@ class GaussianNaiveBayes(BaseEstimator):
         likelihoods = np.empty((m, self.classes_.size))
         for i in range(self.classes_.size):
             centered = - ((X - self.mu_[i, :]) ** 2) / (2 * self.vars_[i, :])
-            denominator = np.sqrt(2 * np.pi * self.vars_[i, :])
-            likelihoods[:, i] = self.pi_[i] * np.prod((1 / denominator) * np.exp(centered), axis=1)
+            factor = 1 / (np.sqrt(2 * np.pi * self.vars_[i, :]))
+            likelihoods[:, i] = self.pi_[i] * np.prod(factor * np.exp(centered), axis=1)
 
         return likelihoods
 
@@ -123,13 +123,3 @@ class GaussianNaiveBayes(BaseEstimator):
             Performance under missclassification loss function
         """
         return misclassification_error(y, self._predict(X))
-
-
-if __name__ == '__main__':
-    data = np.load("G:/My Drive/Semester_4/IML/IML.HUJI/datasets/gaussian1.npy")
-    X = data[:, :2]
-    y = data[:, 2]
-    GNB = GaussianNaiveBayes()
-    GNB.fit(X, y)
-    print(GNB.predict(X))
-    # print(GNB.likelihood(X))

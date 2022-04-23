@@ -750,7 +750,7 @@ b
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
 שאלה
 \family roman
 \series bold
@@ -1348,6 +1348,429 @@ g\left(\boldsymbol{\pi}\right)=\underset{\mathclap{k\in\left[K\right]}}{\sum}\bo
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק פרקטי
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Perceptron Classifier}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+גרף המציג את ההתקדמות של האלגוריתם על הדאטא שניתן להפרדה ליניארית - מציג
+ את ערך ה-
+\begin_inset Formula $\text{Loss}$
+\end_inset
+
+ על ה-
+\begin_inset Formula $\text{training data}$
+\end_inset
+
+ כפונקציה של מספר האיטרציות של האלגוריתם:
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "b"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align right
+\begin_inset Graphics
+	filename Perceptron_Q1_plot.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שלאחר 
+\begin_inset Formula $50$
+\end_inset
+
+ איטרציות של האלגוריתם הוא מתכנס - ערך ה-
+\begin_inset Formula $\text{Loss}$
+\end_inset
+
+ שווה ל-
+\begin_inset Formula $0$
+\end_inset
+
+ ממש.
+ כלומר האלגוריתם מצליח להפריד ליניארית את הדאטא.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "30col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+גרף המציג את ההתקדמות של האלגוריתם על הדאטא ש
+\series bold
+לא
+\series default
+ ניתן להפרדה ליניארית:
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "b"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Perceptron_Q2_plot.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ההבדל בין שני הגרפים ניכר - רואים בגרף השני שהאלגוריתם 
+\series bold
+לא מתכנס
+\series default
+ על הדאטא שלא ניתן להפרדה ליניארית - גם אחרי 
+\begin_inset Formula $1000$
+\end_inset
+
+ איטרציות של האלגוריתם ערך ה-
+\begin_inset Formula $\text{Loss}$
+\end_inset
+
+ נשאר גדול מ-
+\begin_inset Formula $0$
+\end_inset
+
+, כלומר האלגוריתם לא מצליח להפריד ליניארית את הדאטא.
+\end_layout
+
+\begin_layout Standard
+במונחים פורמליים - רק עבור הדאטא שניתן להפרדה ליניארית האלגוריתם מצא וקטור
+ 
+\begin_inset Formula $w\in\kaliReal^{d+1}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula 
+\[
+y_{i}\cdot\left\langle w\mid x_{i}\right\rangle >0
+\]
+
+\end_inset
+
+)כשמוסיפים ל-
+\begin_inset Formula $x$
+\end_inset
+
+ את ה-
+\begin_inset Formula $\text{intercept}$
+\end_inset
+
+ כדי שהעל-מישור יוכל לא לעבור בראשית הצירים(.
+ עבור הדאטא שאינו ניתן להפרדה ליניארית לא קיים וקטור 
+\begin_inset Formula $w$
+\end_inset
+
+ כזה, ולכן האלגוריתם לא התכנס.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Bayes Classifiers}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+הגרף הנדרש:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Bayes_gaussian1_plot.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לפי הגרפים הללו אפשר להסיק שההתפלגות שממנה נדגם הדאטא דומה יותר להתפלגות
+ שהמודל 
+\begin_inset Formula $\text{Gaussian Naive Bayes}$
+\end_inset
+
+ מניח, כי הוא הצליח להפריד את הדאטא קצת יותר טוב מה-
+\begin_inset Formula $\text{LDA}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+הגרף:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Bayes_gaussian2_plot.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בתרחיש הזה, דווקא המודל 
+\begin_inset Formula $\text{LDA}$
+\end_inset
+
+ הפריד את הדאטא יותר טוב מאשר ה-
+\begin_inset Formula $\text{GNB}$
+\end_inset
+
+.
+ לכן אפשר להסיק שההתפלגות שממנה נדגם הדאטא דומה יותר להתפלגות ש-
+\begin_inset Formula $\text{LDA}$
+\end_inset
+
+ מניח.
 \end_layout
 
 \end_body

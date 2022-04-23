@@ -54,11 +54,9 @@ class LDA(BaseEstimator):
         self.classes_, counts = np.unique(y, return_counts=True)
 
         # Calculate class probabilities:
-        # self.pi_ = {self.classes_[i]: (counts[i] / m) for i in range(self.classes_.size)}
         self.pi_ = np.array([counts[i] / m for i in range(self.classes_.size)])
 
         # Calculate expectation estimation for every class:
-        # self.mu_ = {clas: X[y == clas, :].mean(axis=0) for clas in self.classes_}
         self.mu_ = np.empty((self.classes_.size, d))
         for i in range(self.classes_.size):
             self.mu_[i, :] = X[y == self.classes_[i], :].mean(axis=0)
@@ -167,15 +165,3 @@ class LDA(BaseEstimator):
             Performance under missclassification loss function
         """
         return misclassification_error(y, self._predict(X))
-
-
-if __name__ == '__main__':
-    data = np.load("G:/My Drive/Semester_4/IML/IML.HUJI/datasets/gaussian1.npy")
-    X = data[:, :2]
-    y = data[:, 2]
-    lda = LDA()
-    lda.fit(X, y)
-    # print(lda.cov_)
-    # print(lda.mu_)
-    print(lda.predict(X))
-    # print(lda.likelihood(X))

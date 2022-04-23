@@ -86,10 +86,6 @@ class Perceptron(BaseEstimator):
                 break
             t += 1
 
-        # TODO: is this needed?:
-        # if t == self.max_iter_:
-        #     raise Exception(f"Perceptron algorithm did not converge in {self.max_iter_} steps.")
-
     def __partial_fit(self, X: np.ndarray, y: np.ndarray, first_fit: bool = False) -> bool:
         """
         Runs one iteration of the Perceptron algorithm:
@@ -103,7 +99,6 @@ class Perceptron(BaseEstimator):
         X : ndarray of shape (n_samples, n_features) or (n_samples, n_features + 1)
             Input data to do partial fit on.
             Note: Assumes X includes an intercept column in the case include_intercept_ == True !!
-            TODO: is it ok?
 
         y : ndarray of shape (n_samples, )
             Responses of input data to fit to.
@@ -119,7 +114,7 @@ class Perceptron(BaseEstimator):
         """
         if first_fit:
             self.coefs_ = np.zeros(X.shape[1])
-            self.fitted_ = True  # TODO: this doesnt feel right
+            self.fitted_ = True
 
         for i in range(X.shape[0]):
             if y[i] * np.inner(self.coefs_, X[i, :]) <= 0:
