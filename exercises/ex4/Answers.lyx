@@ -1,0 +1,3404 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\begin_preamble
+\usepackage{culmus}
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Fix numbering in hebrew article:
+\renewcommand{\thetheorem}{\beginL \thesection.\arabic{theorem}}
+
+% Create symbol for DotCup (forn union):
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\usepackage{mathtools}
+\usepackage{dsfont}
+\end_preamble
+\use_default_options true
+\begin_modules
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/nimro/AppData/Roaming/LyX2.3/MacrosHeb.lyx"
+
+\end_inset
+
+
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Title
+)
+\numeric on
+67577
+\numeric off
+( מבוא למערכות לומדות | תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Author
+שם: נמרוד בר גיורא | ת"ז:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+207090622
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק תאורטי
+\end_layout
+
+\begin_layout Subsection*
+למידות 
+\begin_inset Formula $\text{PAC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_1.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(b\Rightarrow a\right)$
+\end_inset
+
+ נניח ש- 
+\begin_inset Formula $\underset{m\shortrightarrow\infty}{\lim}\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\right]=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula $\varepsilon,\delta>0$
+\end_inset
+
+.
+ מאי-שיוויון מרקוב נובע שלכל 
+\begin_inset Formula $m\in\kaliNatural$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)>\varepsilon\right]\leqslant\frac{\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\right]}{\varepsilon}
+\]
+
+\end_inset
+
+מהגדרת הגבול נובע שקיים 
+\begin_inset Formula $m\left(\varepsilon,\delta\right)\in\kaliNatural$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $m\geqslant m\left(\varepsilon,\delta\right)$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula 
+\[
+\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\right]<\varepsilon\cdot\delta
+\]
+
+\end_inset
+
+ולכן לכל 
+\begin_inset Formula $m\geqslant m\left(\varepsilon,\delta\right)$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)>\varepsilon\right]<\frac{\varepsilon\cdot\delta}{\varepsilon}=\delta\qquad\overset{{\color{gray}\mathclap{\text{\R{\text{המאורע המשלים}}}}}}{\Longrightarrow}\qquad\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\geqslant1-\delta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(a\Rightarrow b\right)$
+\end_inset
+
+ נניח שלכל 
+\begin_inset Formula $\varepsilon,\delta>0$
+\end_inset
+
+ קיים 
+\begin_inset Formula $m\left(\varepsilon,\delta\right)\in\kaliNatural$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $m\geqslant m\left(\varepsilon,\delta\right)$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\geqslant1-\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula $\varepsilon,\delta>0$
+\end_inset
+
+.
+ נשתמש בנוסחת התוחלת השלמה על 
+\begin_inset Formula $\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{D}\left(\mathcal{A}\left(S\right)\right)\right]$
+\end_inset
+
+ ונקבל לכל 
+\begin_inset Formula $m\geqslant m\left(\varepsilon,\delta\right)$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\begin{align*}
+\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\right] & =\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\cdot\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\mid L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]+\\
+ & +\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)>\varepsilon\right]\cdot\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\mid L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)>\varepsilon\right]
+\end{align*}
+
+\end_inset
+
+נחסום כל אחד מהביטויים לעיל בנפרד:
+\end_layout
+
+\begin_layout Proof
+מכך ש-
+\begin_inset Formula $\kaliProbability_{S\sim\mathcal{D}^{m}}$
+\end_inset
+
+ היא פונקציית הסתברות נובע ש-
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{D}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\leqslant1
+\]
+
+\end_inset
+
+מההנחה של 
+\begin_inset Formula $a$
+\end_inset
+
+ )תוך שימוש במאורע המשלים( נובע ש-
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)>\varepsilon\right]=1-\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\overset{{\color{gray}\overset{\mathclap{a}}{\downarrow}}}{\leqslant}1-\left(1-\delta\right)=\delta
+\]
+
+\end_inset
+
+ממונוטוניות התוחלת, ומכך שזו תוחלת מותנית נובע ש-
+\begin_inset Formula 
+\[
+\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\mid L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\leqslant\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[\varepsilon\right]=\varepsilon
+\]
+
+\end_inset
+
+לפי ההגדרה - 
+\begin_inset Formula $L_{\mathcal{D}}=\kaliExpectedValue_{\text{\textbf{x}}\sim\mathcal{D}}\left[h\left(\text{\textbf{x}}\right)\neq f\left(\boldsymbol{\text{x}}\right)\right]$
+\end_inset
+
+.
+ לכן מכיוון ש- 
+\begin_inset Formula $\mathds{1}_{\left[h\left(\text{\textbf{x}}\right)\neq f\left(\boldsymbol{\text{x}}\right)\right]}\leqslant1$
+\end_inset
+
+ אז ממונוטוניות התוחלת )מופעלת על 
+\begin_inset Formula $\kaliExpectedValue_{\text{\textbf{x}}\sim\mathcal{D}}$
+\end_inset
+
+ ואז על 
+\begin_inset Formula $\kaliExpectedValue_{S\sim\mathcal{D}^{m}}$
+\end_inset
+
+(:
+\begin_inset Formula 
+\[
+\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\mid L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)>\varepsilon\right]\leqslant\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[1\right]=1
+\]
+
+\end_inset
+
+ולכן קיבלנו שלכל 
+\begin_inset Formula $m\geqslant m\left(\varepsilon,\delta\right)$
+\end_inset
+
+ מתקיים -
+\begin_inset Formula 
+\[
+\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\right]\leqslant1\cdot\varepsilon+\delta\cdot1=\varepsilon+\delta
+\]
+
+\end_inset
+
+ומכאן לפי הגדרת הגבול - 
+\begin_inset Formula $\underset{m\shortrightarrow\infty}{\lim}\kaliExpectedValue_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\right]=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_2.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+אלגוריתם למידה
+\bar default
+: בהינתן סט דגימות 
+\begin_inset Formula $S=\left\{ \left(\text{\textbf{x}}_{i},y_{i}\right)\right\} _{i=1}^{m}$
+\end_inset
+
+ האלגוריתם 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ יחזיר את ההיפותזה 
+\begin_inset Formula $\mathcal{A}\left(S\right)=h_{\hat{r}}\in\mathcal{H}$
+\end_inset
+
+ כאשר:
+\begin_inset Formula 
+\[
+\hat{r}=\,\max_{\mathclap{i\in\left[m\right]:\,y_{i}=1}}\,\left\Vert \text{\textbf{x}}_{i}\right\Vert _{2}
+\]
+
+\end_inset
+
+כאשר מגדירים 
+\begin_inset Formula $\max\emptyset=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כלומר האלגוריתם יחזיר את המעגל סביב הראשת עם הרדיוס הגדול ביותר שמכיל את
+ הדגימות שהלייבל שלהן הוא 
+\begin_inset Formula $1$
+\end_inset
+
+, מתוך סט הדגימות הנתון.
+ במילים אחרות - הרדיוס של המעגל יקבע לפי הדגימה 
+\begin_inset Formula $\text{\textbf{x}}_{i}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\Vert \text{\textbf{x}}_{i}\right\Vert _{2}$
+\end_inset
+
+ מקסימלי.
+\end_layout
+
+\begin_layout Standard
+הוכחת נכונות:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נראה שלכל מעגל סביב הראשית ברדיוס 
+\begin_inset Formula $r$
+\end_inset
+
+, לכל הסתברות 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ מעל 
+\begin_inset Formula $\mathcal{X}$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+ - אם נדגום 
+\begin_inset Formula $m$
+\end_inset
+
+ דגימות 
+\begin_inset Formula $\text{i.i.d}$
+\end_inset
+
+ לפי ההתפלגות 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ אז עם הסתברות של לפחות 
+\begin_inset Formula $1-\delta$
+\end_inset
+
+ המעגל סביב הראשית ברדיוס 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+ שיוחזר ע
+\begin_inset Quotes erd
+\end_inset
+
+י האלגוריתם לעיל הוא בעל שגיאה של לכל היותר 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+אז יהיו 
+\begin_inset Formula $\mathcal{D},\varepsilon,\delta$
+\end_inset
+
+ כנ
+\begin_inset Quotes erd
+\end_inset
+
+ל.
+ נשים לב תחילה שהרדיוס של המעגל שמוחזר ע
+\begin_inset Quotes erd
+\end_inset
+
+י האלגוריתם תמיד יהיה קטן\SpecialChar breakableslash
+שווה לרדיוס האמיתי - 
+\begin_inset Formula $\hat{r}\leqslant r$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+L_{\mathcal{D}}\left(h_{\hat{r}}\right)=\kaliProbability\left(\left\Vert \text{\textbf{x}}_{i}\right\Vert _{2}\in\left(\hat{r},r\right]\right)
+\]
+
+\end_inset
+
+נרצה למצוא מספר דגימות גדול מספיק 
+\begin_inset Formula $m$
+\end_inset
+
+ שיבטיח ש- 
+\begin_inset Formula $\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(h_{\hat{r}}\right)\leqslant\varepsilon\right]\geqslant1-\delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נתבונן לצורך כך בהסתברות של המאורע המשלים - 
+\begin_inset Formula $\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(h_{\hat{r}}\right)>\varepsilon\right]$
+\end_inset
+
+.
+ נשים לב שאם ההסתברות לדגום נקודה 
+\begin_inset Formula $\text{\textbf{x}}_{i}\in\kaliReal^{2}$
+\end_inset
+
+ שנמצאת בהפרש בין המעגל האמיתי )ברדיוס 
+\begin_inset Formula $r$
+\end_inset
+
+( למעגל שהחזיר 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ )ברדיוס 
+\begin_inset Formula $\hat{r}$
+\end_inset
+
+( היא גדולה מ-
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, כלומר אם 
+\begin_inset Formula $\kaliProbability\left(\left\Vert \text{\textbf{x}}_{i}\right\Vert _{2}\in\left(\hat{r},r\right]\right)>\varepsilon$
+\end_inset
+
+, אז ההסתברות שבסט הדגימות 
+\begin_inset Formula $S$
+\end_inset
+
+ לא תהיה אף נקודה באיזור הזה היא לפחות 
+\begin_inset Formula $\left(1-\varepsilon\right)^{m}$
+\end_inset
+
+.
+ פורמלית:
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(h_{\hat{r}}\right)>\varepsilon\right]=\kaliProbability_{S\sim\mathcal{D}^{m}}\left[\stackrel[i=1]{m}{\bigwedge}\left\Vert \text{\textbf{x}}_{i}\right\Vert _{2}\notin\left(\hat{r},r\right]\right]\overset{\text{i.i.d}}{=}\stackrel[i=1]{m}{\prod}\kaliProbability_{\text{\textbf{x}}_{i}\sim\mathcal{D}}\left(\left\Vert \text{\textbf{x}}_{i}\right\Vert _{2}\notin\left(\hat{r},r\right]\right)\leqslant\left(1-\varepsilon\right)^{m}\leqslant e^{-\varepsilon m}
+\]
+
+\end_inset
+
+מכאן נובע ש-
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(h_{\hat{r}}\right)\leqslant\varepsilon\right]=1-\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(h_{\hat{r}}\right)>\varepsilon\right]\geqslant1-e^{-\varepsilon m}
+\]
+
+\end_inset
+
+לכן מספר הדגימות צריך לקיים:
+\begin_inset Formula 
+\[
+1-e^{-\varepsilon m}\geqslant1-\delta\;\Longrightarrow\;e^{-\varepsilon m}\leqslant\delta\;\Longrightarrow\;-\varepsilon m\leqslant\ln\left(\delta\right)\;\Longrightarrow\;m\geqslant\frac{-\ln\left(\delta\right)}{\varepsilon}=\frac{\ln\left(\delta^{-1}\right)}{\varepsilon}=\frac{\ln\left(\frac{1}{\delta}\right)}{\varepsilon}
+\]
+
+\end_inset
+
+כלומר, לכל 
+\begin_inset Formula $m\geqslant\frac{\ln\left(\frac{1}{\delta}\right)}{\varepsilon}$
+\end_inset
+
+ נקבל ש- 
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(h_{\hat{r}}\right)\leqslant\varepsilon\right]\geqslant1-\delta
+\]
+
+\end_inset
+
+ומכיוון ש-
+\begin_inset Formula $\varepsilon,\delta,\mathcal{D}$
+\end_inset
+
+ היו שרירותיים - 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ היא למידה-
+\begin_inset Formula $\text{PAC}$
+\end_inset
+
+ וה-
+\begin_inset Formula $\text{sample complexity}$
+\end_inset
+
+ שלה מקיים:
+\begin_inset Formula 
+\[
+m_{\mathcal{H}}\left(\varepsilon,\delta\right)\leqslant\frac{\ln\left(\frac{1}{\delta}\right)}{\varepsilon}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{VC-Dimension}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "65col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_3.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ה-
+\lang english
+VC-dimention
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של המחלקה 
+\begin_inset Formula $\mathcal{H}_{\text{parity}}=\left\{ h_{I}\;:\;I\subseteq\left[n\right]\right\} $
+\end_inset
+
+ הוא 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נשים לב תחילה שלכל 
+\begin_inset Formula $i\subseteq\left[n\right]$
+\end_inset
+
+ מתקיים לכל 
+\begin_inset Formula $\text{\textbf{x}}\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+h_{I}\left(\text{\textbf{x}}\right)=\left(\underset{i\in I}{\sum}x_{i}\right)\text{mod}2=\left\langle \text{\textbf{x}}\mid v_{I}\right\rangle \text{mod}2
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $v_{I}\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ הוא וקטור המוגדר ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\left[v_{I}\right]_{i}=\begin{cases}
+1 & i\in I\\
+0 & i\notin I
+\end{cases}
+\]
+
+\end_inset
+
+כלומר הוא וקטור שהקואורדינטה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ שלו מציינת האם האינדקס 
+\begin_inset Formula $i$
+\end_inset
+
+ שייך לקבוצת האינדקסים 
+\begin_inset Formula $I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכן לכל 
+\begin_inset Formula $I\subseteq\left[n\right]$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $h_{I}\in\mathcal{H}$
+\end_inset
+
+ 
+\bar under
+אם ורק אם
+\bar default
+ קיים לה וקטור 
+\begin_inset Formula $v_{I}$
+\end_inset
+
+ כנ
+\begin_inset Quotes erd
+\end_inset
+
+ל.
+\end_layout
+
+\begin_layout Proof
+נראה שהקבוצה 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}\supseteq C=\left\{ e_{1},\ldots,e_{n}\right\} $
+\end_inset
+
+ )כאשר לכל 
+\begin_inset Formula $i\in\left[n\right]$
+\end_inset
+
+ הוקטור 
+\begin_inset Formula $e_{i}$
+\end_inset
+
+ הוא וקטור היחידה ה-
+\begin_inset Formula $i$
+\end_inset
+
+( מנותצת ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula $n$
+\end_inset
+
+ לייבלים 
+\begin_inset Formula $y_{1},\ldots,y_{n}\in\left\{ 0,1\right\} $
+\end_inset
+
+ עבור הוקטורים ב-
+\begin_inset Formula $C$
+\end_inset
+
+ נגדיר 
+\begin_inset Formula 
+\[
+v_{I}=\begin{pmatrix}y_{1}\\
+\vdots\\
+y_{n}
+\end{pmatrix}
+\]
+
+\end_inset
+
+ונקבל לכל 
+\begin_inset Formula $i\in\left[n\right]$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+h_{I}\left(e_{i}\right)=\left\langle e_{i}\mid v_{I}\right\rangle \text{mod}2=\left[v_{I}\right]_{i}\text{mod}2=y_{i}\text{mod}2\overset{{\color{gray}\overset{\mathclap{y_{i}\in\left\{ 0,1\right\} }}{\downarrow}}}{=}y_{i}
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ מנתצת את 
+\begin_inset Formula $C$
+\end_inset
+
+ הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל, ולכן 
+\begin_inset Formula $\text{VC-DIM}\left(\mathcal{H}\right)\geqslant n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+תהי כעת קבוצה 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}\supseteq C=\left(\text{\textbf{x}}_{1},\ldots,\text{\textbf{x}}_{n+1}\right)$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $n+1$
+\end_inset
+
+.
+ נשים לב ש-
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}\subseteq\kaliReal^{n}$
+\end_inset
+
+, ולכן )כאשר חושבים על 
+\begin_inset Formula $\kaliReal^{n}$
+\end_inset
+
+ כעל מרחב אוקלידי( 
+\begin_inset Formula $C$
+\end_inset
+
+ היא בהכרח קבוצה 
+\bar under
+תלויה ליניארית
+\bar default
+.
+ לכן קיים צירוף ליניארי לא-טריוויאלי מתאפס של איברי 
+\begin_inset Formula $C$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\stackrel[i=1]{n+1}{\sum}a_{i}\text{\textbf{x}}_{i}=\bar{0}
+\]
+
+\end_inset
+
+נניח בה
+\begin_inset Quotes erd
+\end_inset
+
+כ ש- 
+\begin_inset Formula $a_{n+1}\neq0$
+\end_inset
+
+ ונקבל ש-
+\begin_inset Formula 
+\[
+\text{\textbf{x}}_{n+1}=\stackrel[i=1]{n}{\sum}b_{i}\text{\textbf{x}}_{i}\quad{\color{green}\sun}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $b_{i}\coloneqq-\frac{a_{i}}{a_{n+1}}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[n\right]$
+\end_inset
+
+.
+ נתבונן כעת בלייבלים הבאים עבור 
+\begin_inset Formula $C$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\kaliForall i\in\left[n+1\right]:\quad y_{i}=\begin{cases}
+b_{i}\text{mod}2 & i\in\left[n\right]\\
+\big(1+\stackrel[j=1]{n}{\sum}\left(b_{j}\text{mod}2\right)\big)\text{mod}2 & i=n+1
+\end{cases}
+\]
+
+\end_inset
+
+נניח בשלילה שקיים 
+\begin_inset Formula $v_{I}\in\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $i\in\left[n+1\right]$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+y_{i}=\left\langle \text{\textbf{x}}_{i}\mid v_{I}\right\rangle \text{mod}2=\begin{cases}
+b_{i}\text{mod}2 & i\in\left[n\right]\\
+\big(1+\stackrel[j=1]{n}{\sum}\left(b_{j}\text{mod}2\right)\big)\text{mod}2 & i=n+1
+\end{cases}
+\]
+
+\end_inset
+
+ונקבל )תוך שימוש באריתמטיקה של 
+\begin_inset Formula $\text{mod}$
+\end_inset
+
+( ש-
+\begin_inset Formula 
+\begin{align*}
+\left\langle \text{\textbf{x}}_{n+1}\mid v_{I}\right\rangle \text{mod}2 & \overset{{\color{green}\sun}}{=}\left\langle \stackrel[i=1]{n}{\sum}b_{i}\text{\textbf{x}}_{i}\mid v_{I}\right\rangle \text{mod}2=\big(\stackrel[i=1]{n}{\sum}b_{i}\left\langle \text{\textbf{x}}_{i}\mid v_{I}\right\rangle \big)\text{mod}2=\stackrel[i=1]{n}{\sum}\big(\left(b_{i}\text{mod}2\right)\left\langle \text{\textbf{x}}_{i}\mid v_{I}\right\rangle \text{mod}2\big)=\\
+ & \underset{{\color{gray}\underset{\mathclap{\text{\R{\text{מההנחה בשלילה}}}}}{\underset{}{\uparrow}}}}{=}\stackrel[i=1]{n}{\sum}\big(\left(b_{i}\text{mod}2\right)\left(b_{i}\text{mod}2\right)\big)=\stackrel[i=1]{n}{\sum}\left(b_{i}\text{mod}2\right)^{2}\underset{{\color{gray}\underset{\mathclap{\left(b_{i}\text{mod}2\right)\in\left\{ 0,1\right\} }}{\underset{}{\uparrow}}}}{=}\,\stackrel[i=1]{n}{\sum}\left(b_{i}\text{mod}2\right)=\\
+ & =\big(\stackrel[i=1]{n}{\sum}\left(b_{i}\text{mod}2\right)\big)\text{mod}2\neq\big(1+\stackrel[i=1]{n}{\sum}\left(b_{i}\text{mod}2\right)\big)\text{mod}2\underset{{\color{gray}\underset{\mathclap{\text{\R{\text{לפי הבחירה של הלייבלים}}}}}{\uparrow}}}{=}y_{n+1}
+\end{align*}
+
+\end_inset
+
+וזו סתירה.
+ לכן לא ניתן לנתץ תת-קבוצות בגודל 
+\begin_inset Formula $n+1$
+\end_inset
+
+ של 
+\begin_inset Formula $\left\{ 0,1\right\} ^{n}$
+\end_inset
+
+, וזה אומר ש- 
+\begin_inset Formula $\text{VC-DIM}\left(\mathcal{H}\right)<n+1$
+\end_inset
+
+, ובסך הכל קיבלנו ש-
+\begin_inset Formula 
+\[
+\text{VC-DIM}\left(\mathcal{H}\right)=n
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_4.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ה-
+\lang english
+VC-dimention
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של המחלקה 
+\begin_inset Formula $\mathcal{H}_{k\text{-intervals}}$
+\end_inset
+
+ הוא 
+\begin_inset Formula $2k$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נראה שהקבוצה 
+\begin_inset Formula $\kaliReal\supseteq C=\left\{ x_{1},\ldots,x_{2k}\right\} $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $x_{i}=i$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[2k\right]$
+\end_inset
+
+ )קבוצת כל המספרים הטבעיים עד 
+\begin_inset Formula $2k$
+\end_inset
+
+, כולל( מנותצת ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}_{k\text{-intervals}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula $2k$
+\end_inset
+
+ לייבלים 
+\begin_inset Formula $y_{1},\ldots,y_{2k}$
+\end_inset
+
+ עבור איברי 
+\begin_inset Formula $C$
+\end_inset
+
+ נוכל לבנות היפותזה 
+\begin_inset Formula $h_{A}\in\mathcal{H}_{k\text{-intervals}}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $h_{A}\left(x_{i}\right)=y_{i}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[2k\right]$
+\end_inset
+
+, באופן הבא:
+\end_layout
+
+\begin_layout Proof
+אם 
+\begin_inset Formula $y_{i}=0$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[2k\right]$
+\end_inset
+
+ אז נגדיר את 
+\begin_inset Formula $A$
+\end_inset
+
+ להיות איחוד של 
+\begin_inset Formula $k$
+\end_inset
+
+ קטעים שמוכלים ב- 
+\begin_inset Formula $\left(-\infty,0\right]$
+\end_inset
+
+, ונקבל ש- 
+\begin_inset Formula $x_{i}\notin A$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[2k\right]$
+\end_inset
+
+, כלומר ש- 
+\begin_inset Formula $h_{A}\left(x_{i}\right)=0=y_{i}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+אחרת, הקבוצה 
+\begin_inset Formula $A$
+\end_inset
+
+ שעליה מבוססת 
+\begin_inset Formula $h_{A}$
+\end_inset
+
+ תהיה איחוד של קטעים המכסים רצפים של 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+-ים מתוך 
+\begin_inset Formula $C$
+\end_inset
+
+ שהלייבל שלהם הוא 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ ניתן לבנות אותה באופן הבא:
+\end_layout
+
+\begin_layout Proof
+בכל שלב 
+\begin_inset Formula $\ell\in\left[k\right]$
+\end_inset
+
+, אם קיים 
+\begin_inset Formula $i\in\left[2k\right]\backslash\left[b_{\ell-1}\right]$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+ נגדיר את הקטע 
+\begin_inset Formula $\left[a_{\ell},b_{\ell}\right]$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י-
+\begin_inset Formula 
+\begin{align*}
+a_{\ell} & =\min\left\{ i\in\left[2k\right]\backslash\left[b_{\ell-1}\right]\,:\,y_{i}=1\right\} \\
+b_{\ell} & =\max\left\{ i\in\left[2k\right]\backslash\left[a_{\ell}\right]\,:\,y_{j}=1\,\kaliForall j\in\left[i\right]\backslash\left[a_{\ell}\right]\,,\,y_{i+1}=0\right\} 
+\end{align*}
+
+\end_inset
+
+כאשר מגדירים 
+\begin_inset Formula $b_{0}=0$
+\end_inset
+
+ )ולכן 
+\begin_inset Formula $\left[b_{0}\right]=\emptyset$
+\end_inset
+
+(, ו- 
+\begin_inset Formula $y_{2k+1}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+אם לא קיים 
+\begin_inset Formula $i$
+\end_inset
+
+ כנ
+\begin_inset Quotes erd
+\end_inset
+
+ל אז הבניה תעצר )ופורמלית נגדיר 
+\begin_inset Formula $\left[a_{\ell},b_{\ell}\right]=\emptyset$
+\end_inset
+
+(.
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ מוגדרת ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+A=\stackrel[\ell=1]{k}{\bigcup}\left[a_{\ell},b_{\ell}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+מכיוון שבמקרה הזה אנחנו מניחים שקיים 
+\begin_inset Formula $i\in\left[2k\right]$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+, אז מתקבל בבניה הזאת לפחות קטע 
+\begin_inset Formula $\left[a_{\ell},b_{\ell}\right]$
+\end_inset
+
+ אחד.
+\end_layout
+
+\begin_layout Proof
+נשים לב שמספר הקטעים הוא לכל היותר 
+\begin_inset Formula $k$
+\end_inset
+
+ )זו הסיבה לכך ש- 
+\begin_inset Formula $\ell\in\left[k\right]$
+\end_inset
+
+( כי בין כל שני קטעים 
+\begin_inset Formula $\left[a_{\ell},b_{\ell}\right],\left[a_{\ell+1},b_{\ell+1}\right]$
+\end_inset
+
+ קיים לפי הבניה 
+\begin_inset Formula $i\in\left[a_{\ell+1}-1\right]\backslash\left[b_{\ell}\right]$
+\end_inset
+
+ )לפחות אחד( כך ש- 
+\begin_inset Formula $y_{i}=0$
+\end_inset
+
+.
+ לכן אם נניח בשלילה שניתן לבנות כך 
+\begin_inset Formula $k+1$
+\end_inset
+
+ קטעים, נקבל שיש ב-
+\begin_inset Formula $C$
+\end_inset
+
+ לפחות 
+\begin_inset Formula $k$
+\end_inset
+
+ נקודות 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $y_{i}=0$
+\end_inset
+
+, ובנוסף בכל אחד מהקטעים יש לפחות נקודה אחת 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+, ומכאן נקבל שיש ב-
+\begin_inset Formula $C$
+\end_inset
+
+ לפחות 
+\begin_inset Formula $2k+1$
+\end_inset
+
+ נקודות, בסתירה להגדרתה.
+\end_layout
+
+\begin_layout Proof
+עכשיו מהגדרת 
+\begin_inset Formula $A$
+\end_inset
+
+ נובע שלכל 
+\begin_inset Formula $x_{i}\in C$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $x_{i}\in A$
+\end_inset
+
+ אם ורק אם 
+\begin_inset Formula $y_{i}=1$
+\end_inset
+
+, או באופן שקול 
+\begin_inset Formula $x_{i}\notin A$
+\end_inset
+
+ אם ורק אם 
+\begin_inset Formula $y_{i}=0$
+\end_inset
+
+, ולכן 
+\begin_inset Formula 
+\[
+h_{A}\left(x_{i}\right)=y_{i}
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\mathcal{H}_{k\text{-intervals}}$
+\end_inset
+
+ מנתצת את 
+\begin_inset Formula $C$
+\end_inset
+
+, ולכן 
+\begin_inset Formula $\text{VC-DIM}\left(\mathcal{H}_{k\text{-intervals}}\right)\geqslant2k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+תהי כעת קבוצה 
+\begin_inset Formula $\kaliReal\supseteq C=\left\{ x_{1},\ldots,x_{2k+1}\right\} $
+\end_inset
+
+ כלשהי.
+ נתבונן בלייבלים הבאים עבור הנקודות ב-
+\begin_inset Formula $C$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+y_{i} & =\begin{cases}
+1 & i=1\left(\text{mod}2\right)\\
+0 & i=0\left(\text{mod}2\right)
+\end{cases}\\
+ & \overset{1}{y_{1}},\overset{0}{y_{2}},\overset{1}{y_{3}}\ldots,\overset{0}{y_{2k}},\overset{1}{y_{2k+1}}
+\end{align*}
+
+\end_inset
+
+כלומר הלייבלים הם 
+\begin_inset Formula $0$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ עם אינדקס זוגי ו-
+\begin_inset Formula $1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ עם אינדקס אי-זוגי.
+ לכן יש ב-
+\begin_inset Formula $C$
+\end_inset
+
+ בדיוק 
+\begin_inset Formula $k$
+\end_inset
+
+ נקודות עם לייבל 
+\begin_inset Formula $0$
+\end_inset
+
+ ו-
+\begin_inset Formula $k+1$
+\end_inset
+
+ נקודות עם לייבל 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה שקיימת 
+\begin_inset Formula $h_{A}\in\mathcal{H}_{k\text{-intervals}}$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $h_{A}\left(x_{i}\right)=y_{i}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[2k+1\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מכיוון שיש 
+\begin_inset Formula $k+1$
+\end_inset
+
+ נקודות ב-
+\begin_inset Formula $C$
+\end_inset
+
+ עם לייבל 
+\begin_inset Formula $1$
+\end_inset
+
+, ב-
+\begin_inset Formula $A$
+\end_inset
+
+ יש 
+\begin_inset Formula $k$
+\end_inset
+
+ קטעים, וכל נקודה עם לייבל 
+\begin_inset Formula $1$
+\end_inset
+
+ חייבת להיות מוכלת בקטע כלשהו ב-
+\begin_inset Formula $A$
+\end_inset
+
+ אז )מעיקרון שובך היונים( קיים קטע 
+\begin_inset Formula $\left[a_{\ell},b_{\ell}\right]\subseteq A$
+\end_inset
+
+ וקיימות 
+\begin_inset Formula $x_{i},x_{j}\in C$
+\end_inset
+
+
+\series bold
+ שונות
+\series default
+ )בה
+\begin_inset Quotes erd
+\end_inset
+
+כ 
+\begin_inset Formula $x_{i}<x_{j}$
+\end_inset
+
+( כך ש-
+\begin_inset Formula 
+\[
+x_{i},x_{j}\in\left[a_{\ell},b_{\ell}\right]\quad\land\quad y_{i}=y_{j}=1
+\]
+
+\end_inset
+
+מבחירת הלייבלים נובע שקיימת נקודה 
+\begin_inset Formula $x_{d}\in C$
+\end_inset
+
+ כך ש- 
+\begin_inset Formula $x_{i}<x_{d}<x_{j}$
+\end_inset
+
+ וגם 
+\begin_inset Formula $y_{d}=0$
+\end_inset
+
+, ולכן:
+\begin_inset Formula 
+\[
+y_{d}\in\left[a_{\ell},b_{\ell}\right]\subseteq A
+\]
+
+\end_inset
+
+כלומר מתקיים ש- 
+\begin_inset Formula $h_{A}\left(x_{d}\right)=1\neq y_{d}$
+\end_inset
+
+, וזו סתירה.
+\end_layout
+
+\begin_layout Proof
+לכן כל קבוצה בגודל 
+\begin_inset Formula $2k+1$
+\end_inset
+
+ לא ניתנת לניתוץ ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}_{k\text{-intervals}}$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $\text{VC-DIM}\left(\mathcal{H}_{k\text{-intervals}}\right)<2k$
+\end_inset
+
+ ובסה
+\begin_inset Quotes erd
+\end_inset
+
+כ קיבלנו ש-
+\begin_inset Formula 
+\[
+\text{VC-DIM}\left(\mathcal{H}_{k\text{-intervals}}\right)=2k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מימד ה-
+\lang english
+VC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של מחלקת ההיפותזות 
+\begin_inset Formula $\mathcal{H}_{\text{intervals}}$
+\end_inset
+
+ )שבה אין חסם על מספר הקטעים ב-
+\begin_inset Formula $A$
+\end_inset
+
+( הוא 
+\begin_inset Formula $\infty$
+\end_inset
+
+ כי:
+\end_layout
+
+\begin_layout Standard
+לכל 
+\begin_inset Formula $n\in\kaliNatural$
+\end_inset
+
+ הקבוצה 
+\begin_inset Formula $\kaliReal\supseteq C=\left\{ x_{1},\ldots,x_{2n}\right\} $
+\end_inset
+
+ כאשר 
+\begin_inset Formula $x_{i}=i$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[2n\right]$
+\end_inset
+
+ )קבוצת כל המספרים הטבעיים עד 
+\begin_inset Formula $2n$
+\end_inset
+
+, כולל( 
+\series bold
+ניתנת לניתוץ
+\series default
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}_{\text{intervals}}$
+\end_inset
+
+, כי לכל סדרת לייבלים 
+\begin_inset Formula $y_{1},\ldots,y_{2n}$
+\end_inset
+
+ עבור הנקודות ב-
+\begin_inset Formula $C$
+\end_inset
+
+ נוכל לבנות את 
+\begin_inset Formula $A$
+\end_inset
+
+ כאיחוד של קטעים 
+\series bold
+בדיוק
+\series default
+ כמו שעשינו בחלק הראשון של ההוכחה לעיל.
+ נצטרך להשתמש ב-
+\begin_inset Formula $n$
+\end_inset
+
+ קטעים לכל היותר בבניה הזאת, וזה אפשרי מכיוון שאין חסם על מספר הקטעים ב-
+\begin_inset Formula $A$
+\end_inset
+
+ במחלקת ההיפותזות הזו.
+\end_layout
+
+\begin_layout Standard
+מכיוון שלכל 
+\begin_inset Formula $n\in\kaliNatural$
+\end_inset
+
+ קיימת קבוצה 
+\begin_inset Formula $C\subseteq\kaliReal$
+\end_inset
+
+ בגודל 
+\begin_inset Formula $\left|C\right|=2n$
+\end_inset
+
+ הניתנת לניתוץ ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}_{\text{intervals}}$
+\end_inset
+
+, אז 
+\begin_inset Formula 
+\[
+\kaliForall n\in\kaliNatural:\quad\text{VC-DIM}\left(\mathcal{H}_{\text{intervals}}\right)\geqslant2n\quad\Longrightarrow\quad\text{VC-DIM}\left(\mathcal{H}_{\text{intervals}}\right)=\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+מונוטוניות
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "72col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_5.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+נתונה 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ למידה 
+\begin_inset Formula $\text{PAC}$
+\end_inset
+
+.
+ יהי 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ אלגוריתם שלומד אותה, יהי 
+\begin_inset Formula $\delta\in\left(0,1\right)$
+\end_inset
+
+ ויהיו 
+\begin_inset Formula $0<\varepsilon_{1}\leqslant\varepsilon_{2}<1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לפי ההגדרה של למידות-
+\begin_inset Formula $\text{PAC}$
+\end_inset
+
+ ושל ה-
+\begin_inset Formula $\text{sample complexity}$
+\end_inset
+
+ מתקיים לכל 
+\begin_inset Formula $m\in\kaliNatural$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\text{I})\quad m & \geqslant m_{\mathcal{H}}\left(\varepsilon_{1},\delta\right)\quad\iff\quad\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon_{1}\right]\geqslant1-\delta\\
+\text{II})\quad m & \geqslant m_{\mathcal{H}}\left(\varepsilon_{2},\delta\right)\quad\iff\quad\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon_{2}\right]\geqslant1-\delta
+\end{align*}
+
+\end_inset
+
+ומכך ש- 
+\begin_inset Formula $\varepsilon_{1}\leqslant\varepsilon_{2}$
+\end_inset
+
+ נובע ש- 
+\begin_inset Formula $\left\{ L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon_{1}\right\} \subseteq\left\{ L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon_{2}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכן עבור 
+\begin_inset Formula $m=m_{\mathcal{H}}\left(\varepsilon_{1},\delta\right)$
+\end_inset
+
+ מתקיים לפי 
+\begin_inset Formula $\text{I}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+1-\delta\leqslant\kaliProbability_{S\sim\mathcal{D}^{m_{\mathcal{H}}\left(\varepsilon_{1},\delta\right)}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon_{1}\right]\leqslant\kaliProbability_{S\sim\mathcal{D}^{m_{\mathcal{H}}\left(\varepsilon_{1},\delta\right)}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon_{2}\right]
+\]
+
+\end_inset
+
+ומכאן לפי 
+\begin_inset Formula $\text{II}$
+\end_inset
+
+ - 
+\begin_inset Formula 
+\[
+m_{\mathcal{H}}\left(\varepsilon_{1},\delta\right)\geqslant m_{\mathcal{H}}\left(\varepsilon_{2},\delta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+נתונה 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ למידה 
+\begin_inset Formula $\text{PAC}$
+\end_inset
+
+.
+ יהי 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ אלגוריתם שלומד אותה, יהי 
+\begin_inset Formula $\varepsilon\in\left(0,1\right)$
+\end_inset
+
+ ויהיו 
+\begin_inset Formula $0<\delta_{1}\leqslant\delta_{2}\leqslant1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לפי ההגדרה של למידות-
+\begin_inset Formula $\text{PAC}$
+\end_inset
+
+ מתקיים לכל 
+\begin_inset Formula $m\in\kaliNatural$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\text{I})\quad m & \geqslant m_{\mathcal{H}}\left(\varepsilon,\delta_{1}\right)\quad\iff\quad\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\geqslant1-\delta_{1}\\
+\text{II})\quad m & \geqslant m_{\mathcal{H}}\left(\varepsilon,\delta_{2}\right)\quad\iff\quad\kaliProbability_{S\sim\mathcal{D}^{m}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\geqslant1-\delta_{2}
+\end{align*}
+
+\end_inset
+
+מכך ש- 
+\begin_inset Formula $\delta_{1}\leqslant\delta_{2}$
+\end_inset
+
+ נובע ש- 
+\begin_inset Formula $1-\delta_{1}\geqslant1-\delta_{2}$
+\end_inset
+
+ ולכן עבור 
+\begin_inset Formula $m=m_{\mathcal{H}}\left(\varepsilon,\delta_{1}\right)$
+\end_inset
+
+ מתקיים לפי 
+\begin_inset Formula $\text{I}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\kaliProbability_{S\sim\mathcal{D}^{m_{\mathcal{H}}\left(\varepsilon,\delta_{1}\right)}}\left[L_{\mathcal{D}}\left(\mathcal{A}\left(S\right)\right)\leqslant\varepsilon\right]\geqslant1-\delta_{1}\geqslant1-\delta_{2}
+\]
+
+\end_inset
+
+ומכאן לפי 
+\begin_inset Formula $\text{II}$
+\end_inset
+
+ -
+\begin_inset Formula 
+\[
+m_{\mathcal{H}}\left(\varepsilon,\delta_{1}\right)\geqslant m_{\mathcal{H}}\left(\varepsilon,\delta_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_6.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה ש- 
+\begin_inset Formula $\text{VC-DIM}\left(\mathcal{H}_{1}\right)>\text{VC-DIM}\left(\mathcal{H}_{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נסמן ב-
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ את הקבוצה בגודל המקסימלי המנותצת ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+, וב-
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ את הקבוצה בגודל המקסימלי המנותצת ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+.
+ אזי:
+\begin_inset Formula 
+\[
+\left|C_{1}\right|=\text{VC-DIM}\left(\mathcal{H}_{1}\right)>\text{VC-DIM}\left(\mathcal{H}_{2}\right)=\left|C_{2}\right|
+\]
+
+\end_inset
+
+נסמן 
+\begin_inset Formula $C_{1}=\left\{ x_{1},\ldots,x_{m}\right\} $
+\end_inset
+
+ אז לפי ההגדרה של צמצום של מחלקת היפתזות:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{H}_{1}\Big|_{C_{1}} & =\left\{ \left(h\left(x_{1}\right),\ldots,h\left(x_{m}\right)\right)\;:\;h\in\mathcal{H}_{1}\right\} \\
+\mathcal{H}_{2}\Big|_{C_{1}} & =\left\{ \left(h\left(x_{1}\right),\ldots,h\left(x_{m}\right)\right)\;:\;h\in\mathcal{H}_{2}\right\} 
+\end{align*}
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $\mathcal{H}_{1}\Big|_{C_{1}}\subseteq\mathcal{H}_{2}\Big|_{C_{1}}$
+\end_inset
+
+.
+ אבל מכך ש-
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ מנתצת את 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ נובע ש- 
+\begin_inset Formula 
+\[
+2^{\left|C_{1}\right|}=\left|\mathcal{H}_{1}\Big|_{C_{1}}\right|\leqslant\left|\mathcal{H}_{2}\Big|_{C_{1}}\right|\leqslant2^{\left|C_{1}\right|}\quad\Longrightarrow\quad\left|\mathcal{H}_{2}\Big|_{C_{1}}\right|=2^{\left|C_{1}\right|}
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+ מתנצת את 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+, וזו סתירה לכך ש-
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ היא הקבוצה המקסימלית המנותצת על ידה )כי ראינו ש- 
+\begin_inset Formula $\left|C_{1}\right|>\left|C_{2}\right|$
+\end_inset
+
+(.
+\end_layout
+
+\begin_layout Proof
+לכן 
+\begin_inset Formula $\text{VC-DIM}\left(\mathcal{H}_{1}\right)\leqslant\text{VC-DIM}\left(\mathcal{H}_{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Agnostic-PAC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_7.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+תהי 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ מחלקת היפותזות שמקיימת את תכונת ההתכנסות בהחלט עם 
+\begin_inset Formula $m_{\mathcal{H}}^{UC}:\left(0,1\right)^{2}\rightarrow\kaliNatural$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Proof
+ביחס לפונקציית 
+\lang english
+loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כלשהי 
+\begin_inset Formula $\ell:\mathcal{H}\times\left(\mathcal{X}\times\mathcal{Y}\right)\rightarrow\left[0,\infty\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+, ותהי 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ פונקציית התפלגות על 
+\begin_inset Formula $\mathcal{X}\times\mathcal{Y}$
+\end_inset
+
+.
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אז לפי ההגדרה לכל 
+\begin_inset Formula $m\geqslant m_{\mathcal{H}}^{UC}\left(\frac{\varepsilon}{2},\delta\right)$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\mathcal{D}^{m}\left(\left\{ S\in\left(\mathcal{X}\times\mathcal{Y}\right)^{m}\mid S\text{ is }\frac{\varepsilon}{2}\text{-representative}\right\} \right)\geqslant1-\delta
+\]
+
+\end_inset
+
+נבחר את אלגוריתם הלמידה 
+\begin_inset Formula $\mathcal{A}_{\text{ERM}}$
+\end_inset
+
+, כלומר את:
+\begin_inset Formula 
+\[
+\mathcal{A}_{\text{ERM}}:S\mapsto h\quad\text{s.t.:}\quad h\in\left\{ \underset{h\in\mathcal{H}}{\text{argmin}}L_{S}\left(h\right)\right\} 
+\]
+
+\end_inset
+
+כעת לפי למה 
+\begin_inset Formula $4.5.2$
+\end_inset
+
+ מספר הקורס )שראינו גם בהרצאה(, אם סט דגימות 
+\begin_inset Formula $S$
+\end_inset
+
+ הוא 
+\begin_inset Formula $\frac{\varepsilon}{2}$
+\end_inset
+
+-מייצג את 
+\begin_inset Formula $\mathcal{D},\mathcal{H},\ell$
+\end_inset
+
+ אז 
+\begin_inset Formula $\mathcal{A}_{\text{ERM}}\left(S\right)\coloneqq h_{s}$
+\end_inset
+
+ מקיים ש-
+\begin_inset Formula 
+\[
+L_{\mathcal{D}}\left(h_{s}\right)\leqslant\underset{h\in\mathcal{H}}{\min}L_{\mathcal{D}}\left(h\right)+\varepsilon
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+\left\{ S\in\left(\mathcal{X}\times\mathcal{Y}\right)^{m}\mid S\text{ is }\frac{\varepsilon}{2}\text{-representative}\right\} \subseteq\left\{ S\in\left(\mathcal{X}\times\mathcal{Y}\right)^{m}\mid L_{\mathcal{D}}\left(h_{s}\right)\leqslant\underset{h\in\mathcal{H}}{\min}L_{\mathcal{D}}\left(h\right)+\varepsilon\right\} 
+\]
+
+\end_inset
+
+ולכן ממונוטוניות פונקציית ההתפלגות נובע שמתקיים לכל 
+\begin_inset Formula $m\geqslant m_{\mathcal{H}}^{UC}\left(\frac{\varepsilon}{2},\delta\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+1-\delta\leqslant\mathcal{D}^{m}\left(\left\{ S\in\left(\mathcal{X}\times\mathcal{Y}\right)^{m}\mid S\text{ is }\frac{\varepsilon}{2}\text{-representative}\right\} \right)\leqslant\mathcal{D}^{m}\left(\left\{ S\in\left(\mathcal{X}\times\mathcal{Y}\right)^{m}\mid L_{\mathcal{D}}\left(h_{s}\right)\leqslant\underset{h\in\mathcal{H}}{\min}L_{\mathcal{D}}\left(h\right)+\varepsilon\right\} \right)
+\]
+
+\end_inset
+
+ובפרט זה מתקיים עבור 
+\begin_inset Formula $m=m_{\mathcal{H}}^{UC}\left(\frac{\varepsilon}{2},\delta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+כלומר הראינו שלכל 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+, ולכל 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ פונקציית התפלגות על 
+\begin_inset Formula $\mathcal{X}\times\mathcal{Y}$
+\end_inset
+
+, קיים אלגוריתם למידה - 
+\begin_inset Formula $\mathcal{A}_{\text{ERM}}$
+\end_inset
+
+ - המקיים לכל 
+\begin_inset Formula $m\geqslant m_{\mathcal{H}}^{UC}\left(\frac{\varepsilon}{2},\delta\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\mathcal{D}^{m}\left(\left\{ S\in\left(\mathcal{X}\times\mathcal{Y}\right)^{m}\mid L_{\mathcal{D}}\left(\mathcal{A}_{\text{ERM}}\left(S\right)\right)\leqslant\underset{h\in\mathcal{H}}{\min}L_{\mathcal{D}}\left(h\right)+\varepsilon\right\} \right)\geqslant1-\delta
+\]
+
+\end_inset
+
+ולכן לפי ההגדרה 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Agnostic-PAC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+למידה עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sample complexity
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ המקיים ש- 
+\begin_inset Formula $m_{\mathcal{H}}\left(\varepsilon,\delta\right)\leqslant m_{\mathcal{H}}^{UC}\left(\frac{\varepsilon}{2},\delta\right)$
+\end_inset
+
+, כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "73col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2_8.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+פתרון
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+מחלקת היפותזות 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ שמקיימת את התנאי הזה היא לא בהכרח למידה-
+\lang english
+agnostic-PAC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם פונקציית ה-
+\lang english
+loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- 
+\begin_inset Formula $\ell_{0-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הסיבה לכך היא שהתנאי הזה מאפשר לאלגוריתם הלמידה 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+להכיר
+\begin_inset Quotes erd
+\end_inset
+
+ את ההתפלגות 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ על 
+\begin_inset Formula $\mathcal{Z}$
+\end_inset
+
+, ובפרט מאפשר לו לחשב את 
+\begin_inset Formula $L_{\mathcal{D}}\left(h\right)$
+\end_inset
+
+ לכל 
+\begin_inset Formula $h\in\mathcal{H}$
+\end_inset
+
+, דבר שאינו אפשרי ב-
+\lang english
+framework
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+agnostic PAC
+\lang hebrew
+.
+ דוגמא נגדית:
+\end_layout
+
+\begin_layout Standard
+ניקח את 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ להיות מחלקת כל הפונקציות מ-
+\begin_inset Formula $\mathcal{X}$
+\end_inset
+
+ ל- 
+\begin_inset Formula $\left\{ \pm1\right\} $
+\end_inset
+
+ )
+\lang english
+Unstructured Hypotheses Class
+\lang hebrew
+(, כלומר 
+\begin_inset Formula $\mathcal{H}=\mathcal{X}^{\left\{ \pm1\right\} }$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ מקיימת את התנאי הנתון:
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula $m_{\mathcal{H}}:\left(0,1\right)^{2}\rightarrow\kaliNatural$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $m_{\mathcal{H}}\left(\varepsilon,\delta\right)=1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+לכל התפלגות 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ על 
+\begin_inset Formula $\mathcal{Z}$
+\end_inset
+
+ ניקח אלגוריתם 
+\begin_inset Formula $\mathcal{A}:\mathcal{Z}^{m}\rightarrow\mathcal{H}$
+\end_inset
+
+ המוגדר לכל 
+\begin_inset Formula $\mathcal{Z}^{m}\supseteq S=\left\{ \left(x_{i},y_{i}\right)\right\} _{i=1}^{m}$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\mathcal{A}\left(S\right)=\underset{h\in\mathcal{H}}{\text{argmin}}\left\{ L_{\mathcal{D}}\left(h\right)\right\} 
+\]
+
+\end_inset
+
+נקבל שלכל 
+\begin_inset Formula $\varepsilon,\delta\in\left(0,1\right)$
+\end_inset
+
+, כאשר מפעילים את 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ על 
+\begin_inset Formula $S\in\mathcal{Z}^{m}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $m\geqslant m_{\mathcal{H}}\left(\varepsilon,\delta\right)$
+\end_inset
+
+ הוא מחזיר בהסתברות 
+\begin_inset Formula $1-\delta\leqslant1$
+\end_inset
+
+ היפותזה 
+\begin_inset Formula $h_{S}:\mathcal{X}\rightarrow\left\{ \pm1\right\} $
+\end_inset
+
+ כך ש-
+\begin_inset Formula 
+\[
+L_{\mathcal{D}}\left(h_{S}\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהגדרת \ensuremath{\mathcal{A}}}}}}}{\downarrow}}}{=}\min_{h\in\mathcal{H}}\left\{ L_{\mathcal{D}}\left(h\right)\right\} \leqslant\min_{h\in\mathcal{H}}\left\{ L_{\mathcal{D}}\left(h\right)\right\} +\varepsilon
+\]
+
+\end_inset
+
+מצד שני, ראינו בהרצאה ש-
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ היא לא למידה-
+\lang english
+PAC
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+ראינו בנוסף שאם מחלקת היפותזות היא למידה-
+\lang english
+agnostic-PAC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם פונקציית ה-
+\lang english
+loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+- 
+\begin_inset Formula $\ell_{0-1}$
+\end_inset
+
+ אז היא גם למידה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+לכן מכך ש-
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ לא למידה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נובע שהיא 
+\series bold
+לא
+\series default
+ למידה -
+\lang english
+agnostic-PAC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם 
+\begin_inset Formula $\ell_{0-1}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
