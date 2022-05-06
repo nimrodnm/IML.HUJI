@@ -57,8 +57,8 @@ class AdaBoost(BaseEstimator):
 
         # Create and fit weak learners:
         for t in range(self.iterations_):
+            print(f"\radaboost fit iteration number {t + 1} out of {self.iterations_}", end='')
             # Fitting a weak learner:
-            print(f"adaboost fit iteration number {t+1}")
             self.models_.append(self.wl_().fit(X, self.D_ * y))
             y_pred = self.models_[t].predict(X)
             # Computing the weighted misclassification error of the weak learner:
@@ -124,9 +124,9 @@ class AdaBoost(BaseEstimator):
         if not self.fitted_:
             raise ValueError("AdaBoost must first be fitted before calling ``partial_predict``")
 
+        T = min(T, self.iterations_)
         pred = np.zeros(X.shape[0])
         for t in range(T):
-            print(f"adaboost predict iteration number {t + 1}")
             pred += self.weights_[t] * self.models_[t].predict(X)
         return np.sign(pred)
 

@@ -3084,7 +3084,11 @@ agnostic PAC
 \end_layout
 
 \begin_layout Standard
-ניקח את 
+נגדיר 
+\begin_inset Formula $\mathcal{X}=\kaliReal$
+\end_inset
+
+, וניקח את 
 \begin_inset Formula $\mathcal{H}$
 \end_inset
 
@@ -3101,7 +3105,7 @@ agnostic PAC
 Unstructured Hypotheses Class
 \lang hebrew
 (, כלומר 
-\begin_inset Formula $\mathcal{H}=\mathcal{X}^{\left\{ \pm1\right\} }$
+\begin_inset Formula $\mathcal{H}=\kaliReal^{\left\{ \pm1\right\} }$
 \end_inset
 
 .
@@ -3398,6 +3402,783 @@ agnostic-PAC
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Section*
+חלק פרקטי
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+גרף המציג את השגיאה )
+\lang english
+misclassification error
+\lang hebrew
+( של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Adaboost
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ על דגימות האימון )בכחול( ועל דגימות המבחן )בכתום( כפונקציה של מספר המודלים
+ החלשים שנעשה בהם שימוש באלגוריתם:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q1_Plot.PNG
+	lyxscale 57
+	scale 57
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+רואים מהגרף שככל שמספר המודלים החלשים שמשתתפים באלגוריתם 
+\series bold
+גדול
+\series default
+ יותר - השגיאה נהיית 
+\series bold
+קטנה
+\series default
+ יותר.
+ בנוסף, רואים שהשגיאה של המודל על דגימות האימון קטנה יותר מהשגיאה שלו על
+ דגימות המבחן.
+ עם זאת, הפער בשגיאה לא גדול כ
+\begin_inset Quotes erd
+\end_inset
+
+כ ולכן אפשר אולי להסיק שהאלגוריתם מכליל לא רע ולא מתאים את עצמו מדי לדאטא
+ האימון )כלומר לא סובל מ-
+\lang english
+over fitting
+\lang hebrew
+(.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+גרף המציג את ה-
+\lang english
+decision boundary
+\lang hebrew
+ של המודל עבור 
+\begin_inset Formula $5,50,100,250$
+\end_inset
+
+ לומדים חלשים שמשתתפים בו, כאשר הנקודות הן דגימות 
+\series bold
+המבחן
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q2_Plot.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+רואים מהגרף שככל שיותר לומדים חלשים משתתפים במודל, הוא נהיה אקספרסיבי יותר
+ ומצליח לסווג טוב יותר את דגימות המבחן.
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+גרף המציג את ה-
+\lang english
+decision boundary
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של המודל עבור האנסמבל בגודל האופטימלי )מתוך
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+250
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+האפשרויות(:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q3_Plot.PNG
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+גרף המציב את ה-
+\lang english
+decision boundary
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של המודל המלא על דאטא 
+\series bold
+האימון
+\series default
+, כאשר גודל הנקודות פורפורציונלי להתפלגות שלהן בסוף ריצת ה-
+\lang english
+adaboost
+\lang hebrew
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q4_Plot.PNG
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שהנקודות עם המשקל הגדול ביותר בסוף ריצת האלגוריתם הן הנקודות
+ שנמצאות על 
+\begin_inset Quotes eld
+\end_inset
+
+הגבול
+\begin_inset Quotes erd
+\end_inset
+
+ בין המחלקות.
+ המשמעות של זה היא שמרבית הטעויות שהלומדים החלשים במודל עשו במהלך ה-
+\lang english
+fit
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+נעשו על הנקודות הללו.
+ אפשר להסיק מכך )וזו מסקנה הגיונית לחלוטין בלי קשר לגרף( שהנקודות שהכי 
+\begin_inset Quotes eld
+\end_inset
+
+מאתגרות
+\begin_inset Quotes erd
+\end_inset
+
+ את המודל הן הנקודות שנמצאות על הגבול בין המחלקות, ואילו הנקודות שהכי 
+\begin_inset Quotes eld
+\end_inset
+
+קל
+\begin_inset Quotes erd
+\end_inset
+
+ למודל לסווג הן הנקודות שנמצאות בסביבה הומוגנית יותר, כלומר רחוקות מנקודות
+ עם לייבל ששונה מהלייבל שלהן.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+הגרפים המתאימים לשאלות 
+\begin_inset Formula $1$
+\end_inset
+
+ ו-
+\begin_inset Formula $4$
+\end_inset
+
+ עבור דאטא שנוצר עם רעש ברמה 
+\begin_inset Formula $0.4$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q5_Plot1.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+באופן דומה למקרה ללא הרעש, ככל שמספר הלומדים החלשים משתתפים במודל - השגיאה
+ על סט האימון קטנה.
+\end_layout
+
+\begin_layout Standard
+אבל במקרה הזה, בשלב מסויים ניתן לראות בגרף שהשגיאה על סט המבחן מתחילה לגדול.
+ ניתן להסביר זאת בכך שהמודל מתחיל לעשות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+overfitting
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לדאטא וללמוד את הרעש.
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שהפער בין השגיאה של המודל על סט האימון והשגיאה שלו על סט המבחן
+ גדל ככל שהוא עושה שימוש ביותר לומדים חלשים.
+\end_layout
+
+\begin_layout Standard
+במונחי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+bias-variance
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אפשר לומר שככל שהמורכבות של המודל גדולה יותר, כלומר ככל שהוא עושה שימוש
+ ב-
+\lang english
+ensemble
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+גדול יותר, ה-
+\lang english
+variance
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שלו גדל בעוד שה-
+\lang english
+bias
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שלו קטן.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Q5_Plot2.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שכאשר הדאטא נדגם עם רעש )ברמה דיי גבוהה( המודל מתקשה יותר להפריד
+ אותו.
+\end_layout
+
+\begin_layout Standard
+מכיוון שיש נקודות רבות שהלומדים החלשים טועים עליהן, אז הגודל של רוב הנקודות
+ בגרף השני הוא יחסית דומה.
 \end_layout
 
 \end_body
