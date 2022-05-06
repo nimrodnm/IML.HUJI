@@ -110,10 +110,6 @@ class DecisionStump(BaseEstimator):
         s_idx = values.argsort()
         s_values, s_labels = values[s_idx], labels[s_idx]
 
-        # Predict according to each value in s_values as threshold and calculate the error:
-        # y_pred = np.full(shape=s_labels.shape, fill_value=sign)
-        # error = self.__weighted_misclassification_error(s_labels, y_pred)
-
         # Check first possible prediction - sign for every sample:
         error = np.abs(s_labels[np.sign(s_labels) != sign]).sum()
         # Set the initial threshold and minimal error:
@@ -122,16 +118,12 @@ class DecisionStump(BaseEstimator):
         # "moving" the threshold to the next value) results by a mistake. If so - update the error accordingly by
         # subtracting (-sign)*s_labels[i - 1].
         for i in range(1, s_values.size):  # start iterating from the second value
-            # y_pred[i - 1] = -sign
             error -= (-sign) * s_labels[i - 1]
-            # error = self.__weighted_misclassification_error(s_labels, y_pred)
             # Update min_err only if the current value is a legal threshold (different from the previous value):
             if error < min_err and s_values[i - 1] != s_values[i]:
                 best_thr, min_err = s_values[i], error
 
         # Check last possible prediction, -sign for every sample:
-        # y_pred[-1] = -sign
-        # error = self.__weighted_misclassification_error(s_labels, y_pred)
         if np.abs(s_labels[np.sign(s_labels) != -sign]).sum() < min_err:
             best_thr, min_err = (s_values[-1] + abs(EPSILON * s_values[-1])), error
 
@@ -155,28 +147,3 @@ class DecisionStump(BaseEstimator):
             Performance under misclassification loss function
         """
         return misclassification_error(y, self._predict(X))
-
-    # @staticmethod
-    # def __weighted_misclassification_error(y_true: np.ndarray, y_pred: np.ndarray) -> float:
-    #     """
-    #     Calculate misclassification according to the weights that are embedded in y_true
-    #
-    #     Parameters
-    #     ----------
-    #     y_true: ndarray of shape (n_samples, )
-    #         True response values, multiplied with weights array
-    #     y_pred: ndarray of shape (n_samples, )
-    #         Predicted response values
-    #
-    #     Returns
-    #     -------
-    #     Weighted misclassification of given predictions
-    #     """
-    #     return np.abs(y_true[np.sign(y_true) != np.sign(y_pred)]).sum()
-
-
-if __name__ == '__main__':
-    values = np.array([68, 69, 69, 70, 74, 80, 81])
-    labels = np.array([1, -1, 1, -1, -1, 1, 1])
-    stump = DecisionStump()
-    print(stump._find_threshold(values, labels, 1))
