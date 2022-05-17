@@ -1,6 +1,7 @@
 from __future__ import annotations
-from typing import NoReturn
-from ...base import BaseEstimator
+from typing import NoReturn, Tuple
+from IMLearn.base import BaseEstimator
+from IMLearn.learners.regressors import LinearRegression
 import numpy as np
 
 
@@ -31,10 +32,7 @@ class RidgeRegression(BaseEstimator):
         coefs_: ndarray of shape (n_features,) or (n_features+1,)
             Coefficients vector fitted by linear regression. To be set in
             `LinearRegression.fit` function.
-        """
 
-
-        """
         Initialize a ridge regression model
         :param lam: scalar value of regularization parameter
         """
@@ -42,6 +40,7 @@ class RidgeRegression(BaseEstimator):
         self.coefs_ = None
         self.include_intercept_ = include_intercept
         self.lam_ = lam
+        self.regressor = LinearRegression(include_intercept=False)
 
     def _fit(self, X: np.ndarray, y: np.ndarray) -> NoReturn:
         """
@@ -59,7 +58,11 @@ class RidgeRegression(BaseEstimator):
         -----
         Fits model with or without an intercept depending on value of `self.include_intercept_`
         """
-        raise NotImplementedError()
+        # If an intercept is needed - add a column of ones to the design matrix:
+        if self.include_intercept_:
+            X = np.c_[np.ones(X.shape[0]), X]
+        self.regressor.fit(self.__transform(X), np.concatenate((y, np.zeros(X.shape[1]))))
+        self.coefs_ = self.regressor.coefs_
 
     def _predict(self, X: np.ndarray) -> np.ndarray:
         """
@@ -75,7 +78,10 @@ class RidgeRegression(BaseEstimator):
         responses : ndarray of shape (n_samples, )
             Predicted responses of given samples
         """
-        raise NotImplementedError()
+        # If an intercept is needed - add a column of ones to the design matrix:
+        if self.include_intercept_:
+            X = np.c_[np.ones(X.shape[0]), X]
+        return self.regressor.predict(X)
 
     def _loss(self, X: np.ndarray, y: np.ndarray) -> float:
         """
@@ -94,4 +100,18 @@ class RidgeRegression(BaseEstimator):
         loss : float
             Performance under MSE loss function
         """
-        raise NotImplementedError()
+        return self.regressor.loss(X, y)
+
+    def __transform(self, X: np.ndarray) -> np.ndarray:
+        """
+        Transforms the given design matrix X with dimensions m*d, into an extended design matrix with dimensions
+        (m+d)*d, where the d extra rows at the bottom are the identity matrix I multiplied by sqrt(self.lam_).
+
+        Parameters:
+            X : ndarray of shape (n_samples, n_features)
+                The design matrix to be transformed.
+
+        Returns:
+            transformed_X: ndarray of shape (n_samples + n_features, n_features)
+        """
+        return np.concatenate((X, np.identity(X.shape[1]) * np.sqrt(self.lam_)), axis=0)

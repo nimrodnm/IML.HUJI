@@ -37,4 +37,18 @@ def cross_validate(estimator: BaseEstimator, X: np.ndarray, y: np.ndarray,
     validation_score: float
         Average validation score over folds
     """
-    raise NotImplementedError()
+    # Split the data into k=cv manifolds:
+    X_indices = np.arange(X.shape[0])
+    manifolds = np.array_split(X_indices, cv)
+
+    # Train over every manifold and sum the errors:
+    train_score, validation_score = 0, 0
+    for i in range(cv):
+        train_indices = np.setdiff1d(X_indices, manifolds[i])
+        estimator.fit(X[train_indices], y[train_indices])
+        train_pred, validation_pred = estimator.predict(X[train_indices]), estimator.predict(X[manifolds[i]])
+        train_score += scoring(y[train_indices], train_pred)
+        validation_score += scoring(y[manifolds[i]], validation_pred)
+
+    # Return normalized scores:
+    return train_score / cv, validation_score / cv
