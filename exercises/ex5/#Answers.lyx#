@@ -1,0 +1,926 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\begin_preamble
+\usepackage{culmus}
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Fix numbering in hebrew article:
+\renewcommand{\thetheorem}{\beginL \thesection.\arabic{theorem}}
+
+% Create symbol for DotCup (forn union):
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\usepackage{mathtools}
+\usepackage{dsfont}
+\end_preamble
+\use_default_options true
+\begin_modules
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/nimro/AppData/Roaming/LyX2.3/MacrosHeb.lyx"
+
+\end_inset
+
+
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Title
+)
+\numeric on
+67577
+\numeric off
+( מבוא למערכות לומדות | תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Author
+שם: נמרוד בר גיורא | ת"ז:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+207090622
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק תאורטי
+\end_layout
+
+\begin_layout Subsection*
+רגולריזציה
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Q1.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "65col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1_a.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $X=U\Sigma V^{\top}$
+\end_inset
+
+ פירוק ה-
+\lang english
+SVD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ ראינו בתרגול שהפתרון של בעיית הרגרסיה הכולל רגולריזציה בשיטת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ridge
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוא:
+\begin_inset Formula 
+\[
+\hat{w}_{\lambda}=V\Sigma_{\lambda}U^{\top}\cdot y\quad,\quad\left[\Sigma_{\lambda}\right]_{ii}=\frac{\sigma_{i}}{\sigma_{i}^{2}+\lambda}
+\]
+
+\end_inset
+
+והפתרון שראינו עבור בעיית הרגרסיה שאינו כולל רגולריזציה הוא:
+\begin_inset Formula 
+\[
+\hat{w}=V\Sigma^{\dagger}U^{\top}\cdot y\quad,\quad\left[\Sigma^{\dagger}\right]_{ii}=\begin{cases}
+1/\sigma_{i} & \sigma_{i}\neq0\\
+0 & \sigma_{i}=0
+\end{cases}
+\]
+
+\end_inset
+
+נשים לב ש-
+\begin_inset Formula 
+\begin{align*}
+A_{\lambda} & =\left(X^{\top}X+\lambda I_{d}\right)^{-1}\left(X^{\top}X\right)=\left(\left(V\Sigma^{\top}U^{\top}\right)\left(U\Sigma V^{\top}\right)+\lambda I_{d}\right)^{-1}\left(V\Sigma^{\top}U^{\top}\right)\left(U\Sigma V^{\top}\right)=\\
+ & \overset{{\color{green}\left(1\right)}}{=}\left(V\Sigma^{\top}\Sigma V^{\top}+\lambda I_{d}\right)^{-1}V\Sigma^{\top}\Sigma V^{\top}\overset{{\color{green}\left(2\right)}}{=}\left(V\left(\Sigma^{\top}\Sigma+\lambda I_{d}\right)V^{\top}\right)^{-1}V\Sigma^{\top}\Sigma V^{\top}=\\
+ & \overset{{\color{green}\left(3\right)}}{=}V\left(\Sigma^{\top}\Sigma+\lambda I_{d}\right)^{-1}V^{\top}V\Sigma^{\top}\Sigma V^{\top}\overset{{\color{green}\left(1\right)}}{=}V\left(\Sigma^{\top}\Sigma+\lambda I_{d}\right)^{-1}\Sigma^{\top}\Sigma V^{\top}\overset{{\color{green}\left(4\right)}}{=}V\Sigma_{\lambda}\cdot\Sigma V^{\top}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\left(1\right)}$
+\end_inset
+
+: 
+\begin_inset Formula $V$
+\end_inset
+
+ ו-
+\begin_inset Formula $U$
+\end_inset
+
+ מטריצות אורתוגונליות ולכן 
+\begin_inset Formula $U^{\top}U=I_{m}$
+\end_inset
+
+ ו- 
+\begin_inset Formula $V^{\top}V=I_{d}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+
+\color green
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+
+\color inherit
+: לפי למה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $2.1$
+\end_inset
+
+ שראינו בתרגול.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula ${\color{green}\left(3\right)}$
+\end_inset
+
+: נובע מתכונה של מטריצות אורתוגונליות שראינו בתרגול )ו-
+\begin_inset Formula $V$
+\end_inset
+
+ אורתוגונלית(.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula ${\color{green}\left(4\right)}$
+\end_inset
+
+: ראינו בתרגול שמהגדרת 
+\begin_inset Formula $\Sigma,\Sigma_{\lambda}$
+\end_inset
+
+ מתקבל השיוויון 
+\begin_inset Formula $\left(\Sigma^{\top}\Sigma+\lambda I_{d}\right)^{-1}\Sigma^{\top}=\Sigma_{\lambda}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+ולכן:
+\begin_inset Formula 
+\[
+A_{\lambda}\cdot\hat{w}=\left(V\Sigma_{\lambda}\Sigma V^{\top}\right)\left(V\Sigma^{\dagger}U^{\top}\right)\overset{{\color{green}\left(1\right)}}{=}V\Sigma_{\lambda}\Sigma\Sigma^{\dagger}U^{\top}\overset{{\color{green}\left(5\right)}}{=}V\Sigma_{\lambda}IU^{\top}=V\Sigma_{\lambda}U^{\top}=\hat{w}_{\lambda}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula ${\color{green}\left(5\right)}$
+\end_inset
+
+: נתון ש- 
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ 
+\series bold
+הפיכה
+\series default
+ ולכן כל הערכים הסינגולריים שלה 
+\series bold
+שונים
+\series default
+ מ-
+\begin_inset Formula $0$
+\end_inset
+
+.
+ לכן מהגדרת 
+\begin_inset Formula $\Sigma^{\dagger}$
+\end_inset
+
+ נובע ש- 
+\begin_inset Formula $\left[\Sigma\Sigma^{\dagger}\right]_{ii}=\sigma_{i}\cdot\frac{1}{\sigma_{i}}=1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $i\in\left[d\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1_b.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+.
+ מכך ש-
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ הפיכה נובע שפתרון לבעיית הרגרסיה הליניארית הוא:
+\begin_inset Formula 
+\[
+\hat{w}=\left(X^{\top}X\right)^{-1}X^{\top}y
+\]
+
+\end_inset
+
+נציב את הזהות שקיבלנו בסעיף הקודם עבור 
+\begin_inset Formula $\hat{w}_{\lambda}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\kaliExpectedValue\left(\hat{w}_{\lambda}\right) & =\kaliExpectedValue\left(A_{\lambda}\hat{w}\right)\overset{{\color{green}\sun}}{=}A_{\lambda}\kaliExpectedValue\left(\hat{w}\right)=A_{\lambda}\text{\textbf{w}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: 
+\begin_inset Formula $X$
+\end_inset
+
+ מטריצה קבועה ולכן 
+\begin_inset Formula $A_{\lambda}$
+\end_inset
+
+ מטריצה קבועה, ולכל 
+\begin_inset Formula $i\in\left[d\right]$
+\end_inset
+
+ הכניסה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של 
+\begin_inset Formula $\kaliExpectedValue\left(A_{\lambda}\hat{w}\right)$
+\end_inset
+
+ היא 
+\begin_inset Formula $\kaliExpectedValue\left(a^{i}\hat{w}\right)$
+\end_inset
+
+, כאשר 
+\begin_inset Formula $a^{i}$
+\end_inset
+
+ היא השורה ה-
+\begin_inset Formula $i$
+\end_inset
+
+ של 
+\begin_inset Formula $A_{\lambda}$
+\end_inset
+
+.
+ לכן:
+\begin_inset Formula 
+\[
+\kaliExpectedValue\left(a^{i}\hat{w}\right)=\kaliExpectedValue\left(\stackrel[j=1]{d}{\sum}a_{j}^{i}\hat{w}_{j}\right)\overset{{\color{gray}\overset{\text{\R{\text{ליניאריות בתוחלת}}}}{\downarrow}}}{=}\stackrel[j=1]{d}{\sum}a_{j}^{i}\kaliExpectedValue\left(\hat{w}_{j}\right)=a^{i}\cdot\kaliExpectedValue\left(\hat{w}\right)
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $\kaliExpectedValue\left(A_{\lambda}\hat{w}\right)=A_{\lambda}\kaliExpectedValue\left(\hat{w}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נשים לב ש-
+\begin_inset Formula $A_{\lambda}\neq I_{d}$
+\end_inset
+
+ כי אם נניח בשלילה ש- 
+\begin_inset Formula $A_{\lambda}=I_{d}$
+\end_inset
+
+ נקבל ש-
+\begin_inset Formula 
+\[
+I_{d}=A_{\lambda}=\left(X^{\top}X+\lambda I_{d}\right)^{-1}\left(X^{\top}X\right)
+\]
+
+\end_inset
+
+ולכן
+\begin_inset Formula 
+\[
+\left(X^{\top}X+\lambda I_{d}\right)^{-1}=\left(X^{\top}X\right)^{-1}
+\]
+
+\end_inset
+
+מכיוון ש-
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ קיבלנו שקיימות ל-
+\begin_inset Formula $X^{\top}X$
+\end_inset
+
+ 
+\series bold
+שתי
+\series default
+ מטריצות הפוכות 
+\series bold
+שונות
+\series default
+, וזו סתירה.
+\end_layout
+
+\begin_layout Proof
+לכן 
+\begin_inset Formula $\kaliExpectedValue\left(\hat{w}_{\lambda}\right)=A_{\lambda}\text{\textbf{w}}\neq\text{\textbf{w}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1_c.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+\kaliVar\left(\hat{w}_{\lambda}\right)=\kaliVar\left(A_{\lambda}\hat{w}\right)=A_{\lambda}\kaliVar\left(\hat{w}\right)A_{\lambda}^{\top}\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהרמז}}}}}{\downarrow}}}{=}A_{\lambda}\sigma^{2}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1_d.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+לפי ההגדרה של ה-
+\begin_inset Formula $\text{Bias},\kaliVar$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\kaliVar\left(\hat{w}_{\lambda}\right) & =\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}-\kaliExpectedValue\left(\hat{w}_{\lambda}\right)\right\Vert ^{2}\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהסעיף הקודם}}}}}{\downarrow}}}{=}\sigma^{2}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\coloneqq\kaliVar\left(\lambda\right)\mid\\
+\text{Bias}^{2}\left(\hat{w}_{\lambda}\right) & =\left\Vert \kaliExpectedValue\left(\hat{w}_{\lambda}\right)-\text{\textbf{w}}\right\Vert ^{2}=
+\end{align*}
+
+\end_inset
+
+ומההגדרה של ה-
+\begin_inset Formula $\text{Bias}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1_e.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
