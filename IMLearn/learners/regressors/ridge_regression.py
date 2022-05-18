@@ -100,6 +100,9 @@ class RidgeRegression(BaseEstimator):
         loss : float
             Performance under MSE loss function
         """
+        # If an intercept is needed - add a column of ones to the design matrix:
+        if self.include_intercept_:
+            X = np.c_[np.ones(X.shape[0]), X]
         return self.regressor.loss(X, y)
 
     def __transform(self, X: np.ndarray) -> np.ndarray:

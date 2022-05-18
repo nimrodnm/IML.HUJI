@@ -39,7 +39,6 @@ def cross_validate(estimator: BaseEstimator, X: np.ndarray, y: np.ndarray,
     """
     # Split the data into k=cv manifolds:
     X_indices = np.arange(X.shape[0])
-    # X_indices = np.random.choice(X.shape[0], size=X.shape[0], replace=False)
     manifolds = np.array_split(X_indices, cv)
 
     # Train over every manifold and sum the errors:
