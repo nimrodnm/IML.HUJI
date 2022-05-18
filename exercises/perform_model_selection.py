@@ -23,19 +23,17 @@ def select_polynomial_degree(n_samples: int = 100, noise: float = 5):
     """
     # Question 1 - Generate dataset for model f(x)=(x+3)(x+2)(x+1)(x-1)(x-2) + eps for eps Gaussian noise
     # and split into training- and testing portions
-    poly = lambda x: (x + 3) * (x + 2) * (x - 1) * (x - 2)
-    epsilon = np.random.normal(0, noise, n_samples)
+    poly = lambda x: (x + 3) * (x + 2) * (x + 1) * (x - 1) * (x - 2)
     x = np.random.uniform(-1.2, 2, n_samples)
+    x_sorted = np.linspace(-1.2, 2, n_samples)
+    epsilon = np.random.normal(0, np.sqrt(noise), n_samples)
     y = poly(x) + epsilon
-
     train_x, train_y, test_x, test_y = split_train_test(pd.DataFrame(x), pd.Series(y), train_proportion=(2 / 3))
     train_x, test_x = train_x.squeeze(), test_x.squeeze()
-    fig_1 = go.Figure([go.Scatter(x=x, y=poly(x), mode="markers",
-                                  name="Full Noiseless Data", marker=dict(color="black")),
-                       go.Scatter(x=train_x, y=train_y, mode="markers",
-                                  name="Train Data", marker=dict(color="blue")),
-                       go.Scatter(x=test_x, y=test_y, mode="markers",
-                                  name="Test Data", marker=dict(color="red"))])
+    fig_1 = go.Figure([go.Scatter(x=x_sorted, y=poly(x_sorted), mode="lines",
+                                  name="Full Noiseless Data", line_color="black"),
+                       go.Scatter(x=train_x, y=train_y, mode="markers", name="Train Data", marker_color="blue"),
+                       go.Scatter(x=test_x, y=test_y, mode="markers", name="Test Data", marker_color="red")])
     fig_1.update_layout(title=f"Scatter Plot of Noiseless Model and of Test and Train Data<br>"
                               f"Noise = {noise}, Number of Samples = {n_samples}",
                         xaxis_title="x", yaxis_title="y")
@@ -85,7 +83,7 @@ def select_regularization_parameter(n_samples: int = 50, n_evaluations: int = 50
     train_y, test_y = train_y.to_numpy(), test_y.to_numpy()
 
     # Question 7 - Perform CV for different values of the regularization parameter for Ridge and Lasso regressions
-    lambdas_range_start, lambdas_range_end = 0.001, 5
+    lambdas_range_start, lambdas_range_end = 0.0001, 0.2
     lambdas = np.linspace(lambdas_range_start, lambdas_range_end, n_evaluations)
     ridge_train_errors, lasso_train_errors, ridge_validation_errors, lasso_validation_errors = [], [], [], []
     for lam in lambdas:
@@ -121,7 +119,7 @@ def select_regularization_parameter(n_samples: int = 50, n_evaluations: int = 50
 
 if __name__ == '__main__':
     np.random.seed(0)
-    # for n in [100, 1500]:
-    #     select_polynomial_degree(n_samples=n)
-    #     select_polynomial_degree(n_samples=n, noise=0)
+    select_polynomial_degree(n_samples=100, noise=5)
+    select_polynomial_degree(n_samples=100, noise=0)
+    select_polynomial_degree(n_samples=1500, noise=10)
     select_regularization_parameter(n_samples=50, n_evaluations=500)

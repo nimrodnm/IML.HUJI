@@ -39,14 +39,16 @@ def cross_validate(estimator: BaseEstimator, X: np.ndarray, y: np.ndarray,
     """
     # Split the data into k=cv manifolds:
     X_indices = np.arange(X.shape[0])
+    # X_indices = np.random.choice(X.shape[0], size=X.shape[0], replace=False)
     manifolds = np.array_split(X_indices, cv)
 
     # Train over every manifold and sum the errors:
     train_score, validation_score = 0, 0
     for i in range(cv):
+        new_estimator = deepcopy(estimator)  # Deep-copy the estimator to prevent the previous fit from effecting
         train_indices = np.setdiff1d(X_indices, manifolds[i])
-        estimator.fit(X[train_indices], y[train_indices])
-        train_pred, validation_pred = estimator.predict(X[train_indices]), estimator.predict(X[manifolds[i]])
+        new_estimator.fit(X[train_indices], y[train_indices])
+        train_pred, validation_pred = new_estimator.predict(X[train_indices]), new_estimator.predict(X[manifolds[i]])
         train_score += scoring(y[train_indices], train_pred)
         validation_score += scoring(y[manifolds[i]], validation_pred)
 

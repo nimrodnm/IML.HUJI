@@ -858,31 +858,110 @@ status open
  ומה שחישבנו בסעיפים הקודמים:
 \begin_inset Formula 
 \begin{align*}
-\kaliVar\left(\hat{w}_{\lambda}\right) & =\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}-\kaliExpectedValue\left(\hat{w}_{\lambda}\right)\right\Vert ^{2}\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהסעיף הקודם}}}}}{\downarrow}}}{=}\sigma^{2}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\coloneqq\kaliVar\left(\lambda\right)\\
-\text{Bias}^{2}\left(\hat{w}_{\lambda}\right) & =\left\Vert \kaliExpectedValue\left(\hat{w}_{\lambda}\right)-\text{\textbf{w}}\right\Vert ^{2}\underset{{\color{gray}\underset{\mathclap{\text{\R{\text{מסעיף ב'}}}}}{\uparrow}}}{=}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}=\left\Vert \left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}\right\Vert ^{2}\coloneqq\text{Bias}^{2}\left(\lambda\right)
+\kaliVar\left(\hat{w}_{\lambda}\right) & =\kaliExpectedValue\left(\left(\hat{w}_{\lambda}-\kaliExpectedValue(\hat{w}_{\lambda})\right)\left(\hat{w}_{\lambda}-\kaliExpectedValue(\hat{w}_{\lambda})\right)^{\top}\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהסעיף הקודם}}}}}{\downarrow}}}{=}\sigma^{2}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\coloneqq\kaliVar\left(\lambda\right)\\
+\left\Vert \text{Bias}\left(\hat{w}_{\lambda}\right)\right\Vert ^{2} & =\left\Vert \kaliExpectedValue\left(\hat{w}_{\lambda}\right)-\text{\textbf{w}}\right\Vert ^{2}\underset{{\color{gray}\underset{\mathclap{\text{\R{\text{מסעיף ב'}}}}}{\uparrow}}}{=}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}=\left\Vert \left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}\right\Vert ^{2}\coloneqq\text{Bias}^{2}\left(\lambda\right)
 \end{align*}
 
 \end_inset
 
-נסמן 
-\begin_inset Formula $\overline{w}_{\lambda}=\kaliExpectedValue\left(\hat{w}_{\lambda}\right)$
+לפי ההגדרה, ה-
+\begin_inset Formula $\text{MSE}$
 \end_inset
 
- ונשים לב ש-
+ של 
+\begin_inset Formula $\hat{w}_{\lambda}$
+\end_inset
+
+ הוא:
 \begin_inset Formula 
 \[
+\text{MSE}\left(\hat{w}_{\lambda}\right)=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}-\text{\textbf{w}}\right\Vert ^{2}\right)
+\]
+
+\end_inset
+
+נסמן 
+\begin_inset Formula $\overline{w}=\kaliExpectedValue\left(\hat{w}_{\lambda}\right)$
+\end_inset
+
+.
+ נשים לב שלפי ההגדרה של מכפלה חיצונית האלכסון של מטריצת ה-
+\begin_inset Formula $\text{covariance}$
+\end_inset
+
+ 
+\begin_inset Formula $\left(\hat{w}_{\lambda}-\overline{w}\right)\left(\hat{w}_{\lambda}-\overline{w}\right)^{\top}$
+\end_inset
+
+ מכיל בדיוק את הערכים:
+\begin_inset Formula 
+\[
+\left[\left(\hat{w}_{\lambda}-\overline{w}\right)\right]_{i}[\left(\hat{w}_{\lambda}-\overline{w}\right)^{\top}]_{i}=\left[\left(\hat{w}_{\lambda}-\overline{w}\right)\right]_{i}\cdot\left[\left(\hat{w}_{\lambda}-\overline{w}\right)\right]_{i}=\left[\left(\hat{w}_{\lambda}-\overline{w}\right)\right]_{i}^{2}
+\]
+
+\end_inset
+
+כלומר את הריבועים של הקואורדינטות של הוקטור 
+\begin_inset Formula $\left(\hat{w}_{\lambda}-\overline{w}\right)$
+\end_inset
+
+.
+ לכן, מכך שתוחלת של מטריצת משתנים מקריים היא מטריצת התוחלות שלהם ומליניאריות
+ התוחלת נובע ש- 
+\begin_inset Formula 
+\begin{align*}
+\text{Tr}\left(\kaliVar\left(\lambda\right)\right) & =\text{Tr}\left(\kaliExpectedValue\left(\left(\hat{w}_{\lambda}-\overline{w}\right)\left(\hat{w}_{\lambda}-\overline{w}\right)^{\top}\right)\right)=\stackrel[i=1]{d}{\sum}\kaliExpectedValue\left(\left[\left(\hat{w}_{\lambda}-\overline{w}\right)\right]_{i}^{2}\right)=\kaliExpectedValue\left(\stackrel[i=1]{d}{\sum}\left[\left(\hat{w}_{\lambda}-\overline{w}\right)\right]_{i}^{2}\right)=\kaliExpectedValue\left(\left\Vert \left(\hat{w}_{\lambda}-\overline{w}\right)\right\Vert ^{2}\right)
+\end{align*}
+
+\end_inset
+
+נפתח את הביטויים 
+\begin_inset Formula $\text{MSE}\left(\hat{w}_{\lambda}\right),\text{Tr}\left(\kaliVar\left(\lambda\right)\right),\text{Bias}^{2}\left(\lambda\right)$
+\end_inset
+
+ בנפרד:
+\begin_inset Formula 
+\begin{align*}
+\text{Tr}\left(\kaliVar\left(\lambda\right)\right) & =\kaliExpectedValue\left(\left\Vert \left(\hat{w}_{\lambda}-\overline{w}\right)\right\Vert ^{2}\right)=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}-2\overline{w}^{\top}\hat{w}_{\lambda}+\left\Vert \overline{w}\right\Vert ^{2}\right)=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\kaliExpectedValue\left(\overline{w}^{\top}\hat{w}_{\lambda}\right)+\kaliExpectedValue\left(\left\Vert \overline{w}\right\Vert ^{2}\right)=\\
+ & =\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\overline{w}^{\top}\kaliExpectedValue\left(\hat{w}_{\lambda}\right)+\left\Vert \overline{w}\right\Vert ^{2}=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\left\Vert \overline{w}\right\Vert ^{2}+\left\Vert \overline{w}\right\Vert ^{2}=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-\left\Vert \overline{w}\right\Vert ^{2}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\text{Bias}^{2}\left(\lambda\right)=\left\Vert \overline{w}-\text{\textbf{w}}\right\Vert ^{2}=\left\Vert \overline{w}\right\Vert ^{2}-2\text{\textbf{w}}^{\top}\overline{w}+\left\Vert \text{\textbf{w}}\right\Vert ^{2}
 \]
 
 \end_inset
 
 
-\end_layout
+\begin_inset Formula 
+\begin{align*}
+\text{MSE}\left(\hat{w}_{\lambda}\right) & =\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}-\text{\textbf{w}}\right\Vert ^{2}\right)=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}-2\text{\textbf{w}}^{\top}\hat{w}_{\lambda}+\left\Vert \text{\textbf{w}}\right\Vert ^{2}\right)=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\kaliExpectedValue\left(\text{\textbf{w}}^{\top}\hat{w}_{\lambda}\right)+\kaliExpectedValue\left(\left\Vert \text{\textbf{w}}\right\Vert ^{2}\right)=\\
+ & =\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\text{\textbf{w}}^{\top}\kaliExpectedValue\left(\hat{w}_{\lambda}\right)+\left\Vert \text{\textbf{w}}\right\Vert ^{2}=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\text{\textbf{w}}^{\top}\overline{w}+\left\Vert \text{\textbf{w}}\right\Vert ^{2}
+\end{align*}
 
-\begin_layout Standard
-\begin_inset Formula $ $
 \end_inset
 
+ונקבל ש-
+\begin_inset Formula 
+\[
+\text{Tr}\left(\kaliVar\left(\lambda\right)\right)+\text{Bias}^{2}\left(\lambda\right)=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-\left\Vert \overline{w}\right\Vert ^{2}+\left\Vert \overline{w}\right\Vert ^{2}-2\text{\textbf{w}}^{\top}\overline{w}+\left\Vert \text{\textbf{w}}\right\Vert ^{2}=\kaliExpectedValue\left(\left\Vert \hat{w}_{\lambda}\right\Vert ^{2}\right)-2\text{\textbf{w}}^{\top}\overline{w}+\left\Vert \text{\textbf{w}}\right\Vert ^{2}=\text{MSE}\left(\hat{w}_{\lambda}\right)
+\]
 
+\end_inset
+
+וזה פירוק ה-
+\begin_inset Formula $\text{bias-variance}$
+\end_inset
+
+ של ה-
+\begin_inset Formula $\text{MSE}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
