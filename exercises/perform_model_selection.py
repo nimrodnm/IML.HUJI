@@ -27,7 +27,7 @@ def select_polynomial_degree(n_samples: int = 100, noise: float = 5):
     poly = lambda x: (x + 3) * (x + 2) * (x + 1) * (x - 1) * (x - 2)
     x = np.random.uniform(-1.2, 2, n_samples)
     x_sorted = np.linspace(-1.2, 2, n_samples)
-    epsilon = np.random.normal(0, np.sqrt(noise), n_samples)
+    epsilon = np.random.normal(0, noise, n_samples)
     y = poly(x) + epsilon
     train_x, train_y, test_x, test_y = split_train_test(pd.DataFrame(x), pd.Series(y), train_proportion=(2 / 3))
     train_x, test_x = train_x.squeeze(), test_x.squeeze()

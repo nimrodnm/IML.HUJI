@@ -859,7 +859,7 @@ status open
 \begin_inset Formula 
 \begin{align*}
 \kaliVar\left(\hat{w}_{\lambda}\right) & =\kaliExpectedValue\left(\left(\hat{w}_{\lambda}-\kaliExpectedValue(\hat{w}_{\lambda})\right)\left(\hat{w}_{\lambda}-\kaliExpectedValue(\hat{w}_{\lambda})\right)^{\top}\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהסעיף הקודם}}}}}{\downarrow}}}{=}\sigma^{2}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\coloneqq\kaliVar\left(\lambda\right)\\
-\left\Vert \text{Bias}\left(\hat{w}_{\lambda}\right)\right\Vert ^{2} & =\left\Vert \kaliExpectedValue\left(\hat{w}_{\lambda}\right)-\text{\textbf{w}}\right\Vert ^{2}\underset{{\color{gray}\underset{\mathclap{\text{\R{\text{מסעיף ב'}}}}}{\uparrow}}}{=}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}=\left\Vert \left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}\right\Vert ^{2}\coloneqq\text{Bias}^{2}\left(\lambda\right)
+\left\Vert \text{Bias}\left(\hat{w}_{\lambda}\right)\right\Vert ^{2} & =\left\Vert \kaliExpectedValue\left(\hat{w}_{\lambda}\right)-\text{\textbf{w}}\right\Vert ^{2}\underset{{\color{gray}\underset{\mathclap{\text{\R{\text{מסעיף ב'}}}}}{\uparrow}}}{=}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}\coloneqq\text{Bias}^{2}\left(\lambda\right)
 \end{align*}
 
 \end_inset
@@ -961,7 +961,22 @@ status open
 \begin_inset Formula $\text{MSE}$
 \end_inset
 
-.
+, כלומר:
+\begin_inset Formula 
+\[
+\text{MSE}\left(\hat{w}_{\lambda}\right)=\text{Tr}\left(\sigma^{2}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right)+\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}=\sigma^{2}\text{Tr}\left(A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right)+\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -999,6 +1014,339 @@ status open
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נשתמש במהלך ההוכחה בזהויות הבאות )שפורסמו בפורום התרגיל(:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\lambda}\text{Tr}\left(A_{\lambda}\right) & =\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\right)\\
+\frac{\partial}{\partial\lambda}\left[\left(A+\lambda B\right)^{-1}\right] & =-\left(A+\lambda B\right)^{-1}B\left(A+\lambda B\right)^{-1}\\
+\frac{\partial}{\partial\lambda}\left[A_{\lambda}\cdot B_{\lambda}\right] & =\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\cdot B_{\lambda}+A_{\lambda}\cdot\frac{\partial}{\partial\lambda}\left[B_{\lambda}\right]
+\end{align*}
+
+\end_inset
+
+נגזור תחילה את 
+\begin_inset Formula $A_{\lambda}$
+\end_inset
+
+ כפונקציה של 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ )כלומר פונקציה מ-
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+ ל-
+\begin_inset Formula $\kaliReal^{d\times d}$
+\end_inset
+
+(:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right] & =\frac{\partial}{\partial\lambda}\left[\left(X^{\top}X+\lambda I_{d}\right)^{-1}\left(X^{\top}X\right)\right]=\frac{\partial}{\partial\lambda}\left[\left(X^{\top}X+\lambda I_{d}\right)^{-1}\right]\cdot\left(X^{\top}X\right)=\\
+ & =-\left(X^{\top}X+\lambda I_{d}\right)^{-1}\cdot I_{d}\cdot\left(X^{\top}X+\lambda I_{d}\right)^{-1}\left(X^{\top}X\right)=-\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}
+\end{align*}
+
+\end_inset
+
+נגזור את 
+\begin_inset Formula $\text{Tr}\left(\kaliVar\left(\lambda\right)\right)$
+\end_inset
+
+ כפונקציה של 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ )מ-
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+ ל-
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+(:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\lambda}\text{Tr}\left(\kaliVar\left(\lambda\right)\right) & =\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[\kaliVar\left(\hat{w}_{\lambda}\right)\right]\right)=\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[\sigma^{2}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right]\right)=\sigma^{2}\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right]\right)=\\
+ & =\sigma^{2}\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\cdot\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}+A_{\lambda}\cdot\frac{\partial}{\partial\lambda}\left[\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right]\right)=\\
+ & =\sigma^{2}\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}+A_{\lambda}\left(X^{\top}X\right)^{-1}\frac{\partial}{\partial\lambda}\left[A_{\lambda}^{\top}\right]\right)=\\
+ & =\sigma^{2}\text{Tr}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}+A_{\lambda}\left(X^{\top}X\right)^{-1}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\right)^{\top}\right)=\\
+ & =\sigma^{2}\text{Tr}\left(-\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}+A_{\lambda}\left(X^{\top}X\right)^{-1}\left(-\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\right)^{\top}\right)=\\
+ & =\sigma^{2}\text{Tr}\left(-\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}-A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\left(\left(X^{\top}X+\lambda I_{d}\right)^{-1}\right)^{\top}\right)=\\
+ & \overset{{\color{green}\sun}}{=}-\sigma^{2}\text{Tr}\left(\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}+A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\left(X^{\top}X+\lambda I_{d}\right)^{-1}\right)=\\
+ & =-\sigma^{2}\text{Tr}\left(\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right)-\sigma^{2}\text{Tr}\left(A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\left(X^{\top}X+\lambda I_{d}\right)^{-1}\right)=\\
+ & =-2\sigma^{2}\text{Tr}\left(\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\left(X^{\top}X\right)^{-1}A_{\lambda}^{\top}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+:כי 
+\begin_inset Formula $X^{\top}X+\lambda I_{d}$
+\end_inset
+
+ מטריצה סימטרית והפיכה, ולכן גם ההופכית שלה - 
+\begin_inset Formula $\left(X^{\top}X+\lambda I_{d}\right)^{-1}$
+\end_inset
+
+ היא מטריצה סימטרית.
+\end_layout
+
+\begin_layout Proof
+נשים לב ש- 
+\begin_inset Formula $A_{\lambda}=I_{d}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+, ולכן כשנציב 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ בנגזרת נקבל ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\lambda}\text{Tr}\left(\kaliVar\left(\hat{w}_{\lambda}\right)\right)\big|_{\lambda=0}=-2\sigma^{2}\text{Tr}\left(\left(X^{\top}X\right)^{-1}\left(X^{\top}X\right)^{-1}\right)=-2\sigma^{2}\text{Tr}\left(\left(X^{\top}X\right)^{-1}\right)^{2}<0
+\]
+
+\end_inset
+
+כי 
+\begin_inset Formula $\sigma^{2}>0$
+\end_inset
+
+ וכי כל הערכים על האלכסון של 
+\begin_inset Formula $\left(\left(X^{\top}X\right)^{-1}\right)^{2}$
+\end_inset
+
+ 
+\series bold
+גדולים ממש
+\series default
+ מ-
+\begin_inset Formula $0$
+\end_inset
+
+, כי אחרת נקבל שקיימת עמודה 
+\begin_inset Formula $x\in\kaliReal^{d}$
+\end_inset
+
+ של 
+\begin_inset Formula $\left(X^{\top}X\right)^{-1}$
+\end_inset
+
+ המקיימת ש- 
+\begin_inset Formula 
+\[
+x^{\top}x=0\quad\Longrightarrow\quad x=0
+\]
+
+\end_inset
+
+בסתירה לכך ש-
+\begin_inset Formula $\left(X^{\top}X\right)^{-1}$
+\end_inset
+
+ 
+\series bold
+הפיכה
+\series default
+.
+ לכן ה-
+\begin_inset Formula $\text{trace}$
+\end_inset
+
+ של המטריצה הזו 
+\series bold
+גדול ממש
+\series default
+ מ-
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+נגזור עכשיו את 
+\begin_inset Formula $\text{Bias}^{2}\left(\lambda\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right) & =\frac{\partial}{\partial\lambda}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{כלל השרשרת}}}}}{\downarrow}}}{=}\;\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right]\right)^{\top}\left(A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right)=\\
+ & =\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\text{\textbf{w}}-\frac{\partial}{\partial\lambda}\left[\text{\textbf{w}}\right]\right)^{\top}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}=\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\text{\textbf{w}}\right)^{\top}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}=\\
+ & =-\left(\left(X^{\top}X-\lambda I_{d}\right)^{-1}A_{\lambda}\text{\textbf{w}}\right)^{\top}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}=\\
+ & \overset{{\color{green}\sun}}{=}-\text{\textbf{w}}^{\top}A_{\lambda}^{\top}\left(X^{\top}X-\lambda I_{d}\right)^{-1}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}
+\end{align*}
+
+\end_inset
+
+נציב 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ ונקבל ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right)\big|_{\lambda=0}=-\text{\textbf{w}}^{\top}I_{d}\left(X^{\top}X\right)^{-1}\left(I_{d}-I_{d}\right)\text{\textbf{w}}=-\text{\textbf{w}}^{\top}\left(X^{\top}X\right)^{-1}0\text{\textbf{w}}=0
+\]
+
+\end_inset
+
+ולכן מהפירוק של ה-
+\begin_inset Formula $\text{MSE}$
+\end_inset
+
+ מהסעיף הקודם ומכך שהנגזרת שלה לפי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ היא אדטיבית נובע ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\lambda}\text{MSE}\left(\hat{w}_{\lambda}\right)\big|_{\lambda=0}=\frac{\partial}{\partial\lambda}\text{Tr}\left(\kaliVar\left(\hat{w}_{\lambda}\right)\right)\big|_{\lambda=0}+\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right)\big|_{\lambda=0}<0
+\]
+
+\end_inset
+
+כנדרש.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1_f.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+נחשוב על ה-
+\begin_inset Formula $\text{MSE}$
+\end_inset
+
+ כעל פונקציה של 
+\begin_inset Formula $\lambda\in\kaliReal_{+}$
+\end_inset
+
+ שמחזירה ערך ב-
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+.
+ לפי הסעיף הקודם - הנגזרת שלה בנקודה 
+\begin_inset Formula $\lambda=0$
+\end_inset
+
+ מקיימת ש-
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial\lambda}\text{MSE}\left(\hat{w}_{\lambda}\right)\big|_{\lambda=0}=\frac{\partial}{\partial\lambda}\text{MSE}\left(\hat{w}_{0}\right)<0
+\]
+
+\end_inset
+
+ולכן 
+\bar under
+קיימת סביבה
+\bar default
+ ימנית של 
+\begin_inset Formula $0$
+\end_inset
+
+ שבה הפונקציה 
+\begin_inset Formula $\text{MSE}\left(\lambda\right)$
+\end_inset
+
+ היא 
+\bar under
+מונוטונית יורדת
+\bar default
+.
+ לכן עבור כל 
+\begin_inset Formula $\lambda>0$
+\end_inset
+
+ בסביבה הזו מתקיים ש-
+\begin_inset Formula 
+\[
+\text{MSE}\left(\hat{w}_{0}\right)>\text{MSE}\left(\hat{w}_{\lambda}\right)
+\]
+
+\end_inset
+
+כלומר עבור ערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדולים מ-
+\begin_inset Formula $0$
+\end_inset
+
+ אבל קטנים מספיק כדי להישאר בסביבה הזו מתקיים שה-
+\begin_inset Formula $\text{MSE}$
+\end_inset
+
+ היא 
+\bar under
+במגמת ירידה
+\bar default
+.
 \end_layout
 
 \end_body
