@@ -1349,5 +1349,1426 @@ status open
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק פרקטי
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Cross Validation For Selecting Polynomial Degree}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q1.PNG
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q2.PNG
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שככל שהערך של 
+\begin_inset Formula $k$
+\end_inset
+
+ )כלומר דרגת הפולינום( גדל, השגיאה של המודל על סט האימון קטנה.
+ בנוגע לסט הולידציה - השגיאה קטנה כאשר 
+\begin_inset Formula $k$
+\end_inset
+
+ גדל בין 
+\begin_inset Formula $0$
+\end_inset
+
+ ל-
+\begin_inset Formula $4$
+\end_inset
+
+, אבל עבור ערכי 
+\begin_inset Formula $k$
+\end_inset
+
+ גדולים מדי )החל מ-
+\begin_inset Formula $k=5$
+\end_inset
+
+( רואים בגרף שהשגיאה של המודל על סט הולידציה מתחילה לגדול.
+ כלומר - עבור ערכי 
+\begin_inset Formula $k$
+\end_inset
+
+ בין 
+\begin_inset Formula $0$
+\end_inset
+
+ ל-
+\begin_inset Formula $4$
+\end_inset
+
+ המודל נעשה מורכב יותר וגם מצליח להכליל על דאטא שהוא לא ראה, אבל עבור ערכי
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ גדולים מדי הוא מתחיל לעשות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Overfitting
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לסט האימון ולא מכליל טוב.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+הערך של 
+\begin_inset Formula $k\in\left\{ 0,1,\ldots,10\right\} $
+\end_inset
+
+ שעבורו התקבלה שגיאת הולידציה הנמוכה ביותר היה 
+\begin_inset Formula $k^{\ast}=4$
+\end_inset
+
+, והשגיאה של המודל על סט האימון המלא היתה 
+\begin_inset Formula $29.09$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ערך השגיאה שהתקבל על סט הולידציה במהלך הריצה של ה-
+\lang english
+Cross-Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על 
+\begin_inset Formula $k=4$
+\end_inset
+
+ היה 
+\begin_inset Formula $22.60$
+\end_inset
+
+.
+ זהו ערך נמוך יותר.
+ 
+\begin_inset Formula ${\color{red}\text{TODO}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+חזרה על התהליך של 
+\begin_inset Formula $3$
+\end_inset
+
+ השאלות הקודמות עבור רעש
+\begin_inset Formula $0=$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q3_1.PNG
+	lyxscale 56
+	scale 56
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q3_2.PNG
+	lyxscale 56
+	scale 56
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר ערך הרעש הוא 
+\begin_inset Formula $0$
+\end_inset
+
+, רואים בגרף השני שכאשר עושים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Cross-Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עבור 
+\begin_inset Formula $k\geqslant5$
+\end_inset
+
+ השגיאה על סט האימון וגם על סט הולידציה היא 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ זה מסתדר עם כך שהפולינום שממנו נדגמו הנקודות הוא מדרגה 
+\begin_inset Formula $5$
+\end_inset
+
+, ושהן נדגמו ללא רעש.
+ כלומר, אין סכנה שהמודל יעשה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+overfitting
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כאשר הוא משתמש בערכי 
+\begin_inset Formula $k$
+\end_inset
+
+ גדולים מ-
+\begin_inset Formula $5$
+\end_inset
+
+, כי הנקודות שהוא מתאמן עליהן ובודק את עצמו עליהן נמצאות בדיוק על הפולינום
+ האמיתי.
+\end_layout
+
+\begin_layout Standard
+הדרגה שעבורה התקבלה השגיאה המינימלית היתה כמובן 
+\begin_inset Formula $k^{\ast}=5$
+\end_inset
+
+, כמו הדרגה האמיתית של הפולינום, והשגיאה שהתקבלה היא 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+חזרה על התהליך של 
+\begin_inset Formula $3$
+\end_inset
+
+ השאלות הקודמות עבור רעש
+\begin_inset Formula $10=$
+\end_inset
+
+ ועבור 
+\begin_inset Formula $1500$
+\end_inset
+
+ נקודות:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q4_1.PNG
+	lyxscale 58
+	scale 58
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q4_2.PNG
+	lyxscale 58
+	scale 58
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות בגרף השני שעבור 
+\begin_inset Formula $1500$
+\end_inset
+
+ דגימות השגיאה על סט האימון והשגיאה על סט הולידציה קרובות יותר לעומת השגיאות
+ שקיבלנו עבור 
+\begin_inset Formula $100$
+\end_inset
+
+ דגימות בלבד.
+\end_layout
+
+\begin_layout Standard
+בנוסף, הדרגה שהשיגה שגיאה מינימלית בתהליך ה-
+\lang english
+Cross-Validation
+\lang hebrew
+ היתה 
+\begin_inset Formula $k^{\ast}=5$
+\end_inset
+
+ )כמו של הפולינום האמיתי( והשגיאה שהתקבלה על סט 
+\series bold
+הולידציה
+\series default
+ היתה 
+\begin_inset Formula $98.5$
+\end_inset
+
+.
+ השגיאה שהתקבלה על סט 
+\series bold
+המבחן המלא
+\series default
+ היתה 
+\begin_inset Formula $97.3$
+\end_inset
+
+.
+ כלומר היחס בין שגיאת הולידציה לשגיאת המבחן הכללית קטן יותר עבור מספר גדול
+ יותר של נקודות.
+\end_layout
+
+\begin_layout Standard
+המגמה הזאת נתמכת ע
+\begin_inset Quotes erd
+\end_inset
+
+י החוק החלש של המספרים הגדולים, לפיו הערך של השגיאה האמפירית שואף בהסתברות
+ לשגיאת ההכללה כאשר מספר הדגימות גדל, כי אומדים קונסיסטנטיים מקיימים אותו
+ ואנחנו יודעים שהאומד שאיתו אנחנו עושים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PolynomialFitting
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוא קונסיסטנטי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Choosing Regularizaion Parameters Using Cross Validation}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+בקוד
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Standard
+הטווח של ערכי פרמטר הרגולריזציה 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ שנראה לי הכי משמעותי עבור תהליך ה-
+\lang english
+Cross-Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+היה 
+\begin_inset Formula $\left[0,0.5\right]$
+\end_inset
+
+ עבור ה-
+\lang english
+Lasso-Regression
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ו- 
+\begin_inset Formula $\left[0,0.2\right]$
+\end_inset
+
+ עבור ה-
+\lang english
+Ridge-Regression
+\lang hebrew
+.
+ הסיבה לכך היא שבטווחים הללו ראיתי שיש מגמה 
+\begin_inset Quotes eld
+\end_inset
+
+מעניינת
+\begin_inset Quotes erd
+\end_inset
+
+ בערכי השגיאה של המודלים, כלומר שינוי במגמה.
+ עבור ערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדולים מהטווח עבור כל אחד מהמודלים מגמת השגיאה היא פשוט עליה מונוטונית,
+ וזה פחות רלוונטי עבור ה-
+\lang english
+Cross-Validation
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+גרף המציג את שגיאת האימון והולידציה בתהליך ה-
+\lang english
+Cross-Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על מודל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Ridge Regression
+\lang hebrew
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q7_1.PNG
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות בגרף שכאשר הערך של פרמטר הרגולריזציה 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדל, השגיאה על סט האימון גדלה.
+ המגמה הזו ברורה - עבור ערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדולים יותר המודל 
+\begin_inset Quotes eld
+\end_inset
+
+מעניש
+\begin_inset Quotes erd
+\end_inset
+
+ יותר כללי החלטה מורכבים, ולכן היכולת שלו להתאים את עצמו לסט האימון קטנה.
+\end_layout
+
+\begin_layout Standard
+לעומת זאת, עבור ערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ בין 
+\begin_inset Formula $0$
+\end_inset
+
+ ל-
+\begin_inset Formula $0.02$
+\end_inset
+
+ בערך ניתן לראות שהשגיאה על סט הולידציה דווקא קטנה.
+ ניתן להסיק מכך שהגבלת המורכבות של כלל ההחלטה שהמודל מייצר מאפשרת לו עבור
+ הערכים שללו להכליל טוב יותר.
+\end_layout
+
+\begin_layout Standard
+עבור ערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדולים יותר השגיאה על סט הולידציה עולה בדיוק כמו השגיאה על סט האימון.
+ ניתן להסיק מכך שהמגבלה על מורכבות כלל ההחלטה היא קשוחה מדי ולא מאפשרת למודל
+ ללמוד כמו שצריך את הדאטא.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+גרף המציג את שגיאת האימון והולידציה התהליך ה-
+\lang english
+Cross-Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על מודל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Lasso-Regression
+\lang hebrew
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Plot_Q7_2.PNG
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שהשגיאה על סט האימון גדלה ככל שהערך של 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדל, וניתן להסביר זאת בדיוק כמו שהסברתי במקרה הקודם.
+\end_layout
+
+\begin_layout Standard
+בנוגע לסט הולידציה - ניתן לראות שהשגיאה עליו היא במגמת ירידה עבור ערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ בין 
+\begin_inset Formula $0$
+\end_inset
+
+ ל-
+\begin_inset Formula $0.3$
+\end_inset
+
+ בערך, ושלאחר מכן השגיאה מתחילה לעלות עד שמגמת העליה שלה נהיית דומה לזו
+ המתקבלת על סט האימון.
+ ההסבר לכך זהה לזה שנתתי במקרה הקודם.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+ההבדל בין שני האלגוריתמים
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+שגיאת הולידציה המינימלית שהתקבלה בשני המודלים היא 
+\begin_inset Formula $\sim3700$
+\end_inset
+
+.
+ ערכי ה-
+\begin_inset Formula $\lambda$
+\end_inset
+
+ שהביאו את המינימום 
+\series bold
+שונים
+\series default
+ - עבור אלגוריתם ה-
+\lang english
+Ridge
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ערך ה-
+\begin_inset Formula $\lambda$
+\end_inset
+
+ האופטימלי היה 
+\begin_inset Formula $\sim0.012$
+\end_inset
+
+ ולעומת זאת עבור אלגוריתם ה-
+\lang english
+Lasso
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ הערך האופטימלי היה 
+\begin_inset Formula $\sim0.283$
+\end_inset
+
+.
+ הסיבה לכך יכולה להיות העובדה שעבור וקטור משקולות 
+\begin_inset Formula $w\in\kaliReal^{d}$
+\end_inset
+
+, 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Ridge
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עושה שימוש בנורמת 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ 
+\series bold
+בריבוע
+\series default
+ )כלומר מחשב את 
+\begin_inset Formula $\left\Vert w\right\Vert _{2}^{2}$
+\end_inset
+
+(.
+ לכן הוא נותן 
+\begin_inset Quotes eld
+\end_inset
+
+משקל גדול יותר
+\begin_inset Quotes erd
+\end_inset
+
+ לקואורדינטות של 
+\begin_inset Formula $w$
+\end_inset
+
+ )כי הוא מעלה אותן בריבוע(.
+ לעומת זאת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Lasso
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עושה שימוש בנורמת 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+, ולכן פחות מעניש קואורדינטות גדולות.
+ ההבדל הזה מוביל לכך שערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ קטנים יחסית יחד עם נורמת 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ בריבוע יוצרים פרמטר רגולריזציה ש
+\begin_inset Quotes erd
+\end_inset
+
+מעניש
+\begin_inset Quotes erd
+\end_inset
+
+ את ה
+\begin_inset Quotes erd
+\end_inset
+
+גודל
+\begin_inset Quotes erd
+\end_inset
+
+ של 
+\begin_inset Formula $w$
+\end_inset
+
+ באופן דומה לערכי 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ גדולים יותר יחד עם נורמת 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/Res_Q8.PNG
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
