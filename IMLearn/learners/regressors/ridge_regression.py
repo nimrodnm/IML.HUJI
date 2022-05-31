@@ -117,4 +117,8 @@ class RidgeRegression(BaseEstimator):
         Returns:
             transformed_X: ndarray of shape (n_samples + n_features, n_features)
         """
-        return np.concatenate((X, np.identity(X.shape[1]) * np.sqrt(self.lam_)), axis=0)
+        regularization_mat = np.identity(X.shape[1]) * np.sqrt(self.lam_)
+        # Prevent weighting the intercept term in case it was added to the design matrix:
+        if self.include_intercept_:
+            regularization_mat[0, 0] = 0
+        return np.concatenate((X, regularization_mat), axis=0)

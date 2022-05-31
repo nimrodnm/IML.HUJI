@@ -1188,10 +1188,9 @@ x^{\top}x=0\quad\Longrightarrow\quad x=0
 :
 \begin_inset Formula 
 \begin{align*}
-\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right) & =\frac{\partial}{\partial\lambda}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{כלל השרשרת}}}}}{\downarrow}}}{=}\;\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right]\right)^{\top}\left(A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right)=\\
- & =\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\text{\textbf{w}}-\frac{\partial}{\partial\lambda}\left[\text{\textbf{w}}\right]\right)^{\top}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}=\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\text{\textbf{w}}\right)^{\top}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}=\\
- & =-\left(\left(X^{\top}X-\lambda I_{d}\right)^{-1}A_{\lambda}\text{\textbf{w}}\right)^{\top}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}=\\
- & \overset{{\color{green}\sun}}{=}-\text{\textbf{w}}^{\top}A_{\lambda}^{\top}\left(X^{\top}X-\lambda I_{d}\right)^{-1}\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}
+\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right) & =\frac{\partial}{\partial\lambda}\left\Vert A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right\Vert ^{2}\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{כלל השרשרת}}}}}{\downarrow}}}{=}\;2\left(A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right)^{\top}\frac{\partial}{\partial\lambda}\left[A_{\lambda}\text{\textbf{w}}-\text{\textbf{w}}\right]=\\
+ & =2\left(\left(A_{\lambda}-I_{d}\right)\text{\textbf{w}}\right)^{\top}\left(\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\text{\textbf{w}}-\frac{\partial}{\partial\lambda}\left[\text{\textbf{w}}\right]\right)=2\text{\textbf{w}}^{\top}\left(A_{\lambda}-I_{d}\right)^{\top}\frac{\partial}{\partial\lambda}\left[A_{\lambda}\right]\text{\textbf{w}}=\\
+ & =-2\text{\textbf{w}}^{\top}\left(A_{\lambda}-I_{d}\right)^{\top}\left(X^{\top}X+\lambda I_{d}\right)^{-1}A_{\lambda}\text{\textbf{w}}
 \end{align*}
 
 \end_inset
@@ -1202,9 +1201,9 @@ x^{\top}x=0\quad\Longrightarrow\quad x=0
 
  ונקבל ש-
 \begin_inset Formula 
-\[
-\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right)\big|_{\lambda=0}=-\text{\textbf{w}}^{\top}I_{d}\left(X^{\top}X\right)^{-1}\left(I_{d}-I_{d}\right)\text{\textbf{w}}=-\text{\textbf{w}}^{\top}\left(X^{\top}X\right)^{-1}0\text{\textbf{w}}=0
-\]
+\begin{align*}
+\frac{\partial}{\partial\lambda}\text{Bias}^{2}\left(\lambda\right)\big|_{\lambda=0} & =-2\text{\textbf{w}}^{\top}\left(I_{d}-I_{d}\right)^{\top}\left(X^{\top}X\right)^{-1}I_{d}\text{\textbf{w}}=-2\text{\textbf{w}}^{\top}0\left(X^{\top}X\right)^{-1}\text{\textbf{w}}=0
+\end{align*}
 
 \end_inset
 
@@ -1347,6 +1346,446 @@ status open
 במגמת ירידה
 \bar default
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{PCA}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+לפי ההגדרה, 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ )מטריצת ה-
+\begin_inset Formula $\text{covariance}$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+( היא מטריצה סימטרית.
+ לכן לפי המשפט הספקטרלי קיים בסיס 
+\begin_inset Formula $\mathcal{U}=\left\{ u_{1},\ldots,u_{d}\right\} $
+\end_inset
+
+ 
+\series bold
+אורתונורמלי
+\series default
+ של 
+\begin_inset Formula $\kaliReal^{d}$
+\end_inset
+
+ שמורכב מוקטורים עצמיים של 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+ נסמן את הערכים העצמיים המתאימים להם ב- 
+\begin_inset Formula $\lambda_{1},\ldots,\lambda_{d}\in\kaliReal$
+\end_inset
+
+ ונניח בה
+\begin_inset Quotes erd
+\end_inset
+
+כ ש- 
+\begin_inset Formula $\lambda_{1}\geqslant\ldots\geqslant\lambda_{d}$
+\end_inset
+
+.
+ נסמן ב-
+\begin_inset Formula $U$
+\end_inset
+
+ את המטריצה שעמודותיה הן וקטורי הבסיס הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל.
+ אז לכל 
+\begin_inset Formula $v\in\kaliReal^{d}$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $U^{\top}v=\left[v\right]_{\mathcal{U}}$
+\end_inset
+
+ )כלומר זה הייצוג של 
+\begin_inset Formula $v$
+\end_inset
+
+ ביחס לבסיס הא
+\begin_inset Quotes erd
+\end_inset
+
+נ הזה(.
+\end_layout
+
+\begin_layout Proof
+נשים לב שמהנתון ש- 
+\begin_inset Formula $\kaliExpectedValue\left(X\right)=0$
+\end_inset
+
+ ומהגדרת 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ נובע ש-
+\begin_inset Formula 
+\[
+\Sigma=\kaliExpectedValue\left(\left(X-\kaliExpectedValue\left(X\right)\right)\left(X-\kaliExpectedValue\left(X\right)\right)^{\top}\right)=\kaliExpectedValue\left(XX^{\top}\right)\quad{\color{green}\left(\text{I}\right)}
+\]
+
+\end_inset
+
+לפי ההגדרה של אלגוריתם ה-
+\begin_inset Formula $\text{PCA}$
+\end_inset
+
+, הוא מחזיר עבור הקלט 
+\begin_inset Formula $\left(X,1\right)$
+\end_inset
+
+ )כאשר הוא משתמש ב-
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ המקורית( בדיוק את וקטור הבסיס 
+\begin_inset Formula $u_{1}$
+\end_inset
+
+ שמתאים לערך העצמי 
+\begin_inset Formula $\lambda_{1}$
+\end_inset
+
+, שהוא הערך העצמי המקסימלי של 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula $v\in\kaliReal^{d}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+\kaliVar\left(\left\langle v,X\right\rangle \right) & \overset{{\color{gray}\overset{\mathclap{\text{\R{\text{הגדרה}}}}}{\downarrow}}}{=}\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)-\left(\kaliExpectedValue\left(\left\langle v\mid X\right\rangle \right)\right)^{2}=\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)-\left(\kaliExpectedValue\left(\stackrel[i=1]{d}{\sum}v_{i}x_{i}\right)\right)^{2}=\qquad\quad{\color{green}\left(\text{II}\right)}\\
+ & =\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)-\left(\stackrel[i=1]{d}{\sum}v_{i}\kaliExpectedValue\left(x_{i}\right)\right)^{2}=\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)-\left(\left\langle v\mid\kaliExpectedValue\left(X\right)\right\rangle \right)^{2}\underset{{\color{gray}\underset{\mathclap{\kaliExpectedValue\left(X\right)=0}}{\uparrow}}}{=}\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)-\left(\left\langle v\mid0\right\rangle \right)^{2}=\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)
+\end{align*}
+
+\end_inset
+
+בפרט, עבור 
+\begin_inset Formula $\text{PCA}\left(X,1\right)=u_{1}$
+\end_inset
+
+ נקבל ש-
+\begin_inset Formula 
+\begin{align*}
+\kaliVar\left(\left\langle u_{1}\mid X\right\rangle \right) & =\kaliExpectedValue\left(\left\langle u_{1},X\right\rangle ^{2}\right)=\kaliExpectedValue\left(\left(u_{1}^{\top}X\right)^{2}\right)=\kaliExpectedValue\left(u_{1}^{\top}Xu_{1}^{\top}X\right)=\kaliExpectedValue\left(u_{1}^{\top}XX^{\top}u_{1}\right)=u_{1}^{\top}\kaliExpectedValue\left(XX^{\top}\right)u_{1}\overset{{\color{green}\left(\text{I}\right)}}{=}u_{1}^{\top}\Sigma u_{1}=\\
+ & \underset{{\color{gray}\underset{\mathclap{\text{\R{\text{\ensuremath{\Sigma} סימטרית}}}}}{\uparrow}}}{=}\left\langle \Sigma u_{1}\mid u_{1}\right\rangle =\left\langle \lambda_{1}u_{1}\mid u_{1}\right\rangle =\lambda_{1}\left\langle u_{1}\mid u_{1}\right\rangle \underset{{\color{gray}\underset{\mathclap{\text{\R{\text{הבסיס א"נ}}}}}{\uparrow}}}{=}\lambda_{1}\qquad\quad{\color{green}\left(\text{III}\right)}
+\end{align*}
+
+\end_inset
+
+נשים לב שהטמעת ה-
+\begin_inset Formula $\text{PCA}$
+\end_inset
+
+ )ה-
+\begin_inset Formula $\text{embedding}$
+\end_inset
+
+( של 
+\begin_inset Formula $X$
+\end_inset
+
+ על תת-מרחב ממימד
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)כלומר על 
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+( היא, כפי שראינו בכיתה - 
+\begin_inset Formula $\left\langle u_{1}\mid X\right\rangle $
+\end_inset
+
+.
+ כלומר לפי החישוב ב-
+\begin_inset Formula ${\color{green}\left(\text{III}\right)}$
+\end_inset
+
+ השונות של הטמעת ה-
+\begin_inset Formula $\text{PCA}$
+\end_inset
+
+ על 
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+ היא בדיוק 
+\begin_inset Formula $\lambda_{1}$
+\end_inset
+
+ שהוא הערך העצמי המקסימלי של 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+יהי כעת 
+\begin_inset Formula $v\in\kaliReal^{d}$
+\end_inset
+
+ המקיים ש- 
+\begin_inset Formula $\left\Vert v\right\Vert _{2}=1$
+\end_inset
+
+.
+ נסמן 
+\begin_inset Formula $v=\stackrel[i=1]{d}{\sum}\alpha_{i}u_{i}$
+\end_inset
+
+.
+ כלומר - 
+\begin_inset Formula $U^{\top}v=\left[\begin{smallmatrix}\alpha_{1}\\
+\vdots\\
+\alpha_{d}
+\end{smallmatrix}\right]$
+\end_inset
+
+.
+ נחשב את השונות של 
+\begin_inset Formula $\left\langle v,X\right\rangle $
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\kaliVar\left(\left\langle v,X\right\rangle \right) & \overset{{\color{green}\left(\text{II}\right)}}{=}\kaliExpectedValue\left(\left\langle v,X\right\rangle ^{2}\right)=\kaliExpectedValue\left(v^{\top}Xv^{\top}X\right)=\kaliExpectedValue\left(v^{\top}XX^{\top}v\right)=v^{\top}\kaliExpectedValue\left(XX^{\top}\right)v\overset{{\color{green}\left(\text{I}\right)}}{=}v^{\top}\Sigma v=\left\langle \Sigma v\mid v\right\rangle =\\
+ & =\left\langle \stackrel[i=1]{d}{\sum}\alpha_{i}\Sigma u_{i}\mid\,\stackrel[j=1]{d}{\sum}\alpha_{j}u_{j}\right\rangle =\stackrel[i=1]{d}{\sum}\stackrel[j=1]{d}{\sum}\alpha_{i}\alpha_{j}\left\langle \Sigma u_{i}\mid u_{j}\right\rangle =\stackrel[i=1]{d}{\sum}\stackrel[j=1]{d}{\sum}\alpha_{i}\alpha_{j}\lambda_{i}\left\langle u_{i}\mid u_{j}\right\rangle =\\
+ & \underset{{\color{gray}\underset{\mathclap{\text{\R{\text{הבסיס א"נ}}}}}{\uparrow}}}{=}\quad\,\stackrel[i=1]{d}{\sum}\alpha_{i}^{2}\lambda_{i}\leqslant\stackrel[i=1]{d}{\sum}\alpha_{i}^{2}\lambda_{1}=\lambda_{1}\cdot\stackrel[i=1]{d}{\sum}\alpha_{i}^{2}=\lambda_{1}\cdot\left\Vert U^{\top}v\right\Vert _{2}^{2}\overset{{\color{green}\sun}}{=}\lambda_{1}\cdot\left\Vert v\right\Vert _{2}^{2}=\lambda_{1}\overset{{\color{green}\left(\text{III}\right)}}{=}\kaliVar\left(\left\langle u_{1}\mid X\right\rangle \right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: מכיוון ש-
+\begin_inset Formula $\mathcal{U}$
+\end_inset
+
+ הוא בסיס א
+\begin_inset Quotes erd
+\end_inset
+
+נ אז 
+\begin_inset Formula $U^{\top}$
+\end_inset
+
+ היא מטריצה אורתוגונלית, ולכן )כפי שמוכיחים בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+( היא משמרת מרחקים.
+\end_layout
+
+\begin_layout Proof
+קיבלנו שלכל 
+\begin_inset Formula $v\in\kaliReal^{d}$
+\end_inset
+
+ עם 
+\begin_inset Formula $\left\Vert v\right\Vert _{2}=1$
+\end_inset
+
+ השונות של 
+\begin_inset Formula $\left\langle v,X\right\rangle $
+\end_inset
+
+ לא גדולה מהשונות של הטמעת ה-
+\begin_inset Formula $\text{PCA}$
+\end_inset
+
+ של 
+\begin_inset Formula $X$
+\end_inset
+
+ על 
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+, כנדרש.
 \end_layout
 
 \begin_layout Standard
@@ -1646,13 +2085,7 @@ Cross-Validation
 \begin_inset Formula $22.60$
 \end_inset
 
-.
- זהו ערך נמוך יותר.
- 
-\begin_inset Formula ${\color{red}\text{TODO}}$
-\end_inset
-
-
+ - זהו ערך נמוך יותר מזה שהתקבל על סט האימון המלא.
 \end_layout
 
 \begin_layout Standard
