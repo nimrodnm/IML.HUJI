@@ -1789,6 +1789,1222 @@ status open
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Kernels}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q3.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+ראינו בכיתה ש-
+\begin_inset Formula $k_{1}:\mathcal{X}\rightarrow\kaliReal$
+\end_inset
+
+ המוגדר ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $k_{1}\left(x,x^{\prime}\right)=1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x,x^{\prime}\in\mathcal{X}$
+\end_inset
+
+ הוא קרנל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולידי.
+\end_layout
+
+\begin_layout Proof
+ראינו גם שסכום של קרנלים ולידיים הוא ולידי, ולכן 
+\begin_inset Formula $k^{\prime}:\mathcal{X}\rightarrow\kaliReal$
+\end_inset
+
+ המוגדר ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula 
+\[
+k^{\prime}\left(x,x^{\prime}\right)=k\left(x,x^{\prime}\right)+1
+\]
+
+\end_inset
+
+הוא ולידי.
+ מאיפיון מרסר נובע שקיימת 
+\begin_inset Formula $\psi:\mathcal{X}\rightarrow\mathcal{F}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $x,x^{\prime}\in\mathcal{X}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+k^{\prime}\left(x,x^{\prime}\right)=\psi^{\top}\left(x\right)\psi\left(x^{\prime}\right)
+\]
+
+\end_inset
+
+מכיוון ש-
+\begin_inset Formula $k$
+\end_inset
+
+ הוא קרנל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולידי אז לכל 
+\begin_inset Formula $x\in\mathcal{X}$
+\end_inset
+
+ מתקיים ש- 
+\begin_inset Formula $k\left(x,x\right)\geqslant0$
+\end_inset
+
+ ולכן:
+\begin_inset Formula 
+\[
+1\leqslant k\left(x,x\right)+1=k^{\prime}\left(x,x\right)=\psi^{\top}\left(x\right)\psi\left(x\right)=\left\Vert \psi\left(x\right)\right\Vert ^{2}
+\]
+
+\end_inset
+
+נגדיר 
+\begin_inset Formula $\tilde{k}:\mathcal{X}\rightarrow\kaliReal$
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י:
+\begin_inset Formula 
+\[
+\tilde{k}\left(x,x^{\prime}\right)=\frac{k^{\prime}\left(x,x^{\prime}\right)}{\sqrt{k^{\prime}\left(x,x\right)k^{\prime}\left(x^{\prime},x^{\prime}\right)}}
+\]
+
+\end_inset
+
+נקבל שלכל 
+\begin_inset Formula $x\in\mathcal{X}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\tilde{k}\left(x,x\right)=\frac{k^{\prime}\left(x,x\right)}{\sqrt{\left(k^{\prime}\left(x,x\right)\right)^{2}}}=1
+\]
+
+\end_inset
+
+בנוסף, עם הפונקציה 
+\begin_inset Formula $f\left(x\right)=\frac{1}{\left\Vert \psi\left(x\right)\right\Vert }$
+\end_inset
+
+ מתקיים לכל 
+\begin_inset Formula $x,x^{\prime}\in\mathcal{X}$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+\tilde{k}\left(x,x^{\prime}\right)=\frac{k^{\prime}\left(x,x^{\prime}\right)}{\sqrt{k^{\prime}\left(x,x\right)k^{\prime}\left(x^{\prime},x^{\prime}\right)}}=\frac{k^{\prime}\left(x,x^{\prime}\right)}{\sqrt{\left\Vert \psi\left(x\right)\right\Vert ^{2}\left\Vert \psi\left(x^{\prime}\right)\right\Vert ^{2}}}=\frac{k^{\prime}\left(x,x^{\prime}\right)}{\left\Vert \psi\left(x\right)\right\Vert \left\Vert \psi\left(x^{\prime}\right)\right\Vert }=f\left(x\right)k^{\prime}\left(x,x^{\prime}\right)f\left(x^{\prime}\right)
+\]
+
+\end_inset
+
+וראינו שמהולידיות של 
+\begin_inset Formula $k^{\prime}$
+\end_inset
+
+ זה גורר שגם 
+\begin_inset Formula $\tilde{k}$
+\end_inset
+
+ הוא קרנל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולידי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q4.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+דוגמא
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+נבחר 
+\begin_inset Formula $\kaliReal^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $m=4$
+\end_inset
+
+, את הפונקציה 
+\begin_inset Formula $\psi:\kaliReal^{2}\rightarrow\kaliReal^{3}$
+\end_inset
+
+ המוגדרת ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula $\psi\left(x,y\right)=\left(x,y,xy\right)$
+\end_inset
+
+ ואת הקבוצה
+\begin_inset Formula 
+\[
+S=\left\{ \left(x_{i},y_{i}\right)\right\} _{i=1}^{4}=\left\{ \left(\left(\begin{smallmatrix}1\\
+1
+\end{smallmatrix}\right),1\right),\left(\left(\begin{smallmatrix}-1\\
+-1
+\end{smallmatrix}\right),1\right),\left(\left(\begin{smallmatrix}-1\\
+1
+\end{smallmatrix}\right),-1\right),\left(\left(\begin{smallmatrix}1\\
+-1
+\end{smallmatrix}\right),-1\right)\right\} \subseteq\kaliReal^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/for_Q4_1.PNG
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S$
+\end_inset
+
+ בבירור אינה ניתנת להפרדה ליניארית )ע
+\begin_inset Quotes erd
+\end_inset
+
+י קו ישר(.
+ אבל הקבוצה שמתקבלת מהפעלת 
+\begin_inset Formula $\psi$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+S_{\psi}=\left\{ \left(\psi\left(x_{i}\right),y_{i}\right)\right\} _{i=1}^{4}=\left\{ \left(\left(\begin{smallmatrix}1\\
+1\\
+1
+\end{smallmatrix}\right),1\right),\left(\left(\begin{smallmatrix}-1\\
+-1\\
+1
+\end{smallmatrix}\right),1\right),\left(\left(\begin{smallmatrix}-1\\
+1\\
+-1
+\end{smallmatrix}\right),-1\right),\left(\left(\begin{smallmatrix}1\\
+-1\\
+-1
+\end{smallmatrix}\right),-1\right)\right\} 
+\]
+
+\end_inset
+
+ניתנת להפרדה ע
+\begin_inset Quotes erd
+\end_inset
+
+י המישור 
+\begin_inset Formula $z=0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Captures/for_Q4_2.PNG
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q5.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{a}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ הפונקציה 
+\begin_inset Formula $k\left(x,y\right)=\exp\left(\left\Vert x-y\right\Vert ^{2}\right)$
+\end_inset
+
+ היא 
+\series bold
+לא
+\series default
+ קרנל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולידי.
+ דוגמא נגדית:
+\begin_inset Newline newline
+\end_inset
+
+ניקח את הקבוצה 
+\begin_inset Formula $S=\left\{ \left(\begin{smallmatrix}1\\
+1
+\end{smallmatrix}\right),\left(\begin{smallmatrix}0\\
+0
+\end{smallmatrix}\right)\right\} \subseteq\kaliReal^{2}$
+\end_inset
+
+.
+ מטריצת הגראם של 
+\begin_inset Formula $k$
+\end_inset
+
+ המתקבלת מ-
+\begin_inset Formula $S$
+\end_inset
+
+ היא:
+\begin_inset Formula 
+\[
+K=\begin{bmatrix}k\left(\left(\begin{smallmatrix}1\\
+1
+\end{smallmatrix}\right),\left(\begin{smallmatrix}1\\
+1
+\end{smallmatrix}\right)\right) & k\left(\left(\begin{smallmatrix}1\\
+1
+\end{smallmatrix}\right),\left(\begin{smallmatrix}0\\
+0
+\end{smallmatrix}\right)\right)\\
+k\left(\left(\begin{smallmatrix}0\\
+0
+\end{smallmatrix}\right),\left(\begin{smallmatrix}1\\
+1
+\end{smallmatrix}\right)\right) & k\left(\left(\begin{smallmatrix}0\\
+0
+\end{smallmatrix}\right),\left(\begin{smallmatrix}0\\
+0
+\end{smallmatrix}\right)\right)
+\end{bmatrix}=\begin{bmatrix}\exp\left(0\right) & \exp\left(2\right)\\
+\exp\left(2\right) & \exp\left(0\right)
+\end{bmatrix}=\begin{bmatrix}1 & e^{2}\\
+e^{2} & 1
+\end{bmatrix}
+\]
+
+\end_inset
+
+נשים לב שעבור 
+\begin_inset Formula $\left(\begin{smallmatrix}-1\\
+1
+\end{smallmatrix}\right)\coloneqq v\in\kaliReal^{2}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+v^{\top}Kv=\begin{pmatrix}-1 & 1\end{pmatrix}\begin{bmatrix}1 & e^{2}\\
+e^{2} & 1
+\end{bmatrix}\begin{pmatrix}-1\\
+1
+\end{pmatrix}=\begin{pmatrix}-1 & 1\end{pmatrix}\begin{pmatrix}-1+e^{2}\\
+-e^{2}+1
+\end{pmatrix}=1-e^{2}-e^{2}+1=2-2e^{2}\overset{{\color{gray}\overset{\mathclap{e^{2}>1}}{\downarrow}}}{<}0
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $K$
+\end_inset
+
+ היא לא מטריצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\lang hebrew
+, ולכן 
+\begin_inset Formula $k$
+\end_inset
+
+ היא לא קרנל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולידי.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{b}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ הפונקציה 
+\begin_inset Formula $k\left(x,y\right)=k_{1}\left(x,y\right)-k_{2}\left(x,y\right)$
+\end_inset
+
+, כאשר 
+\begin_inset Formula $k_{1},k_{2}$
+\end_inset
+
+ קרנלים ולידיים, היא 
+\series bold
+לא
+\series default
+ קרנל ולידי.
+ דוגמא נגדית:
+\begin_inset Newline newline
+\end_inset
+
+נקח את 
+\begin_inset Formula $\mathcal{X}=\kaliReal$
+\end_inset
+
+.
+ ראינו בתרגול שתבניות קבועות חיוביות הן קרנלים ולידיים.
+ לכן נוכל לקחת את 
+\begin_inset Formula $k_{1}\left(x,y\right)=1$
+\end_inset
+
+ ו- 
+\begin_inset Formula $k_{2}\left(x,y\right)=2$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נקבל ש-
+\begin_inset Formula $k$
+\end_inset
+
+ כפי שהוגדר לעיל הוא לא ולידי כי עבור 
+\begin_inset Formula $x=7$
+\end_inset
+
+ למשל נקבל ש-
+\begin_inset Formula 
+\[
+k\left(x,x\right)=k_{1}\left(x,x\right)-k_{2}\left(x,x\right)=1-2=-1
+\]
+
+\end_inset
+
+ובאופן כללי לכל קבוצה ב-
+\begin_inset Formula $\kaliReal$
+\end_inset
+
+ נקבל שמטריצת הגראם של 
+\begin_inset Formula $k$
+\end_inset
+
+ שתתקבל ממנה תכיל רק ערכים שליליים על האלכסון הראשי, ולכן לא תהיה מטריצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\text{c}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ הפונקציה 
+\begin_inset Formula $k\left(x,y\right)=k_{a}\left(x_{a},y_{a}\right)+k_{b}\left(x_{b},y_{b}\right)$
+\end_inset
+
+ היא קרנל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ולידי.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+יהי 
+\begin_inset Formula $m\in\kaliNatural$
+\end_inset
+
+ ותהי 
+\begin_inset Formula $\left\{ x^{i}\right\} _{i=1}^{m}\subseteq\mathcal{X}$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ נסמן:
+\begin_inset Formula 
+\[
+x^{i}\coloneqq\begin{pmatrix}x_{a}^{i}\\
+\hline x_{b}^{i}
+\end{pmatrix}
+\]
+
+\end_inset
+
+ונתבונן בקבוצות 
+\begin_inset Formula $\left\{ x_{a}^{i}\right\} _{i=1}^{m},\left\{ x_{b}^{i}\right\} _{i=1}^{m}$
+\end_inset
+
+.
+ נתון ש-
+\begin_inset Formula $k_{a},k_{b}$
+\end_inset
+
+ הם קרנלים ולידיים.
+ נסמן ב-
+\begin_inset Formula $K^{a},K^{b}$
+\end_inset
+
+ את מטריצות הגראם שלהם ביחס לקבוצות הללו בהתאמה.
+ לפי ההגדרה - אלו מטריצות 
+\begin_inset Formula $\text{PSD}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula $i,j\in\left[m\right]$
+\end_inset
+
+ הכניסה ה-
+\begin_inset Formula $i,j$
+\end_inset
+
+ של מטריצת הגראם 
+\begin_inset Formula $K$
+\end_inset
+
+ של 
+\begin_inset Formula $k$
+\end_inset
+
+ מקיימת:
+\begin_inset Formula 
+\[
+K_{i,j}=k\left(x^{i},x^{j}\right)=k_{a}\left(x_{a}^{i},x_{a}^{j}\right)+k_{b}\left(x_{b}^{i},x_{b}^{j}\right)=K_{i,j}^{a}+K_{i,j}^{b}
+\]
+
+\end_inset
+
+כלומר היא סכום הכניסות ה-
+\begin_inset Formula $i,j$
+\end_inset
+
+ של 
+\begin_inset Formula $K^{a},K^{b}$
+\end_inset
+
+.
+ לכן 
+\begin_inset Formula $K=K^{a}+K^{b}$
+\end_inset
+
+.
+ נקבל לכל 
+\begin_inset Formula $v\in\kaliReal^{m}$
+\end_inset
+
+ ש-
+\begin_inset Formula 
+\[
+v^{\top}Kv=v^{\top}\left(K^{a}+K^{b}\right)v=v^{\top}K^{a}v+v^{\top}K^{b}v\overset{{\color{gray}\overset{\mathclap{K^{a},K^{b}\succeq0}}{\downarrow}}}{\geqslant}0
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $K$
+\end_inset
+
+ היא מטריצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PSD
+\lang hebrew
+.
+ מכיוון שזה מתקיים לכל 
+\begin_inset Formula $m\in\kaliNatural$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\{ x^{i}\right\} _{i=1}^{m}\subseteq\mathcal{X}$
+\end_inset
+
+ אז לפי ההגדרה 
+\begin_inset Formula $k$
+\end_inset
+
+ היא קרנל ולידי.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -2614,7 +3830,7 @@ Cross-Validation
 \noun default
 \color inherit
 היה 
-\begin_inset Formula $\left[0,0.5\right]$
+\begin_inset Formula $\left[0,1\right]$
 \end_inset
 
  עבור ה-
@@ -2647,7 +3863,7 @@ Lasso-Regression
 \noun default
 \color inherit
 ו- 
-\begin_inset Formula $\left[0,0.2\right]$
+\begin_inset Formula $\left[0,0.3\right]$
 \end_inset
 
  עבור ה-
@@ -2781,7 +3997,7 @@ Ridge Regression
 \end_inset
 
  ל-
-\begin_inset Formula $0.02$
+\begin_inset Formula $0.03$
 \end_inset
 
  בערך ניתן לראות שהשגיאה על סט הולידציה דווקא קטנה.
@@ -2898,7 +4114,7 @@ Lasso-Regression
 \end_inset
 
  ל-
-\begin_inset Formula $0.3$
+\begin_inset Formula $0.5$
 \end_inset
 
  בערך, ושלאחר מכן השגיאה מתחילה לעלות עד שמגמת העליה שלה נהיית דומה לזו
@@ -2915,8 +4131,8 @@ Lasso-Regression
 \end_layout
 
 \begin_layout Standard
-שגיאת הולידציה המינימלית שהתקבלה בשני המודלים היא 
-\begin_inset Formula $\sim3700$
+שגיאת הולידציה המינימלית שהתקבלה בשני המודלים היא בטווח 
+\begin_inset Formula $3200-3500$
 \end_inset
 
 .
@@ -2962,7 +4178,7 @@ Ridge
 \end_inset
 
  האופטימלי היה 
-\begin_inset Formula $\sim0.012$
+\begin_inset Formula $\sim0.025$
 \end_inset
 
  ולעומת זאת עבור אלגוריתם ה-
@@ -2982,7 +4198,7 @@ Lasso
 \color none
 \lang hebrew
  הערך האופטימלי היה 
-\begin_inset Formula $\sim0.283$
+\begin_inset Formula $\sim0.597$
 \end_inset
 
 .
