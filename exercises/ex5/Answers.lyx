@@ -1977,7 +1977,7 @@ k^{\prime}\left(x,x^{\prime}\right)=k\left(x,x^{\prime}\right)+1
  מתקיים:
 \begin_inset Formula 
 \[
-k^{\prime}\left(x,x^{\prime}\right)=\psi^{\top}\left(x\right)\psi\left(x^{\prime}\right)
+k^{\prime}\left(x,x^{\prime}\right)=\left(\psi\left(x\right)\right)^{\top}\psi\left(x^{\prime}\right)
 \]
 
 \end_inset
@@ -2051,7 +2051,7 @@ PSD
  ולכן:
 \begin_inset Formula 
 \[
-1\leqslant k\left(x,x\right)+1=k^{\prime}\left(x,x\right)=\psi^{\top}\left(x\right)\psi\left(x\right)=\left\Vert \psi\left(x\right)\right\Vert ^{2}
+1\leqslant k\left(x,x\right)+1=k^{\prime}\left(x,x\right)=\left(\psi\left(x\right)\right)^{\top}\psi\left(x\right)=\left\Vert \psi\left(x\right)\right\Vert ^{2}
 \]
 
 \end_inset
