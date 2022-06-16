@@ -1,0 +1,1138 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\begin_preamble
+\usepackage{culmus}
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{14,107,217}
+\definecolor{green}{RGB}{0,158,40}
+\definecolor{red}{RGB}{235,16,16}
+\definecolor{brown}{RGB}{164,66,0}
+\definecolor{orange}{RGB}{231,135,26}
+\definecolor{purple}{RGB}{94,53,177}
+
+% Fix numbering in hebrew article:
+\renewcommand{\thetheorem}{\beginL \thesection.\arabic{theorem}}
+
+% Create symbol for DotCup (forn union):
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+\usepackage{mathtools}
+\usepackage{dsfont}
+\end_preamble
+\use_default_options true
+\begin_modules
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 3cm
+\headheight 0cm
+\headsep 0cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/nimro/AppData/Roaming/LyX2.3/MacrosHeb.lyx"
+
+\end_inset
+
+
+\begin_inset Box Doublebox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Title
+)
+\numeric on
+67577
+\numeric off
+( מבוא למערכות לומדות | תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Author
+שם: נמרוד בר גיורא | ת"ז:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+207090622
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק תאורטי
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Convex Optimization}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q1.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula $v,u\in C$
+\end_inset
+
+ ו-
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\begin{align*}
+g\left(\alpha v+\left(1-\alpha\right)u\right) & =\stackrel[i=1]{m}{\sum}\gamma_{i}f_{i}\left(\alpha v+\left(1-\alpha\right)u\right)\overset{{\color{green}\sun}}{\leqslant}\stackrel[i=1]{m}{\sum}\alpha\gamma_{i}f_{i}\left(v\right)+\left(1-\alpha\right)\gamma_{i}f_{i}\left(u\right)=\\
+ & =\alpha\stackrel[i=1]{m}{\sum}\gamma_{i}f_{i}\left(v\right)+\left(1-\alpha\right)\stackrel[i=1]{m}{\sum}\gamma_{i}f_{i}\left(u\right)=\alpha g\left(v\right)+\left(1-\alpha\right)g\left(u\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula ${\color{green}\sun}$
+\end_inset
+
+: כי 
+\begin_inset Formula $\gamma_{i}>0$
+\end_inset
+
+ ו-
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ קמורה לכל 
+\begin_inset Formula $i\in\left[n\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+לכן לפי ההגדרה 
+\begin_inset Formula $g:C\rightarrow\kaliReal$
+\end_inset
+
+ היא פונקציה קמורה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "78col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q2.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+דוגמא נגדית
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula $g\left(x\right)=x^{2}-1$
+\end_inset
+
+ ו- 
+\begin_inset Formula $f\left(x\right)=\left|x\right|$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $x,y\in\kaliReal$
+\end_inset
+
+ ו-
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+\alpha g\left(x\right)+\left(1-\alpha\right)g\left(y\right) & =\alpha\left(x^{2}-1\right)+\left(1-\alpha\right)\left(y^{2}-1\right)=\alpha x^{2}-\alpha+\left(1-\alpha\right)y^{2}-\left(1-\alpha\right)=\alpha x^{2}+\left(1-\alpha\right)y^{2}-1\\
+g\left(\alpha x+\left(1-\alpha\right)y\right) & =\left(\alpha x+\left(1-\alpha\right)y\right)^{2}-1=\alpha^{2}x^{2}+2\alpha\left(1-\alpha\right)xy+\left(1-\alpha\right)^{2}y^{2}
+\end{align*}
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\begin{align*}
+\alpha g\left(x\right)+\left(1-\alpha\right)g\left(y\right)-g\left(\alpha x+\left(1-\alpha\right)y\right) & =\alpha x^{2}+\left(1-\alpha\right)y^{2}-1-\alpha^{2}x^{2}-2\alpha\left(1-\alpha\right)xy-\left(1-\alpha\right)^{2}y^{2}=\\
+ & =\left(\alpha-\alpha^{2}\right)x^{2}-2\alpha\left(1-\alpha\right)xy+\left(1-\alpha-\left(1-\alpha\right)^{2}\right)y^{2}=\\
+ & =\alpha\left(1-\alpha\right)x^{2}-2\alpha\left(1-\alpha\right)xy+\alpha\left(1-\alpha\right)y^{2}=\\
+ & =\alpha\left(1-\alpha\right)\left(x^{2}-2xy+y^{2}\right)=\alpha\left(1-\alpha\right)\left(x-y\right)^{2}\underset{{\color{gray}\underset{\mathclap{\alpha\in\left[0,1\right]}}{\uparrow}}}{\geqslant}0\\
+ & \Downarrow\\
+g\left(\alpha x+\left(1-\alpha\right)y\right) & \leqslant\alpha g\left(x\right)+\left(1-\alpha\right)g\left(y\right)
+\end{align*}
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $g$
+\end_inset
+
+ קמורה.
+ בנוסף 
+\begin_inset Formula $f$
+\end_inset
+
+ קמורה כי:
+\begin_inset Formula 
+\[
+f\left(\alpha x+\left(1-\alpha\right)y\right)=\left|\alpha x+\left(1-\alpha\right)y\right|\overset{\triangle}{\leqslant}\alpha\left|x\right|+\left(1-\alpha\right)\left|y\right|=\alpha f\left(x\right)+\left(1-\alpha\right)f\left(y\right)
+\]
+
+\end_inset
+
+הפונקציה 
+\begin_inset Formula $h\equiv f\circ g$
+\end_inset
+
+ היא 
+\begin_inset Formula $h\left(x\right)=\left|x^{2}-1\right|$
+\end_inset
+
+, והיא 
+\series bold
+איננה
+\series default
+ קמורה - עבור הנקודות 
+\begin_inset Formula $x=-1$
+\end_inset
+
+ ו-
+\begin_inset Formula $y=1$
+\end_inset
+
+, ו-
+\begin_inset Formula $\alpha=\frac{1}{2}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+h\left(\alpha x+\left(1-\alpha\right)y\right) & =h\left(-\frac{1}{2}+\frac{1}{2}\right)=h\left(0\right)=\left|0-1\right|=1\\
+\alpha h\left(x\right)+\left(1-\alpha\right)h\left(y\right) & =\frac{1}{2}h\left(-1\right)+\frac{1}{2}h\left(1\right)=\frac{1}{2}\left|\left(-1\right)^{2}-1\right|+\frac{1}{2}\left|1^{2}-1\right|=0
+\end{align*}
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\alpha h\left(x\right)+\left(1-\alpha\right)h\left(y\right)<h\left(\alpha x+\left(1-\alpha\right)y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "78col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q3.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\Leftarrow\right)$
+\end_inset
+
+ נניח ש-
+\begin_inset Formula $f$
+\end_inset
+
+ היא פונקציה קמורה.
+ לפי ההגדרה של קמירות קבוצות, 
+\begin_inset Formula $\text{epi}\left(f\right)$
+\end_inset
+
+ קמורה אם ורק אם לכל 
+\begin_inset Formula $\left(v,t\right),\left(u,s\right)\in\text{epi}\left(f\right)$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\text{epi}\left(f\right)\ni\alpha\left(v,t\right)+\left(1-\alpha\right)\left(u,s\right)=\left(\alpha v+\left(1-\alpha\right)u,\alpha t+\left(1-\alpha\right)s\right)
+\]
+
+\end_inset
+
+אז יהיו 
+\begin_inset Formula $\left(v,t\right),\left(u,s\right)\in\text{epi}\left(f\right)$
+\end_inset
+
+ ו- 
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+.
+ אזי:
+\begin_inset Formula 
+\[
+f\left(\alpha v+\left(1-\alpha\right)u\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{\ensuremath{f} קמורה}}}}}{\downarrow}}}{\leqslant}\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)\overset{{\color{gray}\overset{\mathclap{\left(v,t\right),\left(u,s\right)\in\text{epi}\left(f\right)}}{\downarrow}}}{\leqslant}\alpha t+\left(1-\alpha\right)s
+\]
+
+\end_inset
+
+ולכן 
+\begin_inset Formula $\left(\alpha v+\left(1-\alpha\right)u,\alpha t+\left(1-\alpha\right)s\right)\in\text{epi}\left(f\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula $\left(\Rightarrow\right)$
+\end_inset
+
+ נניח ש-
+\begin_inset Formula $\text{epi}\left(f\right)$
+\end_inset
+
+ היא קבוצה קמורה.
+ יהיו 
+\begin_inset Formula $v,u\in C$
+\end_inset
+
+ ו-
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+.
+ נסמן 
+\begin_inset Formula $t=f\left(v\right)$
+\end_inset
+
+ ו- 
+\begin_inset Formula $s=f\left(u\right)$
+\end_inset
+
+ ונקבל ש- 
+\begin_inset Formula $\left(v,t\right),\left(u,s\right)\in\text{epi}\left(f\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+מהקמירות של 
+\begin_inset Formula $\text{epi}\left(f\right)$
+\end_inset
+
+ נובע ש-
+\begin_inset Formula 
+\[
+\text{epi}\left(f\right)\ni\alpha\left(v,t\right)+\left(1-\alpha\right)\left(u,s\right)=\left(\alpha v+\left(1-\alpha\right)u,\alpha t+\left(1-\alpha\right)s\right)
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+f\left(\alpha v+\left(1-\alpha\right)u\right)\leqslant\alpha t+\left(1-\alpha\right)s=\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula $u,v,\alpha$
+\end_inset
+
+ היו שרירותיים ולכן 
+\begin_inset Formula $f$
+\end_inset
+
+ קמורה לפי ההגדרה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "55col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q4.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula $u,v\in V$
+\end_inset
+
+ ו-
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+.
+ מתכונת הסופרימום נובע שלכל 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ קיים 
+\begin_inset Formula $i\in I$
+\end_inset
+
+ כך ש-
+\begin_inset Formula 
+\[
+f\left(\alpha v+\left(1-\alpha\right)u\right)<f_{i}\left(\alpha v+\left(1-\alpha\right)u\right)+\varepsilon\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{\ensuremath{f_{i}} קמורה}}}}}{\downarrow}}}{\leqslant}\alpha f_{i}\left(v\right)+\left(1-\alpha\right)f_{i}\left(u\right)+\varepsilon\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{הגדרת ה-\ensuremath{\sup}}}}}}{\downarrow}}}{\leqslant}\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)+\varepsilon
+\]
+
+\end_inset
+
+נובע מכך ש- 
+\begin_inset Formula $f\left(\alpha v+\left(1-\alpha\right)u\right)\leqslant\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)$
+\end_inset
+
+, כי אם נניח בשלילה ש-
+\begin_inset Formula 
+\[
+f\left(\alpha v+\left(1-\alpha\right)u\right)>\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)
+\]
+
+\end_inset
+
+וניקח 
+\begin_inset Formula $\varepsilon=f\left(\alpha v+\left(1-\alpha\right)u\right)-\left(\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)\right)>0$
+\end_inset
+
+ נקבל ש-
+\begin_inset Formula 
+\[
+\alpha f\left(v\right)+\left(1-\alpha\right)f\left(u\right)+\varepsilon=f\left(\alpha v+\left(1-\alpha\right)u\right)
+\]
+
+\end_inset
+
+וזו סתירה למה שהראינו לעיל.
+ לכן לפי ההגדרה 
+\begin_inset Formula $f$
+\end_inset
+
+ קמורה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Sub-Gradients for Soft-SVM Objective}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "78col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q5.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula $w_{1},w_{2}\in\kaliReal^{d}$
+\end_inset
+
+, 
+\begin_inset Formula $b_{1},b_{2}\in\kaliReal$
+\end_inset
+
+ ו- 
+\begin_inset Formula $\alpha\in\left[0,1\right]$
+\end_inset
+
+.
+ נשים לב ש-
+\begin_inset Formula 
+\begin{align*}
+f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\right)\right) & =f\left(\alpha w_{1}+\left(1-\alpha\right)w_{2},\alpha b_{1}+\left(1-\alpha\right)b_{2}\right)=\\
+ & =\max\left\{ 0,1-y\left(\left\langle x\mid\alpha w_{1}+\left(1-\alpha\right)w_{2}\right\rangle +\alpha b_{1}+\left(1-\alpha\right)b_{2}\right)\right\} =\\
+ & =\max\left\{ 0,1-y\left(\alpha\left\langle x\mid w_{1}\right\rangle +\left(1-\alpha\right)\left\langle x\mid w_{2}\right\rangle +\alpha b_{1}+\left(1-\alpha\right)b_{2}\right)\right\} =\\
+ & =\max\left\{ 0,1-y\left(\alpha\left(\left\langle x\mid w_{1}\right\rangle +b_{1}\right)+\left(1-\alpha\right)\left(\left\langle x\mid w_{2}\right\rangle +b_{2}\right)\right)\right\} =\\
+ & =\max\left\{ 0,1-y\alpha\left(x^{\top}w_{1}+b_{1}\right)-y\left(1-\alpha\right)\left(x^{\top}w_{2}+b_{2}\right)\right\} 
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\alpha f\left(w_{1},b_{1}\right)+\left(1-\alpha\right)f\left(w_{2},b_{2}\right)=\alpha\max\left\{ 0,1-y\left(x^{\top}w_{1}+b_{1}\right)\right\} +\left(1-\alpha\right)\max\left\{ 0,1-y\left(x^{\top}w_{2}+b_{2}\right)\right\} 
+\]
+
+\end_inset
+
+אם 
+\begin_inset Formula $f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\right)\right)=0$
+\end_inset
+
+ אז בבירור 
+\begin_inset Formula 
+\[
+f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\right)\right)\leqslant\alpha f\left(w_{1},b_{1}\right)+\left(1-\alpha\right)f\left(w_{2},b_{2}\right)
+\]
+
+\end_inset
+
+אחרת, מתקיים ש- 
+\begin_inset Formula 
+\[
+f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\right)\right)=1-y\alpha\left(x^{\top}w_{1}+b_{1}\right)-y\left(1-\alpha\right)\left(x^{\top}w_{2}+b_{2}\right)>0
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\begin{align*}
+\alpha f\left(w_{1},b_{1}\right)+\left(1-\alpha\right)f\left(w_{2},b_{2}\right)-f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\right)\right) & =\\
+=\alpha\max\left\{ 0,1-y\left(x^{\top}w_{1}+b_{1}\right)\right\} +\left(1-\alpha\right)\max\left\{ 0,1-y\left(x^{\top}w_{2}+b_{2}\right)\right\}  & -1+y\alpha\left(x^{\top}w_{1}+b_{1}\right)+y\left(1-\alpha\right)\left(x^{\top}w_{2}+b_{2}\right)\geqslant\\
+\geqslant\alpha\left(1-y\left(x^{\top}w_{1}+b_{1}\right)\right)+\left(1-\alpha\right)\left(1-y\left(x^{\top}w_{2}+b_{2}\right)\right) & -1+y\alpha\left(x^{\top}w_{1}+b_{1}\right)+y\left(1-\alpha\right)\left(x^{\top}w_{2}+b_{2}\right)=\\
+=\alpha-y\alpha\left(x^{\top}w_{1}+b_{1}\right)+\left(1-\alpha\right)-y\left(1-\alpha\right)\left(x^{\top}w_{2}+b_{2}\right) & -1+y\alpha\left(x^{\top}w_{1}+b_{1}\right)+y\left(1-\alpha\right)\left(x^{\top}w_{2}+b_{2}\right)=\\
+=\alpha+\left(1-\alpha\right)-1 & =0
+\end{align*}
+
+\end_inset
+
+כלומר - 
+\begin_inset Formula 
+\[
+\alpha f\left(w_{1},b_{1}\right)+\left(1-\alpha\right)f\left(w_{2},b_{2}\right)\geqslant f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\right)\right)
+\]
+
+\end_inset
+
+מכיוון ש-
+\begin_inset Formula $\left(w_{1},b_{1}\right),\left(w_{2},b_{2}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\alpha$
+\end_inset
+
+ היו שרירותיים אז לפי ההגדרה - 
+\begin_inset Formula $f\coloneqq\ell_{x,y}^{\text{hinge}}$
+\end_inset
+
+ היא קמורה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q6.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+פתרון
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula ${\color{red}TODO}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "80col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q7.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+לפי ההגדרה של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתקיים לכל 
+\begin_inset Formula $k\in\left[m\right]$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $u\in\kaliReal^{d}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f_{k}\left(x\right)+\left\langle g_{k}\mid u-x\right\rangle \leqslant f_{k}\left(u\right)
+\]
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+f\left(x\right)+\left\langle \stackrel[k=1]{m}{\sum}g_{k}\mid u-x\right\rangle =\stackrel[k=1]{m}{\sum}f_{k}\left(x\right)+\stackrel[k=1]{m}{\sum}\left\langle g_{k}\mid u-x\right\rangle =\stackrel[k=1]{m}{\sum}\left(f_{k}\left(x\right)+\left\langle g_{k}\mid u-x\right\rangle \right)\leqslant\stackrel[k=1]{m}{\sum}f_{k}\left(u\right)=f\left(u\right)
+\]
+
+\end_inset
+
+כלומר לפי ההגדרה - 
+\begin_inset Formula $\sum_{k=1}^{m}g_{k}\in\partial f\left(x\right)=\partial\sum_{k=1}^{m}f_{k}\left(x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Captures/Q8.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+פתרון
+\bar default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula ${\color{red}TODO}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
