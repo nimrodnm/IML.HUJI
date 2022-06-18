@@ -228,6 +228,37 @@ status open
 
 \end_layout
 
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Box Boxed
@@ -319,6 +350,37 @@ g\left(\alpha v+\left(1-\alpha\right)u\right) & =\stackrel[i=1]{m}{\sum}\gamma_{
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
 \end_layout
 
 \begin_layout Standard
@@ -469,6 +531,37 @@ h\left(\alpha x+\left(1-\alpha\right)y\right) & =h\left(-\frac{1}{2}+\frac{1}{2}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
 \end_layout
 
 \begin_layout Standard
@@ -637,6 +730,37 @@ f\left(\alpha v+\left(1-\alpha\right)u\right)\leqslant\alpha t+\left(1-\alpha\ri
 
 \end_layout
 
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Box Boxed
@@ -748,6 +872,37 @@ f\left(\alpha v+\left(1-\alpha\right)u\right)>\alpha f\left(v\right)+\left(1-\al
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
 \end_layout
 
 \begin_layout Standard
@@ -887,6 +1042,37 @@ f\left(\alpha\left(w_{1},b_{1}\right)+\left(1-\alpha\right)\left(w_{2},b_{2}\rig
 
 \end_layout
 
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Box Boxed
@@ -945,6 +1131,37 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
 \end_layout
 
 \begin_layout Standard
@@ -1081,6 +1298,37 @@ f\left(x\right)+\left\langle \stackrel[k=1]{m}{\sum}g_{k}\mid u-x\right\rangle =
 
 \end_layout
 
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Box Boxed
@@ -1132,6 +1380,1785 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+חלק פרקטי
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\text{Gradient Descent}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q1_1.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q1_2.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אפשר לראות שהרגולריזציה שמשתמשת בנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ איפסה את אחת הקואורדינטות במהלך האלגוריתם.
+ לעומת זאת הרגולריזציה שמשתמשת בנורמה 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ הקטינה את הקואורדינטות של 
+\begin_inset Formula $w$
+\end_inset
+
+ באופן 
+\begin_inset Quotes eld
+\end_inset
+
+אחיד
+\begin_inset Quotes erd
+\end_inset
+
+, שתיהן הולכות וקטנות בו זמנית.
+\end_layout
+
+\begin_layout Standard
+בנוסף, ניתן לראות בגרף של דעיכת 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ שהמרחק בין כל שתי נקודות שהתקבלו במהלך האלגוריתם הולך וקטן, ולעומת זאת
+ המרחק בין כל שתי נקודות בגרף של דעיכת 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ נשאר לרוב קבוע.
+ הסיבה לכך היא שהנקודות שנבחרות במהלך האלגוריתם תלויות בנגזרת של פונקציית
+ היעד.
+ הנגזרת של 
+\begin_inset Formula $\left\Vert w\right\Vert _{2}^{2}$
+\end_inset
+
+ היא 
+\begin_inset Formula $2w$
+\end_inset
+
+, כלומר היא פורפורציונלית ל-
+\begin_inset Formula $w$
+\end_inset
+
+ עצמו, ואילו הנגזרת של 
+\begin_inset Formula $\left\Vert w\right\Vert _{1}$
+\end_inset
+
+ היא 
+\begin_inset Formula $\text{sign}\left(w\right)$
+\end_inset
+
+, וזה וקטור שהנורמה שלו נשארת קבוע כל עוד הקואורדינטות שלו לא מתאפסות.
+ הנורמה שלו קטנה רק כאשר כניסה כלשהי מתאפסת, וזה קורה רק אחת לכמה איטרציות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+תופעה ראשונה שניתן לשים לב אליה במסלול דעיכה של הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ היא, כפי שהוסבר בשאלה הקודמת, שאחת הקואורדינטות של המשקולת 
+\begin_inset Formula $w$
+\end_inset
+
+ התאפסה בשלב מוקדם יחסית של האלגוריתם, עוד לפני שהוא הגיע לאיזור נקודת המינימום
+ 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset
+
+.
+ זו תכונה של רגולריזציית 
+\begin_inset Formula $\text{lasso}$
+\end_inset
+
+ שדיברנו עליה בכיתה.
+\end_layout
+
+\begin_layout Standard
+תופעה שניה שניתן לשים לב אליה היא שהמרחק בין כל שתי נקודות שהתקבלות במהלך
+ ריצת האלגוריתם הוא קבוע.
+ הסיבה לכך היא שהנקודות שנבחרות בכל איטרציה תלויות בנגזרת של 
+\begin_inset Formula $\left\Vert w\right\Vert _{1}$
+\end_inset
+
+, שהיא 
+\begin_inset Formula $\text{sign}\left(w\right)$
+\end_inset
+
+, וזה וקטור שהנורמה שלו נשארת קבוע כל עוד הקואורדינטות שלו לא מתאפסות.
+ הנורמה שלו קטנה רק כאשר כניסה כלשהי מתאפסת, וזה קורה רק אחת לכמה איטרציות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q3_1.PNG
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q3_2.PNG
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שעבור גודל צעד 
+\begin_inset Formula $=$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+, האלגוריתם לא התכנס עבור שתי הנורמות.
+ מעבר לכך - ניתן לראות שאין בכלל מגמת ירידה.
+ נראה שערך צעד גדול מדי גורם לאלגוריתם להתבדר.
+ ב-
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ לקפוץ בין שני ערכים קבועים, וב-
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ להישאר על אותו הערך במהלך כל הריצה, כנראה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Overshooting
+\lang hebrew
+.
+\end_layout
+
+\begin_layout Standard
+עבור גודל צעד 
+\begin_inset Formula $=$
+\end_inset
+
+ 
+\begin_inset Formula $0.001$
+\end_inset
+
+ ניתן לראות דעיכה, אבל האלגוריתם לא הגיע למינימום לאחר 
+\begin_inset Formula $1000$
+\end_inset
+
+ איטרציות.
+ כלומר גודל צעד קטן מדי הקשה על האלגוריתם להתכנס.
+\end_layout
+
+\begin_layout Standard
+עבור גודל צעד 
+\begin_inset Formula $=$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula $0.1$
+\end_inset
+
+ נראה שעבור הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ האלגוריתם לא הצליח להתכנס, אם כי הוא התקבע על ערך נמוך יחסית 
+\begin_inset Formula $\sim0.1$
+\end_inset
+
+.
+ לעומת זאת עבור הנורמה 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ האלגוריתם התכנס מהר מאוד - לאחר 
+\begin_inset Formula $50$
+\end_inset
+
+ איטרציות בערך.
+\end_layout
+
+\begin_layout Standard
+עבור גודל צעד 
+\begin_inset Formula $0.01$
+\end_inset
+
+ נראה שהאלגוריתם הגיע לערך קרוב מאוד למינימום עבור שתי הנורמות.
+ עבור 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ הוא התכנס ועצר אחרי מספר איטרציות קטן מהמקסימום, ועבור 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ הוא התקבע על ערך קרוב למינימלי 
+\begin_inset Formula $\sim0.008$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\end_layout
+
+\begin_layout Standard
+טבלה שמציגה את הערך המינימלי של הנורמה שהתקבל במהלך ריצת אלגוריתם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Gradient Descent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ערכים שונים של גודל צעד קבוע:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{norm}$
+\end_inset
+
+
+\backslash
+
+\begin_inset Formula $\text{step size}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.508$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.821$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.092$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.000000001$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.01$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.008$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.0000002$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.001$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.414$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.051$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אפשר לראות שהערך המינימלי שהתקבל עבור הנורמה 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ היה עבור גודל צעד 
+\begin_inset Formula $0.1$
+\end_inset
+
+, והערך המינימלי שהתקבל עבור הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ היה עבור גודל צעד 
+\begin_inset Formula $0.01$
+\end_inset
+
+.
+ זה מתאים לגרפים שהתקבלו בשאלה הקודמת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q5.PNG
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות בגרף שעבור הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ קצבי הדעיכה האקספוננציאלית 
+\begin_inset Formula $0.95$
+\end_inset
+
+ ו- 
+\begin_inset Formula $0.99$
+\end_inset
+
+ הם הטובים ביותר.
+ עם 
+\begin_inset Formula $0.95$
+\end_inset
+
+ האלגוריתם הגיע לערך קרוב מאוד למינימום אחרי מספר איטרציות לא גדול.
+ עם 
+\begin_inset Formula $0.99$
+\end_inset
+
+ האלגוריתם הגיע לערך קרוב אפילו יותר למינימום תוך מספר איטרציות גדול יותר
+ )אבל עדיין קטן מהמקסימלי(.
+\end_layout
+
+\begin_layout Standard
+בנוסף, עבור קצת דעיכה 
+\begin_inset Formula $\gamma=0.9$
+\end_inset
+
+ נראה שהאלגוריתם נעצר בשלב מוקדם יחסית אבל על ערך רחוק מהמינימום.
+ כלומר קצב הדעיכה הזה גרם לנקודות שהתקבלו באלגוריתם להתקרב מאוד אחת לשניה
+ אך לא אפשר להן לקטון בקצב גדול מספיק, וזה גרם לאלגוריתם לעצור בשלב לא מתאים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\end_layout
+
+\begin_layout Standard
+הערכים שהתקבלו בריצת אלגוריתם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Gradient Descent
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ על הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ עם קצבי דעיכה אקספוננציאלים 
+\begin_inset Formula $\left[0.9,0.95,0.99,1\right]$
+\end_inset
+
+ הם:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Decay Rate}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ell_{1}\text{ Value}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.414$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.95$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.0000003$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.99$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.00000000006$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.091$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בהתאם לגרף בשאלה הקודמת - הערך הנמוך ביותר שהאלגוריתם הצליח להגיע אליו התקבל
+ עם קצב דעיכה 
+\begin_inset Formula $\gamma=0.99$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q7_1.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q7_2.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן לראות שבניגוד לצורת הדעיכה של הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ עבור גודל צעד קבוע - שם המרחק בין כל שתי נקודות היה פחות או יותר קבוע,
+ המרחק בין כל שתי נקודות כאשר משתמשים בגודל צעד הדועך אקספוננציאלית כן הולך
+ וקטן.
+\end_layout
+
+\begin_layout Standard
+בנוסף, נראה שהדעיכה האקספוננציאלית אפשרה לאלגוריתם להביא את הנורמה 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+ לערך קרוב בהרבה למינימום.
+ כאשר השתמשנו בגודל צעד קבוע נראה שהאלגוריתם 
+\begin_inset Quotes eld
+\end_inset
+
+מתקבע
+\begin_inset Quotes erd
+\end_inset
+
+ על ערך כלשהו ליד המינימום, ושם הנקודות 
+\begin_inset Quotes eld
+\end_inset
+
+קפצו
+\begin_inset Quotes erd
+\end_inset
+
+ בין ערכים כלשהם בלי להמשיך להתקרב.
+ לעומת זאת עכשיו גודל הצעד אפשר לאלגוריתם להמשיך להקטין את 
+\begin_inset Formula $w$
+\end_inset
+
+ גם בסביבות קטנות יותר של המינימום.
+\end_layout
+
+\begin_layout Standard
+עבור 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ נראה שאין הבדל משמעותי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+8
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q8.PNG
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\end_layout
+
+\begin_layout Standard
+ערך ה-
+\begin_inset Formula $\alpha$
+\end_inset
+
+ שהשיג ערך אופטימלי ב-
+\begin_inset Formula $\text{ROC Curve}$
+\end_inset
+
+ לפי הנוסחא
+\begin_inset Formula 
+\[
+\alpha^{\ast}=\text{argmax}_{\alpha}\left\{ \text{TPR}_{\alpha}-\text{FPR}_{\alpha}\right\} 
+\]
+
+\end_inset
+
+הוא:
+\begin_inset Formula 
+\[
+\alpha^{\ast}=0.315
+\]
+
+\end_inset
+
+והשגיאה )לפי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Misclassification Error
+\lang hebrew
+( של מודל שמשתמש בערך הזה ב-
+\lang english
+Cutoff
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על סט המבחן היא 
+\begin_inset Formula $0.348$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q10.PNG
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לאחר הרצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Cross Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על מודל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Logistic Regression
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם רגולריזצת-
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+, ערך ה-
+\begin_inset Formula $\lambda$
+\end_inset
+
+ האופטימלי שהתקבל היה 
+\begin_inset Formula $\lambda=0.002$
+\end_inset
+
+ והשגיאה של המודל שהתאמן עם הערך הזה על סט המבחן היתה 
+\begin_inset Formula $0.326$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+שאלה
+\family roman
+\series bold
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+11
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Plots/Q11.PNG
+	lyxscale 55
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לאחר הרצת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Cross Validation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+על מודל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Logistic Regression
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עם רגולריזצת-
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+, ערך ה-
+\begin_inset Formula $\lambda$
+\end_inset
+
+ האופטימלי שהתקבל היה 
+\begin_inset Formula $\lambda=0.02$
+\end_inset
+
+ והשגיאה של המודל שהתאמן עם הערך הזה על סט המבחן היתה 
+\begin_inset Formula $0.293$
+\end_inset
+
+.
 \end_layout
 
 \end_body

@@ -68,4 +68,4 @@ class ExponentialLR(FixedLR):
         eta_t: float
             Exponential decay according to eta_t = eta*gamma^t
         """
-        return self.base_lr * pow(base=self.decay_rate, exp=t)
+        return self.base_lr * pow(self.decay_rate, t)

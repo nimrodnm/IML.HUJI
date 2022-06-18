@@ -3,7 +3,7 @@ from typing import Callable, NoReturn
 import numpy as np
 
 from IMLearn.base import BaseModule, BaseLR
-from .learning_rate import FixedLR
+from IMLearn.desent_methods.learning_rate import FixedLR
 
 OUTPUT_VECTOR_TYPE = ["last", "best", "average"]
 
@@ -34,7 +34,7 @@ class GradientDescent:
             - `best`: returns the point achieving the lowest objective
             - `average`: returns the average point over the GD iterations
 
-    callback_: Callable[[...], None], default=default_callback
+    callback_: Callable[[GradientDescent, ...], None], default=default_callback
         A callable function to be called after each update of the model while fitting to given data.
         Callable function receives as input any argument relevant for the current GD iteration. Arguments
         are specified in the `GradientDescent.fit` function
@@ -45,7 +45,7 @@ class GradientDescent:
                  tol: float = 1e-5,
                  max_iter: int = 1000,
                  out_type: str = "last",
-                 callback: Callable[[GradientDescent, ...], None] = default_callback):
+                 callback: Callable[..., None] = default_callback):
         """
         Instantiate a new instance of the GradientDescent class
 
@@ -120,19 +120,34 @@ class GradientDescent:
                 Euclidean norm of w^(t)-w^(t-1)
 
         """
-        for t in range(self.max_iter_):
+        # TODO - refactor
+        solution = f.weights.copy()
+        t = 0
+        self.callback_(solver=self, weights=f.weights, value=f.compute_output(X=X, y=y),
+                       grad=f.compute_jacobian(X=X, y=y), t=t, eta=0, delta=np.linalg.norm(f.weights, ord=2))
+
+        while t <= self.max_iter_:
             eta = self.learning_rate_.lr_step(t=t)
-            next_w = f.weights() - eta * f.compute_jacobian(X=X, y=y)
-            if self.out_type_ == OUTPUT_VECTOR_TYPE[0]:
-                f.weights(next_w)
-            elif self.out_type_ == OUTPUT_VECTOR_TYPE[1]:
-                f.weights()
+            prev_w = f.weights
+            prev_val = f.compute_output(X=X, y=y)
+            f.weights = prev_w - eta * f.compute_jacobian(X=X, y=y)
+            cur_val = f.compute_output(X=X, y=y)
+            delta = np.linalg.norm(f.weights - prev_w, ord=2)
 
-    def handle_output_vector(self, f: BaseModule, old_w: np.ndarray, new_w: np.ndarray) -> np.ndarray:
-        """
+            if self.out_type_ == OUTPUT_VECTOR_TYPE[0]:  # last
+                solution = f.weights
+            elif self.out_type_ == OUTPUT_VECTOR_TYPE[1]:  # best
+                if cur_val < prev_val:
+                    solution = f.weights
+            elif self.out_type_ == OUTPUT_VECTOR_TYPE[2]:  # average
+                solution += f.weights
 
-        """
-        if self.out_type_ == OUTPUT_VECTOR_TYPE[0]:
-            return new_w
-        if self.out_type_ == OUTPUT_VECTOR_TYPE[1]:
-            return
+            t += 1
+
+            self.callback_(solver=self, weights=f.weights, value=cur_val,
+                           grad=f.compute_jacobian(X=X, y=y), t=t, eta=eta, delta= delta)
+
+            if delta <= self.tol_:
+                break
+
+        return solution / (t + 1) if self.out_type_ == OUTPUT_VECTOR_TYPE[2] else solution
