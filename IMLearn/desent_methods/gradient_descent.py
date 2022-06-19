@@ -120,7 +120,6 @@ class GradientDescent:
                 Euclidean norm of w^(t)-w^(t-1)
 
         """
-        # TODO - refactor
         solution = f.weights.copy()
         t = 0
         self.callback_(solver=self, weights=f.weights, value=f.compute_output(X=X, y=y),

@@ -1120,14 +1120,311 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula ${\color{red}TODO}$
+יהיו 
+\begin_inset Formula $w\in\kaliReal^{d}$
 \end_inset
 
+ ו- 
+\begin_inset Formula $b\in\kaliReal$
+\end_inset
 
+.
+ נתבונן בנקודה 
+\begin_inset Formula $\left(w,b\right)\in\kaliReal^{d+1}$
+\end_inset
+
+, ונחלק למקרים:
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $1-y\left(x^{\top}w+b\right)\geqslant0$
+\end_inset
+
+ אז לפי ההגדרה - 
+\begin_inset Formula $\ell_{x,y}^{\text{hinge}}\left(w,b\right)=1-y\left(x^{\top}w+b\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נשים לב שאם אי-השיוויון הוא חזק )כלומר 
+\begin_inset Formula $1-y\left(x^{\top}w+b\right)>0$
+\end_inset
+
+( אז 
+\begin_inset Formula $\ell_{x,y}^{\text{hinge}}$
+\end_inset
+
+ גזירה בנקודה 
+\begin_inset Formula $\left(w,b\right)$
+\end_inset
+
+ והגרדיאנט שלה הוא:
+\begin_inset Formula 
+\[
+\frac{\partial\ell_{x,y}^{\text{hinge}}}{\partial w}\left(w,b\right)=-yx\quad,\quad\frac{\partial\ell_{x,y}^{\text{hinge}}}{\partial b}\left(w,b\right)=-y\quad\Longrightarrow\quad\nabla\ell_{x,y}^{\text{hinge}}\left(w,b\right)=-y\left(x,1\right)=-y\left(\begin{smallmatrix}x_{1}\\
+\vdots\\
+x_{d}\\
+1
+\end{smallmatrix}\right)
+\]
+
+\end_inset
+
+נראה לפי ההגדרה שהוקטור 
+\begin_inset Formula $-y\left(x,1\right)\in\kaliReal^{d+1}$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $\ell_{x,y}^{\text{hinge}}$
+\end_inset
+
+ בנקודה 
+\begin_inset Formula $\left(w,b\right)$
+\end_inset
+
+ גם אם אי-השיוויון הוא חלש:
+\begin_inset Newline newline
+\end_inset
+
+לכל 
+\begin_inset Formula $\left(u,a\right)\in\kaliReal^{d+1}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\begin{align*}
+\left\langle -y\left(x,1\right)\mid\left(u,a\right)-\left(w,b\right)\right\rangle  & =-y\left\langle \left(x,1\right)\mid\left(u,a\right)\right\rangle +y\left\langle \left(x,1\right)\mid\left(w,b\right)\right\rangle =-y\left(\left\langle x\mid u\right\rangle +a\right)+y\left(\left\langle x\mid w\right\rangle +b\right)=y\left(x^{\top}w+b\right)-y\left(x^{\top}u+a\right)
+\end{align*}
+
+\end_inset
+
+ולכן:
+\begin_inset Formula 
+\[
+\ell_{x,y}^{\text{hinge}}\left(w,b\right)+\left\langle -y\left(x,1\right)\mid\left(u,a\right)-\left(w,b\right)\right\rangle =1-y\left(x^{\top}w+b\right)+y\left(x^{\top}w+b\right)-y\left(x^{\top}u+a\right)=1-y\left(x^{\top}u+a\right)\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהגדרת \ensuremath{\ell_{x,y}^{\text{hinge}}}}}}}}{\downarrow}}}{\leqslant}\ell_{x,y}^{\text{hinge}}\left(u,a\right)
+\]
+
+\end_inset
+
+כלומר לפי ההגדרה 
+\begin_inset Formula $-y\left(x,1\right)$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $\ell_{x,y}^{\text{hinge}}$
+\end_inset
+
+ ב-
+\begin_inset Formula $\left(w,b\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula $1-y\left(x^{\top}w+b\right)<0$
+\end_inset
+
+ אז 
+\begin_inset Formula $\ell_{x,y}^{\text{hinge}}\left(w,b\right)=0$
+\end_inset
+
+.
+ נראה שהוקטור 
+\begin_inset Formula $0_{\kaliReal^{d+1}}$
+\end_inset
+
+ הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\lang hebrew
+:
+\begin_inset Newline newline
+\end_inset
+
+לכל 
+\begin_inset Formula $\left(u,a\right)\in\kaliReal^{d+1}$
+\end_inset
+
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\ell_{x,y}^{\text{hinge}}\left(w,b\right)+\left\langle 0_{\kaliReal^{d+1}}\mid\left(u,a\right)-\left(w,b\right)\right\rangle =0+0\overset{{\color{gray}\overset{\mathclap{\text{\R{\text{מהגדרת \ensuremath{\ell_{x,y}^{\text{hinge}}}}}}}}{\downarrow}}}{\leqslant}\ell_{x,y}^{\text{hinge}}\left(u,a\right)
+\]
+
+\end_inset
+
+וזו בדיוק ההגדרה של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\lang hebrew
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ $
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1376,7 +1673,322 @@ status open
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula ${\color{red}TODO}$
+לפי תכונות של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שראינו בתרגול מתקיים לכל 
+\begin_inset Formula $\left(w,b\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\partial\left(\frac{1}{m}\stackrel[i=1]{m}{\sum}\ell_{x,y_{i}}^{\text{hinge}}\left(w,b\right)+\frac{\lambda}{2}\left\Vert w\right\Vert ^{2}\right)=\frac{1}{m}\partial\left(\stackrel[i=1]{m}{\sum}\ell_{x,y_{i}}^{\text{hinge}}\left(w,b\right)\right)+\frac{\lambda}{2}\nabla\left\Vert w\right\Vert ^{2}=\frac{1}{m}\partial\left(\stackrel[i=1]{m}{\sum}\ell_{x,y_{i}}^{\text{hinge}}\left(w,b\right)\right)+\lambda w
+\]
+
+\end_inset
+
+לכן יספיק למצוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ל-
+\begin_inset Formula $\stackrel[i=1]{m}{\sum}\ell_{x,y_{i}}^{\text{hinge}}\left(w,b\right)$
+\end_inset
+
+.
+ יהי 
+\begin_inset Formula $\left(w,b\right)$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ נגדיר:
+\begin_inset Formula 
+\[
+\kaliReal^{d+1}\ni g_{i}=\begin{cases}
+-y_{i}\left(x_{i},1\right) & 1-y_{i}\left(x_{i}^{\top}w+b\right)\geqslant0\\
+0 & 1-y_{i}\left(x_{i}^{\top}w+b\right)<0
+\end{cases}
+\]
+
+\end_inset
+
+ונקבל לפי שאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+6
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ש- 
+\begin_inset Formula $g_{i}\in\partial\ell_{x,y_{i}}^{\text{hinge}}\left(w,b\right)$
+\end_inset
+
+.
+ כעת, מכיוון ש-
+\begin_inset Formula $\ell_{x,y_{i}}^{\text{hinge}}$
+\end_inset
+
+ קמורה לכל 
+\begin_inset Formula $i\in\left[m\right]$
+\end_inset
+
+ לפי ההוכחה בשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ מתקיים ש-
+\begin_inset Formula 
+\[
+\stackrel[i=1]{m}{\sum}g_{i}\in\partial\left(\stackrel[i=1]{m}{\sum}\ell_{x,y_{i}}^{\text{hinge}}\left(w,b\right)\right)
+\]
+
+\end_inset
+
+ולכן 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+sub-gradient
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $f$
+\end_inset
+
+ עבור 
+\begin_inset Formula $\left(w,b\right)$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+\frac{1}{m}\stackrel[i=1]{m}{\sum}g_{i}+\lambda w
+\]
+
 \end_inset
 
 
