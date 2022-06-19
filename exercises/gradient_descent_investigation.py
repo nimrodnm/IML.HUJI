@@ -113,8 +113,8 @@ def compare_fixed_learning_rates(init: np.ndarray = np.array([np.sqrt(2), np.e /
         l2_fig.add_trace(go.Scatter(x=np.arange(len(l2_values)), y=np.array(l2_values).flatten(),
                                     mode="lines", name=f"step size={eta}"))
         # Question 4:
-        print(f"Lowest loss achieved when minimizing L1 norm with fixed step size = {eta} was: {np.min(l1_values)}")
-        print(f"Lowest loss achieved when minimizing L2 norm with fixed step size = {eta} was: {np.min(l2_values)}")
+        print(f"Loss achieved when minimizing L1 norm with fixed step size = {eta} was: {l1_values[-1]}")
+        print(f"Loss achieved when minimizing L2 norm with fixed step size = {eta} was: {l2_values[-1]}")
 
     print("\n")
     l1_fig.update_layout(xaxis_title="Iteration", yaxis_title="Norm Value").show()
@@ -132,7 +132,7 @@ def compare_exponential_decay_rates(init: np.ndarray = np.array([np.sqrt(2), np.
         gd.fit(L1(init), X=None, y=None)
         fig_1.add_trace(go.Scatter(x=np.arange(len(values)), y=np.array(values).flatten(),
                                    mode="lines", name=f"decay rate={gamma}"))
-        print(f"Lowest loss achieved when minimizing L1 norm with exp decay value = {gamma} was: {np.min(values)}")
+        print(f"Loss achieved when minimizing L1 norm with exp decay value = {gamma} was: {values[-1]}")
     # Plot algorithm's convergence for the different values of gamma
     fig_1.update_layout(xaxis_title="Iteration", yaxis_title="Norm Value").show()
 
