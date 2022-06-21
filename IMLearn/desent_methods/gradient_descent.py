@@ -118,7 +118,6 @@ class GradientDescent:
                 Learning rate used at current iteration
             - delta: float
                 Euclidean norm of w^(t)-w^(t-1)
-
         """
         solution = f.weights.copy()
         t = 0

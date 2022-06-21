@@ -7,6 +7,7 @@ from IMLearn.desent_methods import GradientDescent, FixedLR, ExponentialLR
 from IMLearn.desent_methods.modules import L1, L2
 from IMLearn.learners.classifiers.logistic_regression import LogisticRegression
 from IMLearn.utils import split_train_test
+from sklearn.model_selection import train_test_split
 from IMLearn.model_selection import cross_validate
 from IMLearn.metrics import misclassification_error
 from sklearn.metrics import roc_curve, auc
@@ -177,7 +178,9 @@ def load_data(path: str = "../datasets/SAheart.data", train_portion: float = .8)
     """
     df = pd.read_csv(path)
     df.famhist = (df.famhist == 'Present').astype(int)
-    return split_train_test(df.drop(['chd', 'row.names'], axis=1), df.chd, train_portion)
+    # return split_train_test(df.drop(['chd', 'row.names'], axis=1), df.chd, train_portion)
+    train_X, test_X, train_y, test_y = train_test_split(df.drop(['chd', 'row.names'], axis=1), df.chd, train_size=train_portion)
+    return train_X, train_y, test_X, test_y
 
 
 def get_roc_curve_plot(fpr: np.ndarray, tpr: np.ndarray, thresholds: np.ndarray) -> go.Figure:
